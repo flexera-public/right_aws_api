@@ -1,0 +1,6 @@
+nbproject
+.yardoc
+doc
+Gemfile.lock
+right_aws_api-*.gem
+
