@@ -68,7 +68,7 @@ module RightScale
         end
 
         # Escapes a string accordingly to Amazon rules.
-        # @see http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/MakingRESTRequests.html
+        # @see http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html
         #
         # @param [String] string
         # @return [String]
@@ -83,7 +83,7 @@ module RightScale
         # Signature Version 2.
         # EC2, SQS and SDB requests must be signed by this guy.
         #
-        # @see http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/MakingRESTRequests.html
+        # @see http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html
         # @see http://aws.amazon.com/articles/1928?_encoding=UTF8&jiveRedirect=1
         #
         def self.sign_v2_signature(aws_secret_access_key, params, verb, host, urn)
