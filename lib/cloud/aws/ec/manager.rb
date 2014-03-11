@@ -33,7 +33,6 @@ module RightScale
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/ec"
         #
         #  eb = RightScale::CloudApi::AWS::EC::Manager::new(key, secret, 'https://elasticache.us-east-1.amazonaws.com')
         #

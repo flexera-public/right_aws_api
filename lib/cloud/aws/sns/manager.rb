@@ -37,7 +37,6 @@ module RightScale
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/sns"
         #
         #  sns = RightScale::CloudApi::AWS::SNS::Manager::new(
         #    ENV['AWS_ACCESS_KEY_ID'],

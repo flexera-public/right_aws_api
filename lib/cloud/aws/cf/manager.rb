@@ -31,11 +31,10 @@ module RightScale
     module AWS
       module CF
 
-        # Amazon Cloud Front(CF) compatible manager.
+        # Amazon Cloud Front (CF) compatible manager.
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/cf"
         #
         #  cf = RightScale::CloudApi::AWS::CF::Manager::new(key, secret, 'https://cloudfront.amazonaws.com')
         #

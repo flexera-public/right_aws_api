@@ -33,7 +33,6 @@ module RightScale
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/as"
         #
         #  # Create a manager to access Auto Scaling.
         #  as = RightScale::CloudApi::AWS::AS::Manager::new(key, secret, 'https://autoscaling.us-east-1.amazonaws.com')

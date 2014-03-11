@@ -52,7 +52,7 @@ module RightScale
                 body[/\A<\?xml /]
 
               if is_xml
-                hash  = Utils::get_parser_class(options[:xml_parser]).parse(body)
+                hash  = Utils::get_xml_parser_class(options[:xml_parser]).parse(body)
                 error = hash["Error"]
                 result << (error ? ": #{error['Code']}: #{error['Message']} (RequestID: #{error['RequestId']})" : ": #{body}")
               else

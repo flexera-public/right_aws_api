@@ -29,9 +29,11 @@ module RightScale
 
       module SDB
         
-        # Amazon SimpleDB compatible manager.
+        # Amazon SimpleDB (SDB) compatible manager.
         #
         # @example
+        #  require "right_aws_api"
+        #
         #  # Create a manager to access SDB.
         #  sdb = RightScale::CloudApi::AWS::SDB::Manager::new(key, secret, 'https://sdb.amazonaws.com' )
         #  

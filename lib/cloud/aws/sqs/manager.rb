@@ -39,7 +39,6 @@ module RightScale
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/sqs"
         #
         #  # Create a manager
         #  sqs = RightScale::CloudApi::AWS::SQS::Manager::new(

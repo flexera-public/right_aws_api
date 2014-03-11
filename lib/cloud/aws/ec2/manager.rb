@@ -39,7 +39,6 @@ module RightScale
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/ec2"
         #
         #  # Create a manager to access EC2.
         #  ec2 = RightScale::CloudApi::AWS::EC2::Manager::new(key, secret, 'https://us-east-1.ec2.amazonaws.com')

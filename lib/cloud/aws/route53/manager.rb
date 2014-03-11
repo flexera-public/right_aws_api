@@ -31,11 +31,10 @@ module RightScale
     module AWS
       module Route53
 
-        # Amazon Route 53 compatible manager.
+        # Amazon Route 53 (Route53) compatible manager.
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/route53"
         #
         #  r53 = RightScale::CloudApi::AWS::Route53::Manager::new(
         #    ENV['AWS_ACCESS_KEY_ID'],

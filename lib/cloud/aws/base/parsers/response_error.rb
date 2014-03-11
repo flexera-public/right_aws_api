@@ -26,7 +26,10 @@ module RightScale
     module Parser
       module AWS
 
+        # AWS response error parser, case 1
+        #
         class ResponseErrorV1
+
           # Parse HTTP error message from a response body.
           # Body is a String, headers is Hash. 
           # 
@@ -67,8 +70,12 @@ module RightScale
             result
           end
         end
+
         
+        # AWS response error parser, case 2
+        #
         class ResponseErrorV2
+
           # Parse HTTP error message from a response body.
           # Body is a String, headers is Hash. 
           # 

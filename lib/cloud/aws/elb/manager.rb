@@ -32,7 +32,6 @@ module RightScale
         # Amazon Elastic Load Balancing (ELB) compatible manager.
         #
         #  require "right_aws_api"
-        #  require "aws/elb"
         #
         # @example
         #  elb = RightScale::CloudApi::AWS::ELB::Manager::new(key, secret, 'https://elasticloadbalancing.amazonaws.com')

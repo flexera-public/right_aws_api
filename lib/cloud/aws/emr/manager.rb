@@ -29,11 +29,10 @@ module RightScale
 
       module EMR
         
-        # Amazon  ElasticMapReduce (EMR) compatible manager.
+        # Amazon ElasticMapReduce (EMR) compatible manager.
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/emr"
         #
         #  emr = RightScale::CloudApi::AWS::EMR::Manager::new(key, secret, 'https://elasticmapreduce.us-east-1.amazonaws.com')
         #

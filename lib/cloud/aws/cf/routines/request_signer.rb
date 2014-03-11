@@ -26,6 +26,7 @@ module RightScale
     module AWS
       module CF
         
+        # API request signer for CF service.
         class RequestSigner < CloudApi::Routine
 
           class Error < CloudApi::Error

@@ -38,7 +38,18 @@ module RightScale
         class Error < CloudApi::Error
         end
 
-        COMMON_QUERY_PARAMS = %w{Action AWSAccessKeyId Expires SecurityToken Signature SignatureVersion SignatureMethod Timestamp Version}
+        # A list of common AWS API params
+        COMMON_QUERY_PARAMS = %w{
+          Action
+          AWSAccessKeyId
+          Expires
+          SecurityToken
+          Signature
+          SignatureMethod
+          SignatureVersion
+          Timestamp
+          Version
+        }
         
         include Mixin::QueryApiPatterns
 

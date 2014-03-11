@@ -33,7 +33,6 @@ module RightScale
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/cfm"
         #
         #  cfm = RightScale::CloudApi::AWS::CFM::Manager::new(key, secret, 'https://cloudformation.us-east-1.amazonaws.com')
         #

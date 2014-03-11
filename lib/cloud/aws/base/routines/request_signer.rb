@@ -25,12 +25,15 @@ module RightScale
   module CloudApi
     module AWS
 
+      # Request signer for AWS services.
       class RequestSigner < CloudApi::Routine
+
         class Error < CloudApi::Error
         end
 
+        # Use POST verb if GET's path is getting too big.
         MAX_GET_REQUEST_PATH_LENGTH = 2000
-        
+
         # Authenticates an AWS request.
         def process
           # Make sure all the required params are set

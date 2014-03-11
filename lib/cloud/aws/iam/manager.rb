@@ -29,11 +29,10 @@ module RightScale
 
       module IAM
         
-        # AWS Identity and Access Management (IAM) compatible manager.
+        # Amazon Identity and Access Management (IAM) compatible manager.
         # 
         # @example
         #  require "right_aws_api"
-        #  require "aws/iam"
         #
         #  iam = RightScale::CloudApi::AWS::IAM::Manager::new(key, secret, 'https://iam.amazonaws.com')
         #

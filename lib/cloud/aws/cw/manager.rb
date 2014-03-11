@@ -33,7 +33,6 @@ module RightScale
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/cw"
         #
         #  cw = RightScale::CloudApi::AWS::CW::Manager::new(key, secret, 'https://monitoring.us-east-1.amazonaws.com')
         #

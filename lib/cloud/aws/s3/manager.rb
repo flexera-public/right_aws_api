@@ -35,7 +35,6 @@ module RightScale
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/s3"
         #
         #  s3 = RightScale::CloudApi::AWS::S3::new(key, secret, 'https://s3.amazonaws.com')
         #

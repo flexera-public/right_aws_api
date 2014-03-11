@@ -33,7 +33,6 @@ module RightScale
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/rds"
         #
         #  rds = RightScale::CloudApi::AWS::RDS::Manager::new(key, secret, 'https://rds.amazonaws.com')
         #
