@@ -27,9 +27,10 @@ module RightScale
   module CloudApi
     module AWS
 
+      # Identity and Access Management namespace
       module IAM
         
-        # Amazon Identity and Access Management (IAM) compatible manager.
+        # Amazon Identity and Access Management (IAM) compatible manager (thread safe).
         # 
         # @example
         #  require "right_aws_api"
@@ -61,11 +62,17 @@ module RightScale
         #  iam.CreateUser('Path' => '/division_abc/subdivision_xyz/bob/',
         #                 'UserName' => 'Bob')
         #
+        # @see ApiManager
         # @see http://docs.aws.amazon.com/IAM/latest/APIReference/API_Operations.html
         #
         class Manager < AWS::Manager
         end
 
+
+        # Amazon Identity and Access Management (IAM) compatible manager (thread safe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for Identity and Access Management service.

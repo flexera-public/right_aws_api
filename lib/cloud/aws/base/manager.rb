@@ -25,8 +25,13 @@ require "cloud/aws/base/helpers/utils"
 require "cloud/aws/base/routines/request_signer"
 require "cloud/aws/base/parsers/response_error"
 
+# RightscaleNamespace
 module RightScale
+
+  # CloudApi gems namespace
   module CloudApi
+
+    # AWS namespace
     module AWS
 
       # Thread safe parent class for almost all the AWS services.
@@ -34,7 +39,9 @@ module RightScale
       end
 
       # Thread un-safe parent class for almost all the AWS services.
-      class  ApiManager < CloudApi::ApiManager
+      class ApiManager < CloudApi::ApiManager
+
+        # Standard AWS errors
         class Error < CloudApi::Error
         end
 
@@ -71,7 +78,7 @@ module RightScale
         # @param [String] aws_access_key_id Amazon AWS access key id.
         # @param [String] aws_secret_access_key Amazon secret AWS access key.
         # @param [String] endpoint Cloud endpoint.
-        # @param [Hash] options See {RightScale::CloudApi::ApiManager#initialize} options
+        # @param [Hash]   options 
         #
         # @return [RightScale::CloudApi::AWS::ApiManager]
         #

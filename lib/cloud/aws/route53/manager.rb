@@ -29,9 +29,11 @@ require "cloud/aws/route53/wrappers/default"
 module RightScale
   module CloudApi
     module AWS
+
+      # Route 53 namespace
       module Route53
 
-        # Amazon Route 53 (Route53) compatible manager.
+        # Amazon Route 53 (Route53) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
@@ -92,13 +94,18 @@ module RightScale
         #            "Name"=>"testslave9.aws.rightscale.com.",
         #            "Type"=>"A"}]}}}
         #
+        # @see Manager
+        # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
         # @see http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html
-        #
-        # @see file:cloud/aws/route53/wrappers/default.rb
         #
         class Manager < CloudApi::Manager
         end
 
+
+        # Amazon Route 53 (Route53) compatible manager (thread safe).
+        #
+        # @see Manager
+        #
         class  ApiManager < CloudApi::ApiManager
           class Error < CloudApi::Error
           end

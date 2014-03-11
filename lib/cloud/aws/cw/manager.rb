@@ -27,9 +27,10 @@ module RightScale
   module CloudApi
     module AWS
 
+      # CloudWatch namespace
       module CW
         
-        # Amazon CloudWatch (CW) compatible manager.
+        # Amazon CloudWatch (CW) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
@@ -53,7 +54,6 @@ module RightScale
         #                  "Value"=>"dano7_audit_queue_server_array_test"}},
         #              "MetricName"=>"ApproximateNumberOfMessagesDelayed",
         #              "Namespace"=>"AWS/SQS"},
-        #             ... ,
         #             {"Dimensions"=>
         #               {"member"=>
         #                 {"Name"=>"QueueName",
@@ -75,11 +75,17 @@ module RightScale
         #  # Get a history for the specified alarm.
         #  cw.DescribeAlarmHistory('AlarmName' => 'MyAlarm')
         #
+        # @see ApiManager
         # @see http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/Welcome.html
         #
         class Manager < AWS::Manager
         end
 
+
+        # Amazon CloudWatch (CW) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for CloudWatch service.

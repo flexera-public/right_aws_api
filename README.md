@@ -11,22 +11,22 @@ Maintained by the RightScale "Orange_team"
 
 The gem supports next AWS services out of the box:
 
-- Auto Scaling (AS)
-- Cloud Front (CF)
-- Cloud Formation (CFM)
-- Cloud Watch (CW)
-- Elastic Beanstalk (EB)
-- Elasti Cache (EC)
-- Elastic Compute Cloud (EC2)
-- Elastic Load Balancing (ELB)
-- Elastic Map Reduce (EMR)
-- Identity and Access Management (IAM)
-- Relational Database Service (RDS)
-- Route 53 (Route53)
-- Simple Storage Service (S3)
-- Simple DB (SDB)
-- Simple Notification Service (SNS)
-- Simple Queue Service (SQS)
+- {RightScale::CloudApi::AWS::AS::Manager      Auto Scaling (AS)}
+- {RightScale::CloudApi::AWS::CF::Manager      Cloud Front (CF)}
+- {RightScale::CloudApi::AWS::CFM::Manager     Cloud Formation (CFM)}
+- {RightScale::CloudApi::AWS::CW::Manager      Cloud Watch (CW)}
+- {RightScale::CloudApi::AWS::EB::Manager      Elastic Beanstalk (EB)}
+- {RightScale::CloudApi::AWS::EC::Manager      Elasti Cache (EC)}
+- {RightScale::CloudApi::AWS::EC2::Manager     Elastic Compute Cloud (EC2)}
+- {RightScale::CloudApi::AWS::ELB::Manager     Elastic Load Balancing (ELB)}
+- {RightScale::CloudApi::AWS::EMR::Manager     Elastic Map Reduce (EMR)}
+- {RightScale::CloudApi::AWS::IAM::Manager     Identity and Access Management (IAM)}
+- {RightScale::CloudApi::AWS::RDS::Manager     Relational Database Service (RDS)}
+- {RightScale::CloudApi::AWS::Route53::Manager Route 53 (Route53)}
+- {RightScale::CloudApi::AWS::S3::Manager      Simple Storage Service (S3)}
+- {RightScale::CloudApi::AWS::SDB::Manager     Simple DB (SDB)}
+- {RightScale::CloudApi::AWS::SNS::Manager     Simple Notification Service (SNS)}
+- {RightScale::CloudApi::AWS::SQS::Manager     Simple Queue Service (SQS)}
 
 And it is easy to add support for other.
 
@@ -34,7 +34,7 @@ And it is easy to add support for other.
 
 ## Basic usage
 
-### Amazon Elastic Compute Cloud (EC2).
+### Amazon Elastic Compute Cloud (EC2)
 
 With this manager you do not need to worry aboutany new API call implementations.
 If you know that EC2 supports a call and you know what params it accepts -
@@ -148,4 +148,8 @@ just call the method with those params.
   sqs.DeleteQueue('myCoolQueue')
 ```
 
-### 
+## Dependencies
+
+https://github.com/rightscale/right_cloud_api_base
+
+## (c) RightScale

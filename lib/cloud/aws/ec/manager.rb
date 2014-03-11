@@ -27,9 +27,10 @@ module RightScale
   module CloudApi
     module AWS
 
+      # ElastiCache namespace
       module EC
         
-        # Amazon ElastiCache (EC) compatible manager.
+        # Amazon ElastiCache (EC) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
@@ -52,11 +53,16 @@ module RightScale
         #       "DescribeCacheSubnetGroupsResult"=>{"CacheSubnetGroups"=>nil},
         #       "ResponseMetadata"=>{"RequestId"=>"ae3546cb-4f6e-11e2-b196-0b589a77da67"}}}
         #
+        # @see ApiManager
         # @see http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_Operations.html
         #
         class Manager < AWS::Manager
         end
 
+        # Amazon ElastiCache (EC) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for ElastiCache service.

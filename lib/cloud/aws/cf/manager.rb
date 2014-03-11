@@ -29,9 +29,11 @@ require "cloud/aws/cf/wrappers/default"
 module RightScale
   module CloudApi
     module AWS
+
+      # Cloud Front namespace
       module CF
 
-        # Amazon Cloud Front (CF) compatible manager.
+        # Amazon Cloud Front (CF) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
@@ -80,11 +82,17 @@ module RightScale
         #        "DomainName"=>"d2kia27jveea52.cloudfront.net",
         #        "@xmlns"=>"http://cloudfront.amazonaws.com/doc/2010-11-01/"}}
         #
+        # @see ApiManager
+        # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
         # @see http://docs.aws.amazon.com/AmazonCloudFront/latest/APIReference/Welcome.html
         #
         class Manager < CloudApi::Manager
         end
 
+        # Amazon Cloud Front (CF) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < CloudApi::ApiManager
           class Error < CloudApi::Error
           end
@@ -112,7 +120,7 @@ module RightScale
           # @param [String] aws_access_key_id Amazon AWS access key id.
           # @param [String] aws_secret_access_key Amazon secret AWS access key.
           # @param [String] endpoint Cloud endpoint.
-          # @param [Hash] options See {RightScale::CloudApi::ApiManager#initialize} for more options
+          # @param [Hash]   options
           #
           # @return [RightScale::CloudApi::AWS::CF::ApiManager]
           #

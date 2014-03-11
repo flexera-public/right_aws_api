@@ -27,9 +27,10 @@ module RightScale
   module CloudApi
     module AWS
 
+      # ElasticMapReduce namespace
       module EMR
         
-        # Amazon ElasticMapReduce (EMR) compatible manager.
+        # Amazon ElasticMapReduce (EMR) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
@@ -47,11 +48,17 @@ module RightScale
         #  # Get a job by ID
         #  emr.DescribeJobFlows('JobFlowIds.member' => 'j-3UN6WX5RRO2AG')
         #
+        # @see ApiManager
         # @see http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_Operations.html
         #
         class Manager < AWS::Manager
         end
 
+
+        # Amazon ElasticMapReduce (EMR) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for ElasticMapReduce service.

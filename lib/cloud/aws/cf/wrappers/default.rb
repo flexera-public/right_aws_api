@@ -25,12 +25,15 @@ module RightScale
   module CloudApi
     module AWS
       module CF
+
+        # CF wrapper namespace
         module Wrapper
 
+          # Default wrapper
           module DEFAULT
             
+            # Defines QUERY API like methods for the service.
             def self.extended(base)
-
 
               distribution_config = {
                 'DistributionConfig' => {

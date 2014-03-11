@@ -29,19 +29,16 @@ module RightScale
   module CloudApi
     module AWS
       
+      # Simple Queue Service namespace
       module SQS
 
-        # Amazon Simple Queue Service (SQS) compatible manager.
-        #
-        # How to use the gem?
-        # Just refer to {http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/}
-        # and call methods with parameters how Amazon expects them to be passed:
+        # Amazon Simple Queue Service (SQS) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
         #
         #  # Create a manager
-        #  sqs = RightScale::CloudApi::AWS::SQS::Manager::new(
+        #  sqs = RightScale::CloudApi::AWS::SQS::Manager.new(
         #          ENV['AWS_ACCESS_KEY_ID'],
         #          ENV['AWS_SECRET_ACCESS_KEY'],
         #          ENV['AWS_ACCOUNT_NUMBER'],
@@ -54,8 +51,8 @@ module RightScale
         #       "@xmlns"=>"http://queue.amazonaws.com/doc/2011-10-01/",
         #       "ListQueuesResult"=>
         #        {"QueueUrl"=>
-        #           "https://sqs.us-east-1.amazonaws.com/826693181925/Abracadabra",
-        #           "https://sqs.us-east-1.amazonaws.com/826693181925/JM-Output",... }
+        #           ["https://sqs.us-east-1.amazonaws.com/826693181925/Abracadabra",
+        #            "https://sqs.us-east-1.amazonaws.com/826693181925/JM-Output"] }}}
         #
         # @example
         #  # Create new queue (Amazon way)...
@@ -182,9 +179,17 @@ module RightScale
         #      {"ResponseMetadata"=>{"RequestId"=>"01de6439-6817-4308-8645-2a9430316e8a"},
         #       "@xmlns"=>"http://queue.amazonaws.com/doc/2011-10-01/"}}
         #
+        # @see ApiManager
+        # @see http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference
+        #
         class Manager < CloudApi::Manager
         end
 
+
+        # Amazon Simple Queue Service (SQS) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < CloudApi::ApiManager
           class Error < CloudApi::Error
           end

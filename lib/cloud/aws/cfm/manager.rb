@@ -27,9 +27,10 @@ module RightScale
   module CloudApi
     module AWS
 
+      # CloudFormation namespace
       module CFM
         
-        # Amazon CloudFormation (CFM) compatible manager.
+        # Amazon CloudFormation (CFM) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
@@ -51,12 +52,16 @@ module RightScale
         #  # Estimate template cost:
         #  cfm.EstimateTemplateCost('TemplateURL' =>  'https://s3.amazonaws.com/cloudformation-samples-us-east-1/Drupal_Simple.template')
         #
-        # @see  http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Operations.html
-        # for more examples
+        # @see ApiManager
+        # @see http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Operations.html
         #
         class Manager < AWS::Manager
         end
 
+        # Amazon CloudFormation (CFM) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for CloudFormation service.
