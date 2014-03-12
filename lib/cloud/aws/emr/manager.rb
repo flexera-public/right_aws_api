@@ -59,7 +59,7 @@ module RightScale
         #
         # @see Manager
         #
-        class  ApiManager < AWS::ApiManager
+        class ApiManager < AWS::ApiManager
 
           # Default API version for ElasticMapReduce service.
           # To override the API version use :api_version key when instantiating a manager.

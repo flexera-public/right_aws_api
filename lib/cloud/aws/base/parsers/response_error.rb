@@ -23,17 +23,22 @@
 
 module RightScale
   module CloudApi
+    # Parsers namespace
     module Parser
+      # AWS parsers namespace
       module AWS
 
         # AWS response error parser, case 1
         #
         class ResponseErrorV1
 
-          # Parse HTTP error message from a response body.
-          # Body is a String, headers is Hash. 
-          # 
-          # Return a String to be displayed/logged.
+          # Parse HTTP error message from a response body
+          #
+          # @param [RightScale::CloudApi::HTTPResponse] response
+          # @param [Hash] options
+          # @option options [Class] :xml_parser
+          #
+          # @return [String]
           #
           # @example
           #  # For the call below:
@@ -76,10 +81,21 @@ module RightScale
         #
         class ResponseErrorV2
 
-          # Parse HTTP error message from a response body.
-          # Body is a String, headers is Hash. 
+          # Parse HTTP error message from a response body
+          #
+          # @param [RightScale::CloudApi::HTTPResponse] response
+          # @param [Hash] options
+          # @option options [Class] :xml_parser
+          #
+          # @return a String to be displayed/logged.
+          #
+          # @example
+          #   # error is a response from ELB
+          #   parse(error) #=>
+          #     400: ErrorName: SomethingIsWrong (RequestID: 32455505-2345-43245-f432-34543523451)
           # 
-          # Return a String to be displayed/logged.
+          # @return [String]
+          #
           def self.parse(response, options={})
             result = "#{response.code}: "
             body   = response.body.to_s

@@ -58,11 +58,12 @@ module RightScale
         class Manager < AWS::Manager
         end
 
+
         # Amazon CloudFormation (CFM) compatible manager (thread unsafe).
         #
         # @see Manager
         #
-        class  ApiManager < AWS::ApiManager
+        class ApiManager < AWS::ApiManager
 
           # Default API version for CloudFormation service.
           # To override the API version use :api_version key when instantiating a manager.

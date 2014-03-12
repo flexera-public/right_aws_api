@@ -30,6 +30,9 @@ module RightScale
     module AWS
       
       # Simple Queue Service namespace
+      #
+      # @api public
+      #
       module SQS
 
         # Amazon Simple Queue Service (SQS) compatible manager (thread safe).
@@ -190,7 +193,9 @@ module RightScale
         #
         # @see Manager
         #
-        class  ApiManager < CloudApi::ApiManager
+        class ApiManager < CloudApi::ApiManager
+
+          # SQS Error
           class Error < CloudApi::Error
           end
 
@@ -215,7 +220,21 @@ module RightScale
           error_pattern :disconnect_and_abort, :code     => /4../, :if => Proc.new{ |opts| rand(100) < 10 }
 
           set :response_error_parser => Parser::AWS::ResponseErrorV2
-          
+
+
+          # Constructor
+          #
+          # @param [String] aws_access_key_id
+          # @param [String] aws_secret_access_key
+          # @param [String] aws_account_number
+          # @param [String] endpoint
+          # @param [Hash]   options
+          #
+          # @see Manager
+          #
+          # @example
+          #  # see Manager class
+          #
           def initialize(aws_access_key_id, aws_secret_access_key, aws_account_number, endpoint, options={})
             credentials = { :aws_account_number    => aws_account_number,
                             :aws_access_key_id     => aws_access_key_id,
@@ -223,14 +242,16 @@ module RightScale
             super(credentials, endpoint, options)
           end
 
-          # Make an API call to AWS::Ec2 compatible cloud.
+          # Make an API call to AWS::Ec2 compatible cloud
           #
           # @param [String] action The action as Amazon names it in its docs.
           #
+          # @return [Object]
+          #
           # @example
-          #   # Usage:
-          #   api(action, queue_name, params={})
-          #   api(action, params={})
+          #   # Where opts may have next keys: :options, :headers, :body
+          #   api(action, queue_name, opts={})
+          #   api(action, opts={})
           #
           # @example
           #  sqs.api('ListQueues')
@@ -240,20 +261,22 @@ module RightScale
           #
           def api(action, *args)
             queue_name = args.shift if args.first.is_a?(String)
-            params     = args.shift || {}
+            opts     = args.shift || {}
             # Uri Parameters
-            params['Action'] ||= action.to_s._snake_case._camelize
-            opts           = {}
-            opts[:body]    = params.delete(:body)
-            opts[:headers] = params.delete(:headers) || {}
-            opts[:options] = params.delete(:options) || {}
-            opts[:params]  = parametrize(params)
+            opts['Action'] ||= action.to_s._snake_case._camelize
+            options           = {}
+            options[:body]    = opts.delete(:body)
+            options[:headers] = opts.delete(:headers) || {}
+            options[:options] = opts.delete(:options) || {}
+            options[:params]  = parametrize(opts)
             # Options and Per Queue URI
             path = queue_name._blank? ? '' : "#{@credentials[:aws_account_number]}/#{queue_name}"
-            process_api_request(:get, path, opts)
+            process_api_request(:get, path, options)
           end
-          
-          # Parametrize data to the format that Amazon EC2 and compatible services accept.
+
+
+          # Parametrize data to the format that Amazon EC2 and compatible services accept
+          #
           # See {RightScale::CloudApi::Utils::AWS.parametrize} for more examples.
           #
           # @return [Hash] A hash of data in the format Amazon want to get.
@@ -281,9 +304,15 @@ module RightScale
           def parametrize(*args) # :nodoc:
             Utils::AWS.parametrize(*args)
           end
+
+
+          # @api public
           alias_method :p9e, :parametrize
-          
-          # Adds an ability to call SQS API methods by their names.
+
+
+          # Adds an ability to call SQS API methods by their names
+          #
+          # @return [Object]
           #
           # @example
           #  sqs.ListQueues

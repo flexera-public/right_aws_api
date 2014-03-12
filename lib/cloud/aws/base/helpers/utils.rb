@@ -23,7 +23,9 @@
 
 module RightScale
   module CloudApi
+    # Helper methods namespace
     module Utils
+      # AWS helpers namespace
       module AWS
 
         @@digest1   = OpenSSL::Digest::Digest.new("sha1")
@@ -32,7 +34,8 @@ module RightScale
           @@digest256 = OpenSSL::Digest::Digest.new("sha256") rescue nil # Some installations may not support sha256
         end
 
-        # Generates a signature for the given string, secret access key and digest.
+
+        # Generates a signature for the given string, secret access key and digest
         #
         # @param [String] aws_secret_access_key
         # @param [String] auth_string
@@ -48,7 +51,8 @@ module RightScale
           Utils::base64en(OpenSSL::HMAC.digest(digest || @@digest1, aws_secret_access_key, auth_string))
         end
 
-        # Returns ISO-8601 representation for the given time.
+
+        # Returns ISO-8601 representation for the given time
         #
         # @param [Time,Fixnum] time
         # @return [String]
@@ -67,21 +71,40 @@ module RightScale
           end.utc.strftime("%Y-%m-%dT%H:%M:%S.000Z")
         end
 
-        # Escapes a string accordingly to Amazon rules.
+
+        # Escapes a string accordingly to Amazon rules
         # @see http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html
         #
         # @param [String] string
         # @return [String]
         #
         # @example
-        #   RightScale::CloudApi::Utils::AWS.amz_escape('something >= 13') #=> 'something%20%3E%3D%2013'
+        #   RightScale::CloudApi::Utils::AWS.amz_escape('something >= 13') #=>
+        #     'something%20%3E%3D%2013'
         #
         def self.amz_escape(string)
           string.to_s.gsub(/([^a-zA-Z0-9._~-]+)/n) { '%' + $1.unpack('H2' * $1.size).join('%').upcase }
         end
 
-        # Signature Version 2.
-        # EC2, SQS and SDB requests must be signed by this guy.
+
+        # Signature Version 2
+        #
+        # EC2, SQS and SDB requests must be signed by this guy
+        #
+        # @param [String]        aws_secret_access_key
+        # @param [Hash]          params
+        # @param [String,Symbol] verb  'get' | 'post'
+        # @param [String]        host
+        # @param [String]        urn
+        #
+        # @return [String]
+        #
+        # @example
+        #   params = {'InstanceId' => 'i-00000000'}
+        #   sign_v2_signature('secret', params, :get, 'ec2.amazonaws.com', '/') #=>
+        #     "InstanceId=i-00000000&SignatureMethod=HmacSHA256&SignatureVersion=2&
+        #      Timestamp=2014-03-12T21%3A52%3A21.000Z&Signature=gR2x3oWmNbh4bdZksPS
+        #      sg3t7U0zbTcnFOfizWF3Zujw%3D"
         #
         # @see http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html
         # @see http://aws.amazon.com/articles/1928?_encoding=UTF8&jiveRedirect=1
@@ -104,7 +127,8 @@ module RightScale
           "#{canonical_string}&Signature=#{amz_escape(sign(aws_secret_access_key, string_to_sign, digest))}"
         end
 
-        # Returns +true+ if the provided bucket name is  a DNS compliant bucket name.
+
+        # Returns +true+ if the provided bucket name is  a DNS compliant bucket name
         #
         # @see http://docs.aws.amazon.com/AmazonS3/2006-03-01/dev/BucketRestrictions.html
         #
@@ -129,7 +153,19 @@ module RightScale
           true
         end
 
-        # Signs and Authenticates REST Requests.
+
+        # Signs and Authenticates REST Requests
+        #
+        # @param [String]        aws_secret_access_key
+        # @param [String,Symbol] verb  'get' | 'post'
+        # @param [String]        canonicalized_resource
+        # @param [Hash]          _headers
+        #
+        # @return [String]
+        #
+        # @example
+        #  sign_s3_signature('secret', :get, 'xxx/yyy/zzz/object', {'header'=>'value'}) #=>
+        #    "i85igH0sftHD/cGZcLiBKcYEuks=" 
         #
         # @see http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html
         #
@@ -155,7 +191,11 @@ module RightScale
         end
 
                     
-        # Parametrizes data to the format that Amazon EC2 (and compatible) loves.
+        # Parametrizes data to the format that Amazon EC2 (and compatible APIs) loves
+        #
+        # @param [Hash] data
+        #
+        # @return [Hash]
         #
         # @example
         #   # Where hash is:

@@ -28,6 +28,9 @@ module RightScale
     module AWS
 
       # Simple DB namespace
+      #
+      # @api public
+      #
       module SDB
         
         # Amazon Simple DB (SDB) compatible manager (thread safe).

@@ -32,7 +32,13 @@ module RightScale
           # Default wrapper
           module DEFAULT
             
-            # Defines QUERY API like methods for the service.
+            # Defines QUERY API like methods for the service
+            #
+            # @return [void]
+            #
+            # @example
+            #  # no example
+            #
             def self.extended(base)
 
               distribution_config = {

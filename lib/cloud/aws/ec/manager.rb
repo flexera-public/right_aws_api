@@ -59,6 +59,7 @@ module RightScale
         class Manager < AWS::Manager
         end
 
+
         # Amazon ElastiCache (EC) compatible manager (thread unsafe).
         #
         # @see Manager

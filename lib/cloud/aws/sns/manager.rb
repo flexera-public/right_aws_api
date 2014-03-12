@@ -28,6 +28,9 @@ module RightScale
     module AWS
 
       # Simple Notification Service namespace
+      #
+      # @api public
+      #
       module SNS
         
         # Amazon Simple Notification Service (SNS) compatible clouds manager (thread safe).
