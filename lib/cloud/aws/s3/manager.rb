@@ -288,7 +288,7 @@ module RightScale
           end
 
 
-          # Make an API call to AWS::S3 compatible cloud
+          # Makes an API call to AWS::S3 compatible cloud
           #
           # @param [String,Symbol] verb  'get' | 'put' | etc
           # @param [Objects] args

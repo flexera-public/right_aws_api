@@ -242,7 +242,7 @@ module RightScale
             super(credentials, endpoint, options)
           end
 
-          # Make an API call to AWS::Ec2 compatible cloud
+          # Makes an API call to AWS::Ec2 compatible cloud
           #
           # @param [String] action The action as Amazon names it in its docs.
           #

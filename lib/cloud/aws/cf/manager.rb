@@ -143,7 +143,7 @@ module RightScale
           end
 
 
-          # Make an API call to AWS Cloud Front compatible cloud
+          # Makes an API call to AWS Cloud Front compatible cloud
           #
           # @param [String,Symbol] verb
           # @param [Objects] args

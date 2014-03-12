@@ -98,7 +98,7 @@ module RightScale
           # Default API version for ELB service.
           # To override the API version use :api_version key when instantiating a manager.
           #
-          DEFAULT_API_VERSION = ' 2012-06-01'
+          DEFAULT_API_VERSION = '2012-06-01'
 
           error_pattern :abort_on_timeout,     :path     => /Action=(Create)/
           error_pattern :retry,                :response => /InternalError|Unavailable/i
