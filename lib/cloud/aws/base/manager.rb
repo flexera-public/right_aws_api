@@ -44,17 +44,17 @@ module RightScale
         end
 
         # A list of common AWS API params
-        COMMON_QUERY_PARAMS = %w{
-          Action
-          AWSAccessKeyId
-          Expires
-          SecurityToken
-          Signature
-          SignatureMethod
-          SignatureVersion
-          Timestamp
-          Version
-        }
+        COMMON_QUERY_PARAMS = [
+          'Action',
+          'AWSAccessKeyId',
+          'Expires',
+          'SecurityToken',
+          'Signature',
+          'SignatureMethod',
+          'SignatureVersion',
+          'Timestamp',
+          'Version',
+        ]
         
         include Mixin::QueryApiPatterns
 
@@ -79,8 +79,7 @@ module RightScale
         # @param [String] aws_secret_access_key Amazon secret AWS access key.
         # @param [String] endpoint Cloud endpoint.
         # @param [Hash]   options 
-        #
-        # @return [RightScale::CloudApi::AWS::ApiManager]
+        #   see https://github.com/rightscale/right_cloud_api_base/blob/master/lib/base/api_manager.rb
         #
         # @example
         #   new(key_id, secret, 'https://ec2.awsamazon.com', :cache => true)
