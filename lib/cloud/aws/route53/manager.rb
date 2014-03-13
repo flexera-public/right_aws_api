@@ -94,7 +94,7 @@ module RightScale
         #            "Name"=>"testslave9.aws.rightscale.com.",
         #            "Type"=>"A"}]}}}
         #
-        # @see Manager
+        # @see ApiManager
         # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
         # @see http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html
         #

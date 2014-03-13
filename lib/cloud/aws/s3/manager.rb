@@ -237,7 +237,7 @@ module RightScale
         #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd3.test', 'versionId'=>"0lkjreobp1W4"}, opts)
         #  end
         #
-        # @see Manager
+        # @see ApiManager
         # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
         # @see http://docs.aws.amazon.com/AmazonS3/latest/API/APIRest.html
         #

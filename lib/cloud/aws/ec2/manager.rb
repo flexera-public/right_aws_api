@@ -185,7 +185,7 @@ module RightScale
         #      }
         #    }          
         #
-        # @see Manager
+        # @see ApiManager
         # @see http://docs.aws.amazon.com/AWSEC2/latest/APIReference
         #
         class Manager < AWS::Manager
