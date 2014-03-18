@@ -30,7 +30,9 @@ rescue LoadError => e
   STDERR.puts("Bundler is not available, some rake tasks will not be defined: #{e.message}")
 end
 
-require 'spec/rake/spectask'
+require 'rspec/core/rake_task'
 
-Spec::Rake::SpecTask.new do |t|
-end
+RSpec::Core::RakeTask.new(:spec)
+
+task :default => :spec
+
