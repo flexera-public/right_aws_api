@@ -27,13 +27,13 @@ module RightScale
   module CloudApi
     module AWS
 
+      # Elastic Beanstalk  namespace
       module EB
         
-        # Amazon Elastic Beanstalk (EB) compatible manager.
+        # Amazon Elastic Beanstalk (EB) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/eb"
         #
         #  eb = RightScale::CloudApi::AWS::EB::Manager::new(key, secret, 'https://elasticbeanstalk.us-east-1.amazonaws.com')
         #
@@ -49,11 +49,17 @@ module RightScale
         #  eb.CreateApplication('ApplicationName' => 'MyApp',
         #                       'Description' => 'My Description')
         #
+        # @see ApiManager
         # @see http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_Operations.html
         #
         class Manager < AWS::Manager
         end
 
+
+        # Amazon Elastic Beanstalk (EB) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for ElasticBeanstalk service.

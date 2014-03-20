@@ -26,12 +26,20 @@ module RightScale
     module AWS
       module CF
         
+        # API request signer for CF service.
         class RequestSigner < CloudApi::Routine
 
+          # CF RequestSigner Error
           class Error < CloudApi::Error
           end
 
-          # Authenticates a CloudFront request.
+          # Authenticates a CloudFront request
+          #
+          # @return [void]
+          #
+          # @example
+          #  # qno example
+          #
           def process
             # Fix body
             unless @data[:request][:body]._blank?

@@ -29,13 +29,17 @@ require "cloud/aws/cf/wrappers/default"
 module RightScale
   module CloudApi
     module AWS
+
+      # Cloud Front namespace
+      #
+      # @api public
+      #
       module CF
 
-        # Amazon Cloud Front(CF) compatible manager.
+        # Amazon Cloud Front (CF) compatible manager (thread safe)
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/cf"
         #
         #  cf = RightScale::CloudApi::AWS::CF::Manager::new(key, secret, 'https://cloudfront.amazonaws.com')
         #
@@ -81,16 +85,25 @@ module RightScale
         #        "DomainName"=>"d2kia27jveea52.cloudfront.net",
         #        "@xmlns"=>"http://cloudfront.amazonaws.com/doc/2010-11-01/"}}
         #
+        # @see ApiManager
+        # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
         # @see http://docs.aws.amazon.com/AmazonCloudFront/latest/APIReference/Welcome.html
         #
         class Manager < CloudApi::Manager
         end
 
+        # Amazon Cloud Front (CF) compatible manager (thread unsafe)
+        #
+        # @see Manager
+        #
         class  ApiManager < CloudApi::ApiManager
+
+          # CF Error
           class Error < CloudApi::Error
           end
 
-          # Default API version for CloudFront service.
+          # Default API version for CloudFront service
+          #
           # To override the API version use :api_version key when instantiating a manager.
           #
           DEFAULT_API_VERSION = '2012-07-01'
@@ -108,16 +121,20 @@ module RightScale
 
           set :response_error_parser => Parser::AWS::ResponseErrorV2
 
-          # Initializes Amazon CloudFront service manager.
+
+          # Initializes Amazon CloudFront service manager
           #
-          # @param [String] aws_access_key_id Amazon AWS access key id.
-          # @param [String] aws_secret_access_key Amazon secret AWS access key.
-          # @param [String] endpoint Cloud endpoint.
-          # @param [Hash] options See {RightScale::CloudApi::ApiManager#initialize} for more options
+          # @param [String] aws_access_key_id
+          # @param [String] aws_secret_access_key
+          # @param [String] endpoint
+          # @param [Hash]   options
           #
           # @return [RightScale::CloudApi::AWS::CF::ApiManager]
           #
-          # @see RightScale::CloudApi::AWS::CF::Manager for use cases
+          # @example
+          #   # see Manager class for example
+          #
+          # @see Manager
           #
           def initialize(aws_access_key_id, aws_secret_access_key, endpoint, options={})
             credentials = { :aws_access_key_id     => aws_access_key_id,
@@ -125,14 +142,19 @@ module RightScale
             super(credentials, endpoint, options)
           end
 
-          # Make an API call to AWS Cloud Front compatible cloud.
-          # 
-          # opts: [:options, :headers, :params, :body]
-          # body: String, IO, Nil.
+
+          # Makes an API call to AWS Cloud Front compatible cloud
           #
-          # Usage: api(verb,                      opts={})
-          #        api(verb, 'distribution',      opts={})
-          #        api(verb, 'distribution/path', opts={})
+          # @param [String,Symbol] verb
+          # @param [Objects] args
+          #
+          # @return [Object]
+          #
+          # @example
+          #   api(verb,                      opts={})
+          #   api(verb, 'distribution',      opts={})
+          #   # Where opts may have next keys: :options, :headers, :params
+          #   api(verb, 'distribution/path', opts={})
           #
           def api(verb, *args, &block)
             relative_path = args.first.is_a?(String) ? args.shift : ''

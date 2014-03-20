@@ -27,19 +27,13 @@ module RightScale
   module CloudApi
     module AWS
 
+      # Elastic Compute Cloud namespace
       module EC2
         
-        # Amazon Elastic Compute Cloud (EC2) compatible manager.
-        #
-        # This manager does not need to worry about new API call implementations.
-        # If you know that EC2 supports a call and you know what params it accepts -
-        # call the method with those params.
-        #
-        # Just refer to the AWS docs ({http://aws.amazon.com/documentation/}) and that's it!
+        # Amazon Elastic Compute Cloud (EC2) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/ec2"
         #
         #  # Create a manager to access EC2.
         #  ec2 = RightScale::CloudApi::AWS::EC2::Manager::new(key, secret, 'https://us-east-1.ec2.amazonaws.com')
@@ -62,30 +56,8 @@ module RightScale
         #   
         # @example
         #  # Get a list of your instances
-        #  ec2.DescribeInstances #=>
-        #    {
-        #      "DescribeInstancesResponse" => {
-        #        "@xmlns"         => "http://ec2.amazonaws.com/doc/2011-07-15/",
-        #        "requestId"      => "4f90e687-2248-4d97-9858-f337b88a3864",
-        #        "reservationSet" => {
-        #          "item" => [
-        #             {
-        #              "groupSet"      => {
-        #                "item" => {
-        #                  "groupId"   => "sg-a0b85dc9",
-        #                  "groupName" => "default"
-        #                }
-        #              },
-        #              "instancesSet"  => {
-        #                "item" => {
-        #                  "amiLaunchIndex"     => "0",
-        #                  "architecture"       => "i386",
-        #                  "blockDeviceMapping" => nil,
-        #                  "clientToken"        => nil,
-        #                  "dnsName"            => nil, ...
-        #    }
+        #  ec2.DescribeInstances 
         #
-        # @example
         #  # Describe custom Instance(s)
         #  ec2.DescribeInstances('InstanceId'   => "i-2ba7c640")
         #  ec2.DescribeInstances('InstanceId.1' => "i-2ba7c640", 
@@ -213,9 +185,17 @@ module RightScale
         #      }
         #    }          
         #
+        # @see ApiManager
+        # @see http://docs.aws.amazon.com/AWSEC2/latest/APIReference
+        #
         class Manager < AWS::Manager
         end
 
+
+        # Amazon Elastic Compute Cloud (EC2) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for EC2 service.

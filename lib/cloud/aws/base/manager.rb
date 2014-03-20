@@ -25,8 +25,11 @@ require "cloud/aws/base/helpers/utils"
 require "cloud/aws/base/routines/request_signer"
 require "cloud/aws/base/parsers/response_error"
 
+
 module RightScale
   module CloudApi
+
+    # AWS namespace
     module AWS
 
       # Thread safe parent class for almost all the AWS services.
@@ -34,11 +37,24 @@ module RightScale
       end
 
       # Thread un-safe parent class for almost all the AWS services.
-      class  ApiManager < CloudApi::ApiManager
+      class ApiManager < CloudApi::ApiManager
+
+        # Standard AWS errors
         class Error < CloudApi::Error
         end
 
-        COMMON_QUERY_PARAMS = %w{Action AWSAccessKeyId Expires SecurityToken Signature SignatureVersion SignatureMethod Timestamp Version}
+        # A list of common AWS API params
+        COMMON_QUERY_PARAMS = [
+          'Action',
+          'AWSAccessKeyId',
+          'Expires',
+          'SecurityToken',
+          'Signature',
+          'SignatureMethod',
+          'SignatureVersion',
+          'Timestamp',
+          'Version',
+        ]
         
         include Mixin::QueryApiPatterns
 
@@ -55,22 +71,27 @@ module RightScale
         
         set :response_error_parser => Parser::AWS::ResponseErrorV1
 
-        # Initializes the manager.
+        # Constructor
+        #
+        # @abstract
         #
         # @param [String] aws_access_key_id Amazon AWS access key id.
         # @param [String] aws_secret_access_key Amazon secret AWS access key.
         # @param [String] endpoint Cloud endpoint.
-        # @param [Hash] options See {RightScale::CloudApi::ApiManager#initialize} options
+        # @param [Hash]   options 
+        #   see https://github.com/rightscale/right_cloud_api_base/blob/master/lib/base/api_manager.rb
         #
-        # @return [RightScale::CloudApi::AWS::ApiManager]
+        # @example
+        #   new(key_id, secret, 'https://ec2.awsamazon.com', :cache => true)
         #
         def initialize(aws_access_key_id, aws_secret_access_key, endpoint, options={})
           credentials = { :aws_access_key_id     => aws_access_key_id,
                           :aws_secret_access_key => aws_secret_access_key }
           super(credentials, endpoint, options)
         end
-        
-        # Makes a raw API call to AWS compatible service by the mqthod name.
+
+
+        # Makes a raw API call to AWS compatible service by the method name
         #
         # @param [String] action Depends on the selected service/endpoint.
         #   See {http://aws.amazon.com/documentation/}
@@ -97,8 +118,10 @@ module RightScale
           opts[:params]  = parametrize(params)
           process_api_request(:get, '', opts, &block)
         end
-        
-        # Parametrize data to the format that Amazon EC2 and compatible services accept.
+
+
+        # Parametrize data to the format that Amazon EC2 and compatible services accept
+        #
         # See {RightScale::CloudApi::Utils::AWS.parametrize} for more examples.
         #
         # @return [Hash] A hash of data in the format Amazon want to get.
@@ -126,9 +149,18 @@ module RightScale
         def parametrize(*args)
           Utils::AWS.parametrize(*args)
         end
+
+
+        # @api public
         alias_method :p9e, :parametrize
 
-        # Provides an ability to call methods by their API action names.
+
+        # Provides an ability to call methods by their API action names
+        #
+        # @param [String,Symbol] method_name
+        # @param [Objects] args
+        #
+        # @return [Object]
         #
         # @example
         #  # the calls below produce the same result:
@@ -140,7 +172,7 @@ module RightScale
         def method_missing(method_name, *args, &block)
           begin
             invoke_query_api_pattern_method(method_name, *args, &block)
-          rescue PatternNotFoundError => e
+          rescue PatternNotFoundError
             if method_name.to_s[/\A[A-Z]/]
               api(method_name, *args, &block)
             else

@@ -27,14 +27,14 @@ module RightScale
   module CloudApi
     module AWS
 
+      # Elastic Load Balancing namespace
       module ELB
         
-        # Amazon Elastic Load Balancing (ELB) compatible manager.
-        #
-        #  require "right_aws_api"
-        #  require "aws/elb"
+        # Amazon Elastic Load Balancing (ELB) compatible manager (thread safe).
         #
         # @example
+        #  require "right_aws_api"
+        #
         #  elb = RightScale::CloudApi::AWS::ELB::Manager::new(key, secret, 'https://elasticloadbalancing.amazonaws.com')
         #
         #  # List Load Balancers
@@ -76,24 +76,29 @@ module RightScale
         #               {"OwnerAlias"=>"amazon-elb", "GroupName"=>"amazon-elb-sg"},
         #              "DNSName"=>"test-1900221105.us-east-1.elb.amazonaws.com",
         #              "BackendServerDescriptions"=>nil,
-        #              "Subnets"=>nil},...]}},
+        #              "Subnets"=>nil}]}},
         #       "ResponseMetadata"=>{"RequestId"=>"a96cfe8c-4f70-11e2-a887-0189db71cd82"}}}
         #
         # @example
         #  # Delete a Load Balancer
         #  elb.DeleteLoadBalancer('LoadBalancerName' => 'MyLoadBalancere')
         #
+        # @see ApiManager
         # @see http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/APIReference/API_Operations.html
         #
         class Manager < AWS::Manager
         end
 
-        class  ApiManager < AWS::ApiManager
+        # Amazon Elastic Load Balancing (ELB) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
+        class ApiManager < AWS::ApiManager
 
           # Default API version for ELB service.
           # To override the API version use :api_version key when instantiating a manager.
           #
-          DEFAULT_API_VERSION = ' 2012-06-01'
+          DEFAULT_API_VERSION = '2012-06-01'
 
           error_pattern :abort_on_timeout,     :path     => /Action=(Create)/
           error_pattern :retry,                :response => /InternalError|Unavailable/i

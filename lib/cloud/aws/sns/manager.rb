@@ -27,19 +27,18 @@ module RightScale
   module CloudApi
     module AWS
 
+      # Simple Notification Service namespace
+      #
+      # @api public
+      #
       module SNS
         
-        # Amazon Simple Notification Service (SNS) compatible clouds manager.
-        #
-        # How to use the gem?
-        # Just refer to {http://docs.amazonwebservices.com/sns/latest/api/API_Operations.html}
-        # and call methods with parameters how Amazon expects them to be passed:
+        # Amazon Simple Notification Service (SNS) compatible clouds manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/sns"
         #
-        #  sns = RightScale::CloudApi::AWS::SNS::Manager::new(
+        #  sns = RightScale::CloudApi::AWS::SNS::Manager.new(
         #    ENV['AWS_ACCESS_KEY_ID'],
         #    ENV['AWS_SECRET_ACCESS_KEY'],
         #    'https://sns.us-east-1.amazonaws.com')
@@ -59,9 +58,17 @@ module RightScale
         #       "ListSubscriptionsResult"=>{"Subscriptions"=>nil},
         #       "ResponseMetadata"=>{"RequestId"=>"8d53941d-8d8f-11e1-a165-a1021f73c0e5"}}}
         #
+        # @see ApiManager
+        # @see http://docs.amazonwebservices.com/sns/latest/api/API_Operations.html
+        #
         class Manager < AWS::Manager
         end
 
+
+        # Amazon Simple Notification Service (SNS) compatible clouds manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for SNS service.

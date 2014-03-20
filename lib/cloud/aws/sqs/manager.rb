@@ -29,20 +29,19 @@ module RightScale
   module CloudApi
     module AWS
       
+      # Simple Queue Service namespace
+      #
+      # @api public
+      #
       module SQS
 
-        # Amazon Simple Queue Service (SQS) compatible manager.
-        #
-        # How to use the gem?
-        # Just refer to {http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/}
-        # and call methods with parameters how Amazon expects them to be passed:
+        # Amazon Simple Queue Service (SQS) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/sqs"
         #
         #  # Create a manager
-        #  sqs = RightScale::CloudApi::AWS::SQS::Manager::new(
+        #  sqs = RightScale::CloudApi::AWS::SQS::Manager.new(
         #          ENV['AWS_ACCESS_KEY_ID'],
         #          ENV['AWS_SECRET_ACCESS_KEY'],
         #          ENV['AWS_ACCOUNT_NUMBER'],
@@ -55,8 +54,8 @@ module RightScale
         #       "@xmlns"=>"http://queue.amazonaws.com/doc/2011-10-01/",
         #       "ListQueuesResult"=>
         #        {"QueueUrl"=>
-        #           "https://sqs.us-east-1.amazonaws.com/826693181925/Abracadabra",
-        #           "https://sqs.us-east-1.amazonaws.com/826693181925/JM-Output",... }
+        #           ["https://sqs.us-east-1.amazonaws.com/826693181925/Abracadabra",
+        #            "https://sqs.us-east-1.amazonaws.com/826693181925/JM-Output"] }}}
         #
         # @example
         #  # Create new queue (Amazon way)...
@@ -183,10 +182,20 @@ module RightScale
         #      {"ResponseMetadata"=>{"RequestId"=>"01de6439-6817-4308-8645-2a9430316e8a"},
         #       "@xmlns"=>"http://queue.amazonaws.com/doc/2011-10-01/"}}
         #
+        # @see ApiManager
+        # @see http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference
+        #
         class Manager < CloudApi::Manager
         end
 
-        class  ApiManager < CloudApi::ApiManager
+
+        # Amazon Simple Queue Service (SQS) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
+        class ApiManager < CloudApi::ApiManager
+
+          # SQS Error
           class Error < CloudApi::Error
           end
 
@@ -211,7 +220,21 @@ module RightScale
           error_pattern :disconnect_and_abort, :code     => /4../, :if => Proc.new{ |opts| rand(100) < 10 }
 
           set :response_error_parser => Parser::AWS::ResponseErrorV2
-          
+
+
+          # Constructor
+          #
+          # @param [String] aws_access_key_id
+          # @param [String] aws_secret_access_key
+          # @param [String] aws_account_number
+          # @param [String] endpoint
+          # @param [Hash]   options
+          #
+          # @see Manager
+          #
+          # @example
+          #  # see Manager class
+          #
           def initialize(aws_access_key_id, aws_secret_access_key, aws_account_number, endpoint, options={})
             credentials = { :aws_account_number    => aws_account_number,
                             :aws_access_key_id     => aws_access_key_id,
@@ -219,14 +242,16 @@ module RightScale
             super(credentials, endpoint, options)
           end
 
-          # Make an API call to AWS::Ec2 compatible cloud.
+          # Makes an API call to AWS::Ec2 compatible cloud
           #
           # @param [String] action The action as Amazon names it in its docs.
           #
+          # @return [Object]
+          #
           # @example
-          #   # Usage:
-          #   api(action, queue_name, params={})
-          #   api(action, params={})
+          #   # Where opts may have next keys: :options, :headers, :body
+          #   api(action, queue_name, opts={})
+          #   api(action, opts={})
           #
           # @example
           #  sqs.api('ListQueues')
@@ -236,20 +261,22 @@ module RightScale
           #
           def api(action, *args)
             queue_name = args.shift if args.first.is_a?(String)
-            params     = args.shift || {}
+            opts     = args.shift || {}
             # Uri Parameters
-            params['Action'] ||= action.to_s._snake_case._camelize
-            opts           = {}
-            opts[:body]    = params.delete(:body)
-            opts[:headers] = params.delete(:headers) || {}
-            opts[:options] = params.delete(:options) || {}
-            opts[:params]  = parametrize(params)
+            opts['Action'] ||= action.to_s._snake_case._camelize
+            options           = {}
+            options[:body]    = opts.delete(:body)
+            options[:headers] = opts.delete(:headers) || {}
+            options[:options] = opts.delete(:options) || {}
+            options[:params]  = parametrize(opts)
             # Options and Per Queue URI
             path = queue_name._blank? ? '' : "#{@credentials[:aws_account_number]}/#{queue_name}"
-            process_api_request(:get, path, opts)
+            process_api_request(:get, path, options)
           end
-          
-          # Parametrize data to the format that Amazon EC2 and compatible services accept.
+
+
+          # Parametrize data to the format that Amazon EC2 and compatible services accept
+          #
           # See {RightScale::CloudApi::Utils::AWS.parametrize} for more examples.
           #
           # @return [Hash] A hash of data in the format Amazon want to get.
@@ -277,9 +304,15 @@ module RightScale
           def parametrize(*args) # :nodoc:
             Utils::AWS.parametrize(*args)
           end
+
+
+          # @api public
           alias_method :p9e, :parametrize
-          
-          # Adds an ability to call SQS API methods by their names.
+
+
+          # Adds an ability to call SQS API methods by their names
+          #
+          # @return [Object]
           #
           # @example
           #  sqs.ListQueues

@@ -25,21 +25,30 @@ module RightScale
   module CloudApi
     module AWS
 
+      # Request signer for AWS services.
       class RequestSigner < CloudApi::Routine
+
+        # RequestSigner error
         class Error < CloudApi::Error
         end
 
+        # Use POST verb if GET's path is getting too big.
         MAX_GET_REQUEST_PATH_LENGTH = 2000
-        
-        # Authenticates an AWS request.
+
+        # Authenticates an AWS request
+        #
+        # @return [void]
+        #
+        # @example
+        #  no example
+        #
         def process
           # Make sure all the required params are set
           @data[:request][:params]['AWSAccessKeyId'] = @data[:credentials][:aws_access_key_id]
           @data[:request][:params]['Version']      ||= @data[:options][:api_version]
           # Compile a final request path
           @data[:request][:path] = Utils::join_urn(@data[:connection][:uri].path, @data[:request][:relative_path])
-          # sign the request
-          data = @data
+          # Sign the request
           sign_proc = Proc::new do |data|
             Utils::AWS::sign_v2_signature( data[:credentials][:aws_secret_access_key],
                                            data[:request][:params] || {},

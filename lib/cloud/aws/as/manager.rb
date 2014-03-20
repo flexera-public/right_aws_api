@@ -27,13 +27,13 @@ module RightScale
   module CloudApi
     module AWS
 
+      # AutoScaling namespace
       module AS
         
-        # Amazon AutoScaling (AS) compatible manager.
+        # Amazon AutoScaling (AS) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/as"
         #
         #  # Create a manager to access Auto Scaling.
         #  as = RightScale::CloudApi::AWS::AS::Manager::new(key, secret, 'https://autoscaling.us-east-1.amazonaws.com')
@@ -80,11 +80,17 @@ module RightScale
         #                            'DesiredCapacity' => 5,
         #                            'PlacementGroup' => 'my-cool-group')
         #
+        # @see ApiManager
         # @see http://docs.amazonwebservices.com/AutoScaling/latest/APIReference/API_Operations.html
         #
         class Manager < AWS::Manager
         end
 
+
+        # Amazon AutoScaling (AS) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for AutoScaling service.

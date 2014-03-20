@@ -26,12 +26,20 @@ module RightScale
     module AWS
       module Route53
         
+        # Route 53 request signer
         class RequestSigner < CloudApi::Routine
 
+          # Route53 RequestSigner Error
           class Error < CloudApi::Error
           end
 
-          # Authenticates a Route53 request.
+          # Authenticates a Route53 request
+          #
+          # @return [void]
+          #
+          # @example
+          #  # no example
+          #
           def process
             # Fix body
             unless @data[:request][:body]._blank?

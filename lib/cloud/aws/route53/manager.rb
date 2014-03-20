@@ -29,13 +29,14 @@ require "cloud/aws/route53/wrappers/default"
 module RightScale
   module CloudApi
     module AWS
+
+      # Route 53 namespace
       module Route53
 
-        # Amazon Route 53 compatible manager.
+        # Amazon Route 53 (Route53) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/route53"
         #
         #  r53 = RightScale::CloudApi::AWS::Route53::Manager::new(
         #    ENV['AWS_ACCESS_KEY_ID'],
@@ -93,14 +94,21 @@ module RightScale
         #            "Name"=>"testslave9.aws.rightscale.com.",
         #            "Type"=>"A"}]}}}
         #
+        # @see ApiManager
+        # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
         # @see http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html
-        #
-        # @see file:cloud/aws/route53/wrappers/default.rb
         #
         class Manager < CloudApi::Manager
         end
 
+
+        # Amazon Route 53 (Route) compatible manager (thread safe)
+        #
+        # @see Manager
+        #
         class  ApiManager < CloudApi::ApiManager
+
+          # RequestSigner Error
           class Error < CloudApi::Error
           end
           
@@ -122,19 +130,37 @@ module RightScale
 
           set :response_error_parser => Parser::AWS::ResponseErrorV2
 
+
+          # Constructor
+          #
+          # @param [String] aws_access_key_id
+          # @param [String] aws_secret_access_key
+          # @param [String] endpoint
+          # @param [Hash] options
+          #
+          # @example
+          #   # see Manager class usage
+          #
+          # @see Manager 
+          #
           def initialize(aws_access_key_id, aws_secret_access_key, endpoint, options={})
             credentials = { :aws_access_key_id     => aws_access_key_id,
                             :aws_secret_access_key => aws_secret_access_key }
             super(credentials, endpoint, options)
           end
 
-          # Make an API call to AWS::Route53 compatible cloud.
-          # 
-          # opts: [:options, :headers, :params, :body]
-          # body: String, IO, Nil.
+
+          # Makes an API call to AWS::Route53 compatible cloud
           #
-          # Usage: api(verb,         opts={})
-          #        api(verb, 'path', opts={})
+          # @param [String,Symbol] verb
+          # @param [Objects] args
+          #
+          # @return [Object]
+          #
+          # @example
+          #   api(verb,         opts={})
+          #   # Where opts may have next keys: :options, :headers, :params
+          #   api(verb, 'path', opts={})
           #
           def api(verb, *args, &block)
             relative_path = args.first.is_a?(String) ? args.shift : ''

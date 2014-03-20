@@ -25,15 +25,22 @@ module RightScale
   module CloudApi
     module Parser
       module AWS
+
+        # S3 Parsers namespace
         module S3
 
+          # S3 response error
           class ResponseError
-            # Parse HTTP error message from a response body.
-            # Body is a String, headers is Hash.
+
+            # Parses HTTP error message from a response body
             #
-            # Return a String to be displayed/logged.
+            # @param [RightScale::CloudApi::HttpResponse] response
+            # @param [Hash] options
+            # @option options [Object] :xml_parser
             #
-            # @example:
+            # @return [String] to be displayed/logged.
+            #
+            # @example
             #    {"Error"=>
             #        {"Message"=>"The specified key does not exist.",
             #        "RequestId"=>"B9BE7751749FA764",
@@ -52,7 +59,7 @@ module RightScale
                 body[/\A<\?xml /]
 
               if is_xml
-                hash  = Utils::get_parser_class(options[:xml_parser]).parse(body)
+                hash  = Utils::get_xml_parser_class(options[:xml_parser]).parse(body)
                 error = hash["Error"]
                 result << (error ? ": #{error['Code']}: #{error['Message']} (RequestID: #{error['RequestId']})" : ": #{body}")
               else

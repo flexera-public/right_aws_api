@@ -27,13 +27,13 @@ module RightScale
   module CloudApi
     module AWS
 
+      # Relational Database Service namespace
       module RDS
         
-        # Amazon Relational Database Service (RDS) compatible manager.
+        # Amazon Relational Database Service (RDS) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/rds"
         #
         #  rds = RightScale::CloudApi::AWS::RDS::Manager::new(key, secret, 'https://rds.amazonaws.com')
         #
@@ -71,11 +71,17 @@ module RightScale
         #  # Delete an instance
         #  rds.DeleteDBInstance('DBInstanceIdentifier' => 'SimCoProd01')
         #
+        # @see ApiManager
         # @see http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html
         #
         class Manager < AWS::Manager
         end
 
+
+        # Amazon Relational Database Service (RDS) compatible manager (thread safe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for RDS service.

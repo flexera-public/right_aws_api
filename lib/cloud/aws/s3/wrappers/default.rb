@@ -25,11 +25,22 @@ module RightScale
   module CloudApi
     module AWS
       module S3
+
+        # S3 Wrapper namespace
         module Wrapper
 
+          # Default wrapper
           module DEFAULT
-            def self.extended(base)
 
+
+            # Defines QUERY API like methods for the service
+            #
+            # @return [void]
+            #
+            # @example
+            #  # no example
+            #
+            def self.extended(base)
 
               #-----------------
               # Service

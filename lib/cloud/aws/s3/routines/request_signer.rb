@@ -25,16 +25,35 @@ module RightScale
   module CloudApi
     module AWS
       module S3
-        
+
+        # S3 Request signer
         class RequestSigner < CloudApi::Routine
-          
+
+          # S3 Request signer Error
           class Error < CloudApi::Error
           end
 
           # This guys are used to sign a request
-          SUB_RESOURCES = %w{ acl cors delete location logging notification policy tagging lifecycle
-                              requestPayment torrent versioning versions versionId uploads website }
-          
+          SUB_RESOURCES = %w{
+            acl
+            cors
+            delete
+            lifecycle
+            location
+            logging
+            notification
+            policy
+            requestPayment
+            tagging
+            torrent
+            uploads
+            versionId
+            versioning
+            versions
+            website
+          }
+
+
           # Using Query String API Amazon allows to override some of response headers:
           # 
           # response-content-type response-content-language response-expires
@@ -44,9 +63,16 @@ module RightScale
           #
           OVERRIDE_RESPONSE_HEADERS = /^response-/ 
 
+          # One year in seconds
           ONE_YEAR_OF_SECONDS = 365*60*60*24
           
-          # Authenticates an S3 request.
+          # Authenticates an S3 request
+          #
+          # @return [void]
+          #
+          # @example
+          #  # no example
+          #
           def process
             # Extract sub-resource(s).
             # Sub-resources are acl, torrent, versioning, location etc.

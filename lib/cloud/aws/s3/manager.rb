@@ -29,17 +29,22 @@ require "cloud/aws/s3/routines/request_signer"
 module RightScale
   module CloudApi
     module AWS
+
+      # Simple Storage Service namespace
+      #
+      # @api public
+      #
       module S3
 
-        # Amazon Simple Storage Service (S3) compatible manager.
+        # Amazon Simple Storage Service (S3) compatible manager (thread safe).
         #
         # @example
         #  require "right_aws_api"
-        #  require "aws/s3"
         #
         #  s3 = RightScale::CloudApi::AWS::S3::new(key, secret, 'https://s3.amazonaws.com')
         #
-        #  # -- HTTP verb methods way --
+        # @example
+        #  # -- Through HTTP verb methods --
         #  
         #  # List all buckets
         #  s3.get
@@ -60,8 +65,38 @@ module RightScale
         #  s3.put('devs-us-east/boot1.jpg', :body => 'This is my object DATA. WooHoo!!!')
         #
         # @example
-        #  # -- Patterns and Wrappers way (see cloud/aws/s3/wrappers/default.rb)
+        #   # A simple example of a multi-thread file download:
+        #   threads    = []
+        #   file_size  = 3257230
+        #   chunks     = 3
+        #   chunk_size = file_size / chunks
+        #   chunks.times do |i|
+        #     from_byte = i * chunk_size
+        #     to_byte   = from_byte + chunk_size - 1
+        #     to_byte  += file_size % chunks if i + 1 == chunks
+        #     threads << Thread::new {
+        #       Thread.current[:my_file] = s3.get('devs-us-east/xxx/boot.jpg', {:headers => {'Range' => "bytes=#{from_byte}-#{to_byte}"}})
+        #     }
+        #   end
+        #   file_body = ''
+        #   threads.each do |thread|
+        #     thread.join
+        #     file_body << thread[:my_file]
+        #   end
+        #   file_body.size #=> 3257230
+        #
+        # @example
+        #   # Download into IO object
+        #   File.open('/tmp/boot.jpg','w') do |file|
+        #     s3.get('devs-us-east/kd/boot.jpg') do |chunk|
+        #       file.write(chunk)
+        #     end
+        #   end
+        #
+        # @example
+        #  # -- Through Query API Patterns/Wrappers (see {Wrapper::DEFAULT.extended})
         #  
+        #  # List all buckets
         #  s3.ListBuckets #=> 
         #    {"ListAllMyBucketsResult"=>
         #      {"Buckets"=>
@@ -73,12 +108,13 @@ module RightScale
         #           {"Name"=>"DarrylTest", 
         #            "CreationDate"=>"2011-06-03T03:43:08.000Z"},
         #           {"Name"=>"RightScalePeter", 
-        #            "CreationDate"=>"2008-10-28T03:59:20.000Z"}, ...
+        #            "CreationDate"=>"2008-10-28T03:59:20.000Z"}]},
         #       "Owner"=>
         #        {"DisplayName"=>"fghsfg",
         #         "ID"=>"16144ab2929314cc309ffe736daa2b264357476c7fea6efb2c3347ac3ab2792a"},
         #       "@xmlns"=>"http://s3.amazonaws.com/doc/2006-03-01/"}}
         #
+        #  # List bucket objects
         #  s3.ListObjects('Bucket' => 'devs-us-east', 'max-keys' => 3, 'prefix' => 'kd') #=>
         #    {"ListBucketResult"=>
         #      {"MaxKeys"=>"3",
@@ -99,8 +135,6 @@ module RightScale
         #       "Prefix"=>"kd"}}        
         #
         # @example
-        #  # Bucket CORS:
-        #
         #  # Get
         #  s3.GetBucketCors('Bucket' => 'my-bucket' ) #=>
         #    {"CORSConfiguration"=>
@@ -114,14 +148,15 @@ module RightScale
         #
         # @example
         #  # Put
-        #  cors_rules = [ { 'AllowedOrigin' => 'http://www.example.com',
-        #                   'AllowedMethod' => ['PUT', 'POST'],
-        #                   'MaxAgeSeconds' => 3000,
-        #                   'ExposeHeader'  => 'x-amz-server-side-encryption' },
-        #                 { 'AllowedOrigin' => '*',
-        #                   'AllowedMethod' => 'GET',
-        #                   'MaxAgeSeconds' => 3000 } ]
-        # pp s3.PutBucketCors('Bucket' => 'kd-ver-test', 'CORSRule' => cors_rules ) #=> ''
+        #  cors_rules = [
+        #    {'AllowedOrigin' => 'http://www.example.com',
+        #     'AllowedMethod' => ['PUT', 'POST'],
+        #     'MaxAgeSeconds' => 3000,
+        #     'ExposeHeader'  => 'x-amz-server-side-encryption' },
+        #    {'AllowedOrigin' => '*',
+        #     'AllowedMethod' => 'GET',
+        #     'MaxAgeSeconds' => 3000 } ]
+        #  s3.PutBucketCors('Bucket' => 'kd-ver-test', 'CORSRule' => cors_rules ) #=> ''
         #
         #  # .. or
         #  body = "<CORSConfiguration><CORSRule><AllowedOrigin>http://www.example.com</AllowedOrigin>"+
@@ -137,13 +172,13 @@ module RightScale
         #  # Bucket Tagging
         #  # Get
         #  s3.GetBucketTagging('Bucket' => 'my-bucket' ) #=>
-        #    {"Tagging"=>
-        #       "TagSet"=>
-        #          "Tag"=>
-        #            [{"Key"=>"Project",
+        #    {"Tagging"=> {
+        #       "TagSet"=> {
+        #          "Tag"=>[
+        #            {"Key"=>"Project",
         #              "Value"=>"Project One"},
         #             {"Key"=>"User",
-        #              "Value"=>"jsmith"} ] }
+        #              "Value"=>"jsmith"}]}}}
         #
         # @example
         #  # Delete
@@ -151,27 +186,23 @@ module RightScale
         #
         # @example
         #  # Put
-        #  tagging_rules = [{"Key"=>"Project",
-        #                    "Value"=>"Project One"},
-        #                   {"Key"=>"User",
-        #                    "Value"=>"jsmith"} ]
+        #  tagging_rules = [
+        #    {"Key"=>"Project",
+        #     "Value"=>"Project One"},
+        #    {"Key"=>"User",
+        #     "Value"=>"jsmith"} ]
         #  s3.PutBucketTagging('Bucket' => 'my-bucket', 'TagSet' => tagging_rules ) #=> ''
         #
         # @example
         #  # Bucket Lifecycle
         #  # Get
         #  s3.GetBucketLifecycle('Bucket' => 'my-bucket' ) #=>
-        #    {"LifecycleConfiguration"=>
-        #       "Rule"=>[
-        #                 {
-        #                   "ID" => "30-day-log-deletion-rule",
-        #                   "Prefix" => "logs",
-        #                   "Status" => "Enabled",
-        #                   "Expiration" => {
-        #                     "Days" => 30
-        #                   }
-        #                 }
-        #               ] }
+        #    {"LifecycleConfiguration"=> {
+        #       "Rule"=>[{
+        #         "ID" => "30-day-log-deletion-rule",
+        #         "Prefix" => "logs",
+        #         "Status" => "Enabled",
+        #         "Expiration" => { "Days" => 30 }}]}}
         #
         # @example
         #  # Delete
@@ -180,33 +211,47 @@ module RightScale
         # @example
         #  # Put
         #  lifecycle_rules = [
-        #                      {
-        #                        "ID" => "30-day-log-deletion-rule",
-        #                        "Prefix" => "logs",
-        #                        "Status" => "Enabled",
-        #                        "Expiration" => {
-        #                          "Days" => 30
-        #                        }
-        #                      },
-        #                      {
-        #                        "ID" => "delete-documents-rule",
-        #                        "Prefix" => "documents",
-        #                        "Status" => "Enabled",
-        #                        "Expiration" => {
-        #                          "Days" => 365
-        #                        }
-        #                      },
-        #                    ] }
+        #    { "ID"         => "30-day-log-deletion-rule",
+        #      "Prefix"     => "logs",
+        #      "Status"     => "Enabled",
+        #      "Expiration" => {"Days" => 30}},
+        #    {"ID"          => "delete-documents-rule",
+        #      "Prefix"     => "documents",
+        #      "Status"     => "Enabled",
+        #      "Expiration" => { "Days" => 365 }}]
         #  s3.PutBucketLifecycle('Bucket' => 'my-bucket', 'Rule' => lifecycle_rules ) #=> ''
         #
-        # @see http://docs.aws.amazon.com/AmazonS3/latest/API/APIRest.html
+        # @example
+        #  # Get a link to ListAllMyBuckets action
+        #  s3.ListAllMyBuckets(:options=>{:cloud=>{:link=>true}}) #=> 
+        #    {"verb"   => "get",
+        #     "link"   => "https://s3.amazonaws.com/?AWSAccessKeyId=0K4QH...G2&Expires=1426111071&Signature=vLMH...3D",
+        #     "headers"=> {"host"=>["s3.amazonaws.com"]}}
         #
-        # @see file:cloud/aws/s3/wrappers/default.rb
+        #  # If you need to get a bunch of links you can use with_options helper method:
+        #  opts = {:headers => {'expires' => Time.now + 3600}}
+        #  s3.with_options(:cloud=>{:link => true}) do
+        #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd0.test', 'versionId'=>"00eYZeb291o4"}, opts)
+        #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd1.test', 'versionId'=>"fafaf1obp1W4"}, opts)
+        #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd2.test', 'versionId'=>"00asdTebp1W4"}, opts)
+        #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd3.test', 'versionId'=>"0lkjreobp1W4"}, opts)
+        #  end
+        #
+        # @see ApiManager
+        # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
+        # @see http://docs.aws.amazon.com/AmazonS3/latest/API/APIRest.html
         #
         class Manager < CloudApi::Manager
         end
 
+
+        # Amazon Simple Storage Service (S3) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < CloudApi::ApiManager
+
+          # S3 Error
           class Error < CloudApi::Error
           end
 
@@ -223,20 +268,38 @@ module RightScale
 
           set :response_error_parser => Parser::AWS::S3::ResponseError
 
+
+          # Constructor
+          #
+          # @param [String] aws_access_key_id
+          # @param [String] aws_secret_access_key
+          # @param [String] endpoint
+          # @param [Hash]   options
+          #
+          # @example
+          #   # see Manager class
+          #
+          # @see Manager
+          #
           def initialize(aws_access_key_id, aws_secret_access_key, endpoint, options={})
             credentials = { :aws_access_key_id     => aws_access_key_id,
                             :aws_secret_access_key => aws_secret_access_key }
             super(credentials, endpoint, options)
           end
 
-          # Make an API call to AWS::S3 compatible cloud.
-          # 
-          # opts: [:options, :headers, :params, :body]
-          # body: String, IO, Nil.
+
+          # Makes an API call to AWS::S3 compatible cloud
           #
-          # Usage: api(verb,                  opts={})
-          #        api(verb, 'bucket',        opts={})
-          #        api(verb, 'bucket/object', opts={})
+          # @param [String,Symbol] verb  'get' | 'put' | etc
+          # @param [Objects] args
+          #
+          # @return [Object]
+          #
+          # @example
+          #   api(verb,                  opts={})
+          #   api(verb, 'bucket',        opts={})
+          #   # Where opts may have next keys: :options, :headers, :params, :body
+          #   api(verb, 'bucket/object', opts={})
           #
           def api(verb, *args, &block)
             relative_path = args.first.is_a?(String) ? args.shift : ''
@@ -246,7 +309,6 @@ module RightScale
           end
           
         end
-
       end
     end
   end

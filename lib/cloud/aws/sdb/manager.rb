@@ -27,11 +27,17 @@ module RightScale
   module CloudApi
     module AWS
 
+      # Simple DB namespace
+      #
+      # @api public
+      #
       module SDB
         
-        # Amazon SimpleDB compatible manager.
+        # Amazon Simple DB (SDB) compatible manager (thread safe).
         #
         # @example
+        #  require "right_aws_api"
+        #
         #  # Create a manager to access SDB.
         #  sdb = RightScale::CloudApi::AWS::SDB::Manager::new(key, secret, 'https://sdb.amazonaws.com' )
         #  
@@ -106,11 +112,17 @@ module RightScale
         #                                                               
         #  sdb.Select('SelectExpression' => "select name from kdclient where sex = 'female'")
         #
+        # @see ApiManager
         # @see http://docs.amazonwebservices.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_Operations.html
         #
         class Manager < AWS::Manager
         end
 
+
+        # Amazon SimpleDB (SDB) compatible manager (thread unsafe).
+        #
+        # @see Manager
+        #
         class  ApiManager < AWS::ApiManager
 
           # Default API version for SimpleDB service.
