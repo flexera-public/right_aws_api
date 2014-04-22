@@ -116,8 +116,9 @@ module RightScale
 
 
               base.query_api_pattern 'PutBucketAcl', :put, '{:Bucket}',
-                :params => { 'acl' => nil },
-                :body   => { 'AccessControlPolicy' => :AccessControlPolicy }
+                :params  => { 'acl' => nil },
+                :body    => { 'AccessControlPolicy' => :AccessControlPolicy },
+                :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutBucketPolicy', :put, '{:Bucket}',
@@ -127,59 +128,72 @@ module RightScale
 
 
               base.query_api_pattern 'PutBucketLogging', :put, '{:Bucket}',
-                :params => { 'logging' => nil },
-                :body   => { 'BucketLoggingStatus' => :BucketLoggingStatus }
+                :params  => { 'logging' => nil },
+                :body    => { 'BucketLoggingStatus' => :BucketLoggingStatus },
+                :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutBucketNotification', :put, '{:Bucket}',
-                :params => { 'notification' => nil },
-                :body   => { 'NotificationConfiguration' => :NotificationConfiguration }
+                :params  => { 'notification' => nil },
+                :body    => { 'NotificationConfiguration' => :NotificationConfiguration },
+                :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutBucketRequestPayment', :put, '{:Bucket}',
                 :params => { 'requestPayment' => nil },
-                :body   => { 'RequestPaymentConfiguration' => :RequestPaymentConfiguration }
+                :body   => { 'RequestPaymentConfiguration' => :RequestPaymentConfiguration },
+                :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutBucketVersioning', :put, '{:Bucket}',
-                :params => { 'versioning' => nil },
-                :body   => { 'VersioningConfiguration' => :VersioningConfiguration }
+                :params  => { 'versioning' => nil },
+                :body    => { 'VersioningConfiguration' => :VersioningConfiguration },
+                :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutBucketWebsite', :put, '{:Bucket}',
-                :params => { 'website' => nil },
-                :body   => { 'WebsiteConfiguration' => :WebsiteConfiguration }
+                :params  => { 'website' => nil },
+                :body    => { 'WebsiteConfiguration' => :WebsiteConfiguration },
+                :headers => { 'content-type' => 'application/xml'}
+
 
               base.query_api_pattern 'GetBucketCors', :get, '{:Bucket}',
                 :params => { 'cors'=> nil }
 
+
               base.query_api_pattern 'DeleteBucketCors',  :delete, '{:Bucket}',
                 :params => { 'cors'=> nil }
 
+
               base.query_api_pattern 'PutBucketCors',  :put, '{:Bucket}',
-                :params => { 'cors'=> nil },
-              :body   => { 'CORSConfiguration' => {
-              'CORSRule' => :CORSRule } }
+                :params  => { 'cors'=> nil },
+                :body    => { 'CORSConfiguration' => { 'CORSRule' => :CORSRule } },
+                :headers => { 'content-type' => 'application/xml'}
+
 
               base.query_api_pattern 'GetBucketTagging', :get, '{:Bucket}',
                 :params => { 'tagging' => nil }
 
+
               base.query_api_pattern 'PutBucketTagging', :put, '{:Bucket}',
-                :params => { 'tagging' => nil },
-              :body => { 'Tagging' => {
-                           'TagSet' => {
-              'Tag' => :TagSet } } }
+                :params  => { 'tagging' => nil },
+                :body    => { 'Tagging' => { 'TagSet' => { 'Tag' => :TagSet } } },
+                :headers => { 'content-type' => 'application/xml'}
+
 
               base.query_api_pattern 'DeleteBucketTagging', :delete, '{:Bucket}',
                 :params => { 'tagging' => nil }
 
+
               base.query_api_pattern 'GetBucketLifecycle', :get, '{:Bucket}',
                 :params => { 'lifecycle' => nil }
 
+
               base.query_api_pattern 'PutBucketLifecycle', :put, '{:Bucket}',
-                :params => { 'lifecycle' => nil },
-              :body => { 'LifecycleConfiguration' => {
-              'Rule' => :Rule } }
+                :params  => { 'lifecycle' => nil },
+                :body    => { 'LifecycleConfiguration' => { 'Rule' => :Rule } },
+                :headers => { 'content-type' => 'application/xml'}
+
 
               base.query_api_pattern 'DeleteBucketLifecycle', :delete, '{:Bucket}',
                 :params => { 'lifecycle' => nil }
@@ -240,11 +254,14 @@ module RightScale
 
 
               base.query_api_pattern 'PutObjectAcl', :put, '{:Bucket}/{:Object}',
-                :params => { 'acl'=> nil }
+                :params  => { 'acl'=> nil },
+                :body    => { 'AccessControlPolicy' => :AccessControlPolicy },
+                :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutObjectCannedAcl', :put, '{:Bucket}/{:Object}',
-                :params => { 'acl'=> nil }, :headers => { 'x-amz-acl' => :Acl}
+                :params  => { 'acl' => nil },
+                :headers => { 'x-amz-acl' => :Acl, 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'CopyObject', :put, '{:DestinationBucket}/{:DestinationObject}',
@@ -264,8 +281,9 @@ module RightScale
 
 
               base.query_api_pattern 'UploadPart', :post, '{:Bucket}/{:Object}',
-                :params => { 'partNumber' => :PartNumber,
-                             'uploadId'   => :UploadId }
+                :params  => { 'partNumber' => :PartNumber,
+                              'uploadId'   => :UploadId },
+                :headers => { 'content-type' => 'application/octet-stream' }
 
 
               base.query_api_pattern 'UploadPartCopy', :put, '{:DestinationBucket}/{:DestinationObject}',
@@ -275,7 +293,9 @@ module RightScale
 
 
               base.query_api_pattern 'CompleteMultipartUpload', :post, '{:Bucket}/{:Object}',
-                :params => { 'uploadId' => :UploadId }
+                :params  => { 'uploadId' => :UploadId },
+                :body    => { 'CompleteMultipartUpload' => :CompleteMultipartUpload },
+                :headers => { 'x-amz-acl' => :Acl, 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'AbortMultipartUpload', :delete, '{:Bucket}/{:Object}',

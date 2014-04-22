@@ -44,7 +44,7 @@ module RightScale
         #  s3 = RightScale::CloudApi::AWS::S3::new(key, secret, 'https://s3.amazonaws.com')
         #
         # @example
-        #  # -- Through HTTP verb methods --
+        #  # -- Using HTTP verb methods --
         #  
         #  # List all buckets
         #  s3.get
@@ -55,14 +55,29 @@ module RightScale
         #  # Get bucket ACL
         #  s3.get('devs-us-east', :params => {'acl' => nil} )
         #
-        #  # Get bucket Version
+        #  # Put bucket ACL
+        #  s3.put('devs-us-east',
+        #         :params  => {'acl' => nil},
+        #         :body    => access_control_policy_xml,
+        #         :headers => { 'content-type' => 'application/xml' }
+        #  )
+        #
+        #  # Get bucket Versions
         #  s3.get('devs-us-east', :params => {'version' => nil} )
         #
         #  # Get object
         #  s3.get('devs-us-east/boot1.jpg')
         #
+        #  # Get object, force set content-type
+        #  s3.get('kd-kd-kd-1/boot1.jpg', :params => { 'response-content-type' => 'image/jpeg'})
+        #
         #  # Put object
-        #  s3.put('devs-us-east/boot1.jpg', :body => 'This is my object DATA. WooHoo!!!')
+        #  # Do not forget to provide a proper 'content-type' header because the default
+        #  # one is set to 'application/octet-stream'
+        #  s3.put('devs-us-east/boot1.jpg',
+        #          :body    => 'This is my object DATA. WooHoo!!!',
+        #          :headers => {'content-type' => 'text/plain'})
+        #
         #
         # @example
         #   # A simple example of a multi-thread file download:
@@ -85,6 +100,7 @@ module RightScale
         #   end
         #   file_body.size #=> 3257230
         #
+        #
         # @example
         #   # Download into IO object
         #   File.open('/tmp/boot.jpg','w') do |file|
@@ -93,11 +109,40 @@ module RightScale
         #     end
         #   end
         #
+        #
         # @example
-        #  # -- Through Query API Patterns/Wrappers (see {Wrapper::DEFAULT.extended})
+        #  # -- Using helper methods --
+        #
+        #  # List all buckets
+        #  s3.ListAllMyBuckets
+        #
+        #  # List bucket objects
+        #  s3.ListObjects('Bucket' => 'devs-us-east')
+        #
+        #  # Get bucket ACL
+        #  s3.GetBucketAcl('Bucket' => 'devs-us-east')
+        #
+        #  # Get bucket Versions
+        #  s3.GetBucketVersions('Bucket' => 'devs-us-east')
+        #
+        #  # Get object
+        #  s3.GetObject('Bucket' => 'devs-us-east', 'Object' => 'boot1.jpg')
+        #
+        #  # Get object, force set content-type
+        #  s3.GetObject('Bucket' => 'devs-us-east', 'Object' => 'boot1.jpg',
+        #               :params => { 'response-content-type' => 'image/jpeg'})
+        #
+        #  # Put object
+        #  # P.S. 'content-type' is 'application/octet-stream' by default
+        #  s3.PutObject('Bucket' => 'devs-us-east',
+        #               'Object' => 'boot1.jpg',
+        #               :body    => file_content,
+        #               :headers => {'content-type' => 'image/jpeg'})
+        #
+        # @example
         #  
         #  # List all buckets
-        #  s3.ListBuckets #=> 
+        #  s3.ListAllMyBuckets #=>
         #    {"ListAllMyBucketsResult"=>
         #      {"Buckets"=>
         #        {"Bucket"=>
@@ -134,6 +179,7 @@ module RightScale
         #       "@xmlns"=>"http://s3.amazonaws.com/doc/2006-03-01/",
         #       "Prefix"=>"kd"}}        
         #
+        #
         # @example
         #  # Get
         #  s3.GetBucketCors('Bucket' => 'my-bucket' ) #=>
@@ -145,6 +191,7 @@ module RightScale
         #            "MaxAgeSeconds"=>"2000",
         #            "ExposeHeader"=>"x-amz-server-side-encryption"},
         #          {"AllowedOrigin"=>"*", "AllowedMethod"=>"GET", "MaxAgeSeconds"=>"2001"}]}}
+        #
         #
         # @example
         #  # Put
@@ -164,9 +211,11 @@ module RightScale
         #         "<MaxAgeSeconds>3000</MaxAgeSeconds>..</CORSConfiguration>"
         #  s3.PutBucketCors('Bucket' => 'my-bucket', :body => body ) #=> ''
         #
+        #
         # @example
         #  # Delete
         #  s3.DeleteBucketCors('Bucket' => 'my-bucket' ) #=> ''
+        #
         #
         # @example
         #  # Bucket Tagging
@@ -180,9 +229,11 @@ module RightScale
         #             {"Key"=>"User",
         #              "Value"=>"jsmith"}]}}}
         #
+        #
         # @example
         #  # Delete
         #  s3.DeleteBucketTagging('Bucket' => 'my-bucket' ) #=> ''
+        #
         #
         # @example
         #  # Put
@@ -192,6 +243,7 @@ module RightScale
         #    {"Key"=>"User",
         #     "Value"=>"jsmith"} ]
         #  s3.PutBucketTagging('Bucket' => 'my-bucket', 'TagSet' => tagging_rules ) #=> ''
+        #
         #
         # @example
         #  # Bucket Lifecycle
@@ -204,9 +256,11 @@ module RightScale
         #         "Status" => "Enabled",
         #         "Expiration" => { "Days" => 30 }}]}}
         #
+        #
         # @example
         #  # Delete
         #  s3.DeleteBucketLifecycle('Bucket' => 'my-bucket' ) #=> ''
+        #
         #
         # @example
         #  # Put
@@ -220,6 +274,7 @@ module RightScale
         #      "Status"     => "Enabled",
         #      "Expiration" => { "Days" => 365 }}]
         #  s3.PutBucketLifecycle('Bucket' => 'my-bucket', 'Rule' => lifecycle_rules ) #=> ''
+        #
         #
         # @example
         #  # Get a link to ListAllMyBuckets action
@@ -236,6 +291,7 @@ module RightScale
         #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd2.test', 'versionId'=>"00asdTebp1W4"}, opts)
         #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd3.test', 'versionId'=>"0lkjreobp1W4"}, opts)
         #  end
+        #
         #
         # @see ApiManager
         # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
