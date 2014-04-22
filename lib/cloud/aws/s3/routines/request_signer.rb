@@ -124,7 +124,7 @@ module RightScale
               #      So we need to include it into our signature to avoid the error below:
               #      'The request signature we calculated does not match the signature you provided.
               #       Check your key and signing method.'
-              @data[:request][:headers].set_if_blank('content-type', 'application/xml')
+              @data[:request][:headers].set_if_blank('content-type', 'application/octet-stream')
               # REST Auth:
               unless @data[:request][:body]._blank?
                 # Fix body if it is a Hash instance
