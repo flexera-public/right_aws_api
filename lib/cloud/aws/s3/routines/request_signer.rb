@@ -119,10 +119,14 @@ module RightScale
             
             # Make sure headers required for authentication are set
             unless @data[:options][:cloud][:link]
+              # Make sure 'content-type' is set.
+              # P.S. Ruby 2.1+ sets 'content-type' by default for POST and PUT requests.
+              #      So we need to include it into our signature to avoid the error below:
+              #      'The request signature we calculated does not match the signature you provided.
+              #       Check your key and signing method.'
+              @data[:request][:headers].set_if_blank('content-type', 'application/xml')
               # REST Auth:
               unless @data[:request][:body]._blank?
-                # Make sure 'content-type' is set if we have a body
-                @data[:request][:headers].set_if_blank('content-type', 'application/xml')
                 # Fix body if it is a Hash instance
                 if @data[:request][:body].is_a?(Hash)
                   @data[:request][:body] = Utils::contentify_body(@data[:request][:body], @data[:request][:headers]['content-type'])

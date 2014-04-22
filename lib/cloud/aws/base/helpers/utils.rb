@@ -28,10 +28,10 @@ module RightScale
       # AWS helpers namespace
       module AWS
 
-        @@digest1   = OpenSSL::Digest::Digest.new("sha1")
+        @@digest1   = OpenSSL::Digest.new("sha1")
         @@digest256 = nil
         if OpenSSL::OPENSSL_VERSION_NUMBER > 0x00908000
-          @@digest256 = OpenSSL::Digest::Digest.new("sha256") rescue nil # Some installations may not support sha256
+          @@digest256 = OpenSSL::Digest.new("sha256") rescue nil # Some installations may not support sha256
         end
 
 
