@@ -41,7 +41,7 @@ module RightScale
         # @example
         #  require "right_aws_api"
         #
-        #  s3 = RightScale::CloudApi::AWS::S3::new(key, secret, 'https://s3.amazonaws.com')
+        #  s3 = RightScale::CloudApi::AWS::S3::Manager.new(key, secret, 'https://s3.amazonaws.com')
         #
         # @example
         #  # -- Using HTTP verb methods --
