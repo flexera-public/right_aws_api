@@ -67,6 +67,8 @@ module RightScale
         #
         #  # Get object
         #  s3.get('devs-us-east/boot1.jpg')
+        #  # Do not parse response if Amazon reports back XML or JSON content-type
+        #  s3.get('devs-us-east/boot1.xml', :options => { :raw_response => true})
         #
         #  # Get object, force set content-type
         #  s3.get('kd-kd-kd-1/boot1.jpg', :params => { 'response-content-type' => 'image/jpeg'})

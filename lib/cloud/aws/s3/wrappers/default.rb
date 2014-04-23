@@ -231,7 +231,8 @@ module RightScale
               }
 
 
-              base.query_api_pattern 'GetObject', :get, '{:Bucket}/{:Object}'
+              base.query_api_pattern 'GetObject', :get, '{:Bucket}/{:Object}',
+                :options => { :raw_response => true }
 
 
               base.query_api_pattern 'GetObjectAcl', :get, '{:Bucket}/{:Object}',
