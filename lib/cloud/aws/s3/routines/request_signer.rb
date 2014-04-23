@@ -81,6 +81,10 @@ module RightScale
               sub_resources[key] = (value._blank? ? nil : value) if SUB_RESOURCES.include?(key) || key[OVERRIDE_RESPONSE_HEADERS]
             end
 
+            # Escape that part of the path that may have UTF-8 chars (in S3 Object name for instance).
+            # Amazon wants them to be escaped before we sign the request.
+            @data[:request][:relative_path] = Utils::AWS::amz_escape(@data[:request][:relative_path])
+
             # Extract bucket name and object path
             if @data[:request][:bucket]._blank?
               # This is a very first attempt:
