@@ -83,7 +83,13 @@ module RightScale
         #     'something%20%3E%3D%2013'
         #
         def self.amz_escape(string)
-          string.to_s.gsub(/([^a-zA-Z0-9._~-]+)/n) { '%' + $1.unpack('H2' * $1.size).join('%').upcase }
+          string = string.to_s
+          # Use UTF-8 if current ruby supports it (1.9+)
+          string = string.encode("UTF-8") if string.respond_to?(:encode)
+          # CGI::escape is too clever:
+          #  - it escapes '~' when Amazon wants it to be un-escaped
+          #  - it escapes ' ' as '+' but Amazon loves it as '%20'
+          CGI.escape(string).gsub('%7E','~').gsub('+','%20')
         end
 
 
