@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: RightScale::CloudApi::AWS::SDB::Manager
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../../';
+  framesUrl = "../../../../frames.html#!RightScale/CloudApi/AWS/SDB/Manager.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../../_index.html">Index (M)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../../RightScale.html" title="RightScale (module)">RightScale</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../CloudApi.html" title="RightScale::CloudApi (module)">CloudApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../AWS.html" title="RightScale::CloudApi::AWS (module)">AWS</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../SDB.html" title="RightScale::CloudApi::AWS::SDB (module)">SDB</a></span></span>
+     &raquo; 
+    <span class="title">Manager</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: RightScale::CloudApi::AWS::SDB::Manager
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="../Manager.html" title="RightScale::CloudApi::AWS::Manager (class)">Manager</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">CloudApi::Manager</li>
+          
+            <li class="next"><span class='object_link'><a href="../Manager.html" title="RightScale::CloudApi::AWS::Manager (class)">Manager</a></span></li>
+          
+            <li class="next">RightScale::CloudApi::AWS::SDB::Manager</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/cloud/aws/sdb/manager.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Amazon Simple DB (SDB) compatible manager (thread safe).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>right_aws_api</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='comment'># Create a manager to access SDB.
+</span><span class='id identifier rubyid_sdb'>sdb</span> <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>SDB</span><span class='op'>::</span><span class='const'>Manager</span><span class='op'>::</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://sdb.amazonaws.com</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span>
+
+<span class='id identifier rubyid_sdb'>sdb</span><span class='period'>.</span><span class='const'>ListDomains</span> <span class='comment'>#=&gt; 
+</span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ListDomainsResponse</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
+    <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ListDomainsResult</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
+      <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DomainName</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
+        <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kd_tests</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kdclient</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='comma'>,</span>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ResponseMetadata</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
+      <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RequestId</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>d430ab64-18ff-b529-fc0c-0cae65d68203</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BoxUsage</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.0000071759</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://sdb.amazonaws.com/doc/2009-04-15/</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span></code></pre>
+    
+      
+      <pre class="example code"><code>sdb.PutAttributes(&#39;DomainName&#39;   =&gt; &#39;kdclient&#39;,
+                  &#39;ItemName&#39;     =&gt; &#39;Employee&#39;,
+                  &#39;Attribute&#39; =&gt; [ { &#39;Name&#39; =&gt; &#39;name&#39;, &#39;Value&#39; =&gt; &#39;John&#39; },
+                                    { &#39;Name&#39; =&gt; &#39;age&#39;,  &#39;Value&#39; =&gt; &#39;33&#39; },
+                                    { &#39;Name&#39; =&gt; &#39;sex&#39;,  &#39;Value&#39; =&gt; &#39;male } ]) #=&gt;
+  {&quot;PutAttributesResponse&quot;=&gt;
+    {&quot;ResponseMetadata&quot;=&gt;
+      {&quot;RequestId&quot;=&gt;&quot;210d06ce-8b15-0035-1084-baec98874f75&quot;,
+       &quot;BoxUsage&quot;=&gt;&quot;0.0000219961&quot;},
+     &quot;@xmlns&quot;=&gt;&quot;http://sdb.amazonaws.com/doc/2009-04-15/&quot;}}</code></pre>
+    
+      
+      <pre class="example code"><code><span class='comment'># BatchPutAttributes
+</span><span class='id identifier rubyid_sdb'>sdb</span><span class='period'>.</span><span class='const'>BatchPutAttributes</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DomainName</span><span class='tstring_end'>&quot;</span></span>               <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kdclient</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.1.ItemName</span><span class='tstring_end'>&quot;</span></span>          <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>konstantin</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.1.Attribute.1.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sex</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.1.Attribute.1.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>male</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.1.Attribute.2.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>weight</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.1.Attribute.2.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>170</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.1.Attribute.3.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>age</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.1.Attribute.3.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>38</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.2.ItemName</span><span class='tstring_end'>&quot;</span></span>          <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>alex</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.2.Attribute.1.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sex</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.2.Attribute.1.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>male</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.2.Attribute.2.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>weight</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.2.Attribute.2.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>188</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.2.Attribute.3.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>age</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.2.Attribute.3.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>42</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.ItemName</span><span class='tstring_end'>&quot;</span></span>          <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>diana</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.1.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sex</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.1.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>female</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.2.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>weight</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.2.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>120</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.3.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>age</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.3.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>25</span><span class='tstring_end'>&quot;</span></span> <span class='rparen'>)</span> 
+
+<span class='comment'># ... the same as the call above (see {RightScale::CloudApi::Utils::AWS::parametrize} method usage)
+</span><span class='id identifier rubyid_sdb'>sdb</span><span class='period'>.</span><span class='const'>BatchPutAttributes</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DomainName</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kdclient</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Item</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ItemName</span><span class='tstring_end'>&#39;</span></span>   <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>konstantin</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                                       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Attribute</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sex</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>male</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='comma'>,</span>
+                                                        <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>weight</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>170</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
+                                                        <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>age</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>38</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+                                    <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ItemName</span><span class='tstring_end'>&#39;</span></span>   <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>alex</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                                      <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Attribute</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sex</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>male</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='comma'>,</span>
+                                                        <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>weight</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>188</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
+                                                        <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>age</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>42</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+                                    <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ItemName</span><span class='tstring_end'>&#39;</span></span>   <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>diana</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                                      <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Attribute</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sex</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>female</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='comma'>,</span>
+                                                        <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>weight</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>120</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
+                                                        <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>age</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>25</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BatchPutAttributesResponse</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
+    <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ResponseMetadata</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
+      <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RequestId</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>4b0d9997-0a51-2c4f-3424-da04225d6ef9</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BoxUsage</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.0000461918</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://sdb.amazonaws.com/doc/2009-04-15/</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span>
+
+<span class='id identifier rubyid_sdb'>sdb</span><span class='period'>.</span><span class='const'>Select</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SelectExpression</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>select name from kdclient where sex = &#39;female&#39;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="ApiManager.html" title="RightScale::CloudApi::AWS::SDB::ApiManager (class)">ApiManager</a></span></li>
+    
+      <li><a href="http://docs.amazonwebservices.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_Operations.html" target="_parent" title="http://docs.amazonwebservices.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_Operations.html">http://docs.amazonwebservices.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_Operations.html</a></li>
+    
+  </ul>
+
+</div>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+</div>
+
+    <div id="footer">
+  Generated on Fri Apr 25 16:12:36 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-2.1.0).
+</div>
+
+  </body>
+</html>

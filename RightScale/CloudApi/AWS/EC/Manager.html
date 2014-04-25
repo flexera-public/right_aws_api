@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: RightScale::CloudApi::AWS::EC::Manager
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../../';
+  framesUrl = "../../../../frames.html#!RightScale/CloudApi/AWS/EC/Manager.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../../_index.html">Index (M)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../../RightScale.html" title="RightScale (module)">RightScale</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../CloudApi.html" title="RightScale::CloudApi (module)">CloudApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../AWS.html" title="RightScale::CloudApi::AWS (module)">AWS</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../EC.html" title="RightScale::CloudApi::AWS::EC (module)">EC</a></span></span>
+     &raquo; 
+    <span class="title">Manager</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: RightScale::CloudApi::AWS::EC::Manager
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="../Manager.html" title="RightScale::CloudApi::AWS::Manager (class)">Manager</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">CloudApi::Manager</li>
+          
+            <li class="next"><span class='object_link'><a href="../Manager.html" title="RightScale::CloudApi::AWS::Manager (class)">Manager</a></span></li>
+          
+            <li class="next">RightScale::CloudApi::AWS::EC::Manager</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/cloud/aws/ec/manager.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Amazon ElastiCache (EC) compatible manager (thread safe).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>right_aws_api</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='id identifier rubyid_eb'>eb</span> <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>EC</span><span class='op'>::</span><span class='const'>Manager</span><span class='op'>::</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://elasticache.us-east-1.amazonaws.com</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># Get information about all provisioned Cache Clusters if no Cache Cluster identifier is specified, 
+</span><span class='comment'># or about a specific Cache Cluster if a Cache Cluster identifier is supplied
+</span><span class='id identifier rubyid_eb'>eb</span><span class='period'>.</span><span class='const'>DescribeCacheClusters</span> <span class='comment'>#=&gt;
+</span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DescribeApplicationsResponse</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
+    <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://elasticbeanstalk.amazonaws.com/docs/2010-12-01/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DescribeApplicationsResult</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Applications</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='kw'>nil</span><span class='rbrace'>}</span><span class='comma'>,</span>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ResponseMetadata</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RequestId</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>b7c61b5a-4f69-11e2-a3d0-a772ddd49d31</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbrace'>}</span></code></pre>
+    
+      
+      <pre class="example code"><code><span class='comment'># Get a list of CacheSubnetGroup descriptions
+</span><span class='id identifier rubyid_eb'>eb</span><span class='period'>.</span><span class='const'>DescribeCacheSubnetGroups</span> <span class='comment'>#=&gt; 
+</span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DescribeCacheSubnetGroupsResponse</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
+    <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://elasticache.amazonaws.com/doc/2012-11-15/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DescribeCacheSubnetGroupsResult</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CacheSubnetGroups</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='kw'>nil</span><span class='rbrace'>}</span><span class='comma'>,</span>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ResponseMetadata</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RequestId</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ae3546cb-4f6e-11e2-b196-0b589a77da67</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="ApiManager.html" title="RightScale::CloudApi::AWS::EC::ApiManager (class)">ApiManager</a></span></li>
+    
+      <li><a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_Operations.html" target="_parent" title="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_Operations.html">http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_Operations.html</a></li>
+    
+  </ul>
+
+</div>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+</div>
+
+    <div id="footer">
+  Generated on Fri Apr 25 16:12:35 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-2.1.0).
+</div>
+
+  </body>
+</html>
