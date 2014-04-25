@@ -7,6 +7,10 @@ The gem provides interface to AWS cloud services.
 
 Maintained by the RightScale "Orange_team"
 
+## Docs
+
+http://rightscale.github.io/right_aws_api
+
 ## Features
 
 The gem supports next AWS services out of the box:
