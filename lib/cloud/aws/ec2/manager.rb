@@ -51,8 +51,8 @@ module RightScale
         #  
         #  # Or even pass a different API version when making a call!
         #  ec2 = RightScale::CloudApi::AWS::EC2::new(key, secret, 'https://us-east-1.ec2.amazonaws.com',  :api_version => "2010-08-31" )
-        #  ec2.DescribeInternetGateways # => Exception
-        #  ec2.DescribeInternetGateways({}, :options => { :api_version => "2011-05-15" }) #=> Gateways list
+        #  ec2.DescribeInternetGateways("InternetGatewayId"=>"igw-55660000") # => Exception
+        #  ec2.DescribeInternetGateways("InternetGatewayId"=>"igw-55660000", :options => { :api_version => "2011-05-15" }) #=> Gateway data
         #   
         # @example
         #  # Get a list of your instances

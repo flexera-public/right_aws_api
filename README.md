@@ -9,7 +9,7 @@ Maintained by the RightScale "Orange_team"
 
 ## Docs
 
-http://rightscale.github.io/right_aws_api
+http://rightscale.github.io/right_aws_api/frames.html#!file.README.html
 
 ## Features
 
