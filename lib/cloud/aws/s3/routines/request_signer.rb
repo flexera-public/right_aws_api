@@ -81,10 +81,6 @@ module RightScale
               sub_resources[key] = (value._blank? ? nil : value) if SUB_RESOURCES.include?(key) || key[OVERRIDE_RESPONSE_HEADERS]
             end
 
-            # Escape that part of the path that may have UTF-8 chars (in S3 Object name for instance).
-            # Amazon wants them to be escaped before we sign the request.
-            @data[:request][:relative_path] = Utils::AWS::amz_escape(@data[:request][:relative_path])
-
             # Extract bucket name and object path
             if @data[:request][:bucket]._blank?
               # This is a very first attempt:
@@ -114,13 +110,19 @@ module RightScale
               @data[:connection][:uri].path = static_path
             end
 
+            # Escape that part of the path that may have UTF-8 chars (in S3 Object name for instance).
+            # Amazon wants them to be escaped before we sign the request.
+            #
+            # P.S. Escape AFTER we extract bucket name.
+            @data[:request][:relative_path] = Utils::AWS::amz_escape(@data[:request][:relative_path])
+
             # Calculate a canonical path (bucket part must end with '/')
             bucket_string      = Utils::AWS::is_dns_bucket?(bucket_name) ? "#{bucket_name}/" : bucket_name.to_s
             canonicalized_path = Utils::join_urn(static_path,
                                                  bucket_string,
                                                  @data[:request][:relative_path],
                                                  sub_resources ){ |value| value } # pass this block to avoid escaping: Amazon does not like escaped things in canonicalized_path
-            
+
             # Make sure headers required for authentication are set
             unless @data[:options][:cloud][:link]
               # Make sure 'content-type' is set.
@@ -150,10 +152,10 @@ module RightScale
               @data[:request][:headers]['authorization'] = "AWS #{@data[:credentials][:aws_access_key_id]}:#{signature}"
             else
               # @see http://docs.amazonwebservices.com/AmazonS3/latest/dev/RESTAuthentication.html
-              # 
-              # Amazon: ... We assume that when a browser makes the GET request, it won't provide a Content-MD5 or a Content-Type header, 
+              #
+              # Amazon: ... We assume that when a browser makes the GET request, it won't provide a Content-MD5 or a Content-Type header,
               #  nor will it set any x-amz- headers, so those parts of the StringToSign are left blank. ...
-              #  
+              #
               # Only GET requests!
               raise Error::new("Only GET requests are supported by S3 Query String API") unless @data[:request][:verb] == :get
               # Expires
@@ -175,7 +177,7 @@ module RightScale
               # we dont need this header any more
               @data[:request][:headers].delete('expires')
             end
-            
+
             # Sub-domain compatible buckets vs incompatible ones
             if !@data[:options][:cloud][:no_subdomains] && Utils::AWS::is_dns_bucket?(bucket_name)
               # DNS compatible bucket name:
@@ -217,7 +219,7 @@ module RightScale
 
             # Host should be set for REST requests (and should not affect on Query String ones)
             @data[:request][:headers]['host'] = @data[:connection][:uri].host
-            
+
             # Finalize data
             if @data[:options][:cloud][:link]
               # Amazon supports only some GET requests without body and any headers:
@@ -234,7 +236,7 @@ module RightScale
             end
           end
         end
-        
+
       end
     end
   end

@@ -55,7 +55,7 @@ module RightScale
           'Timestamp',
           'Version',
         ]
-        
+
         include Mixin::QueryApiPatterns
 
         set_routine CloudApi::RetryManager
@@ -68,7 +68,7 @@ module RightScale
         set_routine CloudApi::CacheValidator
         set_routine CloudApi::ResponseParser
         set_routine CloudApi::ResultWrapper
-        
+
         set :response_error_parser => Parser::AWS::ResponseErrorV1
 
         # Constructor
@@ -78,7 +78,7 @@ module RightScale
         # @param [String] aws_access_key_id Amazon AWS access key id.
         # @param [String] aws_secret_access_key Amazon secret AWS access key.
         # @param [String] endpoint Cloud endpoint.
-        # @param [Hash]   options 
+        # @param [Hash]   options
         #   see https://github.com/rightscale/right_cloud_api_base/blob/master/lib/base/api_manager.rb
         #
         # @example

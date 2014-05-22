@@ -29,7 +29,6 @@ module RightScale
 
       # Elastic Compute Cloud namespace
       module EC2
-        
         # Amazon Elastic Compute Cloud (EC2) compatible manager (thread safe).
         #
         # @example
@@ -37,7 +36,7 @@ module RightScale
         #
         #  # Create a manager to access EC2.
         #  ec2 = RightScale::CloudApi::AWS::EC2::Manager::new(key, secret, 'https://us-east-1.ec2.amazonaws.com')
-        #  
+        #
         #  ec2.ThisCallMustBeSupportedByEc2('Param.1' => 'A', 'Param.2' => 'B')
         #
         # If there is a new API version just pass it to the manager and woohoo!
@@ -48,19 +47,19 @@ module RightScale
         #
         #  ec2 = RightScale::CloudApi::AWS::EC2::new(key, secret, 'https://us-east-1.ec2.amazonaws.com',  :api_version => "2011-05-15" )
         #  ec2.DescribeInternetGateways # => Exception
-        #  
+        #
         #  # Or even pass a different API version when making a call!
         #  ec2 = RightScale::CloudApi::AWS::EC2::new(key, secret, 'https://us-east-1.ec2.amazonaws.com',  :api_version => "2010-08-31" )
         #  ec2.DescribeInternetGateways("InternetGatewayId"=>"igw-55660000") # => Exception
         #  ec2.DescribeInternetGateways("InternetGatewayId"=>"igw-55660000", :options => { :api_version => "2011-05-15" }) #=> Gateway data
-        #   
+        #
         # @example
         #  # Get a list of your instances
-        #  ec2.DescribeInstances 
+        #  ec2.DescribeInstances
         #
         #  # Describe custom Instance(s)
         #  ec2.DescribeInstances('InstanceId'   => "i-2ba7c640")
-        #  ec2.DescribeInstances('InstanceId.1' => "i-2ba7c640", 
+        #  ec2.DescribeInstances('InstanceId.1' => "i-2ba7c640",
         #                        'InstanceId.2' => "i-7db9101e")
         #  ec2.DescribeInstances('InstanceId'   => ["i-2ba7c640", "i-7db9101e"])
         #
@@ -73,7 +72,7 @@ module RightScale
         #                         'Filter.2.Value.2' => 'us-east-1d',
         #                         'Filter.3.Name'    => 'instance-type',
         #                         'Filter.3.Value'   => 'm1.small')
-        #  
+        #
         #  # (produces the same result as the request above)
         #  ec2.DescribeInstances( 'Filter' => [{ 'Name'  => 'architecture',      'Value' => 'i386'},
         #                                      { 'Name'  => 'availability-zone', 'Value' => [ 'us-east-1a', 'us-east-1d' ]},
@@ -100,7 +99,7 @@ module RightScale
         #                    'BlockDeviceMapping.2.Ebs.SnapshotId'          => 'snap-e40fd188',
         #                    'BlockDeviceMapping.2.Ebs.VolumeSize'          => 3,
         #                    'BlockDeviceMapping.2.Ebs.DeleteOnTermination' => true ) #=> see below
-        #                    
+        #
         #  # or run it like this:
         #  ec2.RunInstances(
         #    'ImageId'               => 'ami-8ef607e7',
@@ -183,7 +182,7 @@ module RightScale
         #        },
         #        "requestId"    => "bf966c52-ee28-4eb2-af1c-dceff7bff231"
         #      }
-        #    }          
+        #    }
         #
         # @see ApiManager
         # @see http://docs.aws.amazon.com/AWSEC2/latest/APIReference
@@ -217,7 +216,7 @@ module RightScale
                         :sign  => Proc::new{ |o| o[:response].body.to_s.sub(%r{<requestId>.+?</requestId>}i,'') }
         end
       end
-      
+
     end
   end
 end
