@@ -48,7 +48,8 @@ The gem provides interface to AWS cloud services.
 
 EOF
 
-  candidates      = Dir.glob('{lib,spec}/**/*') + ['HISTORY', 'README.md', 'Rakefile', 'right_aws_api.gemspec']
+  candidates      = Dir.glob('{lib,spec}/**/*') +
+                    ['LICENSE', 'HISTORY', 'README.md', 'Rakefile', 'right_aws_api.gemspec']
   spec.files      = candidates.sort
   spec.test_files = Dir.glob('spec/**/*')
 end

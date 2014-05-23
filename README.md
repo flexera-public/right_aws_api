@@ -5,15 +5,13 @@
 
 The gem provides interface to AWS cloud services.
 
-Maintained by the RightScale "Orange_team"
-
 ## Docs
 
 http://rightscale.github.io/right_aws_api/frames.html#!file.README.html
 
 ## Features
 
-The gem supports next AWS services out of the box:
+The gem supports the following AWS services out of the box:
 
 - {RightScale::CloudApi::AWS::AS::Manager      Auto Scaling (AS)}
 - {RightScale::CloudApi::AWS::CF::Manager      Cloud Front (CF)}
