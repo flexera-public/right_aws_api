@@ -1,12 +1,18 @@
+# AWS (Amazon Web Services) library for Ruby
 
-# AWS for Ruby
-
-## Notice
-
-The gem provides interface to AWS cloud services.
+This gem provides access to many AWS cloud services.
+Unlike many other AWS libaries this gem is a very thin adaptation layer over the AWS APIs.
+It is highly meta-programmed and exposes the exact AWS API calls with the
+exact AWS parameters. There are two big benefits to this approach: you don't have to translate betwen the
+AWS docs and the library in order to figure out what to do, and there's nothing in the AWS APIs you can't
+call through the library. The library doesn't even need to be updated when AWS introduces new API features.
+The downside to this approach is that when things don't work it's sometimes more difficult to figure out
+what's happening... Another downside is that method names and parameter names follow the AWS API spec and
+thereby run against Ruby conventions.
 
 ## Docs
 
+For some getting-started info see further down but for detailed docs see
 http://rightscale.github.io/right_aws_api/frames.html#!file.README.html
 
 ## Features
@@ -30,17 +36,15 @@ The gem supports the following AWS services out of the box:
 - {RightScale::CloudApi::AWS::SNS::Manager     Simple Notification Service (SNS)}
 - {RightScale::CloudApi::AWS::SQS::Manager     Simple Queue Service (SQS)}
 
-And it is easy to add support for other.
-
-(Plz refer to AWS docs (http://aws.amazon.com/documentation/) for API params and usage explanation)
+And it is easy to add support for other. You will need to refer to
+the AWS docs (http://aws.amazon.com/documentation/) for all the API params and usage explanations.
 
 ## Basic usage
 
 ### Amazon Elastic Compute Cloud (EC2)
 
-With this manager you do not need to worry aboutany new API call implementations.
-If you know that EC2 supports a call and you know what params it accepts -
-just call the method with those params.
+This library supports all existing and future EC2 API calls. If you know that EC2 supports a
+call and you know what params it accepts - just call the method with those params.
 
 #### Basics
 
@@ -152,6 +156,7 @@ just call the method with those params.
 
 ## Dependencies
 
+This gem depends on a base gem which is shared across all RightScale cloud libraries:
 https://github.com/rightscale/right_cloud_api_base
 
-## (c) RightScale
+### (c) 2014 by RightScale, Inc., see the LICENSE file for the open-source license.
