@@ -10,6 +10,8 @@ The downside to this approach is that when things don't work it's sometimes more
 what's happening... Another downside is that method names and parameter names follow the AWS API spec and
 thereby run against Ruby conventions.
 
+If you encounter problems please open a github issue.
+
 ## Docs
 
 For some getting-started info see further down but for detailed docs see
