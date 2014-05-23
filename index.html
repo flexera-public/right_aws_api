@@ -61,15 +61,24 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><div id='filecontents'><h1>AWS for Ruby</h1>
+    <div id="content"><div id='filecontents'><h1>AWS (Amazon Web Services) library for Ruby</h1>
 
-<h2>Notice</h2>
+<p>This gem provides access to many AWS cloud services.
+Unlike many other AWS libaries this gem is a very thin adaptation layer over the AWS APIs.
+It is highly meta-programmed and exposes the exact AWS API calls with the
+exact AWS parameters. There are two big benefits to this approach: you don&#39;t have to translate betwen the
+AWS docs and the library in order to figure out what to do, and there&#39;s nothing in the AWS APIs you can&#39;t
+call through the library. The library doesn&#39;t even need to be updated when AWS introduces new API features.
+The downside to this approach is that when things don&#39;t work it&#39;s sometimes more difficult to figure out
+what&#39;s happening... Another downside is that method names and parameter names follow the AWS API spec and
+thereby run against Ruby conventions.</p>
 
-<p>The gem provides interface to AWS cloud services.</p>
+<p>If you encounter problems please open a github issue.</p>
 
 <h2>Docs</h2>
 
-<p><a href="http://rightscale.github.io/right_aws_api/frames.html#!file.README.html">http://rightscale.github.io/right_aws_api/frames.html#!file.README.html</a></p>
+<p>For some getting-started info see further down but for detailed docs see
+<a href="http://rightscale.github.io/right_aws_api/frames.html#!file.README.html">http://rightscale.github.io/right_aws_api/frames.html#!file.README.html</a></p>
 
 <h2>Features</h2>
 
@@ -94,17 +103,15 @@
 <li><span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/Manager.html" title="RightScale::CloudApi::AWS::SQS::Manager (class)">    Simple Queue Service (SQS)</a></span></li>
 </ul>
 
-<p>And it is easy to add support for other.</p>
-
-<p>(Plz refer to AWS docs (<a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>) for API params and usage explanation)</p>
+<p>And it is easy to add support for other. You will need to refer to
+the AWS docs (<a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>) for all the API params and usage explanations.</p>
 
 <h2>Basic usage</h2>
 
 <h3>Amazon Elastic Compute Cloud (EC2)</h3>
 
-<p>With this manager you do not need to worry aboutany new API call implementations.
-If you know that EC2 supports a call and you know what params it accepts -
-just call the method with those params.</p>
+<p>This library supports all existing and future EC2 API calls. If you know that EC2 supports a
+call and you know what params it accepts - just call the method with those params.</p>
 
 <h4>Basics</h4>
 
@@ -212,13 +219,14 @@ just call the method with those params.</p>
 
 <h2>Dependencies</h2>
 
-<p><a href="https://github.com/rightscale/right_cloud_api_base">https://github.com/rightscale/right_cloud_api_base</a></p>
+<p>This gem depends on a base gem which is shared across all RightScale cloud libraries:
+<a href="https://github.com/rightscale/right_cloud_api_base">https://github.com/rightscale/right_cloud_api_base</a></p>
 
-<h2>(c) RightScale</h2>
+<h3>(c) 2014 by RightScale, Inc., see the LICENSE file for the open-source license.</h3>
 </div></div>
 
     <div id="footer">
-  Generated on Fri May 23 14:33:34 2014 by
+  Generated on Fri May 23 15:02:59 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.2).
 </div>
