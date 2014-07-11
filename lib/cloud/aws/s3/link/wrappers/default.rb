@@ -1,5 +1,5 @@
 #--
-# Copyright (c) 2013 RightScale, Inc.
+# Copyright (c) 2014 RightScale, Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -21,26 +21,20 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
 
-require 'right_cloud_api_base'
+require "cloud/aws/s3/wrappers/default"
 
-$:.unshift(File::expand_path(File::dirname(__FILE__)))
-
-require "right_aws_api_version"
-
-require "cloud/aws/as/manager"
-require "cloud/aws/cf/manager"
-require "cloud/aws/cfm/manager"
-require "cloud/aws/cw/manager"
-require "cloud/aws/eb/manager"
-require "cloud/aws/ec/manager"
-require "cloud/aws/ec2/manager"
-require "cloud/aws/elb/manager"
-require "cloud/aws/emr/manager"
-require "cloud/aws/iam/manager"
-require "cloud/aws/rds/manager"
-require "cloud/aws/route53/manager"
-require "cloud/aws/s3/manager"
-require "cloud/aws/s3/link/manager"
-require "cloud/aws/sdb/manager"
-require "cloud/aws/sns/manager"
-require "cloud/aws/sqs/manager"
+module RightScale
+  module CloudApi
+    module AWS
+      module S3
+        module Link
+          # S3 Link Wrapper namespace
+          module Wrapper
+            # Default wrapper
+            DEFAULT = S3::Wrapper::DEFAULT
+          end
+        end
+      end
+    end
+  end
+end
