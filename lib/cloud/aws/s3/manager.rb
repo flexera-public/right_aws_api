@@ -45,7 +45,7 @@ module RightScale
         #
         # @example
         #  # -- Using HTTP verb methods --
-        #  
+        #
         #  # List all buckets
         #  s3.get
         #
@@ -142,7 +142,7 @@ module RightScale
         #               :headers => {'content-type' => 'image/jpeg'})
         #
         # @example
-        #  
+        #
         #  # List all buckets
         #  s3.ListAllMyBuckets #=>
         #    {"ListAllMyBucketsResult"=>
@@ -179,7 +179,7 @@ module RightScale
         #         "Size"=>"3257230",
         #         "Key"=>"kd/boot.jpg"},
         #       "@xmlns"=>"http://s3.amazonaws.com/doc/2006-03-01/",
-        #       "Prefix"=>"kd"}}        
+        #       "Prefix"=>"kd"}}
         #
         #
         # @example
@@ -279,21 +279,19 @@ module RightScale
         #
         #
         # @example
-        #  # Get a link to ListAllMyBuckets action
-        #  s3.ListAllMyBuckets(:options=>{:cloud=>{:link=>true}}) #=> 
-        #    {"verb"   => "get",
-        #     "link"   => "https://s3.amazonaws.com/?AWSAccessKeyId=0K4QH...G2&Expires=1426111071&Signature=vLMH...3D",
-        #     "headers"=> {"host"=>["s3.amazonaws.com"]}}
+        #   link = RightScale::CloudApi::AWS::S3::Link::Manager::new(key, secret, endpoint)
+        #   link.get(
+        #     'devs-us-east/kd/Константин',
+        #     :params => { 'response-content-type' => 'image/peg'}
+        #   ) #=>
+        #     https://devs-us-east.s3.amazonaws.com/kd%2F%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%
+        #     D0%BD%D1%82%D0%B8%D0%BD?AWSAccessKeyId=AK...TA&Expires=1436557118&
+        #     Signature=hg...%3D&response-content-type=image%2Fpeg
         #
-        #  # If you need to get a bunch of links you can use with_options helper method:
-        #  opts = {:headers => {'expires' => Time.now + 3600}}
-        #  s3.with_options(:cloud=>{:link => true}) do
-        #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd0.test', 'versionId'=>"00eYZeb291o4"}, opts)
-        #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd1.test', 'versionId'=>"fafaf1obp1W4"}, opts)
-        #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd2.test', 'versionId'=>"00asdTebp1W4"}, opts)
-        #    pp s3.GetObject({'Bucket'=>'my-bucket', 'Object'=>'kd/kd3.test', 'versionId'=>"0lkjreobp1W4"}, opts)
-        #  end
-        #
+        # @example
+        #   link.ListAllMyBuckets #=>
+        #     https://s3.amazonaws.com/?AWSAccessKeyId=AK...TA&Expires=1436651780&
+        #     Signature=XK...53s%3D
         #
         # @see ApiManager
         # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
@@ -365,8 +363,8 @@ module RightScale
             raise Error::new("Opts must be Hash not #{opts.class.name}") unless opts.is_a?(Hash)
             process_api_request(verb, relative_path, opts, &block)
           end
-          
         end
+
       end
     end
   end
