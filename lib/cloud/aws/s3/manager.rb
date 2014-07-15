@@ -284,14 +284,14 @@ module RightScale
         #     'devs-us-east/kd/Константин',
         #     :params => { 'response-content-type' => 'image/peg'}
         #   ) #=>
-        #     https://devs-us-east.s3.amazonaws.com/kd%2F%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%
-        #     D0%BD%D1%82%D0%B8%D0%BD?AWSAccessKeyId=AK...TA&Expires=1436557118&
-        #     Signature=hg...%3D&response-content-type=image%2Fpeg
+        #     'https://devs-us-east.s3.amazonaws.com/kd%2F%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%
+        #      D0%BD%D1%82%D0%B8%D0%BD?AWSAccessKeyId=AK...TA&Expires=1436557118&
+        #      Signature=hg...%3D&response-content-type=image%2Fpeg'
         #
         # @example
         #   link.ListAllMyBuckets #=>
-        #     https://s3.amazonaws.com/?AWSAccessKeyId=AK...TA&Expires=1436651780&
-        #     Signature=XK...53s%3D
+        #     'https://s3.amazonaws.com/?AWSAccessKeyId=AK...TA&Expires=1436651780&
+        #      Signature=XK...53s%3D'
         #
         # @see ApiManager
         # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
