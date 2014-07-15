@@ -112,7 +112,11 @@
 <div class="tags">
   
 
-</div><h2>Defined Under Namespace</h2>
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Link/RequestSigner.html" title="RightScale::CloudApi::AWS::S3::Link::RequestSigner (class)">Link::RequestSigner</a></span></p>
+</div>
+<h2>Defined Under Namespace</h2>
 <p class="children">
   
     
@@ -222,6 +226,222 @@ response-content-encoding</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#compute_body-instance_method" title="#compute_body (instance method)">- (Object) <strong>compute_body</strong>(body, content_type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns response body.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compute_bucket_name_and_object_path-instance_method" title="#compute_bucket_name_and_object_path (instance method)">- (Array) <strong>compute_bucket_name_and_object_path</strong>(bucket, relative_path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Extracts S3 bucket name and escapes relative path.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compute_canonicalized_bucket-instance_method" title="#compute_canonicalized_bucket (instance method)">- (String) <strong>compute_canonicalized_bucket</strong>(bucket) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns canonicalized bucket.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compute_canonicalized_path-instance_method" title="#compute_canonicalized_path (instance method)">- (String) <strong>compute_canonicalized_path</strong>(bucket, relative_path, params) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns canonicalized path.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compute_headers%21-instance_method" title="#compute_headers! (instance method)">- (Hash) <strong>compute_headers!</strong>(headers, body, host) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets response headers.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compute_host-instance_method" title="#compute_host (instance method)">- (URI) <strong>compute_host</strong>(bucket, uri) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Figure out if we need to add bucket name into the host name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compute_path-instance_method" title="#compute_path (instance method)">- (String) <strong>compute_path</strong>(bucket, object, params) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Builds request path.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compute_signature-instance_method" title="#compute_signature (instance method)">- (String) <strong>compute_signature</strong>(access_key, secret_key, verb, bucket, object, params, headers) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Computes signature.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_subresources-instance_method" title="#get_subresources (instance method)">- (Hash) <strong>get_subresources</strong>(params) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a list of  sub-resource(s).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#process-instance_method" title="#process (instance method)">- (void) <strong>process</strong> </a>
     
 
@@ -254,7 +474,894 @@ response-content-encoding</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="process-instance_method">
+  <h3 class="signature first" id="compute_body-instance_method">
+  
+    - (<tt>Object</tt>) <strong>compute_body</strong>(body, content_type) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns response body</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>body</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>content_type</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+223
+224
+225
+226
+227
+228</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 223</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compute_body'>compute_body</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='id identifier rubyid_content_type'>content_type</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_body'>body</span> <span class='kw'>if</span> <span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid__blank?'>_blank?</span>
+  <span class='comment'># Make sure it is a String instance
+</span>  <span class='kw'>return</span> <span class='id identifier rubyid_body'>body</span> <span class='kw'>unless</span> <span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+  <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_contentify_body'>contentify_body</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='id identifier rubyid_content_type'>content_type</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compute_bucket_name_and_object_path-instance_method">
+  
+    - (<tt>Array</tt>) <strong>compute_bucket_name_and_object_path</strong>(bucket, relative_path) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Extracts S3 bucket name and escapes relative path</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_subject'>subject</span><span class='period'>.</span><span class='id identifier rubyid_compute_bucket_name_and_object_path'>compute_bucket_name_and_object_path</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-test-bucket/foo/bar/банана.jpg</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span>  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-test-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>foo%2Fbar%2F%D0%B1%D0%B0%D0%BD%D0%B0%D0%BD%D0%B0.jpg</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>bucket</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>relative_path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><dl class="rdoc-list label-list"><dt>bucket, escaped_relative_path
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+177
+178
+179
+180
+181
+182
+183
+184</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 177</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compute_bucket_name_and_object_path'>compute_bucket_name_and_object_path</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_relative_path'>relative_path</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='lbracket'>[</span><span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_relative_path'>relative_path</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_bucket'>bucket</span>
+  <span class='comment'># This is a very first attempt:
+</span>  <span class='id identifier rubyid_relative_path'>relative_path</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^([^\/]*)\/?(.*)$</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
+  <span class='comment'># Escape part of the path that may have UTF-8 chars (in S3 Object name for instance).
+</span>  <span class='comment'># Amazon wants them to be escaped before we sign the request.
+</span>  <span class='lbracket'>[</span> <span class='backref'>$1</span><span class='comma'>,</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='backref'>$2</span><span class='rparen'>)</span> <span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compute_canonicalized_bucket-instance_method">
+  
+    - (<tt>String</tt>) <strong>compute_canonicalized_bucket</strong>(bucket) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns canonicalized bucket</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># DNS bucket
+</span><span class='id identifier rubyid_compute_canonicalized_bucket'>compute_canonicalized_bucket</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>foo-bar</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;foo-bar/&#39;</span></code></pre>
+    
+      
+      <pre class="example code"><code><span class='comment'># non DNS bucket
+</span><span class='id identifier rubyid_compute_canonicalized_bucket'>compute_canonicalized_bucket</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>foo_bar</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;foo_bar&#39;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>bucket</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+138
+139
+140
+141</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 138</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compute_canonicalized_bucket'>compute_canonicalized_bucket</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_bucket'>bucket</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_bucket'>bucket</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compute_canonicalized_path-instance_method">
+  
+    - (<tt>String</tt>) <strong>compute_canonicalized_path</strong>(bucket, relative_path, params) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns canonicalized path</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Foo</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>acl</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>response-content-type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jpg</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_compute_canonicalized_path'>compute_canonicalized_path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>foo-bar_bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>a/b/c/d.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; &#39;/foo-bar_bucket/a/b/c/d.jpg?acl=3&amp;response-content-type=jpg&#39;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>bucket</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>relative_path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>params</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+157
+158
+159
+160
+161
+162
+163</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 157</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compute_canonicalized_path'>compute_canonicalized_path</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_relative_path'>relative_path</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_can_bucket'>can_bucket</span> <span class='op'>=</span> <span class='id identifier rubyid_compute_canonicalized_bucket'>compute_canonicalized_bucket</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_sub_params'>sub_params</span> <span class='op'>=</span> <span class='id identifier rubyid_get_subresources'>get_subresources</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='comment'># We use the block below to avoid escaping: Amazon does not like escaped bucket and &#39;/&#39;
+</span>  <span class='comment'># in canonicalized path (relative path has been escaped above already)
+</span>  <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_join_urn'>join_urn</span><span class='lparen'>(</span><span class='id identifier rubyid_can_bucket'>can_bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_relative_path'>relative_path</span><span class='comma'>,</span> <span class='id identifier rubyid_sub_params'>sub_params</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='op'>|</span> <span class='id identifier rubyid_value'>value</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compute_headers!-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>compute_headers!</strong>(headers, body, host) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets response headers</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>headers</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>body</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>host</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 239</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compute_headers!'>compute_headers!</span><span class='lparen'>(</span><span class='id identifier rubyid_headers'>headers</span><span class='comma'>,</span> <span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='id identifier rubyid_host'>host</span><span class='rparen'>)</span>
+  <span class='comment'># Make sure &#39;content-type&#39; is set.
+</span>  <span class='comment'># P.S. Ruby 2.1+ sets &#39;content-type&#39; by default for POST and PUT requests.
+</span>  <span class='comment'>#      So we need to include it into our signature to avoid the error below:
+</span>  <span class='comment'>#      &#39;The request signature we calculated does not match the signature you provided.
+</span>  <span class='comment'>#       Check your key and signing method.&#39;
+</span>  <span class='id identifier rubyid_headers'>headers</span><span class='period'>.</span><span class='id identifier rubyid_set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/octet-stream</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_headers'>headers</span><span class='period'>.</span><span class='id identifier rubyid_set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>date</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='const'>Time</span><span class='op'>::</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_httpdate'>httpdate</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-md5</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>Base64</span><span class='op'>::</span><span class='id identifier rubyid_encode64'>encode64</span><span class='lparen'>(</span><span class='const'>Digest</span><span class='op'>::</span><span class='const'>MD5</span><span class='op'>::</span><span class='id identifier rubyid_digest'>digest</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid__blank?'>_blank?</span>
+  <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>host</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>        <span class='op'>=</span> <span class='id identifier rubyid_host'>host</span>
+  <span class='id identifier rubyid_headers'>headers</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compute_host-instance_method">
+  
+    - (<tt>URI</tt>) <strong>compute_host</strong>(bucket, uri) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Figure out if we need to add bucket name into the host name</p>
+
+<p>If there was a redirect and it had &#39;location&#39; header then there is
+nothing to do with the host, otherwise we have to add the bucket to the
+host.</p>
+
+<p>P.S. When Amazon returns a redirect (usually 301) with the new host in the
+message body, the new host does not have the bucket name in it. But if it
+is 307 and the host is in the location header then that host name already
+includes the bucket in it. The only thing we can do so far is to check if
+the host name starts with the bucket and the name is at least 4th level DNS
+name.</p>
+
+<p>Examples:</p>
+
+<pre class="code ruby"><code class="ruby">* my-bucket.s3-ap-southeast-2.amazonaws.com
+* my-bucket.s3.amazonaws.com
+* s3.amazonaws.com</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>bucket</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>uri</span>
+      
+      
+        <span class='type'>(<tt>URI</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>URI</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+208
+209
+210
+211
+212
+213</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 208</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compute_host'>compute_host</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_uri'>uri</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_uri'>uri</span> <span class='kw'>unless</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_uri'>uri</span> <span class='kw'>if</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bucket'>bucket</span><span class='embexpr_end'>}</span><span class='tstring_content'>\..+\.[^.]+\.[^.]+$</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bucket'>bucket</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_uri'>uri</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compute_path-instance_method">
+  
+    - (<tt>String</tt>) <strong>compute_path</strong>(bucket, object, params) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Builds request path</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>bucket</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>object</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>params</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+278
+279
+280
+281
+282
+283
+284</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 278</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compute_path'>compute_path</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_object'>object</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_bucket'>bucket</span> <span class='kw'>unless</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_object'>object</span>
+  <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_params'>params</span>
+  <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_join_urn'>join_urn</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compute_signature-instance_method">
+  
+    - (<tt>String</tt>) <strong>compute_signature</strong>(access_key, secret_key, verb, bucket, object, params, headers) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Computes signature</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>access_key</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>secret_key</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>verb</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>bucket</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>params</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>headers</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+264
+265
+266
+267</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 264</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compute_signature'>compute_signature</span><span class='lparen'>(</span><span class='id identifier rubyid_access_key'>access_key</span><span class='comma'>,</span> <span class='id identifier rubyid_secret_key'>secret_key</span><span class='comma'>,</span> <span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_object'>object</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_can_path'>can_path</span>  <span class='op'>=</span> <span class='id identifier rubyid_compute_canonicalized_path'>compute_canonicalized_path</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_object'>object</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_sign_s3_signature'>sign_s3_signature</span><span class='lparen'>(</span><span class='id identifier rubyid_secret_key'>secret_key</span><span class='comma'>,</span> <span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_can_path'>can_path</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_subresources-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>get_subresources</strong>(params) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a list of  sub-resource(s)</p>
+
+<p>Sub-resources are acl, torrent, versioning, location, etc. See
+SUB_RESOURCES</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+114
+115
+116
+117
+118
+119
+120
+121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 114</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_subresources'>get_subresources</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
+    <span class='kw'>next</span> <span class='kw'>unless</span> <span class='const'>SUB_RESOURCES</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_key'>key</span><span class='lbracket'>[</span><span class='const'>OVERRIDE_RESPONSE_HEADERS</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid__blank?'>_blank?</span> <span class='op'>?</span> <span class='kw'>nil</span> <span class='op'>:</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="process-instance_method">
   
     - (<tt>void</tt>) <strong>process</strong> 
   
@@ -287,7 +1394,6 @@ response-content-encoding</p>
       <pre class="lines">
 
 
-76
 77
 78
 79
@@ -316,304 +1422,39 @@ response-content-encoding</p>
 102
 103
 104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237</pre>
+105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/s3/routines/request_signer.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_process'>process</span>
-  <span class='comment'># Extract sub-resource(s).
-</span>  <span class='comment'># Sub-resources are acl, torrent, versioning, location etc.
-</span>  <span class='id identifier rubyid_sub_resources'>sub_resources</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
-    <span class='id identifier rubyid_sub_resources'>sub_resources</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid__blank?'>_blank?</span> <span class='op'>?</span> <span class='kw'>nil</span> <span class='op'>:</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='const'>SUB_RESOURCES</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_key'>key</span><span class='lbracket'>[</span><span class='const'>OVERRIDE_RESPONSE_HEADERS</span><span class='rbracket'>]</span>
-  <span class='kw'>end</span>
+  <span class='id identifier rubyid_uri'>uri</span>        <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_access_key'>access_key</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:credentials</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aws_access_key_id</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_secret_key'>secret_key</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:credentials</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aws_secret_access_key</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_body'>body</span>       <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_bucket'>bucket</span>     <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:bucket</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_headers'>headers</span>    <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_object'>object</span>     <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:relative_path</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_params'>params</span>     <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_verb'>verb</span>       <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:verb</span><span class='rbracket'>]</span>
 
-  <span class='comment'># Extract bucket name and object path
-</span>  <span class='kw'>if</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:bucket</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid__blank?'>_blank?</span>
-    <span class='comment'># This is a very first attempt:
-</span>    <span class='comment'># 1. extract the bucket name from the path
-</span>    <span class='comment'># 2. save the bucket into request data vars
-</span>    <span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='comma'>,</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:relative_path</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:relative_path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^([^\/]*)\/?(.*)$</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='lbracket'>[</span><span class='backref'>$1</span><span class='comma'>,</span> <span class='backref'>$2</span><span class='rbracket'>]</span>
-    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:bucket</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_bucket_name'>bucket_name</span>
-    <span class='comment'># Static path is the path that the original URL has.
-</span>    <span class='comment'># 1. For Amazon it is always &#39;&#39;.
-</span>    <span class='comment'># 2. For Euca it is usually a non-blank string.
-</span>    <span class='id identifier rubyid_static_path'>static_path</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span>
-    <span class='comment'># Add trailing &#39;/&#39; to the path unless it is.
-</span>    <span class='id identifier rubyid_static_path'>static_path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_static_path'>static_path</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_static_path'>static_path</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\/$</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
-    <span class='comment'># Store the path: we may need it for signing redirects later.
-</span>    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:static_path</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_static_path'>static_path</span>
-  <span class='kw'>else</span>
-    <span class='comment'># This is a retry or a redirect:
-</span>    <span class='comment'># 1. Extract the bucket name from the request data;
-</span>    <span class='comment'># 2. Get rid of the path the remote server sent in the location header. We are
-</span>    <span class='comment'>#    re-signing the request and have to build everything from the scratch.
-</span>    <span class='comment'>#    In the crazy case when the new location has path differs from the original one
-</span>    <span class='comment'>#    we are screwed up and we will get &quot;SignatureDoesNotMatch&quot; error. But this does
-</span>    <span class='comment'>#    not seem to be the case for Amazon or Euca.
-</span>    <span class='id identifier rubyid_bucket_name'>bucket_name</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:bucket</span><span class='rbracket'>]</span>
-    <span class='comment'># Revert static path back to the original value.
-</span>    <span class='id identifier rubyid_static_path'>static_path</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:static_path</span><span class='rbracket'>]</span>
-    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_static_path'>static_path</span>
-  <span class='kw'>end</span>
+  <span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_object'>object</span> <span class='op'>=</span> <span class='id identifier rubyid_compute_bucket_name_and_object_path'>compute_bucket_name_and_object_path</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_object'>object</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_body'>body</span>           <span class='op'>=</span> <span class='id identifier rubyid_compute_body'>compute_body</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_uri'>uri</span>            <span class='op'>=</span> <span class='id identifier rubyid_compute_host'>compute_host</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_uri'>uri</span><span class='rparen'>)</span>
 
-  <span class='comment'># Escape that part of the path that may have UTF-8 chars (in S3 Object name for instance).
-</span>  <span class='comment'># Amazon wants them to be escaped before we sign the request.
-</span>  <span class='comment'>#
-</span>  <span class='comment'># P.S. Escape AFTER we extract bucket name.
-</span>  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:relative_path</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:relative_path</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_compute_headers!'>compute_headers!</span><span class='lparen'>(</span><span class='id identifier rubyid_headers'>headers</span><span class='comma'>,</span> <span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='rparen'>)</span>
 
-  <span class='comment'># Calculate a canonical path (bucket part must end with &#39;/&#39;)
-</span>  <span class='id identifier rubyid_bucket_string'>bucket_string</span>      <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
-  <span class='id identifier rubyid_canonicalized_path'>canonicalized_path</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_join_urn'>join_urn</span><span class='lparen'>(</span><span class='id identifier rubyid_static_path'>static_path</span><span class='comma'>,</span>
-                                       <span class='id identifier rubyid_bucket_string'>bucket_string</span><span class='comma'>,</span>
-                                       <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:relative_path</span><span class='rbracket'>]</span><span class='comma'>,</span>
-                                       <span class='id identifier rubyid_sub_resources'>sub_resources</span> <span class='rparen'>)</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='op'>|</span> <span class='id identifier rubyid_value'>value</span> <span class='rbrace'>}</span> <span class='comment'># pass this block to avoid escaping: Amazon does not like escaped things in canonicalized_path
-</span>
-  <span class='comment'># Make sure headers required for authentication are set
-</span>  <span class='kw'>unless</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:options</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:cloud</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:link</span><span class='rbracket'>]</span>
-    <span class='comment'># Make sure &#39;content-type&#39; is set.
-</span>    <span class='comment'># P.S. Ruby 2.1+ sets &#39;content-type&#39; by default for POST and PUT requests.
-</span>    <span class='comment'>#      So we need to include it into our signature to avoid the error below:
-</span>    <span class='comment'>#      &#39;The request signature we calculated does not match the signature you provided.
-</span>    <span class='comment'>#       Check your key and signing method.&#39;
-</span>    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/octet-stream</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-    <span class='comment'># REST Auth:
-</span>    <span class='kw'>unless</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid__blank?'>_blank?</span>
-      <span class='comment'># Fix body if it is a Hash instance
-</span>      <span class='kw'>if</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
-        <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_contentify_body'>contentify_body</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-      <span class='kw'>end</span>
-      <span class='comment'># Calculate &#39;content-md5&#39; when possible (some API calls wanna have it set)
-</span>      <span class='kw'>if</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
-        <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-md5</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>Base64</span><span class='op'>::</span><span class='id identifier rubyid_encode64'>encode64</span><span class='lparen'>(</span><span class='const'>Digest</span><span class='op'>::</span><span class='const'>MD5</span><span class='op'>::</span><span class='id identifier rubyid_digest'>digest</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
-      <span class='kw'>end</span>
-    <span class='kw'>end</span>
-    <span class='comment'># Set date
-</span>    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>date</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='const'>Time</span><span class='op'>::</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_httpdate'>httpdate</span><span class='rparen'>)</span>
-    <span class='comment'># Sign a request
-</span>    <span class='id identifier rubyid_signature'>signature</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_sign_s3_signature'>sign_s3_signature</span><span class='lparen'>(</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:credentials</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aws_secret_access_key</span><span class='rbracket'>]</span><span class='comma'>,</span>
-                                               <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:verb</span><span class='rbracket'>]</span><span class='comma'>,</span>
-                                               <span class='id identifier rubyid_canonicalized_path'>canonicalized_path</span><span class='comma'>,</span>
-                                               <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>authorization</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AWS </span><span class='embexpr_beg'>#{</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:credentials</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aws_access_key_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_signature'>signature</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>else</span>
-    <span class='comment'># @see http://docs.amazonwebservices.com/AmazonS3/latest/dev/RESTAuthentication.html
-</span>    <span class='comment'>#
-</span>    <span class='comment'># Amazon: ... We assume that when a browser makes the GET request, it won&#39;t provide a Content-MD5 or a Content-Type header,
-</span>    <span class='comment'>#  nor will it set any x-amz- headers, so those parts of the StringToSign are left blank. ...
-</span>    <span class='comment'>#
-</span>    <span class='comment'># Only GET requests!
-</span>    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Error</span><span class='op'>::</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Only GET requests are supported by S3 Query String API</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:verb</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:get</span>
-    <span class='comment'># Expires
-</span>    <span class='id identifier rubyid_expires'>expires</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_dearrayify'>dearrayify</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>expires</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>+</span> <span class='const'>ONE_YEAR_OF_SECONDS</span><span class='rparen'>)</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_expires'>expires</span> <span class='op'>=</span> <span class='id identifier rubyid_expires'>expires</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='kw'>unless</span> <span class='id identifier rubyid_expires'>expires</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Fixnum</span><span class='rparen'>)</span>
-    <span class='comment'># QUERY STRING AUTH: (&#39;expires&#39; and &#39;x-amz-*&#39; headers are not supported)
-</span>    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Expires</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>  <span class='op'>=</span> <span class='id identifier rubyid_expires'>expires</span>
-    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>expires</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_expires'>expires</span> <span class='comment'># a hack to sign a record
-</span>    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_header'>header</span><span class='comma'>,</span> <span class='id identifier rubyid_values'>values</span><span class='op'>|</span>
-      <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_header'>header</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_header'>header</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(^x-amz-)|(^expires$)</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
-    <span class='kw'>end</span>
-    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AWSAccessKeyId</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:credentials</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aws_access_key_id</span><span class='rbracket'>]</span>
-    <span class='comment'># Sign a request
-</span>    <span class='id identifier rubyid_signature'>signature</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_sign_s3_signature'>sign_s3_signature</span><span class='lparen'>(</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:credentials</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aws_secret_access_key</span><span class='rbracket'>]</span><span class='comma'>,</span>
-                                               <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:verb</span><span class='rbracket'>]</span><span class='comma'>,</span>
-                                               <span class='id identifier rubyid_canonicalized_path'>canonicalized_path</span><span class='comma'>,</span>
-                                               <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span> <span class='rparen'>)</span>
-    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Signature</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_signature'>signature</span>
-    <span class='comment'># we dont need this header any more
-</span>    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>expires</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
+  <span class='comment'># Set Authorization header
+</span>  <span class='id identifier rubyid_signature'>signature</span> <span class='op'>=</span> <span class='id identifier rubyid_compute_signature'>compute_signature</span><span class='lparen'>(</span><span class='id identifier rubyid_access_key'>access_key</span><span class='comma'>,</span> <span class='id identifier rubyid_secret_key'>secret_key</span><span class='comma'>,</span> <span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_object'>object</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>authorization</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AWS </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_access_key'>access_key</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_signature'>signature</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 
-  <span class='comment'># Sub-domain compatible buckets vs incompatible ones
-</span>  <span class='kw'>if</span> <span class='op'>!</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:options</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:cloud</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:no_subdomains</span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='rparen'>)</span>
-    <span class='comment'># DNS compatible bucket name:
-</span>    <span class='comment'>#
-</span>    <span class='comment'># Figure out if we need to add bucket name into the host name. It is rediculous but
-</span>    <span class='comment'># sometimes Amazon returns a redirect to a host with the bucket name already mixed in
-</span>    <span class='comment'># but sometimes without.
-</span>    <span class='comment'># The only thing we can do so far is to check if the host name starts with the bucket
-</span>    <span class='comment'># and the name is at least 4th level DNS name.
-</span>    <span class='comment'>#
-</span>    <span class='comment'># Examples:
-</span>    <span class='comment'>#   * my-bucket.s3-ap-southeast-2.amazonaws.com
-</span>    <span class='comment'>#   * my-bucket.s3.amazonaws.com
-</span>    <span class='comment'>#   * s3.amazonaws.com
-</span>    <span class='comment'>#
-</span>    <span class='comment'># P.S. This assumtion will not work for any other providers but we will figure it out later
-</span>    <span class='comment'>#      if we support any. The only other provider we support is Eucalyptus but it always
-</span>    <span class='comment'>#      expects that the bucket goes into path and never into the host therefore we are
-</span>    <span class='comment'>#      OK with Euca (Euca is expected to be run with :no_subdomains =&gt; true).
-</span>    <span class='comment'>#
-</span>    <span class='kw'>unless</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='embexpr_end'>}</span><span class='tstring_content'>\..+\.[^.]+\.[^.]+$</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
-      <span class='comment'># If there was a redirect and it had &#39;location&#39; header then there is nothing to do with the host
-</span>      <span class='comment'># otherwise we have to add the bucket to the host.
-</span>      <span class='comment'># P.S. When Amazon returns a redirect (usually 301) with the new host in the message body
-</span>      <span class='comment'># the new host does not have the bucket name in it. But if it is 307 and the host is in the location
-</span>      <span class='comment'># header then that host name already includes the bucket in it. Grrrr....
-</span>      <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-    <span class='kw'>end</span>
-    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_join_urn'>join_urn</span><span class='lparen'>(</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span>
-                                              <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:relative_path</span><span class='rbracket'>]</span><span class='comma'>,</span>
-                                              <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span> <span class='rparen'>)</span>
-  <span class='kw'>else</span>
-    <span class='comment'># Old incompatible or Eucalyptus
-</span>    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_join_urn'>join_urn</span><span class='lparen'>(</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span>
-                                              <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-                                              <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:relative_path</span><span class='rbracket'>]</span><span class='comma'>,</span>
-                                              <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span> <span class='rparen'>)</span>
-  <span class='kw'>end</span>
-
-  <span class='comment'># Host should be set for REST requests (and should not affect on Query String ones)
-</span>  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>host</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span>
-
-  <span class='comment'># Finalize data
-</span>  <span class='kw'>if</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:options</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:cloud</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:link</span><span class='rbracket'>]</span>
-    <span class='comment'># Amazon supports only some GET requests without body and any headers:
-</span>    <span class='comment'># Return the link
-</span>    <span class='id identifier rubyid_uri'>uri</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span>
-    <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>?</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:result</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>verb</span><span class='tstring_end'>&quot;</span></span>    <span class='op'>=&gt;</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:verb</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>link</span><span class='tstring_end'>&quot;</span></span>    <span class='op'>=&gt;</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>headers</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span>
-    <span class='rbrace'>}</span>
-    <span class='comment'># Query Auth:we should stop here because we just generated a link for the third part usage
-</span>    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:vars</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:system</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:done</span><span class='rbracket'>]</span>   <span class='op'>=</span> <span class='kw'>true</span>
-  <span class='kw'>end</span>
+  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span>           <span class='op'>=</span> <span class='id identifier rubyid_body'>body</span>
+  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:bucket</span><span class='rbracket'>]</span>         <span class='op'>=</span> <span class='id identifier rubyid_bucket'>bucket</span>
+  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span>        <span class='op'>=</span> <span class='id identifier rubyid_headers'>headers</span>
+  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span>         <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span>
+  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span>           <span class='op'>=</span> <span class='id identifier rubyid_compute_path'>compute_path</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span> <span class='id identifier rubyid_object'>object</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:relative_path</span><span class='rbracket'>]</span>  <span class='op'>=</span> <span class='id identifier rubyid_object'>object</span>
+  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_uri'>uri</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -625,7 +1466,7 @@ response-content-encoding</p>
 </div>
 
     <div id="footer">
-  Generated on Fri May 23 15:03:01 2014 by
+  Generated on Tue Jul 15 09:24:52 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.2).
 </div>
