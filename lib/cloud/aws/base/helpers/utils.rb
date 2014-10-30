@@ -196,6 +196,94 @@ module RightScale
           sign(aws_secret_access_key, string_to_sign)
         end
 
+
+        # Signs and Authenticates REST Requests
+        #
+        # @param [String]        aws_secret_access_key
+        # @param [String]        aws_access_key
+        # @param [String]        host
+        # @param [Hash]          request
+        #
+        # @return [String]
+        #
+        # @see http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+        #
+        def self.sign_v4_signature(aws_access_key, aws_secret_access_key, host, request )
+          now                          = Time.now.utc
+          current_date                 = now.strftime("%Y%m%d")
+          current_time                 = now.strftime("%Y%m%dT%H%M%SZ")
+          expires_at                   = (now + 60).strftime("%Y%m%dT%H%M%SZ")
+          service_name, region_name, _ = host.split('.')
+          creds_scope                  = "%s/%s/%s/aws4_request" % [current_date, region_name, service_name]
+          algorithm                    = "AWS4-HMAC-SHA256"
+
+          # Verb
+          canonical_verb = request[:verb].to_s.upcase
+
+          # Path
+          canonical_path = request[:path]
+
+          # Headers
+          _headers = {}
+          request[:headers].delete("authorization")
+          request[:headers]['host']           = host
+          request[:headers]['content-length'] = request[:body].to_s.size
+          request[:headers]['content-type']   = 'application/x-www-form-urlencoded; charset=utf-8'
+          request[:headers]['x-amz-date']     = current_time
+          request[:headers]['x-amz-expires']  = expires_at
+          request[:headers].each do |key, value|
+            _headers[key.to_s.downcase] = value.is_a?(Array) ? value.join(',') : value
+          end
+          canonical_headers = _headers.sort.map{ |key, value| "#{key}:#{value}" }.join("\n")
+          signed_headers    = _headers.keys.sort.join(';')
+
+          # Params
+          canonical_query_string = Utils::params_to_urn(request[:params]){ |value| amz_escape(value) }
+
+          # Payload
+          canonical_payload = hexEncode(Digest::SHA256.digest(request[:body].to_s))
+
+          # Canonical String
+          canonical_string =
+            canonical_verb         + "\n" +
+            canonical_path         + "\n" +
+            canonical_query_string + "\n" +
+            canonical_headers      + "\n\n" +
+            signed_headers         + "\n" +
+            canonical_payload
+
+          # StringToSign
+          string_to_sign =
+            algorithm    + "\n" +
+            current_time + "\n" +
+            creds_scope  + "\n" +
+            hexEncode(Digest::SHA256.digest(canonical_string)).downcase
+
+          # Signature
+          signature = getSignatureKey(aws_secret_access_key, string_to_sign, current_date, region_name, service_name)
+
+          # Authorization Header
+          authorization_header = "%s Credential=%s/%s, SignedHeaders=%s, Signature=%s" %
+                                 [algorithm, aws_access_key, creds_scope, signed_headers, signature]
+          request[:headers]['Authorization'] = authorization_header
+        end
+
+        #Helpers from AWS documentation http://docs.aws.amazon.com/general/latest/gr/signature-v4-examples.html
+        def self.getSignatureKey(key, string_to_sign, dateStamp, regionName, serviceName, digest = @@digest256)
+          kDate    = OpenSSL::HMAC.digest(digest, "AWS4" + key, dateStamp)
+          kRegion  = OpenSSL::HMAC.digest(digest, kDate, regionName)
+          kService = OpenSSL::HMAC.digest(digest, kRegion, serviceName)
+          kSigning = OpenSSL::HMAC.digest(digest, kService, "aws4_request")
+          hexEncode OpenSSL::HMAC.digest(digest, kSigning, string_to_sign)
+        end
+        
+
+        def self.hexEncode bindata
+          result=""
+          data=bindata.unpack("C*")
+          data.each {|b| result+= "%02x" % b}
+          result
+        end
                     
         # Parametrizes data to the format that Amazon EC2 (and compatible APIs) loves
         #

@@ -43,38 +43,31 @@ module RightScale
         #  no example
         #
         def process
-          # Make sure all the required params are set
-          @data[:request][:params]['AWSAccessKeyId'] = @data[:credentials][:aws_access_key_id]
-          @data[:request][:params]['Version']      ||= @data[:options][:api_version]
+          @data[:request][:verb] = :post
+
           # Compile a final request path
           @data[:request][:path] = Utils::join_urn(@data[:connection][:uri].path, @data[:request][:relative_path])
-          # Sign the request
-          sign_proc = Proc::new do |data|
-            Utils::AWS::sign_v2_signature( data[:credentials][:aws_secret_access_key],
-                                           data[:request][:params] || {},
-                                           data[:request][:verb],
-                                           data[:connection][:uri].host,
-                                           data[:request][:path] )
-          end
-          signed_path = sign_proc.call(@data)
-          # Rebuild the request as POST if its path is too long
-          if signed_path.size > MAX_GET_REQUEST_PATH_LENGTH && @data[:request][:verb] == :get
-            @data[:request][:verb] = :post
-            signed_path = sign_proc.call(@data)
-          end
-          # Set new path or body and content-type
+
+          # Swap query params and body
+          @data[:request][:params]['Version'] ||= @data[:options][:api_version]
+          @data[:request][:body]   = Utils::params_to_urn(@data[:request][:params]){ |value| Utils::AWS::amz_escape(value) }
+          @data[:request][:params] = {}
+
+          Utils::AWS::sign_v4_signature(
+            @data[:credentials][:aws_access_key_id],
+            @data[:credentials][:aws_secret_access_key],
+            @data[:connection][:uri].host,
+            @data[:request]
+          )
+
           case @data[:request][:verb]
-          when :get
-            @data[:request][:path] << "?#{signed_path}"
           when :post
-            @data[:request][:body] = signed_path
-            @data[:request][:headers]['content-type'] = 'application/x-www-form-urlencoded; charset=utf-8'
+            @data[:request][:body] = @data[:request][:body]
           else
             fail Error::new("Unsupported HTTP verb: #{@data[:request][:verb]}")
           end
         end
-      end
-        
+      end        
     end
   end
 end
