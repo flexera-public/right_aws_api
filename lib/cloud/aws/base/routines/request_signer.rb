@@ -43,8 +43,6 @@ module RightScale
         #  no example
         #
         def process
-          @data[:request][:verb] = :post
-
           # Compile a final request path
           @data[:request][:path] = Utils::join_urn(@data[:connection][:uri].path, @data[:request][:relative_path])
 
@@ -59,15 +57,8 @@ module RightScale
             @data[:connection][:uri].host,
             @data[:request]
           )
-
-          case @data[:request][:verb]
-          when :post
-            @data[:request][:body] = @data[:request][:body]
-          else
-            fail Error::new("Unsupported HTTP verb: #{@data[:request][:verb]}")
-          end
         end
-      end        
+      end
     end
   end
 end

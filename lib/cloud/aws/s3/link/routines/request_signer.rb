@@ -43,25 +43,24 @@ module RightScale
               fail Error::new("Body must be blank")           unless @data[:request][:body]._blank?
               fail Error::new("Headers must be blank")        unless @data[:request][:headers]._blank?
 
-              uri        = @data[:connection][:uri]
-              access_key = @data[:credentials][:aws_access_key_id]
-              secret_key = @data[:credentials][:aws_secret_access_key]
-              bucket     = @data[:request][:bucket]
-              object     = @data[:request][:relative_path]
-              params     = @data[:request][:params]
-              verb       = @data[:request][:verb]
-
+              uri            = @data[:connection][:uri]
+              bucket         = @data[:request][:bucket]
+              object         = @data[:request][:relative_path]
               bucket, object = compute_bucket_name_and_object_path(bucket, object)
               uri            = compute_host(bucket, uri)
 
-              compute_params!(params, access_key)
+              @data[:request][:path] = "/#{object}"
 
-              # Set Auth param
-              signature = compute_signature(secret_key, verb, bucket, object, params)
-              params['Signature'] = signature
+              Utils::AWS::sign_v4_signature(
+                @data[:credentials][:aws_access_key_id],
+                @data[:credentials][:aws_secret_access_key],
+                @data[:connection][:uri].host,
+                @data[:request],
+                :query_params
+              )
 
               # Compute href
-              path                = compute_path(bucket, object, params)
+              path                = @data[:request][:path]
               uri.path, uri.query = path.split('?')
               @data[:result]      = uri.to_s
 
@@ -69,37 +68,6 @@ module RightScale
               @data[:vars][:system][:done] = true
             end
 
-
-            # Sets response params
-            #
-            # @param [Hash] params
-            #
-            # @return [Hash]
-            #
-            def compute_params!(params, access_key)
-              # Expires
-              expires   = params['Expires']
-              expires ||= Time.now.utc.to_i + ONE_YEAR_OF_SECONDS
-              expires   = expires.to_i unless expires.is_a?(Fixnum)
-              params['Expires']        = expires
-              params['AWSAccessKeyId'] = access_key
-              params
-            end
-
-
-            # Computes signature
-            #
-            # @param [String] secret_key
-            # @param [String] verb
-            # @param [String] bucket
-            # @param [Hash]   params
-            #
-            # @return [String]
-            #
-            def compute_signature(secret_key, verb, bucket, object, params)
-              can_path = compute_canonicalized_path(bucket, object, params)
-              Utils::AWS::sign_s3_signature(secret_key, verb, can_path, { 'expires' => params['Expires'] })
-            end
           end
 
         end
