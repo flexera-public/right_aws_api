@@ -197,14 +197,19 @@ module RightScale
         end
 
 
-        def self.get_service_and_region(host)
-          case
-          when host[          /^(.*\.)?s3\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
-          when host[      /^s3-external-1\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
-          when host[  /s3-website-([^.]+)\.amazonaws\.com$/i ] then ['s3',          $1]
-          when host[   /^(.*\.)?s3-([^.]+).amazonaws\.com$/i ] then ['s3',          $2]
-          else host[ /^(.*\.)?s3\.([^.]+)\.amazonaws\.com$/i ] &&   ['s3',          $2]
-          end
+        def self.sign_v4_get_service_and_region(host)
+          result =
+            case
+            when host[          /^(.*\.)?s3\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
+            when host[      /^s3-external-1\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
+            when host[  /s3-website-([^.]+)\.amazonaws\.com$/i ] then ['s3',          $1]
+            when host[   /^(.*\.)?s3-([^.]+).amazonaws\.com$/i ] then ['s3',          $2]
+            when host[ /^(.*\.)?s3\.([^.]+)\.amazonaws\.com$/i ] then ['s3',          $2]
+            else host[   /^([^.]+)\.([^.]+)\.amazonaws\.com$/i ]   && [  $1,          $2]
+            end
+          fail(ArgumentError, "Cannot extract service name from %s host" % host.inspect) if result[0].to_s.empty?
+          fail(ArgumentError, "Cannot extract region name from %s host"  % host.inspect) if result[1].to_s.empty?
+          result
         end
 
 
@@ -224,16 +229,16 @@ module RightScale
           current_date    = now.strftime("%Y%m%d")
           current_time    = now.strftime("%Y%m%dT%H%M%SZ")
           host            = host.downcase
-          service, region = get_service_and_region(host)
+          service, region = sign_v4_get_service_and_region(host)
           creds_scope     = "%s/%s/%s/aws4_request" % [current_date, region, service]
           algorithm       = "AWS4-HMAC-SHA256"
 
           # Verb
-          canonical_verb = request[:verb].to_s.upcase
+          canonical_verb = sign_v4_get_canonical_verb(request[:verb])
 
           # Path
           request[:path] ||= '/'
-          canonical_path   = request[:path]
+          canonical_path   = sign_v4_get_canonical_path(request[:path])
 
           # Headers (Auth)
           request[:headers].delete('Authorization')
@@ -246,8 +251,8 @@ module RightScale
           request[:headers].each do |key, value|
             _headers[key.to_s.downcase] = value.is_a?(Array) ? value.join(',') : value
           end
-          canonical_headers = _headers.sort.map{ |key, value| "#{key}:#{value}" }.join("\n")
-          signed_headers    = _headers.keys.sort.join(';')
+          canonical_headers = sign_v4_get_canonical_headers(_headers)
+          signed_headers    = sign_v4_get_signed_headers(_headers)
 
           # Params (Auth)
           if method != :headers
@@ -292,6 +297,16 @@ module RightScale
         end
 
 
+        def self.sign_v4_get_canonical_verb(verb)
+          verb.to_s.upcase
+        end
+
+
+        def self.sign_v4_get_canonical_path(path)
+          path
+        end
+
+
         def self.sign_v4_query_params(request, algorithm, current_time, signed_headers, aws_access_key, creds_scope)
           expires_at = request[:params]['X-Amz-Expires'] || 3600
           expires_at = expires_at.to_i if expires_at.is_a?(Time)
@@ -303,6 +318,16 @@ module RightScale
           request[:params]['X-Amz-Credential']    = "%s/%s" % [aws_access_key, creds_scope]
 
           'UNSIGNED-PAYLOAD'
+        end
+
+
+        def self.sign_v4_get_canonical_headers(headers)
+          headers.sort.map{ |key, value| "#{key}:#{value}" }.join("\n")
+        end
+
+
+        def self.sign_v4_get_signed_headers(headers)
+          headers.keys.sort.join(';')
         end
 
 
@@ -366,7 +391,7 @@ module RightScale
         end
 
 
-        def self.hex_encode bindata
+        def self.hex_encode(bindata)
           result=""
           data=bindata.unpack("C*")
           data.each {|b| result+= "%02x" % b}
