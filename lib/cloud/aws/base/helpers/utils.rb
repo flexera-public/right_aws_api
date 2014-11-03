@@ -199,10 +199,11 @@ module RightScale
 
         def self.get_service_and_region(host)
           case
-          when host[         /^(.*\.)?s3\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
-          when host[ /s3-website-([^.]+)\.amazonaws\.com$/i ] then ['s3', $1]
-          when host[          /s3-([^.]+).amazonaws\.com$/i ] then ['s3', $1]
-          else host[  /^([^.]+)\.([^.]+)\.amazonaws\.com$/i ] &&   [$1,   $2]
+          when host[          /^(.*\.)?s3\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
+          when host[      /^s3-external-1\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
+          when host[  /s3-website-([^.]+)\.amazonaws\.com$/i ] then ['s3',          $1]
+          when host[   /^(.*\.)?s3-([^.]+).amazonaws\.com$/i ] then ['s3',          $2]
+          else host[ /^(.*\.)?s3\.([^.]+)\.amazonaws\.com$/i ] &&   ['s3',          $2]
           end
         end
 
@@ -235,12 +236,9 @@ module RightScale
           canonical_path   = request[:path]
 
           # Headers (Auth)
+          request[:headers].delete('Authorization')
           if method == :headers
-            canonical_payload = sign_v4_headers(
-              request,
-              host,
-              current_time
-            )
+            canonical_payload = sign_v4_headers(request, host, current_time)
           end
           # Headers (Standard)
           request[:headers]['Host'] = host
