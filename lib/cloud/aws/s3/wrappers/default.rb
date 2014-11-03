@@ -112,7 +112,8 @@ module RightScale
                 :params => { 'uploads'=> '' }
 
 
-              base.query_api_pattern 'PutBucket', :put, '{:Bucket}'
+              base.query_api_pattern 'PutBucket', :put, '{:Bucket}',
+                :headers => { 'content-type' => 'application/xml' }
 
 
               base.query_api_pattern 'PutBucketAcl', :put, '{:Bucket}',

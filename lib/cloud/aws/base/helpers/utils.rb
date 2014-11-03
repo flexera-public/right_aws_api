@@ -266,20 +266,17 @@ module RightScale
           canonical_query_string = Utils::params_to_urn(request[:params]){ |value| amz_escape(value) }
 
           # Canonical String
-          canonical_string =
-            canonical_verb         + "\n"   +
-            canonical_path         + "\n"   +
-            canonical_query_string + "\n"   +
-            canonical_headers      + "\n\n" +
-            signed_headers         + "\n"   +
+          canonical_string = sign_v4_get_canonical_string(
+            canonical_verb,
+            canonical_path,
+            canonical_query_string,
+            canonical_headers,
+            signed_headers,
             canonical_payload
+          )
 
           # StringToSign
-          string_to_sign =
-            algorithm    + "\n" +
-            current_time + "\n" +
-            creds_scope  + "\n" +
-            hex_encode(Digest::SHA256.digest(canonical_string)).downcase
+          string_to_sign = sign_v4_get_string_to_sign(algorithm, current_time, creds_scope, canonical_string)
 
           # Signature
           signature = get_signature_key(aws_secret_access_key, string_to_sign, current_date, region, service)
@@ -332,6 +329,32 @@ module RightScale
           request[:headers]['X-Amz-Expires'] = expires_at
 
           canonical_payload
+        end
+
+
+        # Signature V4: Returns Canonical String
+        #
+        # @return [String]
+        #
+        def self.sign_v4_get_canonical_string(verb, path, query_string, headers, signed_headers, payload)
+          verb           + "\n"   +
+          path           + "\n"   +
+          query_string   + "\n"   +
+          headers        + "\n\n" +
+          signed_headers + "\n"   +
+          payload
+        end
+
+
+        # Signature V4: A string to sign value
+        #
+        # @return [String]
+        #
+        def self.sign_v4_get_string_to_sign(algorithm, current_time, creds_scope, canonical_string)
+          algorithm    + "\n" +
+          current_time + "\n" +
+          creds_scope  + "\n" +
+          hex_encode(Digest::SHA256.digest(canonical_string)).downcase
         end
 
 
