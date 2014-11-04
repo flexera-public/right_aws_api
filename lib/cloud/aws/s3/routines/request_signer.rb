@@ -75,91 +75,28 @@ module RightScale
           #  # no example
           #
           def process
-            uri        = @data[:connection][:uri]
-            access_key = @data[:credentials][:aws_access_key_id]
-            secret_key = @data[:credentials][:aws_secret_access_key]
-            body       = @data[:request][:body]
-            bucket     = @data[:request][:bucket]
-            headers    = @data[:request][:headers]
-            object     = @data[:request][:relative_path]
-            params     = @data[:request][:params]
-            verb       = @data[:request][:verb]
-
+            uri            = @data[:connection][:uri]
+            body           = @data[:request][:body]
+            bucket         = @data[:request][:bucket]
+            object         = @data[:request][:relative_path]
             bucket, object = compute_bucket_name_and_object_path(bucket, object)
-            body           = compute_body(body, headers['content-type'])
+            body           = compute_body(body, @data[:request][:headers]['content-type'])
             uri            = compute_host(bucket, uri)
 
-            compute_headers!(headers, body, uri.host)
+            compute_headers!(@data[:request][:headers], body, uri.host)
 
-            # Set Authorization header
-            signature = compute_signature(access_key, secret_key, verb, bucket, object, params, headers)
-            headers['authorization'] = "AWS #{access_key}:#{signature}"
+            @data[:connection][:uri]        = uri
+            @data[:request][:bucket]        = bucket
+            @data[:request][:relative_path] = object
+            @data[:request][:body]          = body
+            @data[:request][:path]          = compute_path(bucket, object)
 
-            @data[:request][:body]           = body
-            @data[:request][:bucket]         = bucket
-            @data[:request][:headers]        = headers
-            @data[:request][:params]         = params
-            @data[:request][:path]           = compute_path(bucket, object, params)
-            @data[:request][:relative_path]  = object
-            @data[:connection][:uri] = uri
-          end
-
-
-          # Returns a list of  sub-resource(s)
-          #
-          # Sub-resources are acl, torrent, versioning, location, etc. See SUB_RESOURCES
-          #
-          # @return [Hash]
-          #
-          def get_subresources(params)
-            result = {}
-            params.each do |key, value|
-              next unless SUB_RESOURCES.include?(key) || key[OVERRIDE_RESPONSE_HEADERS]
-              result[key] = (value._blank? ? nil : value)
-            end
-            result
-          end
-
-
-          # Returns canonicalized bucket
-          #
-          # @param [String] bucket
-          #
-          # @return [String]
-          #
-          # @example
-          #   # DNS bucket
-          #   compute_canonicalized_bucket('foo-bar') #=> 'foo-bar/'
-          #
-          # @example
-          #   # non DNS bucket
-          #   compute_canonicalized_bucket('foo_bar') #=> 'foo_bar'
-          #
-          def compute_canonicalized_bucket(bucket)
-            bucket += '/' if Utils::AWS::is_dns_bucket?(bucket)
-            bucket
-          end
-
-
-          # Returns canonicalized path
-          #
-          # @param [String] bucket
-          # @param [String] relative_path
-          # @param [Hash]   params
-          #
-          # @return [String]
-          #
-          # @example
-          #   params = { 'Foo' => 1, 'acl' => '2', 'response-content-type' => 'jpg' }
-          #   compute_canonicalized_path('foo-bar_bucket', 'a/b/c/d.jpg', params)
-          #     #=> '/foo-bar_bucket/a/b/c/d.jpg?acl=3&response-content-type=jpg'
-          #
-          def compute_canonicalized_path(bucket, relative_path, params)
-            can_bucket = compute_canonicalized_bucket(bucket)
-            sub_params = get_subresources(params)
-            # We use the block below to avoid escaping: Amazon does not like escaped bucket and '/'
-            # in canonicalized path (relative path has been escaped above already)
-            Utils::join_urn(can_bucket, relative_path, sub_params) { |value| value }
+            Utils::AWS::sign_v4_signature(
+              @data[:credentials][:aws_access_key_id],
+              @data[:credentials][:aws_secret_access_key],
+              @data[:connection][:uri].host,
+              @data[:request]
+            )
           end
 
 
@@ -180,7 +117,10 @@ module RightScale
             relative_path.to_s[/^([^\/]*)\/?(.*)$/]
             # Escape part of the path that may have UTF-8 chars (in S3 Object name for instance).
             # Amazon wants them to be escaped before we sign the request.
-            [ $1, Utils::AWS::amz_escape($2) ]
+            # P.S. but do not escape "/" (signature v4 does not like this)
+            #
+            object = $2.to_s.split('/').map{|i| Utils::AWS::amz_escape(i)}.join('/')
+            [ $1, object ]
           end
 
 
@@ -221,7 +161,7 @@ module RightScale
           # @return [Object]
           #
           def compute_body(body, content_type)
-            return body if body._blank?
+            return body if body.nil?
             # Make sure it is a String instance
             return body unless body.is_a?(Hash)
             Utils::contentify_body(body, content_type)
@@ -243,27 +183,7 @@ module RightScale
             #      'The request signature we calculated does not match the signature you provided.
             #       Check your key and signing method.'
             headers.set_if_blank('content-type', 'application/octet-stream')
-            headers.set_if_blank('date', Time::now.utc.httpdate)
-            headers['content-md5'] = Base64::encode64(Digest::MD5::digest(body)).strip if !body._blank?
-            headers['host']        = host
             headers
-          end
-
-
-          # Computes signature
-          #
-          # @param [String] access_key
-          # @param [String] secret_key
-          # @param [String] verb
-          # @param [String] bucket
-          # @param [Hash]   params
-          # @param [Hash]   headers
-          #
-          # @return [String]
-          #
-          def compute_signature(access_key, secret_key, verb, bucket, object, params, headers)
-            can_path  = compute_canonicalized_path(bucket, object, params)
-            Utils::AWS::sign_s3_signature(secret_key, verb, can_path, headers)
           end
 
 
@@ -275,11 +195,10 @@ module RightScale
           #
           # @return [String]
           #
-          def compute_path(bucket, object, params)
+          def compute_path(bucket, object)
             data = []
             data << bucket unless Utils::AWS::is_dns_bucket?(bucket)
             data << object
-            data << params
             Utils::join_urn(*data)
           end
 

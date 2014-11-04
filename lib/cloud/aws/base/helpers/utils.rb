@@ -171,7 +171,7 @@ module RightScale
         #
         # @example
         #  sign_s3_signature('secret', :get, 'xxx/yyy/zzz/object', {'header'=>'value'}) #=>
-        #    "i85igH0sftHD/cGZcLiBKcYEuks=" 
+        #    "i85igH0sftHD/cGZcLiBKcYEuks="
         #
         # @see http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html
         #
@@ -196,7 +196,209 @@ module RightScale
           sign(aws_secret_access_key, string_to_sign)
         end
 
-                    
+
+        def self.sign_v4_get_service_and_region(host)
+          result =
+            case
+            when host[            /^(.*\.)?s3\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
+            when host[ /^(.*\.)?s3-external-1\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
+            when host[    /s3-website-([^.]+)\.amazonaws\.com$/i ] then ['s3',          $1]
+            when host[     /^(.*\.)?s3-([^.]+).amazonaws\.com$/i ] then ['s3',          $2]
+            when host[   /^(.*\.)?s3\.([^.]+)\.amazonaws\.com$/i ] then ['s3',          $2]
+            else host[     /^([^.]+)\.([^.]+)\.amazonaws\.com$/i ]   && [  $1,          $2]
+            end
+          fail(ArgumentError, "Cannot extract service name from %s host" % host.inspect) if !result || result[0].to_s.empty?
+          fail(ArgumentError, "Cannot extract region name from %s host"  % host.inspect) if result[1].to_s.empty?
+          result
+        end
+
+
+        # Signs and Authenticates REST Requests
+        #
+        # @param [String]        aws_secret_access_key
+        # @param [String]        aws_access_key
+        # @param [String]        host
+        # @param [Hash]          request
+        #
+        # @return [String]
+        #
+        # @see http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+        #
+        def self.sign_v4_signature(aws_access_key, aws_secret_access_key, host, request, method=:headers)
+          now             = Time.now.utc
+          current_date    = now.strftime("%Y%m%d")
+          current_time    = now.strftime("%Y%m%dT%H%M%SZ")
+          host            = host.downcase
+          service, region = sign_v4_get_service_and_region(host)
+          creds_scope     = "%s/%s/%s/aws4_request" % [current_date, region, service]
+          algorithm       = "AWS4-HMAC-SHA256"
+
+          # Verb
+          canonical_verb = sign_v4_get_canonical_verb(request[:verb])
+
+          # Path
+          request[:path] ||= '/'
+          canonical_path   = sign_v4_get_canonical_path(request[:path])
+
+          # Headers (Auth)
+          request[:headers].delete('Authorization')
+          if method == :headers
+            canonical_payload = sign_v4_headers(request, host, current_time)
+          end
+          # Headers (Standard)
+          request[:headers]['Host'] = host
+          _headers = {}
+          request[:headers].each do |key, value|
+            _headers[key.to_s.downcase] = value.is_a?(Array) ? value.join(',') : value
+          end
+          canonical_headers = sign_v4_get_canonical_headers(_headers)
+          signed_headers    = sign_v4_get_signed_headers(_headers)
+
+          # Params (Auth)
+          if method != :headers
+            canonical_payload = sign_v4_query_params(
+              request,
+              algorithm,
+              current_time,
+              signed_headers,
+              aws_access_key,
+              creds_scope
+            )
+          end
+          # Params (Standard)
+          canonical_query_string = Utils::params_to_urn(request[:params]){ |value| amz_escape(value) }
+
+          # Canonical String
+          canonical_string = sign_v4_get_canonical_string(
+            canonical_verb,
+            canonical_path,
+            canonical_query_string,
+            canonical_headers,
+            signed_headers,
+            canonical_payload
+          )
+
+          # StringToSign
+          string_to_sign = sign_v4_get_string_to_sign(algorithm, current_time, creds_scope, canonical_string)
+
+          # Signature
+          signature = sign_v4_get_signature_key(aws_secret_access_key, string_to_sign, current_date, region, service)
+
+          request[:path] += "?%s" % canonical_query_string
+
+          if method == :headers
+            # Authorization Header
+            authorization_header = "%s Credential=%s/%s, SignedHeaders=%s, Signature=%s" %
+                                   [algorithm, aws_access_key, creds_scope, signed_headers, signature]
+            request[:headers]['Authorization'] = authorization_header
+          else
+            request[:path] += "&X-Amz-Signature=%s" % signature
+          end
+        end
+
+
+        def self.sign_v4_get_canonical_verb(verb)
+          verb.to_s.upcase
+        end
+
+
+        def self.sign_v4_get_canonical_path(path)
+          path
+        end
+
+
+        def self.sign_v4_query_params(request, algorithm, current_time, signed_headers, aws_access_key, creds_scope)
+          expires_at = request[:params]['X-Amz-Expires'] || 3600
+          expires_at = expires_at.to_i if expires_at.is_a?(Time)
+
+          request[:params]['X-Amz-Date']          = current_time
+          request[:params]['X-Amz-Expires']       = expires_at
+          request[:params]['X-Amz-Algorithm']     = algorithm
+          request[:params]['X-Amz-SignedHeaders'] = signed_headers
+          request[:params]['X-Amz-Credential']    = "%s/%s" % [aws_access_key, creds_scope]
+
+          'UNSIGNED-PAYLOAD'
+        end
+
+
+        def self.sign_v4_get_canonical_headers(headers)
+          headers.sort.map{ |key, value| "#{key}:#{value}" }.join("\n")
+        end
+
+
+        def self.sign_v4_get_signed_headers(headers)
+          headers.keys.sort.join(';')
+        end
+
+
+        def self.sign_v4_headers(request, host, current_time)
+          expires_at = request[:headers]['X-Amz-Expires'].first || 3600
+          expires_at = expires_at.to_i if expires_at.is_a?(Time)
+
+          if request[:body].is_a?(IO)
+            canonical_payload = ''
+            request[:headers].set_if_blank('X-Amz-Content-Sha256', 'UNSIGNED-PAYLOAD')
+          else
+            request[:body]    = request[:body].to_s
+            canonical_payload = hex_encode(Digest::SHA256.digest(request[:body]))
+            content_type      = 'application/x-www-form-urlencoded; charset=utf-8'
+            content_md5       = Base64::encode64(Digest::MD5::digest(request[:body])).strip
+            request[:headers].set_if_blank('Content-Length',       request[:body].bytesize)
+            request[:headers].set_if_blank('Content-Type',         content_type)
+            request[:headers].set_if_blank('Content-Md5',          content_md5)
+            request[:headers].set_if_blank('X-Amz-Content-Sha256', canonical_payload)
+          end
+          request[:headers]['X-Amz-Date']    = current_time
+          request[:headers]['X-Amz-Expires'] = expires_at
+
+          canonical_payload
+        end
+
+
+        # Signature V4: Returns Canonical String
+        #
+        # @return [String]
+        #
+        def self.sign_v4_get_canonical_string(verb, path, query_string, headers, signed_headers, payload)
+          verb           + "\n"   +
+          path           + "\n"   +
+          query_string   + "\n"   +
+          headers        + "\n\n" +
+          signed_headers + "\n"   +
+          payload
+        end
+
+
+        # Signature V4: A string to sign value
+        #
+        # @return [String]
+        #
+        def self.sign_v4_get_string_to_sign(algorithm, current_time, creds_scope, canonical_string)
+          algorithm    + "\n" +
+          current_time + "\n" +
+          creds_scope  + "\n" +
+          hex_encode(Digest::SHA256.digest(canonical_string)).downcase
+        end
+
+
+        #Helpers from AWS documentation http://docs.aws.amazon.com/general/latest/gr/signature-v4-examples.html
+        def self.sign_v4_get_signature_key(key, string_to_sign, date, region, service, digest = @@digest256)
+          k_date    = OpenSSL::HMAC.digest(digest, "AWS4" + key, date)
+          k_region  = OpenSSL::HMAC.digest(digest, k_date,       region)
+          k_service = OpenSSL::HMAC.digest(digest, k_region,     service)
+          k_signing = OpenSSL::HMAC.digest(digest, k_service,    "aws4_request")
+          hex_encode  OpenSSL::HMAC.digest(digest, k_signing,    string_to_sign)
+        end
+
+
+        def self.hex_encode(bindata)
+          result=""
+          data=bindata.unpack("C*")
+          data.each {|b| result+= "%02x" % b}
+          result
+        end
+
+
         # Parametrizes data to the format that Amazon EC2 (and compatible APIs) loves
         #
         # @param [Hash] data
@@ -207,7 +409,7 @@ module RightScale
         #   # Where hash is:
         #   { Name.?.Mask  => Value | [ Values ],
         #     NamePrefix.? => [{ SubNameA.1 => ValueA.1,  SubNameB.1 => ValueB.1 },   # any simple parameter
-        #                     ..., 
+        #                     ...,
         #                      { SubNameN.X => ValueN.X,  SubNameM.X => ValueN.X }]   # see BlockDeviceMapping case
         #
         # @example
@@ -321,7 +523,7 @@ module RightScale
           end
           result
         end
-        
+
       end
     end
   end

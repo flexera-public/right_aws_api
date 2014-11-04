@@ -116,7 +116,7 @@ module RightScale
           opts[:headers] = params.delete(:headers) || {}
           opts[:options] = params.delete(:options) || {}
           opts[:params]  = parametrize(params)
-          process_api_request(:get, '', opts, &block)
+          process_api_request(:post, '', opts, &block)
         end
 
 

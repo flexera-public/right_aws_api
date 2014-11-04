@@ -61,11 +61,11 @@ module RightScale
 
 
               base.query_api_pattern 'DeleteBucketPolicy', :delete, '{:Bucket}',
-                :params => { 'policy' => nil }
+                :params => { 'policy' => '' }
 
 
               base.query_api_pattern 'DeleteBucketWebsite', :delete, '{:Bucket}',
-                :params => { 'website' => nil }
+                :params => { 'website' => '' }
 
 
               base.query_api_pattern 'ListObjects', :get, '{:Bucket}'
@@ -73,130 +73,131 @@ module RightScale
 
 
               base.query_api_pattern 'GetBucketAcl', :get, '{:Bucket}',
-                :params => { 'acl'=> nil }
+                :params => { 'acl'=> '' }
 
 
               base.query_api_pattern 'GetBucketPolicy',  :get, '{:Bucket}',
-                :params => { 'policy'=> nil }
+                :params => { 'policy'=> '' }
 
 
               base.query_api_pattern 'GetBucketLocation',  :get, '{:Bucket}',
-                :params => { 'location'=> nil }
+                :params => { 'location'=> '' }
 
 
               base.query_api_pattern 'GetBucketLogging',  :get, '{:Bucket}',
-                :params => { 'logging'=> nil }
+                :params => { 'logging'=> '' }
 
 
               base.query_api_pattern 'GetBucketNotification', :get, '{:Bucket}',
-                :params => { 'notification'=> nil }
+                :params => { 'notification'=> '' }
 
 
               base.query_api_pattern 'GetBucketVersions',  :get, '{:Bucket}',
-                :params => { 'versions'=> nil }
+                :params => { 'versions'=> '' }
 
 
               base.query_api_pattern 'GetBucketRequestPayment', :get, '{:Bucket}',
-                :params => { 'requestPayment'=> nil }
+                :params => { 'requestPayment'=> '' }
 
 
               base.query_api_pattern 'GetBucketVersioning', :get, '{:Bucket}',
-                :params => { 'versioning'=> nil }
+                :params => { 'versioning'=> '' }
 
 
               base.query_api_pattern 'GetBucketWebsite', :get, '{:Bucket}',
-                :params => { 'website'=> nil }
+                :params => { 'website'=> '' }
 
 
               base.query_api_pattern 'ListMultipartUploads',  :get, '{:Bucket}',
-                :params => { 'uploads'=> nil }
+                :params => { 'uploads'=> '' }
 
 
-              base.query_api_pattern 'PutBucket', :put, '{:Bucket}'
+              base.query_api_pattern 'PutBucket', :put, '{:Bucket}',
+                :headers => { 'content-type' => 'application/xml' }
 
 
               base.query_api_pattern 'PutBucketAcl', :put, '{:Bucket}',
-                :params  => { 'acl' => nil },
+                :params  => { 'acl' => '' },
                 :body    => { 'AccessControlPolicy' => :AccessControlPolicy },
                 :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutBucketPolicy', :put, '{:Bucket}',
-                :params  => { 'policy' => nil },
+                :params  => { 'policy' => '' },
                 :body    => Utils::MUST_BE_SET,
                 :headers => { 'content-type' => 'application/json' }
 
 
               base.query_api_pattern 'PutBucketLogging', :put, '{:Bucket}',
-                :params  => { 'logging' => nil },
+                :params  => { 'logging' => '' },
                 :body    => { 'BucketLoggingStatus' => :BucketLoggingStatus },
                 :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutBucketNotification', :put, '{:Bucket}',
-                :params  => { 'notification' => nil },
+                :params  => { 'notification' => '' },
                 :body    => { 'NotificationConfiguration' => :NotificationConfiguration },
                 :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutBucketRequestPayment', :put, '{:Bucket}',
-                :params => { 'requestPayment' => nil },
+                :params => { 'requestPayment' => '' },
                 :body   => { 'RequestPaymentConfiguration' => :RequestPaymentConfiguration },
                 :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutBucketVersioning', :put, '{:Bucket}',
-                :params  => { 'versioning' => nil },
+                :params  => { 'versioning' => '' },
                 :body    => { 'VersioningConfiguration' => :VersioningConfiguration },
                 :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutBucketWebsite', :put, '{:Bucket}',
-                :params  => { 'website' => nil },
+                :params  => { 'website' => '' },
                 :body    => { 'WebsiteConfiguration' => :WebsiteConfiguration },
                 :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'GetBucketCors', :get, '{:Bucket}',
-                :params => { 'cors'=> nil }
+                :params => { 'cors'=> '' }
 
 
               base.query_api_pattern 'DeleteBucketCors',  :delete, '{:Bucket}',
-                :params => { 'cors'=> nil }
+                :params => { 'cors'=> '' }
 
 
               base.query_api_pattern 'PutBucketCors',  :put, '{:Bucket}',
-                :params  => { 'cors'=> nil },
+                :params  => { 'cors'=> '' },
                 :body    => { 'CORSConfiguration' => { 'CORSRule' => :CORSRule } },
                 :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'GetBucketTagging', :get, '{:Bucket}',
-                :params => { 'tagging' => nil }
+                :params => { 'tagging' => '' }
 
 
               base.query_api_pattern 'PutBucketTagging', :put, '{:Bucket}',
-                :params  => { 'tagging' => nil },
+                :params  => { 'tagging' => '' },
                 :body    => { 'Tagging' => { 'TagSet' => { 'Tag' => :TagSet } } },
                 :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'DeleteBucketTagging', :delete, '{:Bucket}',
-                :params => { 'tagging' => nil }
+                :params => { 'tagging' => '' }
 
 
               base.query_api_pattern 'GetBucketLifecycle', :get, '{:Bucket}',
-                :params => { 'lifecycle' => nil }
+                :params => { 'lifecycle' => '' }
 
 
               base.query_api_pattern 'PutBucketLifecycle', :put, '{:Bucket}',
-                :params  => { 'lifecycle' => nil },
+                :params  => { 'lifecycle' => '' },
                 :body    => { 'LifecycleConfiguration' => { 'Rule' => :Rule } },
                 :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'DeleteBucketLifecycle', :delete, '{:Bucket}',
-                :params => { 'lifecycle' => nil }
+                :params => { 'lifecycle' => '' }
 
 
               #-----------------
@@ -208,7 +209,7 @@ module RightScale
 
 
               base.query_api_pattern 'DeleteMultipleObjects', :post, '{:Bucket}',
-                :params => { 'delete' => nil },
+                :params => { 'delete' => '' },
               :body   => { 'Delete' => {
                              'Quiet'             => :Quiet,
                              'Object[{:Object}]' => {
@@ -236,11 +237,11 @@ module RightScale
 
 
               base.query_api_pattern 'GetObjectAcl', :get, '{:Bucket}/{:Object}',
-                :params => { 'acl' => nil }
+                :params => { 'acl' => '' }
 
 
               base.query_api_pattern 'GetObjectTorrent', :get, '{:Bucket}/{:Object}',
-                :params => { 'torrent'=> nil }
+                :params => { 'torrent'=> '' }
 
 
               base.query_api_pattern 'HeadObject', :head, '{:Bucket}/{:Object}'
@@ -255,13 +256,13 @@ module RightScale
 
 
               base.query_api_pattern 'PutObjectAcl', :put, '{:Bucket}/{:Object}',
-                :params  => { 'acl'=> nil },
+                :params  => { 'acl'=> '' },
                 :body    => { 'AccessControlPolicy' => :AccessControlPolicy },
                 :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'PutObjectCannedAcl', :put, '{:Bucket}/{:Object}',
-                :params  => { 'acl' => nil },
+                :params  => { 'acl' => '' },
                 :headers => { 'x-amz-acl' => :Acl, 'content-type' => 'application/xml'}
 
 
@@ -278,7 +279,7 @@ module RightScale
 
 
               base.query_api_pattern 'InitiateMultipartUpload', :post, '{:Bucket}/{:Object}',
-                :params => { 'uploads' => nil }
+                :params => { 'uploads' => '' }
 
 
               base.query_api_pattern 'UploadPart', :post, '{:Bucket}/{:Object}',
