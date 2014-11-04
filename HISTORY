@@ -1,5 +1,6 @@
 == 2014-10-30
-v0.2.0
-Add support for v4 signature support and make it the default
+  - v0.2.0
+    Add support for AWS v4 signature and make it the default
+
 == 2013-06-28
   - pre-release candidate created
