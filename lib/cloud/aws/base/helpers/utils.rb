@@ -200,12 +200,13 @@ module RightScale
         def self.sign_v4_get_service_and_region(host)
           result =
             case
-            when host[            /^(.*\.)?s3\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
-            when host[ /^(.*\.)?s3-external-1\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
-            when host[    /s3-website-([^.]+)\.amazonaws\.com$/i ] then ['s3',          $1]
-            when host[     /^(.*\.)?s3-([^.]+).amazonaws\.com$/i ] then ['s3',          $2]
-            when host[   /^(.*\.)?s3\.([^.]+)\.amazonaws\.com$/i ] then ['s3',          $2]
-            else host[     /^([^.]+)\.([^.]+)\.amazonaws\.com$/i ]   && [  $1,          $2]
+            when host == 'iam.amazonaws.com'                       then ['iam', 'us-east-1']
+            when host[            /^(.*\.)?s3\.amazonaws\.com$/i ] then ['s3',  'us-east-1']
+            when host[ /^(.*\.)?s3-external-1\.amazonaws\.com$/i ] then ['s3',  'us-east-1']
+            when host[    /s3-website-([^.]+)\.amazonaws\.com$/i ] then ['s3',           $1]
+            when host[     /^(.*\.)?s3-([^.]+).amazonaws\.com$/i ] then ['s3',           $2]
+            when host[   /^(.*\.)?s3\.([^.]+)\.amazonaws\.com$/i ] then ['s3',           $2]
+            else host[     /^([^.]+)\.([^.]+)\.amazonaws\.com$/i ]   && [$1,             $2]
             end
           fail(ArgumentError, "Cannot extract service name from %s host" % host.inspect) if !result || result[0].to_s.empty?
           fail(ArgumentError, "Cannot extract region name from %s host"  % host.inspect) if result[1].to_s.empty?
@@ -439,15 +440,15 @@ module RightScale
         #               'MaxCount' => 2,
         #               'KeyName'  => 'my-key',
         #               'SecurityGroupId' => ['sg-01234567', 'sg-12345670', 'sg-23456701'],
-        #               'BlockDeviceMapping' => [ 
-        #                  { 'DeviceName'     => '/dev/sda1', 
-        #                    'Ebs.SnapshotId' => 'snap-01234567', 
+        #               'BlockDeviceMapping' => [
+        #                  { 'DeviceName'     => '/dev/sda1',
+        #                    'Ebs.SnapshotId' => 'snap-01234567',
         #                    'Ebs.VolumeSize' => 20,
         #                    'Ebs.DeleteOnTermination' => true },
-        #                  { 'DeviceName'     => '/dev/sdb1', 
-        #                    'Ebs.SnapshotId' => 'snap-12345670', 
+        #                  { 'DeviceName'     => '/dev/sdb1',
+        #                    'Ebs.SnapshotId' => 'snap-12345670',
         #                    'Ebs.VolumeSize' => 10,
-        #                    'Ebs.DeleteOnTermination' => false } ] ) #=> 
+        #                    'Ebs.DeleteOnTermination' => false } ] ) #=>
         #    {
         #      "BlockDeviceMapping.1.DeviceName"              => "/dev/sda1",
         #      "BlockDeviceMapping.1.Ebs.DeleteOnTermination" => true,
@@ -464,7 +465,7 @@ module RightScale
         #      "SecurityGroupId.1"                            => "sg-01234567",
         #      "SecurityGroupId.2"                            => "sg-12345670",
         #      "SecurityGroupId.3"                            => "sg-23456701"
-        #    }          
+        #    }
         #
         # @example
         #  parametrize( 'DomainName' => 'kdclient',
@@ -478,7 +479,7 @@ module RightScale
         #                           { 'ItemName'  => 'diana',
         #                             'Attribute' => [ { 'Name' => 'sex',    'Value' => 'female' },
         #                                              { 'Name' => 'weight', 'Value' => '120'},
-        #                                              { 'Name' => 'age',    'Value' => '25'} ] } ] ) #=> 
+        #                                              { 'Name' => 'age',    'Value' => '25'} ] } ] ) #=>
         #    { "DomainName"               => "kdclient",
         #      "Item.1.ItemName"          => "konstantin",
         #      "Item.1.Attribute.1.Name"  => "sex",
