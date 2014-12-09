@@ -200,12 +200,13 @@ module RightScale
         def self.sign_v4_get_service_and_region(host)
           result =
             case
-            when host[            /^(.*\.)?s3\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
-            when host[ /^(.*\.)?s3-external-1\.amazonaws\.com$/i ] then ['s3', 'us-east-1']
-            when host[    /s3-website-([^.]+)\.amazonaws\.com$/i ] then ['s3',          $1]
-            when host[     /^(.*\.)?s3-([^.]+).amazonaws\.com$/i ] then ['s3',          $2]
-            when host[   /^(.*\.)?s3\.([^.]+)\.amazonaws\.com$/i ] then ['s3',          $2]
-            else host[     /^([^.]+)\.([^.]+)\.amazonaws\.com$/i ]   && [  $1,          $2]
+            when host[            /^(.*\.)?s3\.amazonaws\.com$/i ] then ['s3',  'us-east-1']
+            when host[ /^(.*\.)?s3-external-1\.amazonaws\.com$/i ] then ['s3',  'us-east-1']
+            when host[    /s3-website-([^.]+)\.amazonaws\.com$/i ] then ['s3',           $1]
+            when host[     /^(.*\.)?s3-([^.]+).amazonaws\.com$/i ] then ['s3',           $2]
+            when host[   /^(.*\.)?s3\.([^.]+)\.amazonaws\.com$/i ] then ['s3',           $2]
+            when host[                   /^iam\.amazonaws\.com/i ] then ['iam', 'us-east-1']
+            else host[     /^([^.]+)\.([^.]+)\.amazonaws\.com$/i ]   && [$1,             $2]
             end
           fail(ArgumentError, "Cannot extract service name from %s host" % host.inspect) if !result || result[0].to_s.empty?
           fail(ArgumentError, "Cannot extract region name from %s host"  % host.inspect) if result[1].to_s.empty?
