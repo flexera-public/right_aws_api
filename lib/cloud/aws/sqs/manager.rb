@@ -22,7 +22,7 @@
 #++
 
 require "cloud/aws/base/helpers/utils"
-require "cloud/aws/base/routines/request_signer"
+require "cloud/aws/sqs/routines/request_signer"
 require "cloud/aws/base/parsers/response_error"
 
 module RightScale
