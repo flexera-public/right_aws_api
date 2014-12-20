@@ -206,7 +206,7 @@ module RightScale
 
           set_routine CloudApi::RetryManager
           set_routine CloudApi::RequestInitializer
-          set_routine AWS::RequestSigner
+          set_routine AWS::SQS::RequestSigner
           set_routine CloudApi::RequestGenerator
           set_routine CloudApi::RequestAnalyzer
           set_routine CloudApi::ConnectionProxy
