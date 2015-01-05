@@ -285,7 +285,7 @@ module RightScale
           # Signature
           signature = sign_v4_get_signature_key(aws_secret_access_key, string_to_sign, current_date, region, service)
 
-          request[:path] += "?%s" % canonical_query_string
+          request[:path] += "?%s" % canonical_query_string unless canonical_query_string.empty?
 
           if method == :headers
             # Authorization Header
