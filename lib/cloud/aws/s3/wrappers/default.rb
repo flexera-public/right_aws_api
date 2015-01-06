@@ -209,7 +209,8 @@ module RightScale
 
 
               base.query_api_pattern 'DeleteMultipleObjects', :post, '{:Bucket}',
-                :params => { 'delete' => '' },
+              :headers => { 'content-type' => 'application/xml'},
+              :params => { 'delete' => '' },
               :body   => { 'Delete' => {
                              'Quiet'             => :Quiet,
                              'Object[{:Object}]' => {
