@@ -22,7 +22,7 @@
 #++
 
 require "cloud/aws/base/helpers/utils"
-require "cloud/aws/base/routines/request_signer"
+require "cloud/aws/sqs/routines/request_signer"
 require "cloud/aws/base/parsers/response_error"
 
 module RightScale
@@ -206,7 +206,7 @@ module RightScale
 
           set_routine CloudApi::RetryManager
           set_routine CloudApi::RequestInitializer
-          set_routine AWS::RequestSigner
+          set_routine AWS::SQS::RequestSigner
           set_routine CloudApi::RequestGenerator
           set_routine CloudApi::RequestAnalyzer
           set_routine CloudApi::ConnectionProxy
