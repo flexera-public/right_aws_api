@@ -49,7 +49,7 @@ module RightScale
               bucket, object = compute_bucket_name_and_object_path(bucket, object)
               uri            = compute_host(bucket, uri)
 
-              @data[:request][:path] = "/#{object}"
+              @data[:request][:path] = compute_path(bucket,object)
 
               Utils::AWS::sign_v4_signature(
                 @data[:credentials][:aws_access_key_id],
