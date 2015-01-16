@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #--
 # Copyright (c) 2013 RightScale, Inc.
 #
@@ -146,9 +147,10 @@ module RightScale
           # @return [URI]
           #
           def compute_host(bucket, uri)
-            return uri unless Utils::AWS::is_dns_bucket?(bucket)
-            return uri if uri.host[/^#{bucket}\..+\.[^.]+\.[^.]+$/]
-            uri.host = "#{bucket}.#{uri.host}"
+            # Leaving URI untouched for now and passing the bucket name in the path
+            # return uri unless Utils::AWS::is_dns_bucket?(bucket)
+            # return uri if uri.host[/^#{bucket}\..+\.[^.]+\.[^.]+$/]
+            # uri.host = "#{bucket}.#{uri.host}"
             uri
           end
 
@@ -197,7 +199,8 @@ module RightScale
           #
           def compute_path(bucket, object)
             data = []
-            data << bucket unless Utils::AWS::is_dns_bucket?(bucket)
+            # Always send bucket as part of the path for now   
+            data << bucket # unless Utils::AWS::is_dns_bucket?(bucket)
             data << object
             Utils::join_urn(*data)
           end
