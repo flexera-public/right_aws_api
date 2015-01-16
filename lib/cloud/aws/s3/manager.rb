@@ -293,6 +293,19 @@ module RightScale
         #     'https://s3.amazonaws.com/?AWSAccessKeyId=AK...TA&Expires=1436651780&
         #      Signature=XK...53s%3D'
         #
+        # @example
+        #   link = RightScale::CloudApi::AWS::S3::Link::Manager::new(key, secret, endpoint)
+        #   link.GetObject('Bucket' => 'foo', 'Object' => 'bar') #=>
+        #     'https://foo.s3.amazonaws.com/bar?AWSAccessKeyId=AK...TA&Expires=1436557118&
+        #      Signature=hg...%3D&response-content-type=image%2Fpeg'
+        #
+        # @example
+        #   # Do not use DNS-like bucket hosts but put buckets into path
+        #   link = RightScale::CloudApi::AWS::S3::Link::Manager::new(key, secret, endpoint, :no_dns_buckets => true)
+        #   link.GetObject('Bucket' => 'foo', 'Object' => 'bar') #=>
+        #     'https://s3.amazonaws.com/foo/bar?AWSAccessKeyId=AK...TA&Expires=1436557118&
+        #      Signature=hg...%3D&response-content-type=image%2Fpeg'
+        #
         # @see ApiManager
         # @see Wrapper::DEFAULT.extended Wrapper::DEFAULT.extended (click [View source])
         # @see http://docs.aws.amazon.com/AmazonS3/latest/API/APIRest.html
