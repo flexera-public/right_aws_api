@@ -6,20 +6,18 @@
 <title>
   Module: RightScale
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.7.2
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!RightScale.html";
+  if (relpath != '') relpath += '/';
 </script>
-
 
   <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
 
@@ -28,41 +26,36 @@
 
   </head>
   <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
     <div id="header">
       <div id="menu">
   
-    <a href="_index.html">Index (R)</a> &raquo;
+    <a href="_index.html">Index (R)</a> &raquo; 
     
     
     <span class="title">RightScale</span>
   
-
+  
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
   
-    <a class="full_list_link" id="class_list_link"
-        href="class_list.html">
-      Class List
-    </a>
+    <a id="class_list_link" href="#">Class List</a>
   
-    <a class="full_list_link" id="method_list_link"
-        href="method_list.html">
-      Method List
-    </a>
+    <a id="method_list_link" href="#">Method List</a>
   
-    <a class="full_list_link" id="file_list_link"
-        href="file_list.html">
-      File List
-    </a>
+    <a id="file_list_link" href="#">File List</a>
   
 </div>
       <div class="clear"></div>
     </div>
-
+    
     <iframe id="search_frame"></iframe>
-
+    
     <div id="content"><h1>Module: RightScale
   
   
@@ -80,7 +73,7 @@
   
     <dt class="r1 last">Defined in:</dt>
     <dd class="r1 last">lib/right_aws_api_version.rb<span class="defines">,<br />
-  lib/cloud/aws/s3/manager.rb,<br /> lib/cloud/aws/cw/manager.rb,<br /> lib/cloud/aws/ec/manager.rb,<br /> lib/cloud/aws/eb/manager.rb,<br /> lib/cloud/aws/as/manager.rb,<br /> lib/cloud/aws/cf/manager.rb,<br /> lib/cloud/aws/sns/manager.rb,<br /> lib/cloud/aws/emr/manager.rb,<br /> lib/cloud/aws/sqs/manager.rb,<br /> lib/cloud/aws/iam/manager.rb,<br /> lib/cloud/aws/ec2/manager.rb,<br /> lib/cloud/aws/elb/manager.rb,<br /> lib/cloud/aws/rds/manager.rb,<br /> lib/cloud/aws/cfm/manager.rb,<br /> lib/cloud/aws/sdb/manager.rb,<br /> lib/cloud/aws/base/manager.rb,<br /> lib/cloud/aws/route53/manager.rb,<br /> lib/cloud/aws/s3/link/manager.rb,<br /> lib/cloud/aws/base/helpers/utils.rb,<br /> lib/cloud/aws/cf/wrappers/default.rb,<br /> lib/cloud/aws/s3/wrappers/default.rb,<br /> lib/cloud/aws/route53/wrappers/default.rb,<br /> lib/cloud/aws/s3/link/wrappers/default.rb,<br /> lib/cloud/aws/s3/parsers/response_error.rb,<br /> lib/cloud/aws/s3/routines/request_signer.rb,<br /> lib/cloud/aws/cf/routines/request_signer.rb,<br /> lib/cloud/aws/base/parsers/response_error.rb,<br /> lib/cloud/aws/base/routines/request_signer.rb,<br /> lib/cloud/aws/s3/link/routines/request_signer.rb,<br /> lib/cloud/aws/route53/routines/request_signer.rb</span>
+  lib/cloud/aws/eb/manager.rb,<br /> lib/cloud/aws/as/manager.rb,<br /> lib/cloud/aws/ec/manager.rb,<br /> lib/cloud/aws/cf/manager.rb,<br /> lib/cloud/aws/cw/manager.rb,<br /> lib/cloud/aws/s3/manager.rb,<br /> lib/cloud/aws/ec2/manager.rb,<br /> lib/cloud/aws/cfm/manager.rb,<br /> lib/cloud/aws/rds/manager.rb,<br /> lib/cloud/aws/emr/manager.rb,<br /> lib/cloud/aws/sns/manager.rb,<br /> lib/cloud/aws/elb/manager.rb,<br /> lib/cloud/aws/sdb/manager.rb,<br /> lib/cloud/aws/iam/manager.rb,<br /> lib/cloud/aws/sqs/manager.rb,<br /> lib/cloud/aws/base/manager.rb,<br /> lib/cloud/aws/s3/link/manager.rb,<br /> lib/cloud/aws/route53/manager.rb,<br /> lib/cloud/aws/base/helpers/utils.rb,<br /> lib/cloud/aws/s3/wrappers/default.rb,<br /> lib/cloud/aws/cf/wrappers/default.rb,<br /> lib/cloud/aws/s3/link/wrappers/default.rb,<br /> lib/cloud/aws/route53/wrappers/default.rb,<br /> lib/cloud/aws/s3/parsers/response_error.rb,<br /> lib/cloud/aws/s3/routines/request_signer.rb,<br /> lib/cloud/aws/cf/routines/request_signer.rb,<br /> lib/cloud/aws/base/parsers/response_error.rb,<br /> lib/cloud/aws/sqs/routines/request_signer.rb,<br /> lib/cloud/aws/base/routines/request_signer.rb,<br /> lib/cloud/aws/s3/link/routines/request_signer.rb,<br /> lib/cloud/aws/route53/routines/request_signer.rb</span>
 </dd>
   
 </dl>
@@ -88,41 +81,34 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>– Copyright © 2013 RightScale, Inc.</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the
+    --
+Copyright (c) 2013 RightScale, Inc.<br/>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
 &#39;Software&#39;), to deal in the Software without restriction, including
 without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to permit
-persons to whom the Software is furnished to do so, subject to the
-following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED &#39;AS IS&#39;, WITHOUT WARRANTY OF ANY KIND,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:<br/>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.<br/>THE SOFTWARE IS PROVIDED &#39;AS IS&#39;, WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-USE OR OTHER DEALINGS IN THE SOFTWARE. ++</p>
-
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+++
 
   </div>
 </div>
 <div class="tags">
   
-
 </div><h2>Defined Under Namespace</h2>
 <p class="children">
-  
+   
     
       <strong class="modules">Modules:</strong> <span class='object_link'><a href="RightScale/CloudApi.html" title="RightScale::CloudApi (module)">CloudApi</a></span>
     
-  
+   
     
   
 </p>
@@ -133,14 +119,12 @@ USE OR OTHER DEALINGS IN THE SOFTWARE. ++</p>
 
 
 
-
-
 </div>
-
+    
     <div id="footer">
-  Generated on Tue Jul 15 09:24:51 2014 by
+  Generated on Fri Jan 16 16:01:34 2015 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.7.2 (ruby-2.1.5).
 </div>
 
   </body>

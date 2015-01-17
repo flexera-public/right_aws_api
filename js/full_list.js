@@ -2,47 +2,25 @@ var inSearch = null;
 var searchIndex = 0;
 var searchCache = [];
 var searchString = '';
-var regexSearchString = '';
-var caseSensitiveMatch = false;
-var ignoreKeyCodeMin = 8;
-var ignoreKeyCodeMax = 46;
-var commandKey = 91;
-
-RegExp.escape = function(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-}
 
 function fullListSearch() {
   // generate cache
   searchCache = [];
   $('#full_list li').each(function() {
     var link = $(this).find('.object_link a');
-    if (link.length === 0) return;
-    var fullName = link.attr('title').split(' ')[0];
-    searchCache.push({name:link.text(), fullName:fullName, node:$(this), link:link});
+    searchCache.push({name:link.text(), node:$(this), link:link});
   });
-
-  $('#search input').keyup(function(event) {
-    if ((event.keyCode > ignoreKeyCodeMin && event.keyCode < ignoreKeyCodeMax)
-         || event.keyCode == commandKey)
-      return;
-    searchString = this.value;
-    caseSensitiveMatch = searchString.match(/[A-Z]/) != null;
-    regexSearchString = RegExp.escape(searchString);
-    if (caseSensitiveMatch) {
-      regexSearchString += "|" +
-        $.map(searchString.split(''), function(e) { return RegExp.escape(e); }).
-        join('.+?');
-    }
+  
+  $('#search input').keyup(function() {
+    searchString = this.value.toLowerCase();
     if (searchString === "") {
       clearTimeout(inSearch);
       inSearch = null;
-      $('ul .search_uncollapsed').removeClass('search_uncollapsed');
       $('#full_list, #content').removeClass('insearch');
       $('#full_list li').removeClass('found').each(function() {
-
+        
         var link = $(this).find('.object_link a');
-        if (link.length > 0) link.text(link.text());
+        link.text(link.text()); 
       });
       if (clicked) {
         clicked.parents('ul').each(function() {
@@ -60,7 +38,7 @@ function fullListSearch() {
       searchItem();
     }
   });
-
+  
   $('#search input').focus();
   $('#full_list').after("<div id='noresults'></div>");
 }
@@ -69,18 +47,16 @@ var lastRowClass = '';
 function searchItem() {
   for (var i = 0; i < searchCache.length / 50; i++) {
     var item = searchCache[searchIndex];
-    var searchName = (searchString.indexOf('::') != -1 ? item.fullName : item.name);
-    var matchString = regexSearchString;
-    var matchRegexp = new RegExp(matchString, caseSensitiveMatch ? "" : "i");
-    if (searchName.match(matchRegexp) == null) {
+    if (item.name.toLowerCase().indexOf(searchString) == -1) {
       item.node.removeClass('found');
     }
     else {
       item.node.css('padding-left', '10px').addClass('found');
-      item.node.parents().addClass('search_uncollapsed');
       item.node.removeClass(lastRowClass).addClass(lastRowClass == 'r1' ? 'r2' : 'r1');
       lastRowClass = item.node.hasClass('r1') ? 'r1' : 'r2';
-      item.link.html(item.name.replace(matchRegexp, "<strong>$&</strong>"));
+      item.link.html(item.name.replace(new RegExp("(" + 
+        searchString.replace(/([\/.*+?|()\[\]{}\\])/g, "\\$1") + ")", "ig"), 
+        '<strong>$1</strong>'));
     }
 
     if (searchCache.length === searchIndex + 1) {
@@ -112,10 +88,6 @@ function linkList() {
   $('#full_list li, #full_list li a:last').click(function(evt) {
     if ($(this).hasClass('toggle')) return true;
     if (this.tagName.toLowerCase() == "li") {
-      if ($(this).find('.object_link a').length === 0) {
-        $(this).children('a.toggle').click();
-        return false;
-      }
       var toggle = $(this).children('a.toggle');
       if (toggle.size() > 0 && evt.pageX < toggle.offset().left) {
         toggle.click();
@@ -125,7 +97,7 @@ function linkList() {
     if (clicked) clicked.removeClass('clicked');
     var win = window.top.frames.main ? window.top.frames.main : window.parent;
     if (this.tagName.toLowerCase() == "a") {
-      clicked = $(this).parents('li').addClass('clicked');
+      clicked = $(this).parent('li').addClass('clicked');
       win.location = this.href;
     }
     else {
@@ -138,10 +110,10 @@ function linkList() {
 
 function collapse() {
   if (!$('#full_list').hasClass('class')) return;
-  $('#full_list.class a.toggle').click(function() {
+  $('#full_list.class a.toggle').click(function() { 
     $(this).parent().toggleClass('collapsed').next().toggleClass('collapsed');
     highlight();
-    return false;
+    return false; 
   });
   $('#full_list.class ul').each(function() {
     $(this).addClass('collapsed').prev().addClass('collapsed');

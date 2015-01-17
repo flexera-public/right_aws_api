@@ -6,20 +6,18 @@
 <title>
   Class: RightScale::CloudApi::AWS::S3::Manager
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.7.2
   
 </title>
 
-  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
-  relpath = '../../../../';
-  framesUrl = "../../../../frames.html#!RightScale/CloudApi/AWS/S3/Manager.html";
+  relpath = '../../../..';
+  if (relpath != '') relpath += '/';
 </script>
-
 
   <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
 
@@ -28,41 +26,36 @@
 
   </head>
   <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
     <div id="header">
       <div id="menu">
   
-    <a href="../../../../_index.html">Index (M)</a> &raquo;
+    <a href="../../../../_index.html">Index (M)</a> &raquo; 
     <span class='title'><span class='object_link'><a href="../../../../RightScale.html" title="RightScale (module)">RightScale</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../CloudApi.html" title="RightScale::CloudApi (module)">CloudApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../AWS.html" title="RightScale::CloudApi::AWS (module)">AWS</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../S3.html" title="RightScale::CloudApi::AWS::S3 (module)">S3</a></span></span>
      &raquo; 
     <span class="title">Manager</span>
   
-
+  
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
   
-    <a class="full_list_link" id="class_list_link"
-        href="../../../../class_list.html">
-      Class List
-    </a>
+    <a id="class_list_link" href="#">Class List</a>
   
-    <a class="full_list_link" id="method_list_link"
-        href="../../../../method_list.html">
-      Method List
-    </a>
+    <a id="method_list_link" href="#">Method List</a>
   
-    <a class="full_list_link" id="file_list_link"
-        href="../../../../file_list.html">
-      File List
-    </a>
+    <a id="file_list_link" href="#">File List</a>
   
 </div>
       <div class="clear"></div>
     </div>
-
+    
     <iframe id="search_frame"></iframe>
-
+    
     <div id="content"><h1>Class: RightScale::CloudApi::AWS::S3::Manager
   
   
@@ -103,121 +96,119 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>Amazon Simple Storage Service (S3) compatible manager (thread safe).</p>
-
+    Amazon Simple Storage Service (S3) compatible manager (thread safe).
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h3>Examples:</h3>
     
-      
-      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>right_aws_api</span><span class='tstring_end'>&quot;</span></span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>right_aws_api</span><span class='tstring_end'>&quot;</span></span>
 
-<span class='id identifier rubyid_s3'>s3</span> <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>S3</span><span class='op'>::</span><span class='const'>Manager</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://s3.amazonaws.com</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+<span class='id s3'>s3</span> <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>S3</span><span class='op'>::</span><span class='const'>Manager</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id secret'>secret</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://s3.amazonaws.com</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># -- Using HTTP verb methods --
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># -- Using HTTP verb methods --
 </span>
 <span class='comment'># List all buckets
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='id get'>get</span>
 
 <span class='comment'># List bucket objects
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
 <span class='comment'># Get bucket ACL
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:params</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>acl</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rbrace'>}</span> <span class='rparen'>)</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:params</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>acl</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rbrace'>}</span> <span class='rparen'>)</span>
 
 <span class='comment'># Put bucket ACL
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='id put'>put</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
        <span class='symbol'>:params</span>  <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>acl</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rbrace'>}</span><span class='comma'>,</span>
-       <span class='symbol'>:body</span>    <span class='op'>=&gt;</span> <span class='id identifier rubyid_access_control_policy_xml'>access_control_policy_xml</span><span class='comma'>,</span>
+       <span class='symbol'>:body</span>    <span class='op'>=&gt;</span> <span class='id access_control_policy_xml'>access_control_policy_xml</span><span class='comma'>,</span>
        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/xml</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
 <span class='rparen'>)</span>
 
 <span class='comment'># Get bucket Versions
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:params</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>version</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rbrace'>}</span> <span class='rparen'>)</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:params</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>version</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rbrace'>}</span> <span class='rparen'>)</span>
 
 <span class='comment'># Get object
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='comment'># Do not parse response if Amazon reports back XML or JSON content-type
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/boot1.xml</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:raw_response</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/boot1.xml</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:raw_response</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='rparen'>)</span>
 
 <span class='comment'># Get object, force set content-type
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kd-kd-kd-1/boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:params</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>response-content-type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>image/jpeg</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kd-kd-kd-1/boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:params</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>response-content-type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>image/jpeg</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
 
 <span class='comment'># Put object
 </span><span class='comment'># Do not forget to provide a proper &#39;content-type&#39; header because the default
 </span><span class='comment'># one is set to &#39;application/octet-stream&#39;
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='id put'>put</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
         <span class='symbol'>:body</span>    <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>This is my object DATA. WooHoo!!!</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>text/plain</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span></code></pre>
+        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>text/plain</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># A simple example of a multi-thread file download:
-</span><span class='id identifier rubyid_threads'>threads</span>    <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_file_size'>file_size</span>  <span class='op'>=</span> <span class='int'>3257230</span>
-<span class='id identifier rubyid_chunks'>chunks</span>     <span class='op'>=</span> <span class='int'>3</span>
-<span class='id identifier rubyid_chunk_size'>chunk_size</span> <span class='op'>=</span> <span class='id identifier rubyid_file_size'>file_size</span> <span class='op'>/</span> <span class='id identifier rubyid_chunks'>chunks</span>
-<span class='id identifier rubyid_chunks'>chunks</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
-  <span class='id identifier rubyid_from_byte'>from_byte</span> <span class='op'>=</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>*</span> <span class='id identifier rubyid_chunk_size'>chunk_size</span>
-  <span class='id identifier rubyid_to_byte'>to_byte</span>   <span class='op'>=</span> <span class='id identifier rubyid_from_byte'>from_byte</span> <span class='op'>+</span> <span class='id identifier rubyid_chunk_size'>chunk_size</span> <span class='op'>-</span> <span class='int'>1</span>
-  <span class='id identifier rubyid_to_byte'>to_byte</span>  <span class='op'>+=</span> <span class='id identifier rubyid_file_size'>file_size</span> <span class='op'>%</span> <span class='id identifier rubyid_chunks'>chunks</span> <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='int'>1</span> <span class='op'>==</span> <span class='id identifier rubyid_chunks'>chunks</span>
-  <span class='id identifier rubyid_threads'>threads</span> <span class='op'>&lt;&lt;</span> <span class='const'>Thread</span><span class='op'>::</span><span class='id identifier rubyid_new'>new</span> <span class='lbrace'>{</span>
-    <span class='const'>Thread</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='lbracket'>[</span><span class='symbol'>:my_file</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/xxx/boot.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Range</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bytes=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_from_byte'>from_byte</span><span class='embexpr_end'>}</span><span class='tstring_content'>-</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_to_byte'>to_byte</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># A simple example of a multi-thread file download:
+</span><span class='id threads'>threads</span>    <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id file_size'>file_size</span>  <span class='op'>=</span> <span class='int'>3257230</span>
+<span class='id chunks'>chunks</span>     <span class='op'>=</span> <span class='int'>3</span>
+<span class='id chunk_size'>chunk_size</span> <span class='op'>=</span> <span class='id file_size'>file_size</span> <span class='op'>/</span> <span class='id chunks'>chunks</span>
+<span class='id chunks'>chunks</span><span class='period'>.</span><span class='id times'>times</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id i'>i</span><span class='op'>|</span>
+  <span class='id from_byte'>from_byte</span> <span class='op'>=</span> <span class='id i'>i</span> <span class='op'>*</span> <span class='id chunk_size'>chunk_size</span>
+  <span class='id to_byte'>to_byte</span>   <span class='op'>=</span> <span class='id from_byte'>from_byte</span> <span class='op'>+</span> <span class='id chunk_size'>chunk_size</span> <span class='op'>-</span> <span class='int'>1</span>
+  <span class='id to_byte'>to_byte</span>  <span class='op'>+=</span> <span class='id file_size'>file_size</span> <span class='op'>%</span> <span class='id chunks'>chunks</span> <span class='kw'>if</span> <span class='id i'>i</span> <span class='op'>+</span> <span class='int'>1</span> <span class='op'>==</span> <span class='id chunks'>chunks</span>
+  <span class='id threads'>threads</span> <span class='op'>&lt;&lt;</span> <span class='const'>Thread</span><span class='op'>::</span><span class='id new'>new</span> <span class='lbrace'>{</span>
+    <span class='const'>Thread</span><span class='period'>.</span><span class='id current'>current</span><span class='lbracket'>[</span><span class='symbol'>:my_file</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id s3'>s3</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/xxx/boot.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Range</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bytes=</span><span class='embexpr_beg'>#{</span><span class='id from_byte'>from_byte</span><span class='embexpr_end'>}</span><span class='tstring_content'>-</span><span class='embexpr_beg'>#{</span><span class='id to_byte'>to_byte</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='rbrace'>}</span>
 <span class='kw'>end</span>
-<span class='id identifier rubyid_file_body'>file_body</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
-<span class='id identifier rubyid_threads'>threads</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_thread'>thread</span><span class='op'>|</span>
-  <span class='id identifier rubyid_thread'>thread</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
-  <span class='id identifier rubyid_file_body'>file_body</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_thread'>thread</span><span class='lbracket'>[</span><span class='symbol'>:my_file</span><span class='rbracket'>]</span>
+<span class='id file_body'>file_body</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+<span class='id threads'>threads</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id thread'>thread</span><span class='op'>|</span>
+  <span class='id thread'>thread</span><span class='period'>.</span><span class='id join'>join</span>
+  <span class='id file_body'>file_body</span> <span class='op'>&lt;&lt;</span> <span class='id thread'>thread</span><span class='lbracket'>[</span><span class='symbol'>:my_file</span><span class='rbracket'>]</span>
 <span class='kw'>end</span>
-<span class='id identifier rubyid_file_body'>file_body</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='comment'>#=&gt; 3257230</span></code></pre>
+<span class='id file_body'>file_body</span><span class='period'>.</span><span class='id size'>size</span> <span class='comment'>#=&gt; 3257230</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Download into IO object
-</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/tmp/boot.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_file'>file</span><span class='op'>|</span>
-  <span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/kd/boot.jpg</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_chunk'>chunk</span><span class='op'>|</span>
-    <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_chunk'>chunk</span><span class='rparen'>)</span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Download into IO object
+</span><span class='const'>File</span><span class='period'>.</span><span class='id open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/tmp/boot.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id file'>file</span><span class='op'>|</span>
+  <span class='id s3'>s3</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/kd/boot.jpg</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id chunk'>chunk</span><span class='op'>|</span>
+    <span class='id file'>file</span><span class='period'>.</span><span class='id write'>write</span><span class='lparen'>(</span><span class='id chunk'>chunk</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
-<span class='kw'>end</span></code></pre>
+<span class='kw'>end</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># -- Using helper methods --
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># -- Using helper methods --
 </span>
 <span class='comment'># List all buckets
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>ListAllMyBuckets</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>ListAllMyBuckets</span>
 
 <span class='comment'># List bucket objects
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>ListObjects</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>ListObjects</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
 <span class='comment'># Get bucket ACL
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketAcl</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketAcl</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
 <span class='comment'># Get bucket Versions
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketVersions</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketVersions</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
 <span class='comment'># Get object
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>GetObject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Object</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>GetObject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Object</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
 <span class='comment'># Get object, force set content-type
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>GetObject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Object</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>GetObject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Object</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
              <span class='symbol'>:params</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>response-content-type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>image/jpeg</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
 
 <span class='comment'># Put object
 </span><span class='comment'># P.S. &#39;content-type&#39; is &#39;application/octet-stream&#39; by default
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>PutObject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>PutObject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
              <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Object</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>boot1.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-             <span class='symbol'>:body</span>    <span class='op'>=&gt;</span> <span class='id identifier rubyid_file_content'>file_content</span><span class='comma'>,</span>
-             <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>image/jpeg</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span></code></pre>
+             <span class='symbol'>:body</span>    <span class='op'>=&gt;</span> <span class='id file_content'>file_content</span><span class='comma'>,</span>
+             <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>image/jpeg</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span></pre>
     
-      
-      <pre class="example code"><code>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">
 <span class='comment'># List all buckets
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>ListAllMyBuckets</span> <span class='comment'>#=&gt;
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>ListAllMyBuckets</span> <span class='comment'>#=&gt;
 </span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ListAllMyBucketsResult</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
     <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Buckets</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
       <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
@@ -235,7 +226,7 @@
      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://s3.amazonaws.com/doc/2006-03-01/</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span>
 
 <span class='comment'># List bucket objects
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>ListObjects</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>max-keys</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>3</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>prefix</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kd</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>ListObjects</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>max-keys</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>3</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>prefix</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kd</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
 </span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ListBucketResult</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
     <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MaxKeys</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>3</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>IsTruncated</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>false</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
@@ -252,11 +243,11 @@
        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Size</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>3257230</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Key</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kd/boot.jpg</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://s3.amazonaws.com/doc/2006-03-01/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Prefix</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kd</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span></code></pre>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Prefix</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kd</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Get
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketCors</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt;
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Get
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketCors</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt;
 </span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CORSConfiguration</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
       <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://s3.amazonaws.com/doc/2006-03-01/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CORSRule</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
@@ -264,11 +255,11 @@
           <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AllowedMethod</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PUT</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>POST</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
           <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MaxAgeSeconds</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
           <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ExposeHeader</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>x-amz-server-side-encryption</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
-        <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AllowedOrigin</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>*</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AllowedMethod</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>GET</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MaxAgeSeconds</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2001</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbrace'>}</span></code></pre>
+        <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AllowedOrigin</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>*</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AllowedMethod</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>GET</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MaxAgeSeconds</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2001</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbrace'>}</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Put
-</span><span class='id identifier rubyid_cors_rules'>cors_rules</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Put
+</span><span class='id cors_rules'>cors_rules</span> <span class='op'>=</span> <span class='lbracket'>[</span>
   <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AllowedOrigin</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://www.example.com</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AllowedMethod</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PUT</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>POST</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MaxAgeSeconds</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>3000</span><span class='comma'>,</span>
@@ -276,61 +267,61 @@
   <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AllowedOrigin</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>*</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AllowedMethod</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GET</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MaxAgeSeconds</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>3000</span> <span class='rbrace'>}</span> <span class='rbracket'>]</span>
-<span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>PutBucketCors</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kd-ver-test</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CORSRule</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_cors_rules'>cors_rules</span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;
+<span class='id s3'>s3</span><span class='period'>.</span><span class='const'>PutBucketCors</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kd-ver-test</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CORSRule</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id cors_rules'>cors_rules</span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;
 </span>
 <span class='comment'># .. or
-</span><span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;CORSConfiguration&gt;&lt;CORSRule&gt;&lt;AllowedOrigin&gt;http://www.example.com&lt;/AllowedOrigin&gt;</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span>
+</span><span class='id body'>body</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;CORSConfiguration&gt;&lt;CORSRule&gt;&lt;AllowedOrigin&gt;http://www.example.com&lt;/AllowedOrigin&gt;</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span>
        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;AllowedMethod&gt;PUT&lt;/AllowedMethod&gt;&lt;AllowedMethod&gt;POST&lt;/AllowedMethod&gt;</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span>
        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;MaxAgeSeconds&gt;3000&lt;/MaxAgeSeconds&gt;..&lt;/CORSConfiguration&gt;</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>PutBucketCors</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_body'>body</span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></code></pre>
+<span class='id s3'>s3</span><span class='period'>.</span><span class='const'>PutBucketCors</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='id body'>body</span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Delete
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>DeleteBucketCors</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Delete
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>DeleteBucketCors</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Bucket Tagging
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Bucket Tagging
 </span><span class='comment'># Get
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketTagging</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketTagging</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt;
 </span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tagging</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span> <span class='lbrace'>{</span>
      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>TagSet</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span> <span class='lbrace'>{</span>
         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tag</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbracket'>[</span>
           <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Key</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Project</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
             <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Project One</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
            <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Key</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>jsmith</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbrace'>}</span></code></pre>
+            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>jsmith</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbrace'>}</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Delete
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>DeleteBucketTagging</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Delete
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>DeleteBucketTagging</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Put
-</span><span class='id identifier rubyid_tagging_rules'>tagging_rules</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Put
+</span><span class='id tagging_rules'>tagging_rules</span> <span class='op'>=</span> <span class='lbracket'>[</span>
   <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Key</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Project</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Project One</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
   <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Key</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>jsmith</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span> <span class='rbracket'>]</span>
-<span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>PutBucketTagging</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>TagSet</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tagging_rules'>tagging_rules</span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></code></pre>
+<span class='id s3'>s3</span><span class='period'>.</span><span class='const'>PutBucketTagging</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>TagSet</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id tagging_rules'>tagging_rules</span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Bucket Lifecycle
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Bucket Lifecycle
 </span><span class='comment'># Get
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketLifecycle</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketLifecycle</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt;
 </span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>LifecycleConfiguration</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span> <span class='lbrace'>{</span>
      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Rule</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbracket'>[</span><span class='lbrace'>{</span>
        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ID</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>30-day-log-deletion-rule</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Prefix</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>logs</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Status</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Enabled</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Expiration</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Days</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='int'>30</span> <span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbrace'>}</span></code></pre>
+       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Expiration</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Days</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='int'>30</span> <span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbrace'>}</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Delete
-</span><span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>DeleteBucketLifecycle</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Delete
+</span><span class='id s3'>s3</span><span class='period'>.</span><span class='const'>DeleteBucketLifecycle</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Put
-</span><span class='id identifier rubyid_lifecycle_rules'>lifecycle_rules</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Put
+</span><span class='id lifecycle_rules'>lifecycle_rules</span> <span class='op'>=</span> <span class='lbracket'>[</span>
   <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ID</span><span class='tstring_end'>&quot;</span></span>         <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>30-day-log-deletion-rule</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Prefix</span><span class='tstring_end'>&quot;</span></span>     <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>logs</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Status</span><span class='tstring_end'>&quot;</span></span>     <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Enabled</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
@@ -339,27 +330,39 @@
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Prefix</span><span class='tstring_end'>&quot;</span></span>     <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>documents</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Status</span><span class='tstring_end'>&quot;</span></span>     <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Enabled</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Expiration</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Days</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='int'>365</span> <span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>PutBucketLifecycle</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Rule</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lifecycle_rules'>lifecycle_rules</span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></code></pre>
+<span class='id s3'>s3</span><span class='period'>.</span><span class='const'>PutBucketLifecycle</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Rule</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id lifecycle_rules'>lifecycle_rules</span> <span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;&#39;</span></pre>
     
-      
-      <pre class="example code"><code><span class='id identifier rubyid_link'>link</span> <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>S3</span><span class='op'>::</span><span class='const'>Link</span><span class='op'>::</span><span class='const'>Manager</span><span class='op'>::</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span><span class='comma'>,</span> <span class='id identifier rubyid_endpoint'>endpoint</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_link'>link</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id link'>link</span> <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>S3</span><span class='op'>::</span><span class='const'>Link</span><span class='op'>::</span><span class='const'>Manager</span><span class='op'>::</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id secret'>secret</span><span class='comma'>,</span> <span class='id endpoint'>endpoint</span><span class='rparen'>)</span>
+<span class='id link'>link</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span>
   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>devs-us-east/kd/Константин</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
   <span class='symbol'>:params</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>response-content-type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>image/peg</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span>
 <span class='rparen'>)</span> <span class='comment'>#=&gt;
 </span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://devs-us-east.s3.amazonaws.com/kd%2F%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%
    D0%BD%D1%82%D0%B8%D0%BD?AWSAccessKeyId=AK...TA&amp;Expires=1436557118&amp;
-   Signature=hg...%3D&amp;response-content-type=image%2Fpeg</span><span class='tstring_end'>&#39;</span></span></code></pre>
+   Signature=hg...%3D&amp;response-content-type=image%2Fpeg</span><span class='tstring_end'>&#39;</span></span></pre>
     
-      
-      <pre class="example code"><code><span class='id identifier rubyid_link'>link</span><span class='period'>.</span><span class='const'>ListAllMyBuckets</span> <span class='comment'>#=&gt;
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id link'>link</span><span class='period'>.</span><span class='const'>ListAllMyBuckets</span> <span class='comment'>#=&gt;
 </span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://s3.amazonaws.com/?AWSAccessKeyId=AK...TA&amp;Expires=1436651780&amp;
-   Signature=XK...53s%3D</span><span class='tstring_end'>&#39;</span></span></code></pre>
+   Signature=XK...53s%3D</span><span class='tstring_end'>&#39;</span></span></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id link'>link</span> <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>S3</span><span class='op'>::</span><span class='const'>Link</span><span class='op'>::</span><span class='const'>Manager</span><span class='op'>::</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id secret'>secret</span><span class='comma'>,</span> <span class='id endpoint'>endpoint</span><span class='rparen'>)</span>
+<span class='id link'>link</span><span class='period'>.</span><span class='const'>GetObject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>foo</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Object</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>bar</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://foo.s3.amazonaws.com/bar?AWSAccessKeyId=AK...TA&amp;Expires=1436557118&amp;
+   Signature=hg...%3D&amp;response-content-type=image%2Fpeg</span><span class='tstring_end'>&#39;</span></span></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Do not use DNS-like bucket hosts but put buckets into path
+</span><span class='id link'>link</span> <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>S3</span><span class='op'>::</span><span class='const'>Link</span><span class='op'>::</span><span class='const'>Manager</span><span class='op'>::</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id secret'>secret</span><span class='comma'>,</span> <span class='id endpoint'>endpoint</span><span class='comma'>,</span> <span class='symbol'>:no_dns_buckets</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='id link'>link</span><span class='period'>.</span><span class='const'>GetObject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>foo</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Object</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>bar</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://s3.amazonaws.com/foo/bar?AWSAccessKeyId=AK...TA&amp;Expires=1436557118&amp;
+   Signature=hg...%3D&amp;response-content-type=image%2Fpeg</span><span class='tstring_end'>&#39;</span></span></pre>
     
   </div>
 
-
-  <p class="tag_title">See Also:</p>
+  <h3>See Also:</h3>
   <ul class="see">
     
       <li><span class='object_link'><a href="ApiManager.html" title="RightScale::CloudApi::AWS::S3::ApiManager (class)">ApiManager</a></span></li>
@@ -376,20 +379,20 @@
 </div>
 
 
+  
 
 
-
-
+  
 
 
   
 
 </div>
-
+    
     <div id="footer">
-  Generated on Tue Jul 15 09:24:51 2014 by
+  Generated on Fri Jan 16 16:01:35 2015 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.7.2 (ruby-2.1.5).
 </div>
 
   </body>

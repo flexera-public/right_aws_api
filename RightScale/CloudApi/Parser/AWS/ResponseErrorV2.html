@@ -6,20 +6,18 @@
 <title>
   Class: RightScale::CloudApi::Parser::AWS::ResponseErrorV2
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.7.2
   
 </title>
 
-  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
-  relpath = '../../../../';
-  framesUrl = "../../../../frames.html#!RightScale/CloudApi/Parser/AWS/ResponseErrorV2.html";
+  relpath = '../../../..';
+  if (relpath != '') relpath += '/';
 </script>
-
 
   <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
 
@@ -28,41 +26,36 @@
 
   </head>
   <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
     <div id="header">
       <div id="menu">
   
-    <a href="../../../../_index.html">Index (R)</a> &raquo;
+    <a href="../../../../_index.html">Index (R)</a> &raquo; 
     <span class='title'><span class='object_link'><a href="../../../../RightScale.html" title="RightScale (module)">RightScale</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../CloudApi.html" title="RightScale::CloudApi (module)">CloudApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Parser.html" title="RightScale::CloudApi::Parser (module)">Parser</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../AWS.html" title="RightScale::CloudApi::Parser::AWS (module)">AWS</a></span></span>
      &raquo; 
     <span class="title">ResponseErrorV2</span>
   
-
+  
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
   
-    <a class="full_list_link" id="class_list_link"
-        href="../../../../class_list.html">
-      Class List
-    </a>
+    <a id="class_list_link" href="#">Class List</a>
   
-    <a class="full_list_link" id="method_list_link"
-        href="../../../../method_list.html">
-      Method List
-    </a>
+    <a id="method_list_link" href="#">Method List</a>
   
-    <a class="full_list_link" id="file_list_link"
-        href="../../../../file_list.html">
-      File List
-    </a>
+    <a id="file_list_link" href="#">File List</a>
   
 </div>
       <div class="clear"></div>
     </div>
-
+    
     <iframe id="search_frame"></iframe>
-
+    
     <div id="content"><h1>Class: RightScale::CloudApi::Parser::AWS::ResponseErrorV2
   
   
@@ -101,18 +94,13 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>AWS response error parser, case 2</p>
-
+    AWS response error parser, case 2
 
   </div>
 </div>
 <div class="tags">
   
-
 </div>
-
-
 
 
 
@@ -139,12 +127,9 @@
   
   
   
-  
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Parse HTTP error message from a response body.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'>Parse HTTP error message from a response body.</div></span>
   
 </li>
 
@@ -156,37 +141,33 @@
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
-
+    
     
       <div class="method_details first">
-  <h3 class="signature first" id="parse-class_method">
+  <p class="signature first" id="parse-class_method">
   
     + (<tt>Object</tt>) <strong>parse</strong>(response, options = {}) 
   
 
   
-
-  
-</h3><div class="docstring">
+</p><div class="docstring">
   <div class="discussion">
-    
-<p>Parse HTTP error message from a response body</p>
-
+    Parse HTTP error message from a response body
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h3>Examples:</h3>
     
-      
-      <pre class="example code"><code># error is a response from ELB
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"># error is a response from ELB
 parse(error) #=&gt;
-  400: ErrorName: SomethingIsWrong (RequestID: 32455505-2345-43245-f432-34543523451)</code></pre>
+  400: ErrorName: SomethingIsWrong (RequestID: 32455505-2345-43245-f432-34543523451)</pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
+<h3>Parameters:</h3>
 <ul class="param">
   
     <li>
@@ -220,7 +201,7 @@ parse(error) #=&gt;
     
     
     
-    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <h3>Options Hash (<tt>options</tt>):</h3>
     <ul class="option">
       
         <li>
@@ -230,12 +211,11 @@ parse(error) #=&gt;
             
           </span>
           
-        </li>
+        </tr>
       
     </ul>
   
-
-<p class="tag_title">Returns:</p>
+<h3>Returns:</h3>
 <ul class="return">
   
     <li>
@@ -246,9 +226,7 @@ parse(error) #=&gt;
       
       
         
-        <div class='inline'>
-<p>a String to be displayed/logged.</p>
-</div>
+        <div class='inline'>a String to be displayed/logged.</div>
       
     </li>
   
@@ -286,18 +264,18 @@ parse(error) #=&gt;
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/parsers/response_error.rb', line 99</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_body'>body</span>   <span class='op'>=</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_response'>response</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>xml</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A&lt;\?xml </span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_hash'>hash</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_get_xml_parser_class'>get_xml_parser_class</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:xml_parser</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_error'>error</span> <span class='op'>=</span> <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ErrorResponse</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ErrorResponse</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_error'>error</span>
-      <span class='id identifier rubyid_request_id'>request_id</span> <span class='op'>=</span> <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ErrorResponse</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RequestID</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ErrorResponse</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RequestId</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> 
-      <span class='id identifier rubyid_result'>result</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_error'>error</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_error'>error</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Code</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_error'>error</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Message</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'> (RequestId: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_request_id'>request_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='id response'>response</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id result'>result</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id response'>response</span><span class='period'>.</span><span class='id code'>code</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='tstring_end'>&quot;</span></span>
+  <span class='id body'>body</span>   <span class='op'>=</span> <span class='id response'>response</span><span class='period'>.</span><span class='id body'>body</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+  <span class='kw'>if</span> <span class='id response'>response</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>xml</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A&lt;\?xml </span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
+    <span class='id hash'>hash</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id get_xml_parser_class'>get_xml_parser_class</span><span class='lparen'>(</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:xml_parser</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='id body'>body</span><span class='rparen'>)</span>
+    <span class='id error'>error</span> <span class='op'>=</span> <span class='id hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ErrorResponse</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='id hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ErrorResponse</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id error'>error</span>
+      <span class='id request_id'>request_id</span> <span class='op'>=</span> <span class='id hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ErrorResponse</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RequestID</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ErrorResponse</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RequestId</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> 
+      <span class='id result'>result</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id error'>error</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id error'>error</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Code</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id error'>error</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Message</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'> (RequestId: </span><span class='embexpr_beg'>#{</span><span class='id request_id'>request_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
-  <span class='id identifier rubyid_result'>result</span>
+  <span class='id result'>result</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -307,11 +285,11 @@ parse(error) #=&gt;
   </div>
 
 </div>
-
+    
     <div id="footer">
-  Generated on Tue Jul 15 09:24:52 2014 by
+  Generated on Fri Jan 16 16:01:36 2015 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.7.2 (ruby-2.1.5).
 </div>
 
   </body>

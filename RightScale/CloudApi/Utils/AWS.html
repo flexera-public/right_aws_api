@@ -6,20 +6,18 @@
 <title>
   Module: RightScale::CloudApi::Utils::AWS
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.7.2
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
-  relpath = '../../../';
-  framesUrl = "../../../frames.html#!RightScale/CloudApi/Utils/AWS.html";
+  relpath = '../../..';
+  if (relpath != '') relpath += '/';
 </script>
-
 
   <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
 
@@ -28,41 +26,36 @@
 
   </head>
   <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
     <div id="header">
       <div id="menu">
   
-    <a href="../../../_index.html">Index (A)</a> &raquo;
+    <a href="../../../_index.html">Index (A)</a> &raquo; 
     <span class='title'><span class='object_link'><a href="../../../RightScale.html" title="RightScale (module)">RightScale</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../CloudApi.html" title="RightScale::CloudApi (module)">CloudApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Utils.html" title="RightScale::CloudApi::Utils (module)">Utils</a></span></span>
      &raquo; 
     <span class="title">AWS</span>
   
-
+  
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
   
-    <a class="full_list_link" id="class_list_link"
-        href="../../../class_list.html">
-      Class List
-    </a>
+    <a id="class_list_link" href="#">Class List</a>
   
-    <a class="full_list_link" id="method_list_link"
-        href="../../../method_list.html">
-      Method List
-    </a>
+    <a id="method_list_link" href="#">Method List</a>
   
-    <a class="full_list_link" id="file_list_link"
-        href="../../../file_list.html">
-      File List
-    </a>
+    <a id="file_list_link" href="#">File List</a>
   
 </div>
       <div class="clear"></div>
     </div>
-
+    
     <iframe id="search_frame"></iframe>
-
+    
     <div id="content"><h1>Module: RightScale::CloudApi::Utils::AWS
   
   
@@ -86,15 +79,12 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>AWS helpers namespace</p>
-
+    AWS helpers namespace
 
   </div>
 </div>
 <div class="tags">
   
-
 </div>
   <h2>Constant Summary</h2>
   
@@ -109,31 +99,25 @@
 </div>
 <div class="tags">
   
-
 </div>
         </dt>
-        <dd><pre class="code"><span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Digest</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sha1</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Digest</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sha1</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="digest256-classvariable" class="">@@digest256 =
           <div class="docstring">
   <div class="discussion">
-    
-<p>Some installations may not support sha256</p>
-
+    Some installations may not support sha256
 
   </div>
 </div>
 <div class="tags">
   
-
 </div>
         </dt>
-        <dd><pre class="code"><span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Digest</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sha256</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>rescue</span> <span class='kw'>nil</span></pre></dd>
+        <dd><pre class="code"><span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Digest</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sha256</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>rescue</span> <span class='kw'>nil</span></pre></dd>
       
     </dl>
   
-
-
 
 
 
@@ -161,12 +145,30 @@
   
   
   
+
+  
+    <span class="summary_desc"><div class='inline'>Escapes a string accordingly to Amazon rules.</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hex_encode-class_method" title="hex_encode (class method)">+ (Object) <strong>hex_encode</strong>(bindata) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Escapes a string accordingly to Amazon rules.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -185,13 +187,9 @@
   
   
   
-  
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <code>true</code> if the provided bucket name is  a DNS compliant
-bucket name.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'>Returns +true+ if the provided bucket name is  a DNS compliant bucket name.</div></span>
   
 </li>
 
@@ -210,13 +208,9 @@ bucket name.</p>
   
   
   
-  
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Parametrizes data to the format that Amazon EC2 (and compatible APIs)
-loves.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'>Parametrizes data to the format that Amazon EC2 (and compatible APIs) loves.</div></span>
   
 </li>
 
@@ -235,12 +229,9 @@ loves.</p>
   
   
   
-  
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Generates a signature for the given string, secret access key and digest.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'>Generates a signature for the given string, secret access key and digest.</div></span>
   
 </li>
 
@@ -259,12 +250,9 @@ loves.</p>
   
   
   
-  
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Signs and Authenticates REST Requests.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'>Signs and Authenticates REST Requests.</div></span>
   
 </li>
 
@@ -283,12 +271,240 @@ loves.</p>
   
   
   
+
+  
+    <span class="summary_desc"><div class='inline'>Signature Version 2.</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_get_canonical_headers-class_method" title="sign_v4_get_canonical_headers (class method)">+ (Object) <strong>sign_v4_get_canonical_headers</strong>(headers) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Signature Version 2.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_get_canonical_path-class_method" title="sign_v4_get_canonical_path (class method)">+ (Object) <strong>sign_v4_get_canonical_path</strong>(path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_get_canonical_string-class_method" title="sign_v4_get_canonical_string (class method)">+ (String) <strong>sign_v4_get_canonical_string</strong>(verb, path, query_string, headers, signed_headers, payload) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>Signature V4: Returns Canonical String.</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_get_canonical_verb-class_method" title="sign_v4_get_canonical_verb (class method)">+ (Object) <strong>sign_v4_get_canonical_verb</strong>(verb) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_get_service_and_region-class_method" title="sign_v4_get_service_and_region (class method)">+ (Object) <strong>sign_v4_get_service_and_region</strong>(host) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_get_signature_key-class_method" title="sign_v4_get_signature_key (class method)">+ (Object) <strong>sign_v4_get_signature_key</strong>(key, string_to_sign, date, region, service, digest = @@digest256) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>Helpers from AWS documentation http://docs.aws.amazon.com/general/latest/gr/signature-v4-examples.html.</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_get_signed_headers-class_method" title="sign_v4_get_signed_headers (class method)">+ (Object) <strong>sign_v4_get_signed_headers</strong>(headers) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_get_string_to_sign-class_method" title="sign_v4_get_string_to_sign (class method)">+ (String) <strong>sign_v4_get_string_to_sign</strong>(algorithm, current_time, creds_scope, canonical_string) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>Signature V4: A string to sign value.</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_headers-class_method" title="sign_v4_headers (class method)">+ (Object) <strong>sign_v4_headers</strong>(request, host, current_time) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_query_params-class_method" title="sign_v4_query_params (class method)">+ (Object) <strong>sign_v4_query_params</strong>(request, algorithm, current_time, signed_headers, aws_access_key, creds_scope) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sign_v4_signature-class_method" title="sign_v4_signature (class method)">+ (String) <strong>sign_v4_signature</strong>(aws_access_key, aws_secret_access_key, host, request, method = :headers) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>Signs and Authenticates REST Requests.</div></span>
   
 </li>
 
@@ -307,12 +523,9 @@ loves.</p>
   
   
   
-  
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns ISO-8601 representation for the given time.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'>Returns ISO-8601 representation for the given time.</div></span>
   
 </li>
 
@@ -324,36 +537,32 @@ loves.</p>
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
-
+    
     
       <div class="method_details first">
-  <h3 class="signature first" id="amz_escape-class_method">
+  <p class="signature first" id="amz_escape-class_method">
   
     + (<tt>String</tt>) <strong>amz_escape</strong>(string) 
   
 
   
-
-  
-</h3><div class="docstring">
+</p><div class="docstring">
   <div class="discussion">
-    
-<p>Escapes a string accordingly to Amazon rules</p>
-
+    Escapes a string accordingly to Amazon rules
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h3>Examples:</h3>
     
-      
-      <pre class="example code"><code><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id identifier rubyid_amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>something &gt;= 13</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
-</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>something%20%3E%3D%2013</span><span class='tstring_end'>&#39;</span></span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>something &gt;= 13</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>something%20%3E%3D%2013</span><span class='tstring_end'>&#39;</span></span></pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
+<h3>Parameters:</h3>
 <ul class="param">
   
     <li>
@@ -368,8 +577,7 @@ loves.</p>
     </li>
   
 </ul>
-
-<p class="tag_title">Returns:</p>
+<h3>Returns:</h3>
 <ul class="return">
   
     <li>
@@ -383,7 +591,7 @@ loves.</p>
   
 </ul>
 
-  <p class="tag_title">See Also:</p>
+  <h3>See Also:</h3>
   <ul class="see">
     
       <li><a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html" target="_parent" title="http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html">http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html</a></li>
@@ -409,14 +617,14 @@ loves.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 85</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_string'>string</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='id string'>string</span><span class='rparen'>)</span>
+  <span class='id string'>string</span> <span class='op'>=</span> <span class='id string'>string</span><span class='period'>.</span><span class='id to_s'>to_s</span>
   <span class='comment'># Use UTF-8 if current ruby supports it (1.9+)
-</span>  <span class='id identifier rubyid_string'>string</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_encode'>encode</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:encode</span><span class='rparen'>)</span>
+</span>  <span class='id string'>string</span> <span class='op'>=</span> <span class='id string'>string</span><span class='period'>.</span><span class='id encode'>encode</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id string'>string</span><span class='period'>.</span><span class='id respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:encode</span><span class='rparen'>)</span>
   <span class='comment'># CGI::escape is too clever:
 </span>  <span class='comment'>#  - it escapes &#39;~&#39; when Amazon wants it to be un-escaped
 </span>  <span class='comment'>#  - it escapes &#39; &#39; as &#39;+&#39; but Amazon loves it as &#39;%20&#39;
-</span>  <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_escape'>escape</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%7E</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>~</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>+</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%20</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</span>  <span class='const'>CGI</span><span class='period'>.</span><span class='id escape'>escape</span><span class='lparen'>(</span><span class='id string'>string</span><span class='rparen'>)</span><span class='period'>.</span><span class='id gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%7E</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>~</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>+</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%20</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -424,39 +632,76 @@ loves.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="is_dns_bucket?-class_method">
+  <p class="signature " id="hex_encode-class_method">
+  
+    + (<tt>Object</tt>) <strong>hex_encode</strong>(bindata) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+395
+396
+397
+398
+399
+400</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 395</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id hex_encode'>hex_encode</span><span class='lparen'>(</span><span class='id bindata'>bindata</span><span class='rparen'>)</span>
+  <span class='id result'>result</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id data'>data</span><span class='op'>=</span><span class='id bindata'>bindata</span><span class='period'>.</span><span class='id unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id data'>data</span><span class='period'>.</span><span class='id each'>each</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id b'>b</span><span class='op'>|</span> <span class='id result'>result</span><span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%02x</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id b'>b</span><span class='rbrace'>}</span>
+  <span class='id result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="is_dns_bucket?-class_method">
   
     + (<tt>Boolean</tt>) <strong>is_dns_bucket?</strong>(bucket_name) 
   
 
   
-
-  
-</h3><div class="docstring">
+</p><div class="docstring">
   <div class="discussion">
-    
-<p>Returns <code>true</code> if the provided bucket name is  a DNS compliant
-bucket name</p>
-
+    Returns +true+ if the provided bucket name is  a DNS compliant bucket name
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h3>Examples:</h3>
     
-      
-      <pre class="example code"><code><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id identifier rubyid_is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; false</span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; false</span></pre>
     
-      
-      <pre class="example code"><code><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id identifier rubyid_is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my_bycket</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; false</span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my_bycket</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; false</span></pre>
     
-      
-      <pre class="example code"><code><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id identifier rubyid_is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; true</span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; true</span></pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
+<h3>Parameters:</h3>
 <ul class="param">
   
     <li>
@@ -471,8 +716,7 @@ bucket name</p>
     </li>
   
 </ul>
-
-<p class="tag_title">Returns:</p>
+<h3>Returns:</h3>
 <ul class="return">
   
     <li>
@@ -486,7 +730,7 @@ bucket name</p>
   
 </ul>
 
-  <p class="tag_title">See Also:</p>
+  <h3>See Also:</h3>
   <ul class="see">
     
       <li><a href="http://docs.aws.amazon.com/AmazonS3/2006-03-01/dev/BucketRestrictions.html" target="_parent" title="http://docs.aws.amazon.com/AmazonS3/2006-03-01/dev/BucketRestrictions.html">http://docs.aws.amazon.com/AmazonS3/2006-03-01/dev/BucketRestrictions.html</a></li>
@@ -511,11 +755,11 @@ bucket name</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 153</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_bucket_name'>bucket_name</span> <span class='op'>=</span> <span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
-  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='lparen'>(</span><span class='int'>3</span><span class='op'>..</span><span class='int'>63</span><span class='rparen'>)</span> <span class='op'>===</span> <span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
-  <span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_component'>component</span><span class='op'>|</span>
-    <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_component'>component</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^[a-z0-9]([a-z0-9-]*[a-z0-9])?$</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id is_dns_bucket?'>is_dns_bucket?</span><span class='lparen'>(</span><span class='id bucket_name'>bucket_name</span><span class='rparen'>)</span>
+  <span class='id bucket_name'>bucket_name</span> <span class='op'>=</span> <span class='id bucket_name'>bucket_name</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='lparen'>(</span><span class='int'>3</span><span class='op'>..</span><span class='int'>63</span><span class='rparen'>)</span> <span class='op'>===</span> <span class='id bucket_name'>bucket_name</span><span class='period'>.</span><span class='id size'>size</span>
+  <span class='id bucket_name'>bucket_name</span><span class='period'>.</span><span class='id split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id component'>component</span><span class='op'>|</span>
+    <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id component'>component</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^[a-z0-9]([a-z0-9-]*[a-z0-9])?$</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
   <span class='kw'>end</span>
   <span class='kw'>true</span>
 <span class='kw'>end</span></pre>
@@ -525,36 +769,32 @@ bucket name</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="parametrize-class_method">
+  <p class="signature " id="parametrize-class_method">
   
     + (<tt>Hash</tt>) <strong>parametrize</strong>(data) 
   
 
   
-
-  
-</h3><div class="docstring">
+</p><div class="docstring">
   <div class="discussion">
-    
-<p>Parametrizes data to the format that Amazon EC2 (and compatible APIs) loves</p>
-
+    Parametrizes data to the format that Amazon EC2 (and compatible APIs) loves
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h3>Examples:</h3>
     
-      
-      <pre class="example code"><code># Where hash is:
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"># Where hash is:
 { Name.?.Mask  =&gt; Value | [ Values ],
   NamePrefix.? =&gt; [{ SubNameA.1 =&gt; ValueA.1,  SubNameB.1 =&gt; ValueB.1 },   # any simple parameter
-                  ..., 
-                   { SubNameN.X =&gt; ValueN.X,  SubNameM.X =&gt; ValueN.X }]   # see BlockDeviceMapping case</code></pre>
+                  ...,
+                   { SubNameN.X =&gt; ValueN.X,  SubNameM.X =&gt; ValueN.X }]   # see BlockDeviceMapping case</pre>
     
-      
-      <pre class="example code"><code><span class='id identifier rubyid_parametrize'>parametrize</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ParamA</span><span class='tstring_end'>&#39;</span></span>             <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>a</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id parametrize'>parametrize</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ParamA</span><span class='tstring_end'>&#39;</span></span>             <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>a</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
              <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ParamB</span><span class='tstring_end'>&#39;</span></span>             <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>b</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>c</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
              <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ParamC.?.Something</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>d</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>e</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
              <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Filter</span><span class='tstring_end'>&#39;</span></span>             <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Key</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>aa</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ab</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='comma'>,</span>
@@ -571,24 +811,24 @@ bucket name</p>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ParamB.2</span><span class='tstring_end'>&quot;</span></span>           <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ParamC.1.Something</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>d</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ParamC.2.Something</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e</span><span class='tstring_end'>&quot;</span></span>
-  <span class='rbrace'>}</span></code></pre>
+  <span class='rbrace'>}</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># BlockDeviceMapping example
-</span><span class='id identifier rubyid_parametrize'>parametrize</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ImageId</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>i-01234567</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># BlockDeviceMapping example
+</span><span class='id parametrize'>parametrize</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ImageId</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>i-01234567</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
              <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MinCount</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>1</span><span class='comma'>,</span>
              <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MaxCount</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>2</span><span class='comma'>,</span>
              <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>KeyName</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-key</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
              <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SecurityGroupId</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sg-01234567</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sg-12345670</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sg-23456701</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
-             <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BlockDeviceMapping</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> 
-                <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DeviceName</span><span class='tstring_end'>&#39;</span></span>     <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/dev/sda1</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> 
-                  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ebs.SnapshotId</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>snap-01234567</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> 
+             <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BlockDeviceMapping</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+                <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DeviceName</span><span class='tstring_end'>&#39;</span></span>     <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/dev/sda1</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ebs.SnapshotId</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>snap-01234567</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
                   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ebs.VolumeSize</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>20</span><span class='comma'>,</span>
                   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ebs.DeleteOnTermination</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>true</span> <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DeviceName</span><span class='tstring_end'>&#39;</span></span>     <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/dev/sdb1</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> 
-                  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ebs.SnapshotId</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>snap-12345670</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> 
+                <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DeviceName</span><span class='tstring_end'>&#39;</span></span>     <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/dev/sdb1</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ebs.SnapshotId</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>snap-12345670</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
                   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ebs.VolumeSize</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>10</span><span class='comma'>,</span>
-                  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ebs.DeleteOnTermination</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>false</span> <span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rparen'>)</span> <span class='comment'>#=&gt; 
+                  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ebs.DeleteOnTermination</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>false</span> <span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rparen'>)</span> <span class='comment'>#=&gt;
 </span>  <span class='lbrace'>{</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BlockDeviceMapping.1.DeviceName</span><span class='tstring_end'>&quot;</span></span>              <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/dev/sda1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BlockDeviceMapping.1.Ebs.DeleteOnTermination</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
@@ -605,10 +845,10 @@ bucket name</p>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SecurityGroupId.1</span><span class='tstring_end'>&quot;</span></span>                            <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sg-01234567</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SecurityGroupId.2</span><span class='tstring_end'>&quot;</span></span>                            <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sg-12345670</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SecurityGroupId.3</span><span class='tstring_end'>&quot;</span></span>                            <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sg-23456701</span><span class='tstring_end'>&quot;</span></span>
-  <span class='rbrace'>}</span>          </code></pre>
+  <span class='rbrace'>}</span></pre>
     
-      
-      <pre class="example code"><code><span class='id identifier rubyid_parametrize'>parametrize</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DomainName</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kdclient</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id parametrize'>parametrize</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DomainName</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kdclient</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
              <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Item</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ItemName</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>konstantin</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
                            <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Attribute</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sex</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>male</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='comma'>,</span>
                                             <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>age</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>38</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span>
@@ -619,7 +859,7 @@ bucket name</p>
                          <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ItemName</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>diana</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
                            <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Attribute</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sex</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>female</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='comma'>,</span>
                                             <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>weight</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>120</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
-                                            <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>age</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>25</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rparen'>)</span> <span class='comment'>#=&gt; 
+                                            <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>age</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>25</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rbrace'>}</span> <span class='rbracket'>]</span> <span class='rparen'>)</span> <span class='comment'>#=&gt;
 </span>  <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DomainName</span><span class='tstring_end'>&quot;</span></span>               <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kdclient</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.1.ItemName</span><span class='tstring_end'>&quot;</span></span>          <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>konstantin</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.1.Attribute.1.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sex</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
@@ -641,10 +881,10 @@ bucket name</p>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.2.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>weight</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.2.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>120</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.3.Name</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>age</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.3.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>25</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span></code></pre>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Item.3.Attribute.3.Value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>25</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span></pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
+<h3>Parameters:</h3>
 <ul class="param">
   
     <li>
@@ -659,8 +899,7 @@ bucket name</p>
     </li>
   
 </ul>
-
-<p class="tag_title">Returns:</p>
+<h3>Returns:</h3>
 <ul class="return">
   
     <li>
@@ -680,51 +919,51 @@ bucket name</p>
       <pre class="lines">
 
 
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313
-314
-315
-316
-317
-318
-319
-320
-321
-322
-323</pre>
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 303</span>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 506</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_parametrize'>parametrize</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_data'>data</span> <span class='kw'>unless</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id parametrize'>parametrize</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id data'>data</span> <span class='kw'>unless</span> <span class='id data'>data</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+  <span class='id result'>result</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='comment'>#
-</span>  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_mask'>mask</span><span class='comma'>,</span> <span class='id identifier rubyid_values'>values</span><span class='op'>|</span>
-    <span class='id identifier rubyid_current_values'>current_values</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_arrayify'>arrayify</span><span class='lparen'>(</span><span class='id identifier rubyid_values'>values</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_current_mask'>current_mask</span>   <span class='op'>=</span> <span class='id identifier rubyid_mask'>mask</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
-    <span class='id identifier rubyid_current_mask'>current_mask</span>  <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.?</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_current_mask'>current_mask</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\?</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_current_values'>current_values</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>1</span>
+</span>  <span class='id data'>data</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id mask'>mask</span><span class='comma'>,</span> <span class='id values'>values</span><span class='op'>|</span>
+    <span class='id current_values'>current_values</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id arrayify'>arrayify</span><span class='lparen'>(</span><span class='id values'>values</span><span class='rparen'>)</span>
+    <span class='id current_mask'>current_mask</span>   <span class='op'>=</span> <span class='id mask'>mask</span><span class='period'>.</span><span class='id dup'>dup</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+    <span class='id current_mask'>current_mask</span>  <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.?</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id current_mask'>current_mask</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\?</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id current_values'>current_values</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>&gt;</span> <span class='int'>1</span>
     <span class='comment'>#
-</span>    <span class='id identifier rubyid_current_values'>current_values</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_idx'>idx</span><span class='op'>|</span>
-      <span class='id identifier rubyid_key'>key</span>  <span class='op'>=</span> <span class='id identifier rubyid_current_mask'>current_mask</span><span class='period'>.</span><span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lparen'>(</span><span class='id identifier rubyid_idx'>idx</span><span class='op'>+</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_item'>item</span> <span class='op'>=</span> <span class='id identifier rubyid_parametrize'>parametrize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
-        <span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_k'>k</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span> <span class='rbrace'>}</span>
+</span>    <span class='id current_values'>current_values</span><span class='period'>.</span><span class='id dup'>dup</span><span class='period'>.</span><span class='id each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id value'>value</span><span class='comma'>,</span> <span class='id idx'>idx</span><span class='op'>|</span>
+      <span class='id key'>key</span>  <span class='op'>=</span> <span class='id current_mask'>current_mask</span><span class='period'>.</span><span class='id sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lparen'>(</span><span class='id idx'>idx</span><span class='op'>+</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rparen'>)</span>
+      <span class='id item'>item</span> <span class='op'>=</span> <span class='id parametrize'>parametrize</span><span class='lparen'>(</span><span class='id value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>if</span> <span class='id item'>item</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+        <span class='id item'>item</span><span class='period'>.</span><span class='id each'>each</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id k'>k</span><span class='comma'>,</span> <span class='id v'>v</span><span class='op'>|</span> <span class='id result'>result</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id key'>key</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id k'>k</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id v'>v</span> <span class='rbrace'>}</span>
       <span class='kw'>else</span>
-        <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_item'>item</span>
+        <span class='id result'>result</span><span class='lbracket'>[</span><span class='id key'>key</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id item'>item</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
-  <span class='id identifier rubyid_result'>result</span>
+  <span class='id result'>result</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -732,33 +971,29 @@ bucket name</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="sign-class_method">
+  <p class="signature " id="sign-class_method">
   
     + (<tt>String</tt>) <strong>sign</strong>(aws_secret_access_key, auth_string, digest = nil) 
   
 
   
-
-  
-</h3><div class="docstring">
+</p><div class="docstring">
   <div class="discussion">
-    
-<p>Generates a signature for the given string, secret access key and digest</p>
-
+    Generates a signature for the given string, secret access key and digest
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h3>Examples:</h3>
     
-      
-      <pre class="example code"><code><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id identifier rubyid_sign'>sign</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-secret-key</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>something-that-needs-to-be-signed</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
-</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kdHo0Ks4KkypU1CkYZzAxFIIX+0=</span><span class='tstring_end'>&#39;</span></span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id sign'>sign</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-secret-key</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>something-that-needs-to-be-signed</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kdHo0Ks4KkypU1CkYZzAxFIIX+0=</span><span class='tstring_end'>&#39;</span></span></pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
+<h3>Parameters:</h3>
 <ul class="param">
   
     <li>
@@ -797,8 +1032,7 @@ bucket name</p>
     </li>
   
 </ul>
-
-<p class="tag_title">Returns:</p>
+<h3>Returns:</h3>
 <ul class="return">
   
     <li>
@@ -809,9 +1043,7 @@ bucket name</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>The signature.</p>
-</div>
+        <div class='inline'>The signature.</div>
       
     </li>
   
@@ -830,8 +1062,8 @@ bucket name</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 50</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_sign'>sign</span><span class='lparen'>(</span><span class='id identifier rubyid_aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id identifier rubyid_auth_string'>auth_string</span><span class='comma'>,</span> <span class='id identifier rubyid_digest'>digest</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_base64en'>base64en</span><span class='lparen'>(</span><span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>HMAC</span><span class='period'>.</span><span class='id identifier rubyid_digest'>digest</span><span class='lparen'>(</span><span class='id identifier rubyid_digest'>digest</span> <span class='op'>||</span> <span class='cvar'>@@digest1</span><span class='comma'>,</span> <span class='id identifier rubyid_aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id identifier rubyid_auth_string'>auth_string</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign'>sign</span><span class='lparen'>(</span><span class='id aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id auth_string'>auth_string</span><span class='comma'>,</span> <span class='id digest'>digest</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='const'>Utils</span><span class='op'>::</span><span class='id base64en'>base64en</span><span class='lparen'>(</span><span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>HMAC</span><span class='period'>.</span><span class='id digest'>digest</span><span class='lparen'>(</span><span class='id digest'>digest</span> <span class='op'>||</span> <span class='cvar'>@@digest1</span><span class='comma'>,</span> <span class='id aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id auth_string'>auth_string</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -839,33 +1071,29 @@ bucket name</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="sign_s3_signature-class_method">
+  <p class="signature " id="sign_s3_signature-class_method">
   
     + (<tt>String</tt>) <strong>sign_s3_signature</strong>(aws_secret_access_key, verb, canonicalized_resource, _headers = {}) 
   
 
   
-
-  
-</h3><div class="docstring">
+</p><div class="docstring">
   <div class="discussion">
-    
-<p>Signs and Authenticates REST Requests</p>
-
+    Signs and Authenticates REST Requests
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h3>Examples:</h3>
     
-      
-      <pre class="example code"><code><span class='id identifier rubyid_sign_s3_signature'>sign_s3_signature</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>secret</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:get</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xxx/yyy/zzz/object</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>header</span><span class='tstring_end'>&#39;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>value</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='comment'>#=&gt;
-</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i85igH0sftHD/cGZcLiBKcYEuks=</span><span class='tstring_end'>&quot;</span></span> </code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id sign_s3_signature'>sign_s3_signature</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>secret</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:get</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xxx/yyy/zzz/object</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>header</span><span class='tstring_end'>&#39;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>value</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i85igH0sftHD/cGZcLiBKcYEuks=</span><span class='tstring_end'>&quot;</span></span></pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
+<h3>Parameters:</h3>
 <ul class="param">
   
     <li>
@@ -889,9 +1117,7 @@ bucket name</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>&#39;get&#39; | &#39;post&#39;</p>
-</div>
+        <div class='inline'>&#39;get&#39; | &#39;post&#39;</div>
       
     </li>
   
@@ -920,8 +1146,7 @@ bucket name</p>
     </li>
   
 </ul>
-
-<p class="tag_title">Returns:</p>
+<h3>Returns:</h3>
 <ul class="return">
   
     <li>
@@ -935,7 +1160,7 @@ bucket name</p>
   
 </ul>
 
-  <p class="tag_title">See Also:</p>
+  <h3>See Also:</h3>
   <ul class="see">
     
       <li><a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html" target="_parent" title="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html</a></li>
@@ -972,25 +1197,25 @@ bucket name</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 178</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_sign_s3_signature'>sign_s3_signature</span><span class='lparen'>(</span><span class='id identifier rubyid_aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_canonicalized_resource'>canonicalized_resource</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_s3_signature'>sign_s3_signature</span><span class='lparen'>(</span><span class='id aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id verb'>verb</span><span class='comma'>,</span> <span class='id canonicalized_resource'>canonicalized_resource</span><span class='comma'>,</span> <span class='id _headers'>_headers</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='comment'># Make sure all our headers ara downcased
-</span>  <span class='id identifier rubyid__headers'>_headers</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
-    <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_value'>value</span>
+</span>  <span class='id _headers'>_headers</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id value'>value</span><span class='op'>|</span>
+    <span class='id headers'>headers</span><span class='lbracket'>[</span><span class='id key'>key</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id downcase'>downcase</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id value'>value</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id value'>value</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id value'>value</span>
   <span class='kw'>end</span>
-  <span class='id identifier rubyid_content_md5'>content_md5</span>                 <span class='op'>=</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-md5</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_content_type'>content_type</span>                <span class='op'>=</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_date'>date</span>                        <span class='op'>=</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x-amz-date</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>date</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>expires</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_canonicalized_x_amz_headers'>canonicalized_x_amz_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_headers'>headers</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>  <span class='id identifier rubyid_key'>key</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^x-amz-</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_value'>value</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_canonicalized_x_amz_headers'>canonicalized_x_amz_headers</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_canonicalized_x_amz_headers'>canonicalized_x_amz_headers</span><span class='period'>.</span><span class='id identifier rubyid__blank?'>_blank?</span>
+  <span class='id content_md5'>content_md5</span>                 <span class='op'>=</span> <span class='id headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-md5</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='id content_type'>content_type</span>                <span class='op'>=</span> <span class='id headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>content-type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='id date'>date</span>                        <span class='op'>=</span> <span class='id headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x-amz-date</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>date</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>expires</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='id canonicalized_x_amz_headers'>canonicalized_x_amz_headers</span> <span class='op'>=</span> <span class='id headers'>headers</span><span class='period'>.</span><span class='id select'>select</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id value'>value</span><span class='op'>|</span>  <span class='id key'>key</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^x-amz-</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id sort'>sort</span><span class='period'>.</span><span class='id map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id value'>value</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id key'>key</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id value'>value</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id canonicalized_x_amz_headers'>canonicalized_x_amz_headers</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id canonicalized_x_amz_headers'>canonicalized_x_amz_headers</span><span class='period'>.</span><span class='id _blank?'>_blank?</span>
   <span class='comment'># StringToSign
-</span>  <span class='id identifier rubyid_string_to_sign'>string_to_sign</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_verb'>verb</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>         <span class='op'>+</span>
-                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_content_md5'>content_md5</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>              <span class='op'>+</span>
-                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_content_type'>content_type</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>             <span class='op'>+</span>
-                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_date'>date</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>                     <span class='op'>+</span>
-                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_canonicalized_x_amz_headers'>canonicalized_x_amz_headers</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span>
-                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_canonicalized_resource'>canonicalized_resource</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_sign'>sign</span><span class='lparen'>(</span><span class='id identifier rubyid_aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id identifier rubyid_string_to_sign'>string_to_sign</span><span class='rparen'>)</span>
+</span>  <span class='id string_to_sign'>string_to_sign</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id verb'>verb</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id upcase'>upcase</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>         <span class='op'>+</span>
+                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id content_md5'>content_md5</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>              <span class='op'>+</span>
+                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id content_type'>content_type</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>             <span class='op'>+</span>
+                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id date'>date</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>                     <span class='op'>+</span>
+                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id canonicalized_x_amz_headers'>canonicalized_x_amz_headers</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span>
+                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id canonicalized_resource'>canonicalized_resource</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id sign'>sign</span><span class='lparen'>(</span><span class='id aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id string_to_sign'>string_to_sign</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -998,38 +1223,32 @@ bucket name</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="sign_v2_signature-class_method">
+  <p class="signature " id="sign_v2_signature-class_method">
   
     + (<tt>String</tt>) <strong>sign_v2_signature</strong>(aws_secret_access_key, params, verb, host, urn) 
   
 
   
-
-  
-</h3><div class="docstring">
+</p><div class="docstring">
   <div class="discussion">
-    
-<p>Signature Version 2</p>
-
-<p>EC2, SQS and SDB requests must be signed by this guy</p>
-
+    Signature Version 2<br/>EC2, SQS and SDB requests must be signed by this guy
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h3>Examples:</h3>
     
-      
-      <pre class="example code"><code><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InstanceId</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>i-00000000</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span>
-<span class='id identifier rubyid_sign_v2_signature'>sign_v2_signature</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>secret</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='symbol'>:get</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ec2.amazonaws.com</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InstanceId</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>i-00000000</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span>
+<span class='id sign_v2_signature'>sign_v2_signature</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>secret</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id params'>params</span><span class='comma'>,</span> <span class='symbol'>:get</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ec2.amazonaws.com</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
 </span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>InstanceId=i-00000000&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;
    Timestamp=2014-03-12T21%3A52%3A21.000Z&amp;Signature=gR2x3oWmNbh4bdZksPS
-   sg3t7U0zbTcnFOfizWF3Zujw%3D</span><span class='tstring_end'>&quot;</span></span></code></pre>
+   sg3t7U0zbTcnFOfizWF3Zujw%3D</span><span class='tstring_end'>&quot;</span></span></pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
+<h3>Parameters:</h3>
 <ul class="param">
   
     <li>
@@ -1064,9 +1283,7 @@ bucket name</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>&#39;get&#39; | &#39;post&#39;</p>
-</div>
+        <div class='inline'>&#39;get&#39; | &#39;post&#39;</div>
       
     </li>
   
@@ -1093,8 +1310,7 @@ bucket name</p>
     </li>
   
 </ul>
-
-<p class="tag_title">Returns:</p>
+<h3>Returns:</h3>
 <ul class="return">
   
     <li>
@@ -1108,7 +1324,7 @@ bucket name</p>
   
 </ul>
 
-  <p class="tag_title">See Also:</p>
+  <h3>See Also:</h3>
   <ul class="see">
     
       <li><a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html" target="_parent" title="http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html">http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html</a></li>
@@ -1144,22 +1360,22 @@ bucket name</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 118</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_sign_v2_signature'>sign_v2_signature</span><span class='lparen'>(</span><span class='id identifier rubyid_aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_urn'>urn</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Timestamp</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>      <span class='op'>||=</span> <span class='id identifier rubyid_utc_iso8601'>utc_iso8601</span><span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Expires</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SignatureVersion</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v2_signature'>sign_v2_signature</span><span class='lparen'>(</span><span class='id aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id params'>params</span><span class='comma'>,</span> <span class='id verb'>verb</span><span class='comma'>,</span> <span class='id host'>host</span><span class='comma'>,</span> <span class='id urn'>urn</span><span class='rparen'>)</span>
+  <span class='id params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Timestamp</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>      <span class='op'>||=</span> <span class='id utc_iso8601'>utc_iso8601</span><span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id now'>now</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Expires</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='id params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SignatureVersion</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2</span><span class='tstring_end'>&#39;</span></span>
   <span class='comment'># select a signing method (make an old openssl working with sha1)
 </span>  <span class='comment'># make &#39;HmacSHA256&#39; to be a default one
-</span>  <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SignatureMethod</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HmacSHA256</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HmacSHA256</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HmacSHA1</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SignatureMethod</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SignatureMethod</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HmacSHA1</span><span class='tstring_end'>&#39;</span></span>   <span class='kw'>unless</span> <span class='cvar'>@@digest256</span>
+</span>  <span class='id params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SignatureMethod</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HmacSHA256</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HmacSHA256</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HmacSHA1</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='id params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SignatureMethod</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SignatureMethod</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HmacSHA1</span><span class='tstring_end'>&#39;</span></span>   <span class='kw'>unless</span> <span class='cvar'>@@digest256</span>
   <span class='comment'># select a digest
-</span>  <span class='id identifier rubyid_digest'>digest</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SignatureMethod</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HmacSHA256</span><span class='tstring_end'>&#39;</span></span> <span class='op'>?</span> <span class='cvar'>@@digest256</span> <span class='op'>:</span> <span class='cvar'>@@digest1</span><span class='rparen'>)</span>
+</span>  <span class='id digest'>digest</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SignatureMethod</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HmacSHA256</span><span class='tstring_end'>&#39;</span></span> <span class='op'>?</span> <span class='cvar'>@@digest256</span> <span class='op'>:</span> <span class='cvar'>@@digest1</span><span class='rparen'>)</span>
   <span class='comment'># form string to sign
-</span>  <span class='id identifier rubyid_canonical_string'>canonical_string</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_params_to_urn'>params_to_urn</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='op'>|</span> <span class='id identifier rubyid_amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-  <span class='id identifier rubyid_string_to_sign'>string_to_sign</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_verb'>verb</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host'>host</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>    <span class='op'>+</span>
-                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_urn'>urn</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>              <span class='op'>+</span>
-                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_canonical_string'>canonical_string</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_canonical_string'>canonical_string</span><span class='embexpr_end'>}</span><span class='tstring_content'>&amp;Signature=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='id identifier rubyid_sign'>sign</span><span class='lparen'>(</span><span class='id identifier rubyid_aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id identifier rubyid_string_to_sign'>string_to_sign</span><span class='comma'>,</span> <span class='id identifier rubyid_digest'>digest</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+</span>  <span class='id canonical_string'>canonical_string</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id params_to_urn'>params_to_urn</span><span class='lparen'>(</span><span class='id params'>params</span><span class='rparen'>)</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id value'>value</span><span class='op'>|</span> <span class='id amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='id value'>value</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+  <span class='id string_to_sign'>string_to_sign</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id verb'>verb</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id upcase'>upcase</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id host'>host</span><span class='period'>.</span><span class='id downcase'>downcase</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>    <span class='op'>+</span>
+                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id urn'>urn</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>              <span class='op'>+</span>
+                   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id canonical_string'>canonical_string</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id canonical_string'>canonical_string</span><span class='embexpr_end'>}</span><span class='tstring_content'>&amp;Signature=</span><span class='embexpr_beg'>#{</span><span class='id amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='id sign'>sign</span><span class='lparen'>(</span><span class='id aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id string_to_sign'>string_to_sign</span><span class='comma'>,</span> <span class='id digest'>digest</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1167,35 +1383,761 @@ bucket name</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="utc_iso8601-class_method">
+  <p class="signature " id="sign_v4_get_canonical_headers-class_method">
+  
+    + (<tt>Object</tt>) <strong>sign_v4_get_canonical_headers</strong>(headers) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+325
+326
+327</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 325</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_get_canonical_headers'>sign_v4_get_canonical_headers</span><span class='lparen'>(</span><span class='id headers'>headers</span><span class='rparen'>)</span>
+  <span class='id headers'>headers</span><span class='period'>.</span><span class='id sort'>sort</span><span class='period'>.</span><span class='id map'>map</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id value'>value</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id key'>key</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id value'>value</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sign_v4_get_canonical_path-class_method">
+  
+    + (<tt>Object</tt>) <strong>sign_v4_get_canonical_path</strong>(path) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+306
+307
+308</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 306</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_get_canonical_path'>sign_v4_get_canonical_path</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span>
+  <span class='id path'>path</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sign_v4_get_canonical_string-class_method">
+  
+    + (<tt>String</tt>) <strong>sign_v4_get_canonical_string</strong>(verb, path, query_string, headers, signed_headers, payload) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    Signature V4: Returns Canonical String
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+363
+364
+365
+366
+367
+368
+369
+370</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 363</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_get_canonical_string'>sign_v4_get_canonical_string</span><span class='lparen'>(</span><span class='id verb'>verb</span><span class='comma'>,</span> <span class='id path'>path</span><span class='comma'>,</span> <span class='id query_string'>query_string</span><span class='comma'>,</span> <span class='id headers'>headers</span><span class='comma'>,</span> <span class='id signed_headers'>signed_headers</span><span class='comma'>,</span> <span class='id payload'>payload</span><span class='rparen'>)</span>
+  <span class='id verb'>verb</span>           <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>   <span class='op'>+</span>
+  <span class='id path'>path</span>           <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>   <span class='op'>+</span>
+  <span class='id query_string'>query_string</span>   <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>   <span class='op'>+</span>
+  <span class='id headers'>headers</span>        <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+  <span class='id signed_headers'>signed_headers</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>   <span class='op'>+</span>
+  <span class='id payload'>payload</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sign_v4_get_canonical_verb-class_method">
+  
+    + (<tt>Object</tt>) <strong>sign_v4_get_canonical_verb</strong>(verb) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+301
+302
+303</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 301</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_get_canonical_verb'>sign_v4_get_canonical_verb</span><span class='lparen'>(</span><span class='id verb'>verb</span><span class='rparen'>)</span>
+  <span class='id verb'>verb</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id upcase'>upcase</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sign_v4_get_service_and_region-class_method">
+  
+    + (<tt>Object</tt>) <strong>sign_v4_get_service_and_region</strong>(host) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 200</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_get_service_and_region'>sign_v4_get_service_and_region</span><span class='lparen'>(</span><span class='id host'>host</span><span class='rparen'>)</span>
+  <span class='id result'>result</span> <span class='op'>=</span>
+    <span class='kw'>case</span>
+    <span class='kw'>when</span> <span class='id host'>host</span><span class='lbracket'>[</span>                  <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^iam\.amazonaws\.com$</span><span class='regexp_end'>/i</span></span> <span class='rbracket'>]</span> <span class='kw'>then</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>iam</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>us-east-1</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='id host'>host</span><span class='lbracket'>[</span>            <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(.*\.)?s3\.amazonaws\.com$</span><span class='regexp_end'>/i</span></span> <span class='rbracket'>]</span> <span class='kw'>then</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>s3</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>us-east-1</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='id host'>host</span><span class='lbracket'>[</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(.*\.)?s3-external-1\.amazonaws\.com$</span><span class='regexp_end'>/i</span></span> <span class='rbracket'>]</span> <span class='kw'>then</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>s3</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>us-east-1</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='id host'>host</span><span class='lbracket'>[</span>    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>s3-website-([^.]+)\.amazonaws\.com$</span><span class='regexp_end'>/i</span></span> <span class='rbracket'>]</span> <span class='kw'>then</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>s3</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>           <span class='backref'>$1</span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='id host'>host</span><span class='lbracket'>[</span>     <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(.*\.)?s3-([^.]+).amazonaws\.com$</span><span class='regexp_end'>/i</span></span> <span class='rbracket'>]</span> <span class='kw'>then</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>s3</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>           <span class='backref'>$2</span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='id host'>host</span><span class='lbracket'>[</span>   <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(.*\.)?s3\.([^.]+)\.amazonaws\.com$</span><span class='regexp_end'>/i</span></span> <span class='rbracket'>]</span> <span class='kw'>then</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>s3</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>           <span class='backref'>$2</span><span class='rbracket'>]</span>
+    <span class='kw'>else</span> <span class='id host'>host</span><span class='lbracket'>[</span>     <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^([^.]+)\.([^.]+)\.amazonaws\.com$</span><span class='regexp_end'>/i</span></span> <span class='rbracket'>]</span>   <span class='op'>&amp;&amp;</span> <span class='lbracket'>[</span><span class='backref'>$1</span><span class='comma'>,</span>             <span class='backref'>$2</span><span class='rbracket'>]</span>
+    <span class='kw'>end</span>
+  <span class='id fail'>fail</span><span class='lparen'>(</span><span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot extract service name from %s host</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id host'>host</span><span class='period'>.</span><span class='id inspect'>inspect</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id result'>result</span> <span class='op'>||</span> <span class='id result'>result</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id empty?'>empty?</span>
+  <span class='id fail'>fail</span><span class='lparen'>(</span><span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot extract region name from %s host</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>%</span> <span class='id host'>host</span><span class='period'>.</span><span class='id inspect'>inspect</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id result'>result</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id empty?'>empty?</span>
+  <span class='id result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sign_v4_get_signature_key-class_method">
+  
+    + (<tt>Object</tt>) <strong>sign_v4_get_signature_key</strong>(key, string_to_sign, date, region, service, digest = @@digest256) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    Helpers from AWS documentation http://docs.aws.amazon.com/general/latest/gr/signature-v4-examples.html
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+386
+387
+388
+389
+390
+391
+392</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 386</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_get_signature_key'>sign_v4_get_signature_key</span><span class='lparen'>(</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id string_to_sign'>string_to_sign</span><span class='comma'>,</span> <span class='id date'>date</span><span class='comma'>,</span> <span class='id region'>region</span><span class='comma'>,</span> <span class='id service'>service</span><span class='comma'>,</span> <span class='id digest'>digest</span> <span class='op'>=</span> <span class='cvar'>@@digest256</span><span class='rparen'>)</span>
+  <span class='id k_date'>k_date</span>    <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>HMAC</span><span class='period'>.</span><span class='id digest'>digest</span><span class='lparen'>(</span><span class='id digest'>digest</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AWS4</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id key'>key</span><span class='comma'>,</span> <span class='id date'>date</span><span class='rparen'>)</span>
+  <span class='id k_region'>k_region</span>  <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>HMAC</span><span class='period'>.</span><span class='id digest'>digest</span><span class='lparen'>(</span><span class='id digest'>digest</span><span class='comma'>,</span> <span class='id k_date'>k_date</span><span class='comma'>,</span>       <span class='id region'>region</span><span class='rparen'>)</span>
+  <span class='id k_service'>k_service</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>HMAC</span><span class='period'>.</span><span class='id digest'>digest</span><span class='lparen'>(</span><span class='id digest'>digest</span><span class='comma'>,</span> <span class='id k_region'>k_region</span><span class='comma'>,</span>     <span class='id service'>service</span><span class='rparen'>)</span>
+  <span class='id k_signing'>k_signing</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>HMAC</span><span class='period'>.</span><span class='id digest'>digest</span><span class='lparen'>(</span><span class='id digest'>digest</span><span class='comma'>,</span> <span class='id k_service'>k_service</span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>aws4_request</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id hex_encode'>hex_encode</span>  <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>HMAC</span><span class='period'>.</span><span class='id digest'>digest</span><span class='lparen'>(</span><span class='id digest'>digest</span><span class='comma'>,</span> <span class='id k_signing'>k_signing</span><span class='comma'>,</span>    <span class='id string_to_sign'>string_to_sign</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sign_v4_get_signed_headers-class_method">
+  
+    + (<tt>Object</tt>) <strong>sign_v4_get_signed_headers</strong>(headers) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+330
+331
+332</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 330</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_get_signed_headers'>sign_v4_get_signed_headers</span><span class='lparen'>(</span><span class='id headers'>headers</span><span class='rparen'>)</span>
+  <span class='id headers'>headers</span><span class='period'>.</span><span class='id keys'>keys</span><span class='period'>.</span><span class='id sort'>sort</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sign_v4_get_string_to_sign-class_method">
+  
+    + (<tt>String</tt>) <strong>sign_v4_get_string_to_sign</strong>(algorithm, current_time, creds_scope, canonical_string) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    Signature V4: A string to sign value
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+377
+378
+379
+380
+381
+382</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 377</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_get_string_to_sign'>sign_v4_get_string_to_sign</span><span class='lparen'>(</span><span class='id algorithm'>algorithm</span><span class='comma'>,</span> <span class='id current_time'>current_time</span><span class='comma'>,</span> <span class='id creds_scope'>creds_scope</span><span class='comma'>,</span> <span class='id canonical_string'>canonical_string</span><span class='rparen'>)</span>
+  <span class='id algorithm'>algorithm</span>    <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+  <span class='id current_time'>current_time</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+  <span class='id creds_scope'>creds_scope</span>  <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+  <span class='id hex_encode'>hex_encode</span><span class='lparen'>(</span><span class='const'>Digest</span><span class='op'>::</span><span class='const'>SHA256</span><span class='period'>.</span><span class='id digest'>digest</span><span class='lparen'>(</span><span class='id canonical_string'>canonical_string</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id downcase'>downcase</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sign_v4_headers-class_method">
+  
+    + (<tt>Object</tt>) <strong>sign_v4_headers</strong>(request, host, current_time) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 335</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_headers'>sign_v4_headers</span><span class='lparen'>(</span><span class='id request'>request</span><span class='comma'>,</span> <span class='id host'>host</span><span class='comma'>,</span> <span class='id current_time'>current_time</span><span class='rparen'>)</span>
+  <span class='id expires_at'>expires_at</span> <span class='op'>=</span> <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-Expires</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id first'>first</span> <span class='op'>||</span> <span class='int'>3600</span>
+  <span class='id expires_at'>expires_at</span> <span class='op'>=</span> <span class='id expires_at'>expires_at</span><span class='period'>.</span><span class='id to_i'>to_i</span> <span class='kw'>if</span> <span class='id expires_at'>expires_at</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Time</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>IO</span><span class='rparen'>)</span>
+    <span class='id canonical_payload'>canonical_payload</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-Content-Sha256</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UNSIGNED-PAYLOAD</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span>    <span class='op'>=</span> <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+    <span class='id canonical_payload'>canonical_payload</span> <span class='op'>=</span> <span class='id hex_encode'>hex_encode</span><span class='lparen'>(</span><span class='const'>Digest</span><span class='op'>::</span><span class='const'>SHA256</span><span class='period'>.</span><span class='id digest'>digest</span><span class='lparen'>(</span><span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='id content_type'>content_type</span>      <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/x-www-form-urlencoded; charset=utf-8</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id content_md5'>content_md5</span>       <span class='op'>=</span> <span class='const'>Base64</span><span class='op'>::</span><span class='id encode64'>encode64</span><span class='lparen'>(</span><span class='const'>Digest</span><span class='op'>::</span><span class='const'>MD5</span><span class='op'>::</span><span class='id digest'>digest</span><span class='lparen'>(</span><span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id strip'>strip</span>
+    <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Content-Length</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>       <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id bytesize'>bytesize</span><span class='rparen'>)</span>
+    <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>         <span class='id content_type'>content_type</span><span class='rparen'>)</span>
+    <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Content-Md5</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>          <span class='id content_md5'>content_md5</span><span class='rparen'>)</span>
+    <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-Content-Sha256</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id canonical_payload'>canonical_payload</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-Date</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>    <span class='op'>=</span> <span class='id current_time'>current_time</span>
+  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-Expires</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id expires_at'>expires_at</span>
+
+  <span class='id canonical_payload'>canonical_payload</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sign_v4_query_params-class_method">
+  
+    + (<tt>Object</tt>) <strong>sign_v4_query_params</strong>(request, algorithm, current_time, signed_headers, aws_access_key, creds_scope) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 311</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_query_params'>sign_v4_query_params</span><span class='lparen'>(</span><span class='id request'>request</span><span class='comma'>,</span> <span class='id algorithm'>algorithm</span><span class='comma'>,</span> <span class='id current_time'>current_time</span><span class='comma'>,</span> <span class='id signed_headers'>signed_headers</span><span class='comma'>,</span> <span class='id aws_access_key'>aws_access_key</span><span class='comma'>,</span> <span class='id creds_scope'>creds_scope</span><span class='rparen'>)</span>
+  <span class='id expires_at'>expires_at</span> <span class='op'>=</span> <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-Expires</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='int'>3600</span>
+  <span class='id expires_at'>expires_at</span> <span class='op'>=</span> <span class='id expires_at'>expires_at</span><span class='period'>.</span><span class='id to_i'>to_i</span> <span class='kw'>if</span> <span class='id expires_at'>expires_at</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Time</span><span class='rparen'>)</span>
+
+  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-Date</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>          <span class='op'>=</span> <span class='id current_time'>current_time</span>
+  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-Expires</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>       <span class='op'>=</span> <span class='id expires_at'>expires_at</span>
+  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-Algorithm</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>     <span class='op'>=</span> <span class='id algorithm'>algorithm</span>
+  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-SignedHeaders</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id signed_headers'>signed_headers</span>
+  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>X-Amz-Credential</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s/%s</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='id aws_access_key'>aws_access_key</span><span class='comma'>,</span> <span class='id creds_scope'>creds_scope</span><span class='rbracket'>]</span>
+
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UNSIGNED-PAYLOAD</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sign_v4_signature-class_method">
+  
+    + (<tt>String</tt>) <strong>sign_v4_signature</strong>(aws_access_key, aws_secret_access_key, host, request, method = :headers) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    Signs and Authenticates REST Requests
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>aws_secret_access_key</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>aws_access_key</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>host</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>request</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html" target="_parent" title="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 228</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id sign_v4_signature'>sign_v4_signature</span><span class='lparen'>(</span><span class='id aws_access_key'>aws_access_key</span><span class='comma'>,</span> <span class='id aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id host'>host</span><span class='comma'>,</span> <span class='id request'>request</span><span class='comma'>,</span> <span class='id method'>method</span><span class='op'>=</span><span class='symbol'>:headers</span><span class='rparen'>)</span>
+  <span class='id now'>now</span>             <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id now'>now</span><span class='period'>.</span><span class='id utc'>utc</span>
+  <span class='id current_date'>current_date</span>    <span class='op'>=</span> <span class='id now'>now</span><span class='period'>.</span><span class='id strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%Y%m%d</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id current_time'>current_time</span>    <span class='op'>=</span> <span class='id now'>now</span><span class='period'>.</span><span class='id strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%Y%m%dT%H%M%SZ</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id host'>host</span>            <span class='op'>=</span> <span class='id host'>host</span><span class='period'>.</span><span class='id downcase'>downcase</span>
+  <span class='id service'>service</span><span class='comma'>,</span> <span class='id region'>region</span> <span class='op'>=</span> <span class='id sign_v4_get_service_and_region'>sign_v4_get_service_and_region</span><span class='lparen'>(</span><span class='id host'>host</span><span class='rparen'>)</span>
+  <span class='id creds_scope'>creds_scope</span>     <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s/%s/%s/aws4_request</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='id current_date'>current_date</span><span class='comma'>,</span> <span class='id region'>region</span><span class='comma'>,</span> <span class='id service'>service</span><span class='rbracket'>]</span>
+  <span class='id algorithm'>algorithm</span>       <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AWS4-HMAC-SHA256</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='comment'># Verb
+</span>  <span class='id canonical_verb'>canonical_verb</span> <span class='op'>=</span> <span class='id sign_v4_get_canonical_verb'>sign_v4_get_canonical_verb</span><span class='lparen'>(</span><span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:verb</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='comment'># Path
+</span>  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id canonical_path'>canonical_path</span>   <span class='op'>=</span> <span class='id sign_v4_get_canonical_path'>sign_v4_get_canonical_path</span><span class='lparen'>(</span><span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='comment'># Headers (Auth)
+</span>  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Authorization</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id method'>method</span> <span class='op'>==</span> <span class='symbol'>:headers</span>
+    <span class='id canonical_payload'>canonical_payload</span> <span class='op'>=</span> <span class='id sign_v4_headers'>sign_v4_headers</span><span class='lparen'>(</span><span class='id request'>request</span><span class='comma'>,</span> <span class='id host'>host</span><span class='comma'>,</span> <span class='id current_time'>current_time</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='comment'># Headers (Standard)
+</span>  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Host</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id host'>host</span>
+  <span class='id _headers'>_headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id value'>value</span><span class='op'>|</span>
+    <span class='id _headers'>_headers</span><span class='lbracket'>[</span><span class='id key'>key</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id downcase'>downcase</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id value'>value</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id value'>value</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id value'>value</span>
+  <span class='kw'>end</span>
+  <span class='id canonical_headers'>canonical_headers</span> <span class='op'>=</span> <span class='id sign_v4_get_canonical_headers'>sign_v4_get_canonical_headers</span><span class='lparen'>(</span><span class='id _headers'>_headers</span><span class='rparen'>)</span>
+  <span class='id signed_headers'>signed_headers</span>    <span class='op'>=</span> <span class='id sign_v4_get_signed_headers'>sign_v4_get_signed_headers</span><span class='lparen'>(</span><span class='id _headers'>_headers</span><span class='rparen'>)</span>
+
+  <span class='comment'># Params (Auth)
+</span>  <span class='kw'>if</span> <span class='id method'>method</span> <span class='op'>!=</span> <span class='symbol'>:headers</span>
+    <span class='id canonical_payload'>canonical_payload</span> <span class='op'>=</span> <span class='id sign_v4_query_params'>sign_v4_query_params</span><span class='lparen'>(</span>
+      <span class='id request'>request</span><span class='comma'>,</span>
+      <span class='id algorithm'>algorithm</span><span class='comma'>,</span>
+      <span class='id current_time'>current_time</span><span class='comma'>,</span>
+      <span class='id signed_headers'>signed_headers</span><span class='comma'>,</span>
+      <span class='id aws_access_key'>aws_access_key</span><span class='comma'>,</span>
+      <span class='id creds_scope'>creds_scope</span>
+    <span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='comment'># Params (Standard)
+</span>  <span class='id canonical_query_string'>canonical_query_string</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id params_to_urn'>params_to_urn</span><span class='lparen'>(</span><span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id value'>value</span><span class='op'>|</span> <span class='id amz_escape'>amz_escape</span><span class='lparen'>(</span><span class='id value'>value</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+
+  <span class='comment'># Canonical String
+</span>  <span class='id canonical_string'>canonical_string</span> <span class='op'>=</span> <span class='id sign_v4_get_canonical_string'>sign_v4_get_canonical_string</span><span class='lparen'>(</span>
+    <span class='id canonical_verb'>canonical_verb</span><span class='comma'>,</span>
+    <span class='id canonical_path'>canonical_path</span><span class='comma'>,</span>
+    <span class='id canonical_query_string'>canonical_query_string</span><span class='comma'>,</span>
+    <span class='id canonical_headers'>canonical_headers</span><span class='comma'>,</span>
+    <span class='id signed_headers'>signed_headers</span><span class='comma'>,</span>
+    <span class='id canonical_payload'>canonical_payload</span>
+  <span class='rparen'>)</span>
+
+  <span class='comment'># StringToSign
+</span>  <span class='id string_to_sign'>string_to_sign</span> <span class='op'>=</span> <span class='id sign_v4_get_string_to_sign'>sign_v4_get_string_to_sign</span><span class='lparen'>(</span><span class='id algorithm'>algorithm</span><span class='comma'>,</span> <span class='id current_time'>current_time</span><span class='comma'>,</span> <span class='id creds_scope'>creds_scope</span><span class='comma'>,</span> <span class='id canonical_string'>canonical_string</span><span class='rparen'>)</span>
+
+  <span class='comment'># Signature
+</span>  <span class='id signature'>signature</span> <span class='op'>=</span> <span class='id sign_v4_get_signature_key'>sign_v4_get_signature_key</span><span class='lparen'>(</span><span class='id aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id string_to_sign'>string_to_sign</span><span class='comma'>,</span> <span class='id current_date'>current_date</span><span class='comma'>,</span> <span class='id region'>region</span><span class='comma'>,</span> <span class='id service'>service</span><span class='rparen'>)</span>
+
+  <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>?%s</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id canonical_query_string'>canonical_query_string</span> <span class='kw'>unless</span> <span class='id canonical_query_string'>canonical_query_string</span><span class='period'>.</span><span class='id empty?'>empty?</span>
+
+  <span class='kw'>if</span> <span class='id method'>method</span> <span class='op'>==</span> <span class='symbol'>:headers</span>
+    <span class='comment'># Authorization Header
+</span>    <span class='id authorization_header'>authorization_header</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s Credential=%s/%s, SignedHeaders=%s, Signature=%s</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span>
+                           <span class='lbracket'>[</span><span class='id algorithm'>algorithm</span><span class='comma'>,</span> <span class='id aws_access_key'>aws_access_key</span><span class='comma'>,</span> <span class='id creds_scope'>creds_scope</span><span class='comma'>,</span> <span class='id signed_headers'>signed_headers</span><span class='comma'>,</span> <span class='id signature'>signature</span><span class='rbracket'>]</span>
+    <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Authorization</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id authorization_header'>authorization_header</span>
+  <span class='kw'>else</span>
+    <span class='id request'>request</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&amp;X-Amz-Signature=%s</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id signature'>signature</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="utc_iso8601-class_method">
   
     + (<tt>String</tt>) <strong>utc_iso8601</strong>(time) 
   
 
   
-
-  
-</h3><div class="docstring">
+</p><div class="docstring">
   <div class="discussion">
-    
-<p>Returns ISO-8601 representation for the given time</p>
-
+    Returns ISO-8601 representation for the given time
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h3>Examples:</h3>
     
-      
-      <pre class="example code"><code><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id identifier rubyid_utc_iso8601'>utc_iso8601</span><span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;2013-03-22T21:00:21.000Z&#39;</span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id utc_iso8601'>utc_iso8601</span><span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id now'>now</span><span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;2013-03-22T21:00:21.000Z&#39;</span></pre>
     
-      
-      <pre class="example code"><code><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id identifier rubyid_utc_iso8601'>utc_iso8601</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;1970-01-01T00:00:00.000Z&#39;</span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='period'>.</span><span class='id utc_iso8601'>utc_iso8601</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span> <span class='comment'>#=&gt; &#39;1970-01-01T00:00:00.000Z&#39;</span></pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
+<h3>Parameters:</h3>
 <ul class="param">
   
     <li>
@@ -1210,8 +2152,7 @@ bucket name</p>
     </li>
   
 </ul>
-
-<p class="tag_title">Returns:</p>
+<h3>Returns:</h3>
 <ul class="return">
   
     <li>
@@ -1242,12 +2183,12 @@ bucket name</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/base/helpers/utils.rb', line 66</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_utc_iso8601'>utc_iso8601</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id utc_iso8601'>utc_iso8601</span><span class='lparen'>(</span><span class='id time'>time</span><span class='rparen'>)</span>
   <span class='kw'>case</span>
-  <span class='kw'>when</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Fixnum</span><span class='rparen'>)</span> <span class='kw'>then</span> <span class='const'>Time</span><span class='op'>::</span><span class='id identifier rubyid_at'>at</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
-  <span class='kw'>when</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span> <span class='kw'>then</span> <span class='const'>Time</span><span class='op'>::</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
-  <span class='kw'>else</span>                         <span class='id identifier rubyid_time'>time</span>
-  <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%Y-%m-%dT%H:%M:%S.000Z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='id time'>time</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Fixnum</span><span class='rparen'>)</span> <span class='kw'>then</span> <span class='const'>Time</span><span class='op'>::</span><span class='id at'>at</span><span class='lparen'>(</span><span class='id time'>time</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='id time'>time</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span> <span class='kw'>then</span> <span class='const'>Time</span><span class='op'>::</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='id time'>time</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>                         <span class='id time'>time</span>
+  <span class='kw'>end</span><span class='period'>.</span><span class='id utc'>utc</span><span class='period'>.</span><span class='id strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%Y-%m-%dT%H:%M:%S.000Z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1257,11 +2198,11 @@ bucket name</p>
   </div>
 
 </div>
-
+    
     <div id="footer">
-  Generated on Tue Jul 15 09:24:51 2014 by
+  Generated on Fri Jan 16 16:01:35 2015 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.7.2 (ruby-2.1.5).
 </div>
 
   </body>

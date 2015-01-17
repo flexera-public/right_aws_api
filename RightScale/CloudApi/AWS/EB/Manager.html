@@ -6,20 +6,18 @@
 <title>
   Class: RightScale::CloudApi::AWS::EB::Manager
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.7.2
   
 </title>
 
-  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
-  relpath = '../../../../';
-  framesUrl = "../../../../frames.html#!RightScale/CloudApi/AWS/EB/Manager.html";
+  relpath = '../../../..';
+  if (relpath != '') relpath += '/';
 </script>
-
 
   <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
 
@@ -28,41 +26,36 @@
 
   </head>
   <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
     <div id="header">
       <div id="menu">
   
-    <a href="../../../../_index.html">Index (M)</a> &raquo;
+    <a href="../../../../_index.html">Index (M)</a> &raquo; 
     <span class='title'><span class='object_link'><a href="../../../../RightScale.html" title="RightScale (module)">RightScale</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../CloudApi.html" title="RightScale::CloudApi (module)">CloudApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../AWS.html" title="RightScale::CloudApi::AWS (module)">AWS</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../EB.html" title="RightScale::CloudApi::AWS::EB (module)">EB</a></span></span>
      &raquo; 
     <span class="title">Manager</span>
   
-
+  
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
   
-    <a class="full_list_link" id="class_list_link"
-        href="../../../../class_list.html">
-      Class List
-    </a>
+    <a id="class_list_link" href="#">Class List</a>
   
-    <a class="full_list_link" id="method_list_link"
-        href="../../../../method_list.html">
-      Method List
-    </a>
+    <a id="method_list_link" href="#">Method List</a>
   
-    <a class="full_list_link" id="file_list_link"
-        href="../../../../file_list.html">
-      File List
-    </a>
+    <a id="file_list_link" href="#">File List</a>
   
 </div>
       <div class="clear"></div>
     </div>
-
+    
     <iframe id="search_frame"></iframe>
-
+    
     <div id="content"><h1>Class: RightScale::CloudApi::AWS::EB::Manager
   
   
@@ -105,38 +98,35 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>Amazon Elastic Beanstalk (EB) compatible manager (thread safe).</p>
-
+    Amazon Elastic Beanstalk (EB) compatible manager (thread safe).
 
   </div>
 </div>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h3>Examples:</h3>
     
-      
-      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>right_aws_api</span><span class='tstring_end'>&quot;</span></span>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>right_aws_api</span><span class='tstring_end'>&quot;</span></span>
 
-<span class='id identifier rubyid_eb'>eb</span> <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>EB</span><span class='op'>::</span><span class='const'>Manager</span><span class='op'>::</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://elasticbeanstalk.us-east-1.amazonaws.com</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id eb'>eb</span> <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>EB</span><span class='op'>::</span><span class='const'>Manager</span><span class='op'>::</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id secret'>secret</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://elasticbeanstalk.us-east-1.amazonaws.com</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
 <span class='comment'># Get the descriptions of existing applications
-</span><span class='id identifier rubyid_eb'>eb</span><span class='period'>.</span><span class='const'>DescribeApplications</span> <span class='comment'>#=&gt;
+</span><span class='id eb'>eb</span><span class='period'>.</span><span class='const'>DescribeApplications</span> <span class='comment'>#=&gt;
 </span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DescribeApplicationsResponse</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
     <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://elasticbeanstalk.amazonaws.com/docs/2010-12-01/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DescribeApplicationsResult</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Applications</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='kw'>nil</span><span class='rbrace'>}</span><span class='comma'>,</span>
-     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ResponseMetadata</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RequestId</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>b7c61b5a-4f69-11e2-a3d0-a772ddd49d31</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbrace'>}</span></code></pre>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ResponseMetadata</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RequestId</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>b7c61b5a-4f69-11e2-a3d0-a772ddd49d31</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbrace'>}</span></pre>
     
-      
-      <pre class="example code"><code><span class='comment'># Create a new application
-</span><span class='id identifier rubyid_eb'>eb</span><span class='period'>.</span><span class='const'>CreateApplication</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ApplicationName</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MyApp</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-                     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Description</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>My Description</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># Create a new application
+</span><span class='id eb'>eb</span><span class='period'>.</span><span class='const'>CreateApplication</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ApplicationName</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MyApp</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Description</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>My Description</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></pre>
     
   </div>
 
-
-  <p class="tag_title">See Also:</p>
+  <h3>See Also:</h3>
   <ul class="see">
     
       <li><span class='object_link'><a href="ApiManager.html" title="RightScale::CloudApi::AWS::EB::ApiManager (class)">ApiManager</a></span></li>
@@ -147,13 +137,19 @@
 
 </div>
 
-
-
-
-
+  
+  
+  
+  
+  
 
 
   
+  
+  
+  
+
+
   
   
   
@@ -162,11 +158,11 @@
   
 
 </div>
-
+    
     <div id="footer">
-  Generated on Tue Jul 15 09:24:51 2014 by
+  Generated on Fri Jan 16 16:01:35 2015 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.7.2 (ruby-2.1.5).
 </div>
 
   </body>
