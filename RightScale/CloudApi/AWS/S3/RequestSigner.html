@@ -96,7 +96,8 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    S3 Request signer
+    <p>S3 Request signer</p>
+
 
   </div>
 </div>
@@ -124,7 +125,8 @@
         <dt id="SUB_RESOURCES-constant" class="">SUB_RESOURCES =
           <div class="docstring">
   <div class="discussion">
-    This guys are used to sign a request
+    <p>This guys are used to sign a request</p>
+
 
   </div>
 </div>
@@ -189,8 +191,11 @@ SUB_RESOURCES = %w{
         <dt id="OVERRIDE_RESPONSE_HEADERS-constant" class="">OVERRIDE_RESPONSE_HEADERS =
           <div class="docstring">
   <div class="discussion">
-    Using Query String API Amazon allows to override some of response headers:<br/>response-content-type response-content-language response-expires
-reponse-cache-control response-content-disposition response-content-encoding
+    <p>Using Query String API Amazon allows to override some of response headers:</p>
+
+<p>response-content-type response-content-language response-expires
+reponse-cache-control response-content-disposition response-content-encoding</p>
+
 
   </div>
 </div>
@@ -210,7 +215,8 @@ reponse-cache-control response-content-disposition response-content-encoding
         <dt id="ONE_YEAR_OF_SECONDS-constant" class="">ONE_YEAR_OF_SECONDS =
           <div class="docstring">
   <div class="discussion">
-    One year in seconds
+    <p>One year in seconds</p>
+
 
   </div>
 </div>
@@ -253,7 +259,8 @@ reponse-cache-control response-content-disposition response-content-encoding
   
 
   
-    <span class="summary_desc"><div class='inline'>Returns response body.</div></span>
+    <span class="summary_desc"><div class='inline'><p>Returns response body.</p>
+</div></span>
   
 </li>
 
@@ -274,7 +281,8 @@ reponse-cache-control response-content-disposition response-content-encoding
   
 
   
-    <span class="summary_desc"><div class='inline'>Extracts S3 bucket name and escapes relative path.</div></span>
+    <span class="summary_desc"><div class='inline'><p>Extracts S3 bucket name and escapes relative path.</p>
+</div></span>
   
 </li>
 
@@ -295,7 +303,8 @@ reponse-cache-control response-content-disposition response-content-encoding
   
 
   
-    <span class="summary_desc"><div class='inline'>Sets response headers.</div></span>
+    <span class="summary_desc"><div class='inline'><p>Sets response headers.</p>
+</div></span>
   
 </li>
 
@@ -316,7 +325,8 @@ reponse-cache-control response-content-disposition response-content-encoding
   
 
   
-    <span class="summary_desc"><div class='inline'>Figure out if we need to add bucket name into the host name.</div></span>
+    <span class="summary_desc"><div class='inline'><p>Figure out if we need to add bucket name into the host name.</p>
+</div></span>
   
 </li>
 
@@ -337,7 +347,8 @@ reponse-cache-control response-content-disposition response-content-encoding
   
 
   
-    <span class="summary_desc"><div class='inline'>Builds request path.</div></span>
+    <span class="summary_desc"><div class='inline'><p>Builds request path.</p>
+</div></span>
   
 </li>
 
@@ -358,8 +369,9 @@ reponse-cache-control response-content-disposition response-content-encoding
   
 
   
-    <span class="summary_desc"><div class='inline'>Returns +true+ if DNS compatible buckets are enabled (default) and the
-given bucket is DNS compatible.</div></span>
+    <span class="summary_desc"><div class='inline'><p>Returns +true+ if DNS compatible buckets are enabled (default) and the
+given bucket is DNS compatible.</p>
+</div></span>
   
 </li>
 
@@ -380,7 +392,8 @@ given bucket is DNS compatible.</div></span>
   
 
   
-    <span class="summary_desc"><div class='inline'>Authenticates an S3 request.</div></span>
+    <span class="summary_desc"><div class='inline'><p>Authenticates an S3 request.</p>
+</div></span>
   
 </li>
 
@@ -404,7 +417,8 @@ given bucket is DNS compatible.</div></span>
   
 </p><div class="docstring">
   <div class="discussion">
-    Returns response body
+    <p>Returns response body</p>
+
 
   </div>
 </div>
@@ -485,7 +499,8 @@ given bucket is DNS compatible.</div></span>
   
 </p><div class="docstring">
   <div class="discussion">
-    Extracts S3 bucket name and escapes relative path
+    <p>Extracts S3 bucket name and escapes relative path</p>
+
 
   </div>
 </div>
@@ -536,7 +551,8 @@ given bucket is DNS compatible.</div></span>
       
       
         &mdash;
-        <div class='inline'>[bucket, escaped_relative_path]</div>
+        <div class='inline'><p>[bucket, escaped<em>relative</em>path]</p>
+</div>
       
     </li>
   
@@ -588,7 +604,8 @@ given bucket is DNS compatible.</div></span>
   
 </p><div class="docstring">
   <div class="discussion">
-    Sets response headers
+    <p>Sets response headers</p>
+
 
   </div>
 </div>
@@ -686,15 +703,22 @@ given bucket is DNS compatible.</div></span>
   
 </p><div class="docstring">
   <div class="discussion">
-    Figure out if we need to add bucket name into the host name<br/>If there was a redirect and it had &#39;location&#39; header then there is nothing to do
-with the host, otherwise we have to add the bucket to the host.<br/>P.S. When Amazon returns a redirect (usually 301) with the new host in the message
+    <p>Figure out if we need to add bucket name into the host name</p>
+
+<p>If there was a redirect and it had &#39;location&#39; header then there is nothing to do
+with the host, otherwise we have to add the bucket to the host.</p>
+
+<p>P.S. When Amazon returns a redirect (usually 301) with the new host in the message
 body, the new host does not have the bucket name in it. But if it is 307 and the
 host is in the location header then that host name already includes the bucket in it.
 The only thing we can do so far is to check if the host name starts with the bucket
-and the name is at least 4th level DNS name.<br/>Examples:
+and the name is at least 4th level DNS name.</p>
+
+<p>Examples:
   * my-bucket.s3-ap-southeast-2.amazonaws.com
   * my-bucket.s3.amazonaws.com
-  * s3.amazonaws.com
+  * s3.amazonaws.com</p>
+
 
   </div>
 </div>
@@ -775,7 +799,8 @@ and the name is at least 4th level DNS name.<br/>Examples:
   
 </p><div class="docstring">
   <div class="discussion">
-    Builds request path
+    <p>Builds request path</p>
+
 
   </div>
 </div>
@@ -867,8 +892,9 @@ and the name is at least 4th level DNS name.<br/>Examples:
   
 </p><div class="docstring">
   <div class="discussion">
-    Returns +true+ if DNS compatible buckets are enabled (default) and the
-given bucket is DNS compatible
+    <p>Returns +true+ if DNS compatible buckets are enabled (default) and the
+given bucket is DNS compatible</p>
+
 
   </div>
 </div>
@@ -934,7 +960,8 @@ given bucket is DNS compatible
   
 </p><div class="docstring">
   <div class="discussion">
-    <p class="note returns_void">This method returns an undefined value.</p>Authenticates an S3 request
+    <p class="note returns_void">This method returns an undefined value.</p><p>Authenticates an S3 request</p>
+
 
   </div>
 </div>
@@ -1016,7 +1043,7 @@ given bucket is DNS compatible
 </div>
     
     <div id="footer">
-  Generated on Fri Jan 16 16:01:36 2015 by 
+  Generated on Fri Jan 16 16:10:30 2015 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.2 (ruby-2.1.5).
 </div>
