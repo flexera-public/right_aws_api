@@ -6,18 +6,20 @@
 <title>
   Class: RightScale::CloudApi::AWS::Route53::ApiManager
   
-    &mdash; Documentation by YARD 0.7.2
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
-  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" charset="utf-8" />
 
-  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  relpath = '../../../..';
-  if (relpath != '') relpath += '/';
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../../';
+  framesUrl = "../../../../frames.html#!RightScale/CloudApi/AWS/Route53/ApiManager.html";
 </script>
+
 
   <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
 
@@ -26,36 +28,41 @@
 
   </head>
   <body>
-    <script type="text/javascript" charset="utf-8">
-      if (window.top.frames.main) document.body.className = 'frames';
-    </script>
-    
     <div id="header">
       <div id="menu">
   
-    <a href="../../../../_index.html">Index (A)</a> &raquo; 
+    <a href="../../../../_index.html">Index (A)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../../../RightScale.html" title="RightScale (module)">RightScale</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../CloudApi.html" title="RightScale::CloudApi (module)">CloudApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../AWS.html" title="RightScale::CloudApi::AWS (module)">AWS</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Route53.html" title="RightScale::CloudApi::AWS::Route53 (module)">Route53</a></span></span>
      &raquo; 
     <span class="title">ApiManager</span>
   
-  
+
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
   
-    <a id="class_list_link" href="#">Class List</a>
+    <a class="full_list_link" id="class_list_link"
+        href="../../../../class_list.html">
+      Class List
+    </a>
   
-    <a id="method_list_link" href="#">Method List</a>
+    <a class="full_list_link" id="method_list_link"
+        href="../../../../method_list.html">
+      Method List
+    </a>
   
-    <a id="file_list_link" href="#">File List</a>
+    <a class="full_list_link" id="file_list_link"
+        href="../../../../file_list.html">
+      File List
+    </a>
   
 </div>
       <div class="clear"></div>
     </div>
-    
+
     <iframe id="search_frame"></iframe>
-    
+
     <div id="content"><h1>Class: RightScale::CloudApi::AWS::Route53::ApiManager
   
   
@@ -100,14 +107,16 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>Amazon Route 53 (Route) compatible manager (thread safe)</p>
+    
+<p>Amazon Route 53 (Route) compatible manager (thread safe)</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-  <h3>See Also:</h3>
+
+  <p class="tag_title">See Also:</p>
   <ul class="see">
     
       <li><span class='object_link'><a href="Manager.html" title="RightScale::CloudApi::AWS::Route53::Manager (class)">Manager</a></span></li>
@@ -116,9 +125,9 @@
 
 </div><h2>Defined Under Namespace</h2>
 <p class="children">
-   
+  
     
-   
+  
     
       <strong class="classes">Classes:</strong> <span class='object_link'><a href="ApiManager/Error.html" title="RightScale::CloudApi::AWS::Route53::ApiManager::Error (class)">Error</a></span>
     
@@ -132,14 +141,16 @@
         <dt id="DEFAULT_API_VERSION-constant" class="">DEFAULT_API_VERSION =
           <div class="docstring">
   <div class="discussion">
-    <p>Default API version for Route53 service.
-To override the API version use :api_version key when instantiating a manager.</p>
+    
+<p>Default API version for Route53 service. To override the API version use
+:api_version key when instantiating a manager.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+
 </div>
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2011-05-05</span><span class='tstring_end'>&#39;</span></span></pre></dd>
@@ -148,12 +159,10 @@ To override the API version use :api_version key when instantiating a manager.</
   
 
 
-  
-  
 
 
-  
-  
+
+
 
   
     <h2>
@@ -166,7 +175,7 @@ To override the API version use :api_version key when instantiating a manager.</
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#api-instance_method" title="#api (instance method)">- (Object) <strong>api</strong>(verb, *args) </a>
+      <a href="#api-instance_method" title="#api (instance method)">- (Object) <strong>api</strong>(verb, *args, &amp;block) </a>
     
 
     
@@ -177,9 +186,11 @@ To override the API version use :api_version key when instantiating a manager.</
   
   
   
+  
 
   
-    <span class="summary_desc"><div class='inline'><p>Makes an API call to AWS::Route53 compatible cloud.</p>
+    <span class="summary_desc"><div class='inline'>
+<p>Makes an API call to AWS::Route53 compatible cloud.</p>
 </div></span>
   
 </li>
@@ -194,6 +205,7 @@ To override the API version use :api_version key when instantiating a manager.</
     
   </span>
   
+  
     <span class="note title constructor">constructor</span>
   
   
@@ -203,7 +215,8 @@ To override the API version use :api_version key when instantiating a manager.</
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Constructor.</p>
+    <span class="summary_desc"><div class='inline'>
+<p>Constructor.</p>
 </div></span>
   
 </li>
@@ -218,15 +231,18 @@ To override the API version use :api_version key when instantiating a manager.</
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
-  <p class="signature first" id="initialize-instance_method">
+  <h3 class="signature first" id="initialize-instance_method">
   
     - (<tt><span class='object_link'><a href="" title="RightScale::CloudApi::AWS::Route53::ApiManager (class)">ApiManager</a></span></tt>) <strong>initialize</strong>(aws_access_key_id, aws_secret_access_key, endpoint, options = {}) 
   
 
   
-</p><div class="docstring">
+
+  
+</h3><div class="docstring">
   <div class="discussion">
-    <p>Constructor</p>
+    
+<p>Constructor</p>
 
 
   </div>
@@ -234,13 +250,13 @@ To override the API version use :api_version key when instantiating a manager.</
 <div class="tags">
   
   <div class="examples">
-    <h3>Examples:</h3>
+    <p class="tag_title">Examples:</p>
     
-      <h4><div class='inline'></div></h4>
-      <pre class="example code"><span class='comment'># see Manager class usage</span></pre>
+      
+      <pre class="example code"><code><span class='comment'># see Manager class usage</span></code></pre>
     
   </div>
-<h3>Parameters:</h3>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -291,7 +307,8 @@ To override the API version use :api_version key when instantiating a manager.</
   
 </ul>
 
-  <h3>See Also:</h3>
+
+  <p class="tag_title">See Also:</p>
   <ul class="see">
     
       <li><span class='object_link'><a href="Manager.html" title="RightScale::CloudApi::AWS::Route53::Manager (class)">Manager</a></span></li>
@@ -313,10 +330,10 @@ To override the API version use :api_version key when instantiating a manager.</
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/route53/manager.rb', line 146</span>
 
-<span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id aws_access_key_id'>aws_access_key_id</span><span class='comma'>,</span> <span class='id aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id endpoint'>endpoint</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id credentials'>credentials</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:aws_access_key_id</span>     <span class='op'>=&gt;</span> <span class='id aws_access_key_id'>aws_access_key_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:aws_secret_access_key</span> <span class='op'>=&gt;</span> <span class='id aws_secret_access_key'>aws_secret_access_key</span> <span class='rbrace'>}</span>
-  <span class='kw'>super</span><span class='lparen'>(</span><span class='id credentials'>credentials</span><span class='comma'>,</span> <span class='id endpoint'>endpoint</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_aws_access_key_id'>aws_access_key_id</span><span class='comma'>,</span> <span class='id identifier rubyid_aws_secret_access_key'>aws_secret_access_key</span><span class='comma'>,</span> <span class='id identifier rubyid_endpoint'>endpoint</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_credentials'>credentials</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:aws_access_key_id</span>     <span class='op'>=&gt;</span> <span class='id identifier rubyid_aws_access_key_id'>aws_access_key_id</span><span class='comma'>,</span>
+                  <span class='symbol'>:aws_secret_access_key</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_aws_secret_access_key'>aws_secret_access_key</span> <span class='rbrace'>}</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_credentials'>credentials</span><span class='comma'>,</span> <span class='id identifier rubyid_endpoint'>endpoint</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -328,18 +345,21 @@ To override the API version use :api_version key when instantiating a manager.</
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
-    
+
     
       <div class="method_details first">
-  <p class="signature first" id="api-instance_method">
+  <h3 class="signature first" id="api-instance_method">
   
-    - (<tt>Object</tt>) <strong>api</strong>(verb, *args) 
+    - (<tt>Object</tt>) <strong>api</strong>(verb, *args, &amp;block) 
   
 
   
-</p><div class="docstring">
+
+  
+</h3><div class="docstring">
   <div class="discussion">
-    <p>Makes an API call to AWS::Route53 compatible cloud</p>
+    
+<p>Makes an API call to AWS::Route53 compatible cloud</p>
 
 
   </div>
@@ -347,15 +367,15 @@ To override the API version use :api_version key when instantiating a manager.</
 <div class="tags">
   
   <div class="examples">
-    <h3>Examples:</h3>
+    <p class="tag_title">Examples:</p>
     
-      <h4><div class='inline'></div></h4>
-      <pre class="example code"><span class='id api'>api</span><span class='lparen'>(</span><span class='id verb'>verb</span><span class='comma'>,</span>         <span class='id opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_api'>api</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span>         <span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='comment'># Where opts may have next keys: :options, :headers, :params
-</span><span class='id api'>api</span><span class='lparen'>(</span><span class='id verb'>verb</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>path</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span></pre>
+</span><span class='id identifier rubyid_api'>api</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>path</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span></code></pre>
     
   </div>
-<h3>Parameters:</h3>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -381,7 +401,8 @@ To override the API version use :api_version key when instantiating a manager.</
     </li>
   
 </ul>
-<h3>Returns:</h3>
+
+<p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
@@ -394,7 +415,7 @@ To override the API version use :api_version key when instantiating a manager.</
     </li>
   
 </ul>
-<h3>Raises:</h3>
+<p class="tag_title">Raises:</p>
 <ul class="raise">
   
     <li>
@@ -424,11 +445,11 @@ To override the API version use :api_version key when instantiating a manager.</
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/route53/manager.rb', line 165</span>
 
-<span class='kw'>def</span> <span class='id api'>api</span><span class='lparen'>(</span><span class='id verb'>verb</span><span class='comma'>,</span> <span class='op'>*</span><span class='id args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
-  <span class='id relative_path'>relative_path</span> <span class='op'>=</span> <span class='id args'>args</span><span class='period'>.</span><span class='id first'>first</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id args'>args</span><span class='period'>.</span><span class='id shift'>shift</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
-  <span class='id opts'>opts</span>          <span class='op'>=</span> <span class='id args'>args</span><span class='period'>.</span><span class='id shift'>shift</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-  <span class='id raise'>raise</span> <span class='const'>Error</span><span class='op'>::</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Opts must be Hash not </span><span class='embexpr_beg'>#{</span><span class='id opts'>opts</span><span class='period'>.</span><span class='id class'>class</span><span class='period'>.</span><span class='id name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id opts'>opts</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
-  <span class='id process_api_request'>process_api_request</span><span class='lparen'>(</span><span class='id verb'>verb</span><span class='comma'>,</span> <span class='id relative_path'>relative_path</span><span class='comma'>,</span> <span class='id opts'>opts</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_api'>api</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_relative_path'>relative_path</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_shift'>shift</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_opts'>opts</span>          <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_shift'>shift</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Error</span><span class='op'>::</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Opts must be Hash not </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_process_api_request'>process_api_request</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_relative_path'>relative_path</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -438,11 +459,11 @@ To override the API version use :api_version key when instantiating a manager.</
   </div>
 
 </div>
-    
+
     <div id="footer">
-  Generated on Fri Jan 16 16:10:29 2015 by 
+  Generated on Fri Jan 16 16:24:01 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.2 (ruby-2.1.5).
+  0.8.7.6 (ruby-2.1.5).
 </div>
 
   </body>

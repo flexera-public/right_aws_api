@@ -8,18 +8,23 @@
     
       <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
     
-    
+
     
       <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
     
       <script type="text/javascript" charset="utf-8" src="js/full_list.js"></script>
     
-    
+
+    <title>Method List</title>
     <base id="base_target" target="_parent" />
   </head>
   <body>
     <script type="text/javascript" charset="utf-8">
-      if (window.top.frames.main) {
+      var hasFrames = false;
+      try {
+        hasFrames = window.top.frames.main ? true : false;
+      } catch (e) { }
+      if (hasFrames) {
         document.getElementById('base_target').target = 'main';
         document.body.className = 'frames';
       }
@@ -28,423 +33,327 @@
       <h1 id="full_list_header">Method List</h1>
       <div id="nav">
         
-          <a target="_self" href="class_list.html">Classes</a>
+          <span><a target="_self" href="class_list.html">
+            Classes
+          </a></span>
         
-          <a target="_self" href="method_list.html">Methods</a>
+          <span><a target="_self" href="method_list.html">
+            Methods
+          </a></span>
         
-          <a target="_self" href="file_list.html">Files</a>
+          <span><a target="_self" href="file_list.html">
+            Files
+          </a></span>
         
       </div>
       <div id="search">Search: <input type="text" /></div>
 
-      <ul id="full_list" class="methods">
+      <ul id="full_list" class="method">
         
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#amz_escape-class_method" title="RightScale::CloudApi::Utils::AWS.amz_escape (method)">amz_escape</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#amz_escape-class_method" title="RightScale::CloudApi::Utils::AWS.amz_escape (method)">amz_escape</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/ApiManager.html#api-instance_method" title="RightScale::CloudApi::AWS::S3::ApiManager#api (method)">#api</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/ApiManager.html#api-instance_method" title="RightScale::CloudApi::AWS::S3::ApiManager#api (method)">#api</a></span>
+    <small>RightScale::CloudApi::AWS::S3::ApiManager</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/ApiManager.html#api-instance_method" title="RightScale::CloudApi::AWS::ApiManager#api (method)">#api</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/ApiManager.html#api-instance_method" title="RightScale::CloudApi::AWS::ApiManager#api (method)">#api</a></span>
+    <small>RightScale::CloudApi::AWS::ApiManager</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/CF/ApiManager.html#api-instance_method" title="RightScale::CloudApi::AWS::CF::ApiManager#api (method)">#api</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::CF::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/CF/ApiManager.html#api-instance_method" title="RightScale::CloudApi::AWS::CF::ApiManager#api (method)">#api</a></span>
+    <small>RightScale::CloudApi::AWS::CF::ApiManager</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/Route53/ApiManager.html#api-instance_method" title="RightScale::CloudApi::AWS::Route53::ApiManager#api (method)">#api</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::Route53::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/Route53/ApiManager.html#api-instance_method" title="RightScale::CloudApi::AWS::Route53::ApiManager#api (method)">#api</a></span>
+    <small>RightScale::CloudApi::AWS::Route53::ApiManager</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/ApiManager.html#api-instance_method" title="RightScale::CloudApi::AWS::SQS::ApiManager#api (method)">#api</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::SQS::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/ApiManager.html#api-instance_method" title="RightScale::CloudApi::AWS::SQS::ApiManager#api (method)">#api</a></span>
+    <small>RightScale::CloudApi::AWS::SQS::ApiManager</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#compute_body-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#compute_body (method)">#compute_body</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#compute_body-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#compute_body (method)">#compute_body</a></span>
+    <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#compute_bucket_name_and_object_path-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#compute_bucket_name_and_object_path (method)">#compute_bucket_name_and_object_path</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#compute_bucket_name_and_object_path-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#compute_bucket_name_and_object_path (method)">#compute_bucket_name_and_object_path</a></span>
+    <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#compute_headers%21-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#compute_headers! (method)">#compute_headers!</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#compute_headers%21-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#compute_headers! (method)">#compute_headers!</a></span>
+    <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#compute_host-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#compute_host (method)">#compute_host</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#compute_host-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#compute_host (method)">#compute_host</a></span>
+    <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#compute_path-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#compute_path (method)">#compute_path</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#compute_path-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#compute_path (method)">#compute_path</a></span>
+    <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/CF/Wrapper/DEFAULT.html#extended-class_method" title="RightScale::CloudApi::AWS::CF::Wrapper::DEFAULT.extended (method)">extended</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::CF::Wrapper::DEFAULT</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/CF/Wrapper/DEFAULT.html#extended-class_method" title="RightScale::CloudApi::AWS::CF::Wrapper::DEFAULT.extended (method)">extended</a></span>
+    <small>RightScale::CloudApi::AWS::CF::Wrapper::DEFAULT</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/Route53/Wrapper/DEFAULT.html#extended-class_method" title="RightScale::CloudApi::AWS::Route53::Wrapper::DEFAULT.extended (method)">extended</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::Route53::Wrapper::DEFAULT</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/Route53/Wrapper/DEFAULT.html#extended-class_method" title="RightScale::CloudApi::AWS::Route53::Wrapper::DEFAULT.extended (method)">extended</a></span>
+    <small>RightScale::CloudApi::AWS::Route53::Wrapper::DEFAULT</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/Wrapper/DEFAULT.html#extended-class_method" title="RightScale::CloudApi::AWS::S3::Wrapper::DEFAULT.extended (method)">extended</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::Wrapper::DEFAULT</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/Wrapper/DEFAULT.html#extended-class_method" title="RightScale::CloudApi::AWS::S3::Wrapper::DEFAULT.extended (method)">extended</a></span>
+    <small>RightScale::CloudApi::AWS::S3::Wrapper::DEFAULT</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#hex_encode-class_method" title="RightScale::CloudApi::Utils::AWS.hex_encode (method)">hex_encode</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#hex_encode-class_method" title="RightScale::CloudApi::Utils::AWS.hex_encode (method)">hex_encode</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/ApiManager.html#initialize-instance_method" title="RightScale::CloudApi::AWS::SQS::ApiManager#initialize (method)">#initialize</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::SQS::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/ApiManager.html#initialize-instance_method" title="RightScale::CloudApi::AWS::SQS::ApiManager#initialize (method)">#initialize</a></span>
+    <small>RightScale::CloudApi::AWS::SQS::ApiManager</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/ApiManager.html#initialize-instance_method" title="RightScale::CloudApi::AWS::S3::ApiManager#initialize (method)">#initialize</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/ApiManager.html#initialize-instance_method" title="RightScale::CloudApi::AWS::S3::ApiManager#initialize (method)">#initialize</a></span>
+    <small>RightScale::CloudApi::AWS::S3::ApiManager</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/Route53/ApiManager.html#initialize-instance_method" title="RightScale::CloudApi::AWS::Route53::ApiManager#initialize (method)">#initialize</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::Route53::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/Route53/ApiManager.html#initialize-instance_method" title="RightScale::CloudApi::AWS::Route53::ApiManager#initialize (method)">#initialize</a></span>
+    <small>RightScale::CloudApi::AWS::Route53::ApiManager</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/ApiManager.html#initialize-instance_method" title="RightScale::CloudApi::AWS::ApiManager#initialize (method)">#initialize</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/ApiManager.html#initialize-instance_method" title="RightScale::CloudApi::AWS::ApiManager#initialize (method)">#initialize</a></span>
+    <small>RightScale::CloudApi::AWS::ApiManager</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/CF/ApiManager.html#initialize-instance_method" title="RightScale::CloudApi::AWS::CF::ApiManager#initialize (method)">#initialize</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::CF::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/CF/ApiManager.html#initialize-instance_method" title="RightScale::CloudApi::AWS::CF::ApiManager#initialize (method)">#initialize</a></span>
+    <small>RightScale::CloudApi::AWS::CF::ApiManager</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#is_dns_bucket%3F-class_method" title="RightScale::CloudApi::Utils::AWS.is_dns_bucket? (method)">is_dns_bucket?</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#is_dns_bucket%3F-class_method" title="RightScale::CloudApi::Utils::AWS.is_dns_bucket? (method)">is_dns_bucket?</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#is_dns_bucket%3F-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#is_dns_bucket? (method)">#is_dns_bucket?</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#is_dns_bucket%3F-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#is_dns_bucket? (method)">#is_dns_bucket?</a></span>
+    <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/ApiManager.html#method_missing-instance_method" title="RightScale::CloudApi::AWS::SQS::ApiManager#method_missing (method)">#method_missing</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::SQS::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/ApiManager.html#method_missing-instance_method" title="RightScale::CloudApi::AWS::SQS::ApiManager#method_missing (method)">#method_missing</a></span>
+    <small>RightScale::CloudApi::AWS::SQS::ApiManager</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/ApiManager.html#method_missing-instance_method" title="RightScale::CloudApi::AWS::ApiManager#method_missing (method)">#method_missing</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/ApiManager.html#method_missing-instance_method" title="RightScale::CloudApi::AWS::ApiManager#method_missing (method)">#method_missing</a></span>
+    <small>RightScale::CloudApi::AWS::ApiManager</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#parametrize-class_method" title="RightScale::CloudApi::Utils::AWS.parametrize (method)">parametrize</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#parametrize-class_method" title="RightScale::CloudApi::Utils::AWS.parametrize (method)">parametrize</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/ApiManager.html#parametrize-instance_method" title="RightScale::CloudApi::AWS::SQS::ApiManager#parametrize (method)">#parametrize</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::SQS::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/ApiManager.html#parametrize-instance_method" title="RightScale::CloudApi::AWS::SQS::ApiManager#parametrize (method)">#parametrize</a></span>
+    <small>RightScale::CloudApi::AWS::SQS::ApiManager</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/ApiManager.html#parametrize-instance_method" title="RightScale::CloudApi::AWS::ApiManager#parametrize (method)">#parametrize</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::ApiManager</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/ApiManager.html#parametrize-instance_method" title="RightScale::CloudApi::AWS::ApiManager#parametrize (method)">#parametrize</a></span>
+    <small>RightScale::CloudApi::AWS::ApiManager</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Parser/AWS/ResponseErrorV1.html#parse-class_method" title="RightScale::CloudApi::Parser::AWS::ResponseErrorV1.parse (method)">parse</a></span> 
-    
-      <small>RightScale::CloudApi::Parser::AWS::ResponseErrorV1</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Parser/AWS/ResponseErrorV1.html#parse-class_method" title="RightScale::CloudApi::Parser::AWS::ResponseErrorV1.parse (method)">parse</a></span>
+    <small>RightScale::CloudApi::Parser::AWS::ResponseErrorV1</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Parser/AWS/S3/ResponseError.html#parse-class_method" title="RightScale::CloudApi::Parser::AWS::S3::ResponseError.parse (method)">parse</a></span> 
-    
-      <small>RightScale::CloudApi::Parser::AWS::S3::ResponseError</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Parser/AWS/S3/ResponseError.html#parse-class_method" title="RightScale::CloudApi::Parser::AWS::S3::ResponseError.parse (method)">parse</a></span>
+    <small>RightScale::CloudApi::Parser::AWS::S3::ResponseError</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Parser/AWS/ResponseErrorV2.html#parse-class_method" title="RightScale::CloudApi::Parser::AWS::ResponseErrorV2.parse (method)">parse</a></span> 
-    
-      <small>RightScale::CloudApi::Parser::AWS::ResponseErrorV2</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Parser/AWS/ResponseErrorV2.html#parse-class_method" title="RightScale::CloudApi::Parser::AWS::ResponseErrorV2.parse (method)">parse</a></span>
+    <small>RightScale::CloudApi::Parser::AWS::ResponseErrorV2</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::RequestSigner#process (method)">#process</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::RequestSigner#process (method)">#process</a></span>
+    <small>RightScale::CloudApi::AWS::RequestSigner</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/Link/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::S3::Link::RequestSigner#process (method)">#process</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::Link::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/Link/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::S3::Link::RequestSigner#process (method)">#process</a></span>
+    <small>RightScale::CloudApi::AWS::S3::Link::RequestSigner</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#process (method)">#process</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/S3/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::S3::RequestSigner#process (method)">#process</a></span>
+    <small>RightScale::CloudApi::AWS::S3::RequestSigner</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/CF/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::CF::RequestSigner#process (method)">#process</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::CF::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/CF/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::CF::RequestSigner#process (method)">#process</a></span>
+    <small>RightScale::CloudApi::AWS::CF::RequestSigner</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::SQS::RequestSigner#process (method)">#process</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::SQS::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::SQS::RequestSigner#process (method)">#process</a></span>
+    <small>RightScale::CloudApi::AWS::SQS::RequestSigner</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/AWS/Route53/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::Route53::RequestSigner#process (method)">#process</a></span> 
-    
-      <small>RightScale::CloudApi::AWS::Route53::RequestSigner</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/AWS/Route53/RequestSigner.html#process-instance_method" title="RightScale::CloudApi::AWS::Route53::RequestSigner#process (method)">#process</a></span>
+    <small>RightScale::CloudApi::AWS::Route53::RequestSigner</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign-class_method" title="RightScale::CloudApi::Utils::AWS.sign (method)">sign</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign-class_method" title="RightScale::CloudApi::Utils::AWS.sign (method)">sign</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_s3_signature-class_method" title="RightScale::CloudApi::Utils::AWS.sign_s3_signature (method)">sign_s3_signature</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_s3_signature-class_method" title="RightScale::CloudApi::Utils::AWS.sign_s3_signature (method)">sign_s3_signature</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v2_signature-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v2_signature (method)">sign_v2_signature</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v2_signature-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v2_signature (method)">sign_v2_signature</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_canonical_headers-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_canonical_headers (method)">sign_v4_get_canonical_headers</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_canonical_headers-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_canonical_headers (method)">sign_v4_get_canonical_headers</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_canonical_path-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_canonical_path (method)">sign_v4_get_canonical_path</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_canonical_path-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_canonical_path (method)">sign_v4_get_canonical_path</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_canonical_string-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_canonical_string (method)">sign_v4_get_canonical_string</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_canonical_string-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_canonical_string (method)">sign_v4_get_canonical_string</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_canonical_verb-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_canonical_verb (method)">sign_v4_get_canonical_verb</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_canonical_verb-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_canonical_verb (method)">sign_v4_get_canonical_verb</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_service_and_region-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_service_and_region (method)">sign_v4_get_service_and_region</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_service_and_region-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_service_and_region (method)">sign_v4_get_service_and_region</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_signature_key-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_signature_key (method)">sign_v4_get_signature_key</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_signature_key-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_signature_key (method)">sign_v4_get_signature_key</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_signed_headers-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_signed_headers (method)">sign_v4_get_signed_headers</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_signed_headers-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_signed_headers (method)">sign_v4_get_signed_headers</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_string_to_sign-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_string_to_sign (method)">sign_v4_get_string_to_sign</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_get_string_to_sign-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_get_string_to_sign (method)">sign_v4_get_string_to_sign</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_headers-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_headers (method)">sign_v4_headers</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_headers-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_headers (method)">sign_v4_headers</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_query_params-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_query_params (method)">sign_v4_query_params</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_query_params-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_query_params (method)">sign_v4_query_params</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_signature-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_signature (method)">sign_v4_signature</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#sign_v4_signature-class_method" title="RightScale::CloudApi::Utils::AWS.sign_v4_signature (method)">sign_v4_signature</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#utc_iso8601-class_method" title="RightScale::CloudApi::Utils::AWS.utc_iso8601 (method)">utc_iso8601</a></span> 
-    
-      <small>RightScale::CloudApi::Utils::AWS</small>
-    
+    <span class='object_link'><a href="RightScale/CloudApi/Utils/AWS.html#utc_iso8601-class_method" title="RightScale::CloudApi::Utils::AWS.utc_iso8601 (method)">utc_iso8601</a></span>
+    <small>RightScale::CloudApi::Utils::AWS</small>
   </li>
   
 
