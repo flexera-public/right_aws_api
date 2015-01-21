@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 #--
-# Copyright (c) 2013 RightScale, Inc.
+# Copyright (c) 2015 RightScale, Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -21,27 +22,26 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
 
-require 'right_cloud_api_base'
+module RightScale
+  module CloudApi
+    module AWS
+      module S3
+        module Folder
 
-$:.unshift(File::expand_path(File::dirname(__FILE__)))
+          class RequestSigner < S3::RequestSigner
 
-require "right_aws_api_version"
+            def compute_path(bucket, object)
+              data = []
+              # Always send bucket as part of the path for now
+              data << bucket # unless Utils::AWS::is_dns_bucket?(bucket)
+              data << object
+              # we should append trailing slash to create the key that will be used as a folder
+              Utils::join_urn(*data) + '/'
+            end
+          end
 
-require "cloud/aws/as/manager"
-require "cloud/aws/cf/manager"
-require "cloud/aws/cfm/manager"
-require "cloud/aws/cw/manager"
-require "cloud/aws/eb/manager"
-require "cloud/aws/ec/manager"
-require "cloud/aws/ec2/manager"
-require "cloud/aws/elb/manager"
-require "cloud/aws/emr/manager"
-require "cloud/aws/iam/manager"
-require "cloud/aws/rds/manager"
-require "cloud/aws/route53/manager"
-require "cloud/aws/s3/manager"
-require "cloud/aws/s3/link/manager"
-require "cloud/aws/s3/folder/manager"
-require "cloud/aws/sdb/manager"
-require "cloud/aws/sns/manager"
-require "cloud/aws/sqs/manager"
+        end
+      end
+    end
+  end
+end
