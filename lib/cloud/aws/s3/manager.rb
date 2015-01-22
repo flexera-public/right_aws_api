@@ -75,11 +75,13 @@ module RightScale
         #
         #  # Put object
         #  # Do not forget to provide a proper 'content-type' header because the default
-        #  # one is set to 'application/octet-stream'
+        #  # one is set to 'binary/octet-stream'
         #  s3.put('devs-us-east/boot1.jpg',
         #          :body    => 'This is my object DATA. WooHoo!!!',
         #          :headers => {'content-type' => 'text/plain'})
         #
+        #  # Create a folder:
+        #  s3.put('devs-us-east/logs/')
         #
         # @example
         #   # A simple example of a multi-thread file download:
@@ -135,11 +137,14 @@ module RightScale
         #               :params => { 'response-content-type' => 'image/jpeg'})
         #
         #  # Put object
-        #  # P.S. 'content-type' is 'application/octet-stream' by default
+        #  # P.S. 'content-type' is 'binary/octet-stream' by default
         #  s3.PutObject('Bucket' => 'devs-us-east',
         #               'Object' => 'boot1.jpg',
         #               :body    => file_content,
         #               :headers => {'content-type' => 'image/jpeg'})
+        #
+        # # Create a folder
+        # s3.PutObject('Bucket' => 'devs-us-east', 'Object' => 'logs/', :body => '')
         #
         # @example
         #
@@ -152,9 +157,9 @@ module RightScale
         #            "CreationDate"=>"2011-05-25T20:46:28.000Z"},
         #           {"Name"=>"CR_right_test",
         #            "CreationDate"=>"2011-06-08T20:46:32.000Z"},
-        #           {"Name"=>"DarrylTest", 
+        #           {"Name"=>"DarrylTest",
         #            "CreationDate"=>"2011-06-03T03:43:08.000Z"},
-        #           {"Name"=>"RightScalePeter", 
+        #           {"Name"=>"RightScalePeter",
         #            "CreationDate"=>"2008-10-28T03:59:20.000Z"}]},
         #       "Owner"=>
         #        {"DisplayName"=>"fghsfg",

@@ -120,8 +120,12 @@ module RightScale
             # Amazon wants them to be escaped before we sign the request.
             # P.S. but do not escape "/" (signature v4 does not like this)
             #
-            object = $2.to_s.split('/').map{|i| Utils::AWS::amz_escape(i)}.join('/')
-            [ $1, object ]
+            new_bucket = $1
+            pre_object = $2.to_s
+            object     = pre_object.split('/').map{|i| Utils::AWS::amz_escape(i)}.join('/')
+            # Preserve '/' if it is the last symbol of the object because it is an operation on a folder
+            object    += '/' if object.length > 0 && pre_object[/\/$/]
+            [ new_bucket, object ]
           end
 
 
@@ -183,7 +187,7 @@ module RightScale
             #      So we need to include it into our signature to avoid the error below:
             #      'The request signature we calculated does not match the signature you provided.
             #       Check your key and signing method.'
-            headers.set_if_blank('content-type', 'application/octet-stream')
+            headers.set_if_blank('content-type', 'binary/octet-stream')
             headers
           end
 

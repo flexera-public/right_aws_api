@@ -1,11 +1,11 @@
-== 2015-01-16
-  - v0.2.2
-    Added an ability to not use DNS like buckets in AWS S3
-    Some minor bugs were fixed in singature V4
+== 2015-01-22, current
+  - Added support for S3 folders creation
 
-== 2014-10-30
-  - v0.2.1
-    Added support for AWS v4 signature and make it the default
+== 2015-01-16, v0.2.2
+  - Added an ability to not use DNS like buckets in AWS S3
+  - Some minor bugs were fixed in singature V4
 
-== 2013-06-28
-  - pre-release candidate created
+== 2014-10-30, v0.2.1
+  - Added support for AWS v4 signature and make it the default
+
+== 2013-06-28, pre-release

@@ -92,9 +92,9 @@ describe RightScale::CloudApi::AWS::S3::RequestSigner do
     end
 
     context 'content-type' do
-      it 'defaults content-type to application/octet-stream' do
+      it 'defaults content-type to binary/octet-stream' do
         result      = subject.compute_headers!(@headers, @body, @host)
-        expectation = ['application/octet-stream']
+        expectation = ['binary/octet-stream']
         expect(result['content-type']).to eq(expectation)
       end
     end
