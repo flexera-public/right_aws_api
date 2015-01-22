@@ -37,6 +37,10 @@ describe RightScale::CloudApi::AWS::S3::RequestSigner do
 
 
   context '#compute_host' do
+    before :each do
+      allow(subject).to receive(:no_dns_buckets?).and_return(false)
+    end
+
     context 'DNS bucket' do
       before :each do
         bucket  = 'foo-bar-bucket'
@@ -101,6 +105,7 @@ describe RightScale::CloudApi::AWS::S3::RequestSigner do
     before :each do
       @path   = 'foo-bar'
       @object = 'foo%2Fbar%2F%D0%B1%D0%B0%D0%BD%D0%B0%D0%BD%D0%B0.jpg'
+      allow(subject).to receive(:no_dns_buckets?).and_return(false)
     end
 
     it 'works for DNS bucket' do

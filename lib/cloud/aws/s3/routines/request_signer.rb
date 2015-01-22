@@ -210,8 +210,13 @@ module RightScale
           # @return [Boolean]
           #
           def is_dns_bucket?(bucket)
-            return false if @data[:options][:cloud][:no_dns_buckets]
+            return false if no_dns_buckets?
             Utils::AWS::is_dns_bucket?(bucket)
+          end
+
+
+          def no_dns_buckets?
+            !!@data[:options][:cloud][:no_dns_buckets]
           end
 
         end
