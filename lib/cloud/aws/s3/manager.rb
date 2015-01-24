@@ -38,13 +38,35 @@ module RightScale
 
         # Amazon Simple Storage Service (S3) compatible manager (thread safe).
         #
+        # There are 2 ways of using S3 API manager: _HTTP verb calls_ or _helper methods_
+        #
+        # ### HTTP verbs
+        #
+        # The manager supports following HTTP verbs: get, post, put, head and delete,
+        # and all of them share the same syntax:
+        #
+        # ```ruby
+        #  s3.post(path, :params => Hash, :headers => Hash, :body => 'foo-bar', :options => Hash)
+        # ```
+        #
+        # ### Helper methods
+        #
+        # Eventhough the _HTTP verbs_ are powerfull they are not too handy.
+        # If you like to call API actions by their name you may find our helper methods usefull.
+        #
+        # In most cases these methods use the same names and they take the same parameters
+        # that Amazon uses in their docs.
+        #
+        # You can find use case examples for both the verbs and the methods below.
+        # The helper method definitions can be found here: https://github.com/rightscale/right_aws_api/blob/master/lib/cloud/aws/s3/wrappers/default.rb
+        #
         # @example
         #  require "right_aws_api"
         #
         #  s3 = RightScale::CloudApi::AWS::S3::Manager.new(key, secret, 'https://s3.amazonaws.com')
         #
         # @example
-        #  # -- Using HTTP verb methods --
+        #  # -- Using HTTP verbs --
         #
         #  # List all buckets
         #  s3.get
@@ -80,7 +102,7 @@ module RightScale
         #          :body    => 'This is my object DATA. WooHoo!!!',
         #          :headers => {'content-type' => 'text/plain'})
         #
-        #  # Create a folder:
+        #  # Create a folder
         #  s3.put('devs-us-east/logs/')
         #
         # @example
@@ -113,7 +135,6 @@ module RightScale
         #     end
         #   end
         #
-        #
         # @example
         #  # -- Using helper methods --
         #
@@ -143,8 +164,8 @@ module RightScale
         #               :body    => file_content,
         #               :headers => {'content-type' => 'image/jpeg'})
         #
-        # # Create a folder
-        # s3.PutObject('Bucket' => 'devs-us-east', 'Object' => 'logs/', :body => '')
+        #  # Create a folder
+        #  s3.PutObject('Bucket' => 'devs-us-east', 'Object' => 'logs/', :body => '')
         #
         # @example
         #
