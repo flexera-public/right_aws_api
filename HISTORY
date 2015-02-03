@@ -1,4 +1,6 @@
-== 2015-01-22, current
+== current
+
+== 2015-01-16, v0.2.3
   - Added support for S3 folders creation
 
 == 2015-01-16, v0.2.2
