@@ -2,11 +2,9 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
-  File: README
-  
-    &mdash; Documentation by YARD 0.8.7.6
+  Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -17,7 +15,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!file.README.html";
+  framesUrl = "frames.html#!_index.html";
 </script>
 
 
@@ -30,9 +28,6 @@
   <body>
     <div id="header">
       <div id="menu">
-  
-    <a href="_index.html">Index</a> &raquo; 
-    <span class="title">File: README</span>
   
 
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
@@ -61,172 +56,30 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><div id='filecontents'><h1>AWS (Amazon Web Services) library for Ruby</h1>
+    <div id="content"><h1 class="noborder title">Documentation by YARD 0.8.7.6</h1>
+<div id="listing">
+  <h1 class="alphaindex">Alphabetic Index</h1>
+  
+<div class="clear"></div>
+<h2>Namespace Listing A-Z</h2>
 
-<p>This gem provides access to many AWS cloud services.
-Unlike many other AWS libaries this gem is a very thin adaptation layer over the AWS APIs.
-It is highly meta-programmed and exposes the exact AWS API calls with the
-exact AWS parameters. There are two big benefits to this approach: you don&#39;t have to translate betwen the
-AWS docs and the library in order to figure out what to do, and there&#39;s nothing in the AWS APIs you can&#39;t
-call through the library. The library doesn&#39;t even need to be updated when AWS introduces new API features.
-The downside to this approach is that when things don&#39;t work it&#39;s sometimes more difficult to figure out
-what&#39;s happening... Another downside is that method names and parameter names follow the AWS API spec and
-thereby run against Ruby conventions.</p>
 
-<p>If you encounter problems please open a github issue.</p>
 
-<h2>Docs</h2>
 
-<p>For some getting-started info see further down but for detailed docs see
-<a href="http://rightscale.github.io/right_aws_api/frames.html#!file.README.html">http://rightscale.github.io/right_aws_api/frames.html#!file.README.html</a></p>
+<table>
+  <tr>
+    <td valign='top' width="33%">
+      
+    </td>
+  </tr>
+</table>
 
-<h2>Features</h2>
+</div>
 
-<p>The gem supports the following AWS services out of the box:</p>
-
-<ul>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/AS/Manager.html" title="RightScale::CloudApi::AWS::AS::Manager (class)">     Auto Scaling (AS)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/CF/Manager.html" title="RightScale::CloudApi::AWS::CF::Manager (class)">     Cloud Front (CF)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/CFM/Manager.html" title="RightScale::CloudApi::AWS::CFM::Manager (class)">    Cloud Formation (CFM)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/CW/Manager.html" title="RightScale::CloudApi::AWS::CW::Manager (class)">     Cloud Watch (CW)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/EB/Manager.html" title="RightScale::CloudApi::AWS::EB::Manager (class)">     Elastic Beanstalk (EB)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/EC/Manager.html" title="RightScale::CloudApi::AWS::EC::Manager (class)">     Elasti Cache (EC)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/EC2/Manager.html" title="RightScale::CloudApi::AWS::EC2::Manager (class)">    Elastic Compute Cloud (EC2)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/ELB/Manager.html" title="RightScale::CloudApi::AWS::ELB::Manager (class)">    Elastic Load Balancing (ELB)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/EMR/Manager.html" title="RightScale::CloudApi::AWS::EMR::Manager (class)">    Elastic Map Reduce (EMR)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/IAM/Manager.html" title="RightScale::CloudApi::AWS::IAM::Manager (class)">    Identity and Access Management (IAM)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/RDS/Manager.html" title="RightScale::CloudApi::AWS::RDS::Manager (class)">    Relational Database Service (RDS)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/Route53/Manager.html" title="RightScale::CloudApi::AWS::Route53::Manager (class)">Route 53 (Route53)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/S3/Manager.html" title="RightScale::CloudApi::AWS::S3::Manager (class)">     Simple Storage Service (S3)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/SDB/Manager.html" title="RightScale::CloudApi::AWS::SDB::Manager (class)">    Simple DB (SDB)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/SNS/Manager.html" title="RightScale::CloudApi::AWS::SNS::Manager (class)">    Simple Notification Service (SNS)</a></span></li>
-<li><span class='object_link'><a href="RightScale/CloudApi/AWS/SQS/Manager.html" title="RightScale::CloudApi::AWS::SQS::Manager (class)">    Simple Queue Service (SQS)</a></span></li>
-</ul>
-
-<p>And it is easy to add support for other. You will need to refer to
-the AWS docs (<a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>) for all the API params and usage explanations.</p>
-
-<h2>Basic usage</h2>
-
-<h3>Amazon Elastic Compute Cloud (EC2)</h3>
-
-<p>This library supports all existing and future EC2 API calls. If you know that EC2 supports a
-call and you know what params it accepts - just call the method with those params.</p>
-
-<h4>Basics</h4>
-
-<pre class="code ruby"><code class="ruby">  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>right_aws_api</span><span class='tstring_end'>&quot;</span></span>
-
-  <span class='id identifier rubyid_key'>key</span>      <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AWS_ACCESS_KEY_ID</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_secret'>secret</span>   <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AWS_SECRET_ACCESS_KEY</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_endpoint'>endpoint</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://us-east-1.ec2.amazonaws.com</span><span class='tstring_end'>&#39;</span></span>
-  <span class='id identifier rubyid_ec2'>ec2</span>      <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>EC2</span><span class='op'>::</span><span class='const'>Manager</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span><span class='comma'>,</span> <span class='id identifier rubyid_endpoint'>endpoint</span><span class='rparen'>)</span>
-
-  <span class='id identifier rubyid_ec2'>ec2</span><span class='period'>.</span><span class='const'>ThisCallMustBeSupportedByEc2</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Param.1</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Param.2</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>B</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-</code></pre>
-
-<h4>EC2 Instances</h4>
-
-<pre class="code ruby"><code class="ruby">  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>right_aws_api</span><span class='tstring_end'>&quot;</span></span>
-
-  <span class='comment'># Get a list of your instances
-</span>  <span class='id identifier rubyid_ec2'>ec2</span><span class='period'>.</span><span class='const'>DescribeInstances</span>
-
-  <span class='comment'># Describe custom Instance(s)
-</span>  <span class='id identifier rubyid_ec2'>ec2</span><span class='period'>.</span><span class='const'>DescribeInstances</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InstanceId</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i-2ba7c640</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_ec2'>ec2</span><span class='period'>.</span><span class='const'>DescribeInstances</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InstanceId</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i-2ba7c640</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i-7db9101e</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-
-  <span class='comment'># Describe Instances with filteringSame (another way, the result is the same):
-</span>  <span class='id identifier rubyid_ec2'>ec2</span><span class='period'>.</span><span class='const'>DescribeInstances</span><span class='lparen'>(</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Filter</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
-      <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>architecture</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>i386</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
-      <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>availability-zone</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>us-east-1a</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>us-east-1d</span><span class='tstring_end'>&#39;</span></span> <span class='rbracket'>]</span><span class='rbrace'>}</span><span class='comma'>,</span>
-      <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>instance-type</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>m1.small</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span> <span class='rbracket'>]</span>
-  <span class='rparen'>)</span>
-
-  <span class='comment'># Run an new instance:
-</span>  <span class='id identifier rubyid_ec2'>ec2</span><span class='period'>.</span><span class='const'>RunInstances</span><span class='lparen'>(</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ImageId</span><span class='tstring_end'>&#39;</span></span>            <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ami-8ef607e7</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MinCount</span><span class='tstring_end'>&#39;</span></span>           <span class='op'>=&gt;</span> <span class='int'>1</span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MaxCount</span><span class='tstring_end'>&#39;</span></span>           <span class='op'>=&gt;</span> <span class='int'>1</span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>KeyName</span><span class='tstring_end'>&#39;</span></span>            <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>kd: alex</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UserData</span><span class='tstring_end'>&#39;</span></span>           <span class='op'>=&gt;</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_base64en'>base64en</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hehehehe!!!!</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>InstanceType</span><span class='tstring_end'>&#39;</span></span>       <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>c1.medium</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ClientToken</span><span class='tstring_end'>&#39;</span></span>        <span class='op'>=&gt;</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_generate_token'>generate_token</span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SecurityGroupId</span><span class='tstring_end'>&#39;</span></span>    <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sg-f71a089e</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sg-c71a08ae</span><span class='tstring_end'>&#39;</span></span> <span class='rbracket'>]</span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Placement+</span><span class='tstring_end'>&#39;</span></span>         <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
-       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AvailabilityZone</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>us-east-1d</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Tenancy</span><span class='tstring_end'>&#39;</span></span>          <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>default</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BlockDeviceMapping</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
-      <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DeviceName</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/dev/sdc</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ebs</span><span class='tstring_end'>&#39;</span></span>        <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
-         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SnapshotId</span><span class='tstring_end'>&#39;</span></span>          <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>snap-e40fd188</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>VolumeSize</span><span class='tstring_end'>&#39;</span></span>          <span class='op'>=&gt;</span> <span class='int'>3</span><span class='comma'>,</span>
-         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DeleteOnTermination</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='rbrace'>}</span> <span class='rbracket'>]</span>
-  <span class='rparen'>)</span>
-
-  <span class='comment'># Terminate your instance:
-</span>  <span class='id identifier rubyid_ec2'>ec2</span><span class='period'>.</span><span class='const'>TerminateInstances</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>InstanceId</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i-67c87504</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i-67c87504</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-</code></pre>
-
-<h3>Amazon Simple Storage Service (S3)</h3>
-
-<pre class="code ruby"><code class="ruby">  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>right_aws_api</span><span class='tstring_end'>&quot;</span></span>
-
-  <span class='id identifier rubyid_key'>key</span>      <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AWS_ACCESS_KEY_ID</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_secret'>secret</span>   <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AWS_SECRET_ACCESS_KEY</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_endpoint'>endpoint</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://s3.amazonaws.com</span><span class='tstring_end'>&#39;</span></span>
-  <span class='id identifier rubyid_s3'>s3</span>       <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>S3</span><span class='op'>::</span><span class='const'>Manager</span><span class='op'>::</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span><span class='comma'>,</span> <span class='id identifier rubyid_endpoint'>endpoint</span><span class='rparen'>)</span>
-
-  <span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>ListBuckets</span>
-  <span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>GetBucketAcl</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-lovely-bucket</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_s3'>s3</span><span class='period'>.</span><span class='const'>GetObject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Bucket</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-lovely-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Object</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>fairies.txt</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-</code></pre>
-
-<h3>Amazon Simple Queue Service (SQS)</h3>
-
-<pre class="code ruby"><code class="ruby">  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>right_aws_api</span><span class='tstring_end'>&quot;</span></span>
-
-  <span class='id identifier rubyid_key'>key</span>            <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AWS_ACCESS_KEY_ID</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_secret'>secret</span>         <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AWS_SECRET_ACCESS_KEY</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_account_number'>account_number</span> <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AWS_ACCOUNT_NUMBER</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_endpoint'>endpoint</span>       <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://sqs.us-east-1.amazonaws.com</span><span class='tstring_end'>&#39;</span></span>
-  <span class='id identifier rubyid_sqs'>sqs</span>            <span class='op'>=</span> <span class='const'>RightScale</span><span class='op'>::</span><span class='const'>CloudApi</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='const'>SQS</span><span class='op'>::</span><span class='const'>Manager</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span><span class='comma'>,</span> <span class='id identifier rubyid_account_number'>account_number</span><span class='comma'>,</span> <span class='id identifier rubyid_endpoint'>endpoint</span><span class='rparen'>)</span>
-
-  <span class='comment'># List all queues
-</span>  <span class='id identifier rubyid_sqs'>sqs</span><span class='period'>.</span><span class='const'>ListQueues</span>
-
-  <span class='comment'># Create a new one
-</span>  <span class='id identifier rubyid_sqs'>sqs</span><span class='period'>.</span><span class='const'>CreateQueue</span><span class='lparen'>(</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>QueueName</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>myCoolQueue</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Attribute</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
-       <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>VisibilityTimeout</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>40</span> <span class='rbrace'>}</span><span class='comma'>,</span>
-       <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MaximumMessageSize</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Value</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>2048</span> <span class='rbrace'>}</span> <span class='rbracket'>]</span><span class='rparen'>)</span>
-
-  <span class='comment'># Send a message
-</span>  <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='const'>URI</span><span class='op'>::</span><span class='id identifier rubyid_escape'>escape</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Woohoo!!!</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_sqs'>sqs</span><span class='period'>.</span><span class='const'>SendMessage</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>myCoolQueue</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MessageBody</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
-
-  <span class='comment'># Receive a message
-</span>  <span class='id identifier rubyid_sqs'>sqs</span><span class='period'>.</span><span class='const'>ReceiveMessage</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>myCoolQueue</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-
-  <span class='comment'># Kill the queue
-</span>  <span class='id identifier rubyid_sqs'>sqs</span><span class='period'>.</span><span class='const'>DeleteQueue</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>myCoolQueue</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-</code></pre>
-
-<h2>Dependencies</h2>
-
-<p>This gem depends on a base gem which is shared across all RightScale cloud libraries:
-<a href="https://github.com/rightscale/right_cloud_api_base">https://github.com/rightscale/right_cloud_api_base</a></p>
-
-<h3>(c) 2014 by RightScale, Inc., see the LICENSE file for the open-source license.</h3>
-</div></div>
+</div>
 
     <div id="footer">
-  Generated on Fri Jan 16 16:23:59 2015 by
+  Generated on Fri Jan 23 13:56:20 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.5).
 </div>
