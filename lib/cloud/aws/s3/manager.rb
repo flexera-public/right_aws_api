@@ -38,13 +38,35 @@ module RightScale
 
         # Amazon Simple Storage Service (S3) compatible manager (thread safe).
         #
+        # There are 2 ways of using S3 API manager: _HTTP verb calls_ or _helper methods_
+        #
+        # ### HTTP verbs
+        #
+        # The manager supports following HTTP verbs: get, post, put, head and delete,
+        # and all of them share the same syntax:
+        #
+        # ```ruby
+        #  s3.post(path, :params => Hash, :headers => Hash, :body => 'foo-bar', :options => Hash)
+        # ```
+        #
+        # ### Helper methods
+        #
+        # Eventhough the _HTTP verbs_ are powerfull they are not too handy.
+        # If you like to call API actions by their name you may find our helper methods usefull.
+        #
+        # In most cases these methods use the same names and they take the same parameters
+        # that Amazon uses in their docs.
+        #
+        # You can find use case examples for both the verbs and the methods below.
+        # The helper method definitions can be found here: https://github.com/rightscale/right_aws_api/blob/master/lib/cloud/aws/s3/wrappers/default.rb
+        #
         # @example
         #  require "right_aws_api"
         #
         #  s3 = RightScale::CloudApi::AWS::S3::Manager.new(key, secret, 'https://s3.amazonaws.com')
         #
         # @example
-        #  # -- Using HTTP verb methods --
+        #  # -- Using HTTP verbs --
         #
         #  # List all buckets
         #  s3.get
@@ -75,11 +97,13 @@ module RightScale
         #
         #  # Put object
         #  # Do not forget to provide a proper 'content-type' header because the default
-        #  # one is set to 'application/octet-stream'
+        #  # one is set to 'binary/octet-stream'
         #  s3.put('devs-us-east/boot1.jpg',
         #          :body    => 'This is my object DATA. WooHoo!!!',
         #          :headers => {'content-type' => 'text/plain'})
         #
+        #  # Create a folder
+        #  s3.put('devs-us-east/logs/')
         #
         # @example
         #   # A simple example of a multi-thread file download:
@@ -111,7 +135,6 @@ module RightScale
         #     end
         #   end
         #
-        #
         # @example
         #  # -- Using helper methods --
         #
@@ -135,11 +158,14 @@ module RightScale
         #               :params => { 'response-content-type' => 'image/jpeg'})
         #
         #  # Put object
-        #  # P.S. 'content-type' is 'application/octet-stream' by default
+        #  # P.S. 'content-type' is 'binary/octet-stream' by default
         #  s3.PutObject('Bucket' => 'devs-us-east',
         #               'Object' => 'boot1.jpg',
         #               :body    => file_content,
         #               :headers => {'content-type' => 'image/jpeg'})
+        #
+        #  # Create a folder
+        #  s3.PutObject('Bucket' => 'devs-us-east', 'Object' => 'logs/', :body => '')
         #
         # @example
         #
@@ -152,9 +178,9 @@ module RightScale
         #            "CreationDate"=>"2011-05-25T20:46:28.000Z"},
         #           {"Name"=>"CR_right_test",
         #            "CreationDate"=>"2011-06-08T20:46:32.000Z"},
-        #           {"Name"=>"DarrylTest", 
+        #           {"Name"=>"DarrylTest",
         #            "CreationDate"=>"2011-06-03T03:43:08.000Z"},
-        #           {"Name"=>"RightScalePeter", 
+        #           {"Name"=>"RightScalePeter",
         #            "CreationDate"=>"2008-10-28T03:59:20.000Z"}]},
         #       "Owner"=>
         #        {"DisplayName"=>"fghsfg",
