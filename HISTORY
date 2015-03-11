@@ -1,4 +1,5 @@
 == current
+  - Fixed bug in Route53: ChangeResourceRecordSets method (HostedZoneId -> TargetHostedZoneId)
 
 == 2015-01-16, v0.2.3
   - Added an ability to not use DNS like buckets in AWS S3

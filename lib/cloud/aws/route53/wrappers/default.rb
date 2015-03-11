@@ -94,7 +94,7 @@ module RightScale
                             'Name' => :Name,
                             'Type' => :Type,
                             'AliasTarget{!remove-if-blank}' => {
-                              'HostedZoneId' => :HostedZoneId,
+                              'HostedZoneId' => :TargetHostedZoneId,
                               'DNSName'      => :DNSName
                             },
                             'SetIdentifier' => :SetIdentifier,
