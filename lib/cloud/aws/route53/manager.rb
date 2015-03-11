@@ -35,6 +35,46 @@ module RightScale
 
         # Amazon Route 53 (Route53) compatible manager (thread safe).
         #
+        #  Supported API calls:
+        #  - using get, post, put, etc methods:
+        #    - any API call for any API version
+        #  - using predefined methods in wrappers/default.rb (only API version 2013-04-01):
+        #    # Hosted Zones
+        #    - AssociateVPCWithHostedZone
+        #    - CreateHostedZone
+        #    - DeleteHostedZone
+        #    - DisassociateVPCFromHostedZone
+        #    - GetHostedZone
+        #    - GetHostedZoneCount
+        #    - ListHostedZone
+        #    - ListHostedZonesByName
+        #    - UpdateHostedZoneComment
+        #    # Resource Record Sets
+        #    - ChangeResourceRecordSets
+        #    - GetChange
+        #    - GetGeoLocation
+        #    - ListGeoLocations
+        #    - ListResourceRecordSets
+        #    # Reusable Delegation Sets
+        #    - CreateReusableDelegationSet
+        #    - DeleteReusableDelegationSet
+        #    - GetReusableDelegationSet
+        #    - ListReusableDelegationSets
+        #    # Health Check
+        #    - CreateHealthCheck
+        #    - DeleteHealthCheck
+        #    - GetCheckerIpRanges
+        #    - GetHealthCheck
+        #    - GetHealthCheckCount
+        #    - GetHealthCheckLastFailureReason
+        #    - GetHealthCheckStatus
+        #    - ListHealthChecks
+        #    - UpdateHealthCheck
+        #    # Tags for Hosted Zones and Health Checks
+        #    - ChangeTagsForResource
+        #    - ListTagsForResource
+        #    - ListTagsForResources
+        #
         # @example
         #  require "right_aws_api"
         #
@@ -44,7 +84,7 @@ module RightScale
         #    'https://route53.amazonaws.com'
         #    )
         #
-        #  r53.ListHostedZones #=> 
+        #  r53.ListHostedZones #=>
         #    {"ListHostedZonesResponse"=>
         #      {"IsTruncated"=>"false",
         #       "HostedZones"=>
@@ -58,7 +98,7 @@ module RightScale
         #
         #
         # @example
-        #  r53.ListResourceRecordSets #=>        
+        #  r53.ListResourceRecordSets #=>
         #    {"ListResourceRecordSetsResponse"=>
         #      {"IsTruncated"=>"false",
         #       "MaxItems"=>"100",
@@ -111,11 +151,11 @@ module RightScale
           # RequestSigner Error
           class Error < CloudApi::Error
           end
-          
+
           # Default API version for Route53 service.
           # To override the API version use :api_version key when instantiating a manager.
           #
-          DEFAULT_API_VERSION = '2011-05-05'
+          DEFAULT_API_VERSION = '2013-04-01'
 
           include Mixin::QueryApiPatterns
 
@@ -141,7 +181,7 @@ module RightScale
           # @example
           #   # see Manager class usage
           #
-          # @see Manager 
+          # @see Manager
           #
           def initialize(aws_access_key_id, aws_secret_access_key, endpoint, options={})
             credentials = { :aws_access_key_id     => aws_access_key_id,
@@ -168,7 +208,7 @@ module RightScale
             raise Error::new("Opts must be Hash not #{opts.class.name}") unless opts.is_a?(Hash)
             process_api_request(verb, relative_path, opts, &block)
           end
-                    
+
         end
 
       end
