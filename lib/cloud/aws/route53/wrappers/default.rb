@@ -98,7 +98,7 @@ module RightScale
 
               base.query_api_pattern 'DisassociateVPCFromHostedZone', :post, 'hostedzone/{:HostedZoneId}/disassociatevpc',
                 :body => {
-                  'AssociateVPCWithHostedZoneRequest' => {
+                  'DisassociateVPCFromHostedZoneRequest' => {
                     'VPC{!remove-if-blank}' => {
                       'VPCId'     => :VPCId,
                       'VPCRegion' => :VPCRegion
@@ -127,7 +127,6 @@ module RightScale
               base.query_api_pattern 'ChangeResourceRecordSets', :post, 'hostedzone/{:HostedZoneId}/rrset',
                 :body => {
                   'ChangeResourceRecordSetsRequest' => {
-                    '@xmlns'      => 'https://route53.amazonaws.com/doc/2011-05-05/',
                     'ChangeBatch' => {
                       'Comment' => :Comment,
                       'Changes' => {

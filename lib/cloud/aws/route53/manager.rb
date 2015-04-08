@@ -94,7 +94,7 @@ module RightScale
         #           "Config"=>{"Comment"=>"This is RightScale test hosted zone."},
         #           "Id"=>"/hostedzone/Z3AINKOIEY1X3X"}},
         #       "MaxItems"=>"100",
-        #       "@xmlns"=>"https://route53.amazonaws.com/doc/2011-05-05/"}}
+        #       "@xmlns"=>"https://route53.amazonaws.com/doc/2013-04-01/"}}
         #
         #
         # @example
@@ -102,7 +102,7 @@ module RightScale
         #    {"ListResourceRecordSetsResponse"=>
         #      {"IsTruncated"=>"false",
         #       "MaxItems"=>"100",
-        #       "@xmlns"=>"https://route53.amazonaws.com/doc/2011-05-05/",
+        #       "@xmlns"=>"https://route53.amazonaws.com/doc/2013-04-01/",
         #       "ResourceRecordSets"=>
         #        {"ResourceRecordSet"=>
         #          [{"ResourceRecords"=>
