@@ -55,7 +55,7 @@ call and you know what params it accepts - just call the method with those param
 
   key      = ENV['AWS_ACCESS_KEY_ID']
   secret   = ENV['AWS_SECRET_ACCESS_KEY']
-  endpoint = 'https://us-east-1.ec2.amazonaws.com'
+  endpoint = 'https://ec2.us-east-1.amazonaws.com'
   ec2      = RightScale::CloudApi::AWS::EC2::Manager.new(key, secret, endpoint)
 
   ec2.ThisCallMustBeSupportedByEc2('Param.1' => 'A', 'Param.2' => 'B')
