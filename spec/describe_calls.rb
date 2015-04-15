@@ -76,7 +76,7 @@ describe RightScale::CloudApi::AWS do
       ec2 = RightScale::CloudApi::AWS::EC2::Manager::new(
         ENV['AWS_ACCESS_KEY_ID'],
         ENV['AWS_SECRET_ACCESS_KEY'],
-        'https://us-east-1.ec2.amazonaws.com/',
+        'https://ec2.us-east-1.amazonaws.com/',
         :api_version => '2011-07-15',
         :logger      => nil )
 

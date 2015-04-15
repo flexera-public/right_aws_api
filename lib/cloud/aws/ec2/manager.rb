@@ -35,21 +35,21 @@ module RightScale
         #  require "right_aws_api"
         #
         #  # Create a manager to access EC2.
-        #  ec2 = RightScale::CloudApi::AWS::EC2::Manager::new(key, secret, 'https://us-east-1.ec2.amazonaws.com')
+        #  ec2 = RightScale::CloudApi::AWS::EC2::Manager::new(key, secret, 'https://ec2.us-east-1.amazonaws.com')
         #
         #  ec2.ThisCallMustBeSupportedByEc2('Param.1' => 'A', 'Param.2' => 'B')
         #
         # If there is a new API version just pass it to the manager and woohoo!
         #
         # @example
-        #  ec2 = RightScale::CloudApi::AWS::EC2::new(key, secret, 'https://us-east-1.ec2.amazonaws.com',  :api_version => "2010-08-31" )
+        #  ec2 = RightScale::CloudApi::AWS::EC2::new(key, secret, 'https://ec2.us-east-1.amazonaws.com',  :api_version => "2010-08-31" )
         #  ec2.DescribeInternetGateways # => Gateways list
         #
-        #  ec2 = RightScale::CloudApi::AWS::EC2::new(key, secret, 'https://us-east-1.ec2.amazonaws.com',  :api_version => "2011-05-15" )
+        #  ec2 = RightScale::CloudApi::AWS::EC2::new(key, secret, 'https://ec2.us-east-1.amazonaws.com',  :api_version => "2011-05-15" )
         #  ec2.DescribeInternetGateways # => Exception
         #
         #  # Or even pass a different API version when making a call!
-        #  ec2 = RightScale::CloudApi::AWS::EC2::new(key, secret, 'https://us-east-1.ec2.amazonaws.com',  :api_version => "2010-08-31" )
+        #  ec2 = RightScale::CloudApi::AWS::EC2::new(key, secret, 'https://ec2.us-east-1.amazonaws.com',  :api_version => "2010-08-31" )
         #  ec2.DescribeInternetGateways("InternetGatewayId"=>"igw-55660000") # => Exception
         #  ec2.DescribeInternetGateways("InternetGatewayId"=>"igw-55660000", :options => { :api_version => "2011-05-15" }) #=> Gateway data
         #
