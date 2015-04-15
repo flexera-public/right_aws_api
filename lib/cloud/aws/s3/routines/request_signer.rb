@@ -196,7 +196,6 @@ module RightScale
           #
           # @param [String] bucket
           # @param [String] object
-          # @param [Hash]   params
           #
           # @return [String]
           #
