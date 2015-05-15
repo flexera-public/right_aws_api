@@ -106,6 +106,46 @@
     
 <p>Amazon Route 53 (Route53) compatible manager (thread safe).</p>
 
+<pre class="code ruby"><code class="ruby">Supported API calls:
+- using get, post, put, etc methods:
+  - any API call for any API version
+- using predefined methods in wrappers/default.rb (only API version 2013-04-01):
+  # Hosted Zones
+  - AssociateVPCWithHostedZone
+  - CreateHostedZone
+  - DeleteHostedZone
+  - DisassociateVPCFromHostedZone
+  - GetHostedZone
+  - GetHostedZoneCount
+  - ListHostedZone
+  - ListHostedZonesByName
+  - UpdateHostedZoneComment
+  # Resource Record Sets
+  - ChangeResourceRecordSets
+  - GetChange
+  - GetGeoLocation
+  - ListGeoLocations
+  - ListResourceRecordSets
+  # Reusable Delegation Sets
+  - CreateReusableDelegationSet
+  - DeleteReusableDelegationSet
+  - GetReusableDelegationSet
+  - ListReusableDelegationSets
+  # Health Check
+  - CreateHealthCheck
+  - DeleteHealthCheck
+  - GetCheckerIpRanges
+  - GetHealthCheck
+  - GetHealthCheckCount
+  - GetHealthCheckLastFailureReason
+  - GetHealthCheckStatus
+  - ListHealthChecks
+  - UpdateHealthCheck
+  # Tags for Hosted Zones and Health Checks
+  - ChangeTagsForResource
+  - ListTagsForResource
+  - ListTagsForResources</code></pre>
+
 
   </div>
 </div>
@@ -123,7 +163,7 @@
   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://route53.amazonaws.com</span><span class='tstring_end'>&#39;</span></span>
   <span class='rparen'>)</span>
 
-<span class='id identifier rubyid_r53'>r53</span><span class='period'>.</span><span class='const'>ListHostedZones</span> <span class='comment'>#=&gt; 
+<span class='id identifier rubyid_r53'>r53</span><span class='period'>.</span><span class='const'>ListHostedZones</span> <span class='comment'>#=&gt;
 </span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ListHostedZonesResponse</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
     <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>IsTruncated</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>false</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>HostedZones</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
@@ -133,14 +173,14 @@
          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Config</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Comment</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is RightScale test hosted zone.</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Id</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/hostedzone/Z3AINKOIEY1X3X</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='comma'>,</span>
      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MaxItems</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>100</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2011-05-05/</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span></code></pre>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span></code></pre>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_r53'>r53</span><span class='period'>.</span><span class='const'>ListResourceRecordSets</span> <span class='comment'>#=&gt;        
+      <pre class="example code"><code><span class='id identifier rubyid_r53'>r53</span><span class='period'>.</span><span class='const'>ListResourceRecordSets</span> <span class='comment'>#=&gt;
 </span>  <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ListResourceRecordSetsResponse</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
     <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>IsTruncated</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>false</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MaxItems</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>100</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2011-05-05/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ResourceRecordSets</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
       <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ResourceRecordSet</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
         <span class='lbracket'>[</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ResourceRecords</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span>
@@ -199,7 +239,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Feb  3 13:47:06 2015 by
+  Generated on Fri May 15 13:52:59 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.5).
 </div>

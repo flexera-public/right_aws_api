@@ -226,7 +226,11 @@
 61
 62
 63
-64</pre>
+64
+65
+66
+67
+68</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/route53/routines/request_signer.rb', line 43</span>
@@ -246,12 +250,16 @@
     <span class='kw'>end</span>
   <span class='kw'>end</span>
   <span class='comment'># Set date
-</span>  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>date</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='const'>Time</span><span class='op'>::</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_httpdate'>httpdate</span><span class='rparen'>)</span>
-  <span class='comment'># Sign a request
-</span>  <span class='id identifier rubyid_signature'>signature</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_sign'>sign</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:credentials</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aws_secret_access_key</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_dearrayify'>dearrayify</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>date</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x-amzn-authorization</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AWS3-HTTPS AWSAccessKeyId=</span><span class='embexpr_beg'>#{</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:credentials</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aws_access_key_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>,Algorithm=HmacSHA1,Signature=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_signature'>signature</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+</span>  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_set_if_blank'>set_if_blank</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x-amz-date</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='const'>Time</span><span class='op'>::</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_httpdate'>httpdate</span><span class='rparen'>)</span>
   <span class='comment'># Set path
 </span>  <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='id identifier rubyid_join_urn'>join_urn</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:options</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:api_version</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:relative_path</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:params</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='comment'># Sign a request
+</span>  <span class='const'>Utils</span><span class='op'>::</span><span class='const'>AWS</span><span class='op'>::</span><span class='id identifier rubyid_sign_v4_signature'>sign_v4_signature</span><span class='lparen'>(</span>
+    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:credentials</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aws_access_key_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:credentials</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aws_secret_access_key</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span>
+    <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='symbol'>:request</span><span class='rbracket'>]</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -263,7 +271,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Feb  3 13:47:06 2015 by
+  Generated on Fri May 15 13:53:00 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.5).
 </div>
