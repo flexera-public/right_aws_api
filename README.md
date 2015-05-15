@@ -33,6 +33,7 @@ The gem supports the following AWS services out of the box:
 - {RightScale::CloudApi::AWS::IAM::Manager     Identity and Access Management (IAM)}
 - {RightScale::CloudApi::AWS::RDS::Manager     Relational Database Service (RDS)}
 - {RightScale::CloudApi::AWS::Route53::Manager Route 53 (Route53)}
+- {RightScale::CloudApi::AWS::Route53::Domain::Manager Route 53 Domain (Route53Domain)}
 - {RightScale::CloudApi::AWS::S3::Manager      Simple Storage Service (S3)}
 - {RightScale::CloudApi::AWS::SDB::Manager     Simple DB (SDB)}
 - {RightScale::CloudApi::AWS::SNS::Manager     Simple Notification Service (SNS)}

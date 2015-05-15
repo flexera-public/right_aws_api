@@ -25,7 +25,7 @@ module RightScale
   module CloudApi
     module AWS
       module Route53
-        
+
         # Route 53 request signer
         class RequestSigner < CloudApi::Routine
 
@@ -55,14 +55,18 @@ module RightScale
               end
             end
             # Set date
-            @data[:request][:headers].set_if_blank('date', Time::now.utc.httpdate)
-            # Sign a request
-            signature = Utils::AWS::sign(@data[:credentials][:aws_secret_access_key], Utils::dearrayify(@data[:request][:headers]['date']))
-            @data[:request][:headers]['x-amzn-authorization'] = "AWS3-HTTPS AWSAccessKeyId=#{@data[:credentials][:aws_access_key_id]},Algorithm=HmacSHA1,Signature=#{signature}"
+            @data[:request][:headers].set_if_blank('x-amz-date', Time::now.utc.httpdate)
             # Set path
             @data[:request][:path] = Utils::join_urn(@data[:connection][:uri].path, @data[:options][:api_version], @data[:request][:relative_path], @data[:request][:params])
+            # Sign a request
+            Utils::AWS::sign_v4_signature(
+              @data[:credentials][:aws_access_key_id],
+              @data[:credentials][:aws_secret_access_key],
+              @data[:connection][:uri].host,
+              @data[:request]
+            )
           end
-          
+
         end
       end
     end

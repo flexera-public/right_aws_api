@@ -1,5 +1,12 @@
 == current
-  - Fixed bug in Route53: ChangeResourceRecordSets method (HostedZoneId -> TargetHostedZoneId)
+
+== 2015-03-12, v0.3.0
+  - Fixed bugs in Route53:
+    - new param added to ChangeResourceRecordSets: HostedZoneId -> TargetHostedZoneId
+    - method renamed: CreateHostedZones -> CreateHostedZone
+  - Route53 API 2013-04-01 support added
+  - Route53 Domain API v20140515 support added
+  - Switched to the newer version of right_cloud_api_base gem
 
 == 2015-01-16, v0.2.3
   - Added an ability to not use DNS like buckets in AWS S3
