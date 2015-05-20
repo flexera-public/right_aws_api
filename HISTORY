@@ -1,5 +1,7 @@
 == current
 
+== 2015-06-02, v0.3.1
+  - AWS china support
 == 2015-03-12, v0.3.0
   - Fixed bugs in Route53:
     - new param added to ChangeResourceRecordSets: HostedZoneId -> TargetHostedZoneId
