@@ -1,5 +1,5 @@
 #--
-# Copyright (c) 2013 RightScale, Inc.
+# Copyright (c) 2015 RightScale, Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -21,41 +21,23 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
 
+require "cloud/aws/base/manager"
+
 module RightScale
   module CloudApi
-    module AWS
+    module MWS
 
-      # Request signer for AWS services.
-      class RequestSigner < CloudApi::Routine
+      module Reports
 
-        # RequestSigner error
-        class Error < CloudApi::Error
+        class Manager < MWS::Manager
         end
 
-        # Authenticates an AWS request
-        #
-        # @return [void]
-        #
-        # @example
-        #  no example
-        #
-        def process
-          # Compile a final request path
-          @data[:request][:path] = Utils::join_urn(@data[:connection][:uri].path, @data[:request][:relative_path])
-
-          # Swap query params and body
-          @data[:request][:params]['Version'] ||= @data[:options][:api_version]
-          @data[:request][:body]   = Utils::params_to_urn(@data[:request][:params]){ |value| Utils::AWS::amz_escape(value) }
-          @data[:request][:params] = {}
-
-          Utils::AWS::sign_v4_signature(
-            @data[:credentials][:aws_access_key_id],
-            @data[:credentials][:aws_secret_access_key],
-            @data[:connection][:uri].host,
-            @data[:request]
-          )
+        class  ApiManager < MWS::ApiManager
+          DEFAULT_API_VERSION = '2009-01-01'
+          WMS_SERVICE_PATH    = nil
         end
       end
+
     end
   end
 end
