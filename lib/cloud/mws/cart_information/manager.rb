@@ -21,41 +21,23 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
 
+require "cloud/aws/base/manager"
+
 module RightScale
   module CloudApi
-    module AWS
+    module MWS
 
-      # Request signer for AWS services.
-      class RequestSigner < CloudApi::Routine
+      module CartInformation
 
-        # RequestSigner error
-        class Error < CloudApi::Error
+        class Manager < MWS::Manager
         end
 
-        # Authenticates an AWS request
-        #
-        # @return [void]
-        #
-        # @example
-        #  no example
-        #
-        def process
-          # Compile a final request path
-          @data[:request][:path] = Utils::join_urn(@data[:connection][:uri].path, @data[:request][:relative_path])
-
-          # Swap query params and body
-          @data[:request][:params]['Version'] ||= @data[:options][:api_version]
-          @data[:request][:body]   = Utils::params_to_urn(@data[:request][:params]){ |value| Utils::AWS::amz_escape(value) }
-          @data[:request][:params] = {}
-
-          Utils::AWS::sign_v4_signature(
-            @data[:credentials][:aws_access_key_id],
-            @data[:credentials][:aws_secret_access_key],
-            @data[:connection][:uri].host,
-            @data[:request]
-          )
+        class  ApiManager < MWS::ApiManager
+          DEFAULT_API_VERSION = '2014-03-01'
+          WMS_SERVICE_PATH    = 'CartInformation'
         end
       end
+
     end
   end
 end

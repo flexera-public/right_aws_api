@@ -21,6 +21,8 @@ http://rightscale.github.io/right_aws_api/frames.html#!file.README.html
 
 The gem supports the following AWS services out of the box:
 
+Web Services:
+
 - {RightScale::CloudApi::AWS::AS::Manager      Auto Scaling (AS)}
 - {RightScale::CloudApi::AWS::CF::Manager      Cloud Front (CF)}
 - {RightScale::CloudApi::AWS::CFM::Manager     Cloud Formation (CFM)}
@@ -38,6 +40,27 @@ The gem supports the following AWS services out of the box:
 - {RightScale::CloudApi::AWS::SDB::Manager     Simple DB (SDB)}
 - {RightScale::CloudApi::AWS::SNS::Manager     Simple Notification Service (SNS)}
 - {RightScale::CloudApi::AWS::SQS::Manager     Simple Queue Service (SQS)}
+
+Product Advertising API:
+
+- {RightScale::CloudApi::ECS::PA::Manager      Product Advertising API (PA)}
+
+Market Web Services:
+
+- {RightScale::CloudApi::MWS::CartInformation::Manager              Cart Information}
+- {RightScale::CloudApi::MWS::CustomerInformation::Manager          Customer Information}
+- {RightScale::CloudApi::MWS::Feeds::Manager                        Feeds}
+- {RightScale::CloudApi::MWS::Finances::Manager                     Finances}
+- {RightScale::CloudApi::MWS::FulfillmentInboundShipment::Manager   Fulfillment Inbound Shipment}
+- {RightScale::CloudApi::MWS::FulfillmentInventory::Manager         Fulfillment Inventory}
+- {RightScale::CloudApi::MWS::FulfillmentOutboundShipment::Manager  Fulfillment Outbound Shipment}
+- {RightScale::CloudApi::MWS::Orders::Manager                       Orders}
+- {RightScale::CloudApi::MWS::Products::Manager                     Products}
+- {RightScale::CloudApi::MWS::Recommendations::Manager              Recommendations}
+- {RightScale::CloudApi::MWS::Reports::Manager                      Reports}
+- {RightScale::CloudApi::MWS::Sellers::Manager                      Sellers}
+- {RightScale::CloudApi::MWS::Subscriptions::Manager                Subscriptions}
+- {RightScale::CloudApi::MWS::Webstore::Manager                     Webstore}
 
 And it is easy to add support for other. You will need to refer to
 the AWS docs (http://aws.amazon.com/documentation/) for all the API params and usage explanations.
@@ -157,6 +180,52 @@ call and you know what params it accepts - just call the method with those param
 
   # Kill the queue
   sqs.DeleteQueue('myCoolQueue')
+```
+
+### Amazon Product Advertising API (PA)
+
+```ruby
+
+  require "right_aws_api"
+
+  key      = ENV['AWS_ACCESS_KEY_ID']
+  secret   = ENV['AWS_SECRET_ACCESS_KEY']
+  endpoint = 'https://webservices.amazon.com'
+  paa      = RightScale::CloudApi::ECS::PA::Manager.new(key, secret, endpoint)
+
+  paa.ItemLookup(
+    'AssociateTag'  => 'weird-tag',
+    'IdType'        => 'ASIN',
+    'ItemId'        => 'B00TRAO8HK',
+    'ResponseGroup' => 'OfferSummary'
+  )
+```
+
+### Amazon Market Web Services API (MWS)
+
+```ruby
+
+  key      = ENV['AWS_ACCESS_KEY_ID']
+  secret   = ENV['AWS_SECRET_ACCESS_KEY']
+  endpoint = 'https://mws.amazonservices.com'
+
+  # Webstore
+  ws = RightScale::CloudApi::MWS::Webstore::Manager.new(key, secret, endpoint)
+  ws.GetServiceStatus
+
+  # Reports
+  rd = RightScale::CloudApi::MWS::Reports::Manager.new(key, secret, endpoint)
+  rd.GetReportList(
+    'SellerId'      => 'foo',
+    'MarketplaceId' => 'bar',
+  )
+
+  # Recommendations
+  rd = RightScale::CloudApi::MWS::Recommendations::Manager.new(key, secret, endpoint)
+  rd.ListRecommendations(
+    'SellerId'      => 'foo',
+    'MarketplaceId' => 'bar',
+  )
 ```
 
 ### Options

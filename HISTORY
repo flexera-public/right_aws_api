@@ -1,4 +1,21 @@
-== current
+== current (not released as a gem yet)
+  - Added new services:
+    - Product Advertising API
+    - Market Web Service API:
+      - Cart Information
+      - Customer Information
+      - Feeds
+      - Finances
+      - Fulfillment Inbound Shipment
+      - Fulfillment Inventory
+      - Fulfillment Outbound Shipment
+      - Orders
+      - Products
+      - Recommendations
+      - Reports
+      - Sellers
+      - Subscriptions
+      - Webstore
 
 == 2015-03-12, v0.3.0
   - Fixed bugs in Route53:
