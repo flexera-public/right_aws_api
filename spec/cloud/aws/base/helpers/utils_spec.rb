@@ -67,6 +67,27 @@ describe RightScale::CloudApi::Utils::AWS do
           ).to eq ['ec2', 'region-1']
         end
       end
+
+      context "for China region" do
+        it "parses service endpoints" do
+          expect(
+            subject.sign_v4_get_service_and_region("ec2.cn-north-1.amazonaws.com.cn")
+          ).to eq ["ec2", "cn-north-1"]
+          expect(
+            subject.sign_v4_get_service_and_region("s3.cn-north-1.amazonaws.com.cn")
+          ).to eq ["s3", "cn-north-1"]
+          expect(
+            subject.sign_v4_get_service_and_region("s3-website.cn-north-1.amazonaws.com.cn")
+          ).to eq ["s3", "cn-north-1"]
+
+          expect(
+            subject.sign_v4_get_service_and_region("iam.cn-north-1.amazonaws.com.cn")
+          ).to eq ["iam", "cn-north-1"]
+          expect(
+            subject.sign_v4_get_service_and_region("ec2.cn-north-1.amazonaws.com.cn")
+          ).to eq ["ec2", "cn-north-1"]
+        end
+      end
     end
 
 
