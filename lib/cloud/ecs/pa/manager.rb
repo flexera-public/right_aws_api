@@ -22,6 +22,7 @@
 #++
 
 require "cloud/ecs/pa/routines/request_signer"
+require "cloud/ecs/pa/parsers/response_error"
 
 module RightScale
   module CloudApi
@@ -116,6 +117,8 @@ module RightScale
           set_routine CacheValidator
           set_routine ResponseParser
           set_routine ResultWrapper
+
+          set :response_error_parser => Parser::ECS::ResponseError
 
           def api(action, params={}, &block)
             params['Operation'] ||= action.to_s._snake_case._camelize
