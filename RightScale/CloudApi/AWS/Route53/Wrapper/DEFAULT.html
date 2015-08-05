@@ -427,7 +427,16 @@
 289
 290
 291
-292</pre>
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/cloud/aws/route53/wrappers/default.rb', line 42</span>
@@ -441,6 +450,7 @@
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_query_api_pattern'>query_api_pattern</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CreateHostedZone</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hostedzone</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CreateHostedZoneRequest</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&#39;</span></span>           <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Name</span><span class='tstring_end'>&#39;</span></span>             <span class='op'>=&gt;</span> <span class='symbol'>:Name</span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CallerReference</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='symbol'>:CallerReference</span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HostedZoneConfig{!remove-if-blank}</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
@@ -471,6 +481,7 @@
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_query_api_pattern'>query_api_pattern</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UpdateHostedZoneComment</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hostedzone/{:HostedZoneId}</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UpdateHostedZoneCommentRequest</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Comment</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:Comment</span>
       <span class='rbrace'>}</span>
     <span class='rbrace'>}</span>
@@ -478,6 +489,7 @@
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_query_api_pattern'>query_api_pattern</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AssociateVPCWithHostedZone</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hostedzone/{:HostedZoneId}/associatevpc</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AssociateVPCWithHostedZoneRequest</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&#39;</span></span>                <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>VPC{!remove-if-blank}</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>VPCId</span><span class='tstring_end'>&#39;</span></span>     <span class='op'>=&gt;</span> <span class='symbol'>:VPCId</span><span class='comma'>,</span>
           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>VPCRegion</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:VPCRegion</span>
@@ -492,6 +504,7 @@
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_query_api_pattern'>query_api_pattern</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DisassociateVPCFromHostedZone</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hostedzone/{:HostedZoneId}/disassociatevpc</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DisassociateVPCFromHostedZoneRequest</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&#39;</span></span>                <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>VPC{!remove-if-blank}</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>VPCId</span><span class='tstring_end'>&#39;</span></span>     <span class='op'>=&gt;</span> <span class='symbol'>:VPCId</span><span class='comma'>,</span>
           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>VPCRegion</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:VPCRegion</span>
@@ -520,6 +533,7 @@
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_query_api_pattern'>query_api_pattern</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ChangeResourceRecordSets</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hostedzone/{:HostedZoneId}/rrset</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ChangeResourceRecordSetsRequest</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&#39;</span></span>      <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ChangeBatch</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Comment</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:Comment</span><span class='comma'>,</span>
           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Changes</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
@@ -577,6 +591,7 @@
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_query_api_pattern'>query_api_pattern</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CreateReusableDelegationSet</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>delegationset</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CreateReusableDelegationSetRequest</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CallerReference</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:CallerReference</span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HostedZoneId</span><span class='tstring_end'>&#39;</span></span>    <span class='op'>=&gt;</span> <span class='symbol'>:HostedZoneId</span>
       <span class='rbrace'>}</span>
@@ -595,6 +610,7 @@
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_query_api_pattern'>query_api_pattern</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CreateHealthCheck</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>healthcheck</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CreateHealthCheckRequest</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&#39;</span></span>          <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CallerReference</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:CallerReference</span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HealthCheckConfig</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>IPAddress</span><span class='tstring_end'>&#39;</span></span>                <span class='op'>=&gt;</span> <span class='symbol'>:IPAddress</span><span class='comma'>,</span>
@@ -620,6 +636,7 @@
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_query_api_pattern'>query_api_pattern</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UpdateHealthCheck</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>healthcheck/{:HealthCheckId}</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CreateHealthCheckRequest</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&#39;</span></span>                   <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HealthCheckVersion</span><span class='tstring_end'>&#39;</span></span>       <span class='op'>=&gt;</span> <span class='symbol'>:HealthCheckVersion</span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>IPAddress</span><span class='tstring_end'>&#39;</span></span>                <span class='op'>=&gt;</span> <span class='symbol'>:IPAddress</span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Port</span><span class='tstring_end'>&#39;</span></span>                     <span class='op'>=&gt;</span> <span class='symbol'>:Port</span><span class='comma'>,</span>
@@ -660,6 +677,7 @@
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_query_api_pattern'>query_api_pattern</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ChangeTagsForResource</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>tags/{:ResourceType}/{:ResourceId}</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ChangeTagsForResourceRequest</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@xmlns</span><span class='tstring_end'>&#39;</span></span>        <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://route53.amazonaws.com/doc/2013-04-01/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>RemoveTagKeys</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:RemoveTagKeys</span><span class='comma'>,</span>
         <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AddTags{!remove-if-blank}</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Tag</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:Tag</span>
@@ -693,7 +711,7 @@
 </div>
 
     <div id="footer">
-  Generated on Mon Jun  1 08:34:48 2015 by
+  Generated on Wed Aug  5 11:49:04 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.5).
 </div>
