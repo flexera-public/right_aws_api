@@ -246,7 +246,7 @@ describe RightScale::CloudApi::Utils::AWS do
             :params  => { 'A' => 'B' },
             :body    => "banana"
           }
-          Timecop.freeze(Time.local(2014)) do
+          Timecop.freeze(Time.utc(2014)) do
             subject.sign_v4_signature(
               'aws_access_key',
               'aws_secret_access_key',
@@ -262,10 +262,10 @@ describe RightScale::CloudApi::Utils::AWS do
                 "content-type"         => ["application/x-www-form-urlencoded; charset=utf-8"],
                 "content-md5"          => ["crMCvyl6Iop1cwEj7+98QQ=="],
                 "x-amz-content-sha256" => ["b493d48364afe44d11c0165cf470a4164d1e2609911ef998be868d46ade3de4e"],
-                "x-amz-date"           => ["20140101T080000Z"],
+                "x-amz-date"           => ["20140101T000000Z"],
                 "x-amz-expires"        => [3600],
                 "host"                 => ["ec2.us-region-1.amazonaws.com"],
-                "authorization"        => ["AWS4-HMAC-SHA256 Credential=aws_access_key/20140101/us-region-1/ec2/aws4_request, SignedHeaders=content-length;content-md5;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-expires, Signature=c7814d3865b530322742b73670475ac5adb0c1bd4ab39ecf9b80d672283fc177"]
+                "authorization"        => ["AWS4-HMAC-SHA256 Credential=aws_access_key/20140101/us-region-1/ec2/aws4_request, SignedHeaders=content-length;content-md5;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-expires, Signature=60e830ba801836039a61cad6a1c300431f913aa81bd832cc340959a140586aa6"]
               },
               :params  => {"A" => "B"},
               :path    => "/foo/bar?A=B",
@@ -285,7 +285,7 @@ describe RightScale::CloudApi::Utils::AWS do
             :params  => { 'A' => 'B' },
             :body    => "banana"
           }
-          Timecop.freeze(Time.local(2014)) do
+          Timecop.freeze(Time.utc(2014)) do
             subject.sign_v4_signature(
               'aws_access_key',
               'aws_secret_access_key',
@@ -300,13 +300,13 @@ describe RightScale::CloudApi::Utils::AWS do
               :headers => {"host"=>["ec2.us-region-1.amazonaws.com"]},
               :params  => {
                 "A"                   => "B",
-                "X-Amz-Date"          => "20140101T080000Z",
+                "X-Amz-Date"          => "20140101T000000Z",
                 "X-Amz-Expires"       => 3600,
                 "X-Amz-Algorithm"     => "AWS4-HMAC-SHA256",
                 "X-Amz-SignedHeaders" => "host",
                 "X-Amz-Credential"    => "aws_access_key/20140101/us-region-1/ec2/aws4_request"
               },
-              :path    => "/foo/bar?A=B&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=aws_access_key%2F20140101%2Fus-region-1%2Fec2%2Faws4_request&X-Amz-Date=20140101T080000Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0fcac655717af1f947fc0942cc2a2e98fddfe71cf669b0a344235bb83684c9cf",
+              :path    => "/foo/bar?A=B&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=aws_access_key%2F20140101%2Fus-region-1%2Fec2%2Faws4_request&X-Amz-Date=20140101T000000Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=62ef6599fbacd4869a517857cdbb95763c00b8397cb551c374c3320285df9e87",
               :verb    => :post
             }
           )
