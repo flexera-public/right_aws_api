@@ -48,6 +48,7 @@ module RightScale
               base.query_api_pattern 'CreateHostedZone', :post, 'hostedzone',
                 :body => {
                   'CreateHostedZoneRequest' => {
+                    '@xmlns'           => 'https://route53.amazonaws.com/doc/2013-04-01/',
                     'Name'             => :Name,
                     'CallerReference'  => :CallerReference,
                     'HostedZoneConfig{!remove-if-blank}' => {
@@ -78,6 +79,7 @@ module RightScale
               base.query_api_pattern 'UpdateHostedZoneComment', :post, 'hostedzone/{:HostedZoneId}',
                 :body => {
                   'UpdateHostedZoneCommentRequest' => {
+                    '@xmlns'  => 'https://route53.amazonaws.com/doc/2013-04-01/',
                     'Comment' => :Comment
                   }
                 }
@@ -85,6 +87,7 @@ module RightScale
               base.query_api_pattern 'AssociateVPCWithHostedZone', :post, 'hostedzone/{:HostedZoneId}/associatevpc',
                 :body => {
                   'AssociateVPCWithHostedZoneRequest' => {
+                    '@xmlns'                => 'https://route53.amazonaws.com/doc/2013-04-01/',
                     'VPC{!remove-if-blank}' => {
                       'VPCId'     => :VPCId,
                       'VPCRegion' => :VPCRegion
@@ -99,6 +102,7 @@ module RightScale
               base.query_api_pattern 'DisassociateVPCFromHostedZone', :post, 'hostedzone/{:HostedZoneId}/disassociatevpc',
                 :body => {
                   'DisassociateVPCFromHostedZoneRequest' => {
+                    '@xmlns'                => 'https://route53.amazonaws.com/doc/2013-04-01/',
                     'VPC{!remove-if-blank}' => {
                       'VPCId'     => :VPCId,
                       'VPCRegion' => :VPCRegion
@@ -185,6 +189,7 @@ module RightScale
               base.query_api_pattern 'CreateReusableDelegationSet', :post, 'delegationset',
                 :body => {
                   'CreateReusableDelegationSetRequest' => {
+                    '@xmlns' => 'https://route53.amazonaws.com/doc/2013-04-01/',
                     'CallerReference' => :CallerReference,
                     'HostedZoneId'    => :HostedZoneId
                   }
@@ -203,6 +208,7 @@ module RightScale
               base.query_api_pattern 'CreateHealthCheck', :post, 'healthcheck',
                 :body => {
                   'CreateHealthCheckRequest' => {
+                    '@xmlns'          => 'https://route53.amazonaws.com/doc/2013-04-01/',
                     'CallerReference' => :CallerReference,
                     'HealthCheckConfig' => {
                       'IPAddress'                => :IPAddress,
@@ -228,6 +234,7 @@ module RightScale
               base.query_api_pattern 'UpdateHealthCheck', :post, 'healthcheck/{:HealthCheckId}',
                 :body => {
                   'CreateHealthCheckRequest' => {
+                    '@xmlns'                   => 'https://route53.amazonaws.com/doc/2013-04-01/',
                     'HealthCheckVersion'       => :HealthCheckVersion,
                     'IPAddress'                => :IPAddress,
                     'Port'                     => :Port,
@@ -268,6 +275,7 @@ module RightScale
               base.query_api_pattern 'ChangeTagsForResource', :post, 'tags/{:ResourceType}/{:ResourceId}',
                 :body => {
                   'ChangeTagsForResourceRequest' => {
+                    '@xmlns'        => 'https://route53.amazonaws.com/doc/2013-04-01/',
                     'RemoveTagKeys' => :RemoveTagKeys,
                     'AddTags{!remove-if-blank}' => {
                       'Tag' => :Tag
