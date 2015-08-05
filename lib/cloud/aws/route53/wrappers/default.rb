@@ -127,6 +127,7 @@ module RightScale
               base.query_api_pattern 'ChangeResourceRecordSets', :post, 'hostedzone/{:HostedZoneId}/rrset',
                 :body => {
                   'ChangeResourceRecordSetsRequest' => {
+                    '@xmlns'      => 'https://route53.amazonaws.com/doc/2013-04-01/',
                     'ChangeBatch' => {
                       'Comment' => :Comment,
                       'Changes' => {
