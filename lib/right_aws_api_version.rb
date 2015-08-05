@@ -33,7 +33,7 @@ module RightScale
       # Gem version namespace
       module VERSION
         # Current version
-        STRING = '0.3.0'
+        STRING = '0.3.2'
       end
     end
   end

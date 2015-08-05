@@ -1,4 +1,7 @@
 == current (not released as a gem yet)
+  - Fixed:
+    - Route53
+      - All POST actions were broken because of the missing 'xmlns' attribute.
   - Added new services:
     - Product Advertising API
     - Market Web Service API:
