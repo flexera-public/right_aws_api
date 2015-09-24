@@ -201,6 +201,7 @@ module RightScale
           result =
             case
             when host[                  /^iam\.amazonaws\.com$/i ] then ['iam', 'us-east-1']
+            when host[              /^iam\.amazonaws\.com\.cn$/i ] then ['iam', 'cn-north-1']
             when host[              /^route53\.amazonaws\.com$/i ] then ['route53', 'us-east-1']
             when host[            /^(.*\.)?s3\.amazonaws\.com$/i ] then ['s3',  'us-east-1']
             when host[ /^(.*\.)?s3-external-1\.amazonaws\.com$/i ] then ['s3',  'us-east-1']
