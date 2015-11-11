@@ -205,7 +205,7 @@ module RightScale
           error_pattern :abort_on_timeout,     :path     => /Action=(Run|Create|Purchase)/
           error_pattern :abort,                :response => /InsufficientInstanceCapacity/i
           error_pattern :retry,                :response => /InternalError|Unavailable|Internal Server Error/i
-          error_pattern :retry,                :response => /Please try again|no response from/i
+          error_pattern :retry,                :response => /Please try again|no response from|Request limit exceeded/i
           error_pattern :disconnect_and_abort, :code     => /5..|403|408/
           error_pattern :disconnect_and_abort, :code     => /4../, :if => Proc.new{ |opts| rand(100) < 10 }
 
