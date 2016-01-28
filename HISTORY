@@ -1,8 +1,9 @@
 == current (not released as a gem yet)
+  - Added AWS Support service
 == 2015-11-11, v0.3.4
-  - Add LimitRateExceeded to the retryable error types
+  - Added LimitRateExceeded to the retryable error types
 == 2015-09-24, v0.3.3
-  - Add iam regex for AWS China
+  - Added iam regex for AWS China
 == ?? , v0.3.2
   - Fixed:
     - Route53

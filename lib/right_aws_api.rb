@@ -45,6 +45,7 @@ require "cloud/aws/s3/link/manager"
 require "cloud/aws/sdb/manager"
 require "cloud/aws/sns/manager"
 require "cloud/aws/sqs/manager"
+require "cloud/aws/support/manager"
 
 require "cloud/mws/base/manager"
 require "cloud/mws/cart_information/manager"
