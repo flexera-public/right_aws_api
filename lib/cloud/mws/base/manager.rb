@@ -22,6 +22,7 @@
 #++
 
 require "cloud/mws/base/routines/request_signer"
+require "cloud/mws/base/parsers/response_error"
 
 module RightScale
   module CloudApi
@@ -50,6 +51,8 @@ module RightScale
         set_routine CacheValidator
         set_routine ResponseParser
         set_routine ResultWrapper
+
+        set :response_error_parser => Parser::MWS::ResponseError
 
         def api(action, params={}, &block)
           params['Action'] ||= action.to_s._snake_case._camelize

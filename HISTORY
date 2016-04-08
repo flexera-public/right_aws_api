@@ -1,4 +1,5 @@
 == current (not released as a gem yet)
+  - Fixed a bug in MWS error parsing
 == 2015-11-11, v0.3.4
   - Add LimitRateExceeded to the retryable error types
 == 2015-09-24, v0.3.3
