@@ -283,7 +283,7 @@ module RightScale
                 :params => { 'uploads' => '' }
 
 
-              base.query_api_pattern 'UploadPart', :post, '{:Bucket}/{:Object}',
+              base.query_api_pattern 'UploadPart', :put, '{:Bucket}/{:Object}',
                 :params  => { 'partNumber' => :PartNumber,
                               'uploadId'   => :UploadId },
                 :headers => { 'content-type' => 'binary/octet-stream' }
@@ -298,7 +298,7 @@ module RightScale
               base.query_api_pattern 'CompleteMultipartUpload', :post, '{:Bucket}/{:Object}',
                 :params  => { 'uploadId' => :UploadId },
                 :body    => { 'CompleteMultipartUpload' => :CompleteMultipartUpload },
-                :headers => { 'x-amz-acl' => :Acl, 'content-type' => 'application/xml'}
+                :headers => { 'content-type' => 'application/xml'}
 
 
               base.query_api_pattern 'AbortMultipartUpload', :delete, '{:Bucket}/{:Object}',
