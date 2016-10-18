@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.require_path     = 'lib'
   spec.required_ruby_version = '>= 1.8.7'
 
-  spec.add_dependency 'right_cloud_api_base', '>= 0.2.2'
+  spec.add_dependency 'right_cloud_api_base', '>= 0.2.6'
 
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec', '>= 3.0.0'
