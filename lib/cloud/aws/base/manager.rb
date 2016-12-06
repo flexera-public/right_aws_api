@@ -22,6 +22,7 @@
 #++
 
 require "cloud/aws/base/helpers/utils"
+require "cloud/aws/base/helpers/cs_helper_methods"
 require "cloud/aws/base/routines/request_signer"
 require "cloud/aws/base/parsers/response_error"
 
