@@ -34,7 +34,7 @@ module RightScale
 
         class  ApiManager < MWS::ApiManager
           DEFAULT_API_VERSION = '2009-01-01'
-          WMS_SERVICE_PATH    = nil
+          WMS_SERVICE_PATH    = 'Feeds'
         end
       end
 
