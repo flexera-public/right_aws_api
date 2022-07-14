@@ -23,5 +23,8 @@
 
 source "https://rubygems.org"
 
+gem 'json', '1.8.6'
+gem 'libxml-ruby', '2.8.0'
+
 # Load .gemspec file to avoid duplicates.
 gemspec

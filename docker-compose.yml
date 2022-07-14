@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  web:
+    build: .
+    command: bash -c "bundle exec rspec"
+    volumes:
+      - .:/code/Ruby-Docker
