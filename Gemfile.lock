@@ -1,0 +1,57 @@
+PATH
+  remote: .
+  specs:
+    right_aws_api (0.3.5)
+      right_cloud_api_base (>= 0.2.6)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    diff-lcs (1.5.0)
+    docile (1.1.5)
+    json (1.8.6)
+    libxml-ruby (2.8.0)
+    net-http-persistent (2.9.4)
+    rake (10.4.2)
+    redcarpet (3.5.1)
+    right_cloud_api_base (0.2.6)
+      json (>= 1.0.0)
+      libxml-ruby (>= 1.0.0)
+      net-http-persistent (~> 2.9)
+      redcarpet (>= 3.0.0)
+      ruby-hmac (>= 0.4.0)
+    rspec (3.11.0)
+      rspec-core (~> 3.11.0)
+      rspec-expectations (~> 3.11.0)
+      rspec-mocks (~> 3.11.0)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-support (3.11.0)
+    ruby-hmac (0.4.0)
+    simplecov (0.12.0)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
+    timecop (0.9.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  json (= 1.8.6)
+  libxml-ruby (= 2.8.0)
+  rake (= 10.4.2)
+  right_aws_api!
+  rspec (>= 3.0.0)
+  simplecov (= 0.12.0)
+  timecop
+
+BUNDLED WITH
+   1.12.5
