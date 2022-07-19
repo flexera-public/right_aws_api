@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 require_relative '../../../../../lib/right_aws_api'
 
 require 'rspec'
