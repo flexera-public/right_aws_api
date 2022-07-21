@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 require 'right_aws_api'
 
 require 'rspec'

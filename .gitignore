@@ -2,6 +2,5 @@ nbproject
 .yardoc
 doc
 gh-pages
-Gemfile.lock
 right_aws_api-*.gem
-
+coverage
