@@ -4,4 +4,4 @@ services:
     build: .
     command: bash -c "bundle exec rspec"
     volumes:
-      - .:/code/Ruby-Docker
+      - .:/code/right_aws_api
